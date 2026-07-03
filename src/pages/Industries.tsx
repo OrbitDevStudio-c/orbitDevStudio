@@ -5,9 +5,7 @@ import IndustriesShowcase from '../components/sections/IndustriesShowcase';
 import IndustriesStory from '../components/sections/IndustriesStory';
 import IndustriesTechClusters from '../components/sections/IndustriesTechClusters';
 import IndustriesWhyUs from '../components/sections/IndustriesWhyUs';
-import IndustriesTestimonials from '../components/sections/IndustriesTestimonials';
 import IndustriesFAQ from '../components/sections/IndustriesFAQ';
-import IndustriesCTA from '../components/sections/IndustriesCTA';
 
 export default function Industries() {
   return (
@@ -27,9 +25,7 @@ export default function Industries() {
           <IndustriesStory />
           <IndustriesTechClusters />
           <IndustriesWhyUs />
-          <IndustriesTestimonials />
           <IndustriesFAQ />
-          <IndustriesCTA />
         </div>
 
       </div>

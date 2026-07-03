@@ -48,7 +48,7 @@ const techClusters = [
       { name: "Next.js", x: 30, y: 25 },
       { name: "Shopify Plus", x: 60, y: 10 },
       { name: "GraphQL", x: 15, y: 65 },
-      { name: "Vercel", x: 50, y: 50 },
+      { name: "Vercel", x: 50, y: 85 },
       { name: "Tailwind", x: 80, y: 70 }
     ]
   }

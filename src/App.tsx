@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 
 import LenisProvider from './components/providers/LenisProvider';
+import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './layouts/MainLayout';
 
 // Lazy loaded pages for performance
@@ -27,6 +28,7 @@ function App() {
     <HelmetProvider>
       <LenisProvider>
         <Router>
+          <ScrollToTop />
           <MainLayout>
             <Suspense fallback={<div className="flex h-screen items-center justify-center text-white"><div className="w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin"></div></div>}>
               <AnimatePresence mode="wait">

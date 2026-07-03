@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 const bentoItems = [
   {
     id: "healthcare",
-    icon: <HeartPulse size={28} className="text-[#F36B6B]" />,
+    icon: <HeartPulse size={28} className="text-white" />,
     title: "Healthcare & Medical",
     desc: "Secure, HIPAA-compliant patient portals, telemedicine platforms, and scalable clinical management systems engineered for uncompromising data integrity.",
-    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2 bg-gradient-to-br from-[#0a1128] to-[#121f42] text-white border-white/10",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
     tech: ["React", "Node.js", "AWS", "PostgreSQL"],
     stats: { label: "Uptime", value: "99.99%" },
     isDark: true,
+    bgImage: "https://images.unsplash.com/photo-1551076805-e18690c5e561?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: "ecommerce",
@@ -72,16 +73,19 @@ export default function IndustriesGrid() {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
       
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] -z-10" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-400/20 rounded-full blur-[100px] -z-10" />
+      
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
             Industries We Build For
           </h2>
           <p className="text-slate-500 text-[16px] leading-relaxed">
             We don't just write code — we engineer handcrafted, interactive solutions tailored to the specific business logic, regulatory requirements, and high aesthetic standards of your sector.
           </p>
         </div>
-        <button className="hidden md:flex items-center gap-2 text-[#2E5BE5] font-semibold hover:text-[#1B3675] transition-colors group">
+        <button className="hidden md:flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors group">
           View All Case Studies
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </button>
@@ -96,29 +100,38 @@ export default function IndustriesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className={`group relative overflow-hidden rounded-[32px] p-8 border hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 flex flex-col ${item.className}`}
+            className={`group relative overflow-hidden rounded-[32px] p-8 border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${
+              item.isDark ? 'bg-slate-900/90 text-white border-slate-700' : 'bg-white/60 text-slate-900'
+            } ${item.className}`}
           >
-            {/* Ambient Glass Highlight for Dark Cards */}
+            {/* Ambient Glass Highlight & Image for Dark Cards */}
             {item.isDark && (
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#2E5BE5] rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0" />
+                {item.bgImage && (
+                  <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 mix-blend-overlay">
+                    <img src={item.bgImage} alt="" className="w-full h-full object-cover" />
+                  </div>
+                )}
+              </>
             )}
 
             <div className="relative z-10 flex flex-col h-full">
               
               {/* Header: Icon & Title */}
               <div className="flex items-start justify-between mb-6">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${item.isDark ? 'bg-white/10 border border-white/10' : 'bg-white border border-slate-100 shadow-sm'}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${item.isDark ? 'bg-white/10 border border-white/10' : 'bg-white border border-slate-200 shadow-sm'}`}>
                   {item.icon}
                 </div>
                 {item.stats && (
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-white tracking-tight">{item.stats.value}</div>
-                    <div className="text-[10px] font-bold text-white/50 uppercase tracking-wider">{item.stats.label}</div>
+                    <div className="text-2xl font-bold tracking-tight">{item.stats.value}</div>
+                    <div className={`text-[10px] font-bold uppercase tracking-wider ${item.isDark ? 'text-white/50' : 'text-slate-400'}`}>{item.stats.label}</div>
                   </div>
                 )}
               </div>
               
-              <h3 className={`text-xl font-bold mb-3 tracking-tight ${item.isDark ? 'text-white' : 'text-[#0f172a]'}`}>
+              <h3 className="text-xl font-bold mb-3 tracking-tight">
                 {item.title}
               </h3>
               
@@ -127,16 +140,16 @@ export default function IndustriesGrid() {
               </p>
               
               {/* Footer: Tech Stack & CTA */}
-              <div className="mt-auto flex items-center justify-between border-t border-inherit pt-5 border-opacity-10">
+              <div className="mt-auto flex items-center justify-between border-t border-slate-200/50 pt-5">
                 <div className="flex items-center gap-2 flex-wrap">
                   {item.tech.map(t => (
-                    <span key={t} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide ${item.isDark ? 'bg-white/10 text-white/90' : 'bg-slate-100 text-slate-600'}`}>
+                    <span key={t} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide ${item.isDark ? 'bg-white/10 text-white/90' : 'bg-white/80 text-slate-600 border border-slate-200/50'}`}>
                       {t}
                     </span>
                   ))}
                 </div>
                 
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 ${item.isDark ? 'bg-white text-[#0a1128]' : 'bg-[#2E5BE5] text-white'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 ${item.isDark ? 'bg-white text-slate-900' : 'bg-blue-600 text-white'}`}>
                   <ArrowRight size={14} />
                 </div>
               </div>

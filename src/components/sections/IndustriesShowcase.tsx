@@ -10,7 +10,7 @@ const cases = [
     solution: "Engineered a secure, cloud-native portal with real-time EHR synchronization and a unified patient dashboard.",
     result: "Reduced wait times by 40% and achieved 99.99% uptime with full HIPAA compliance.",
     tech: ["React", "AWS", "Node.js", "HL7/FHIR"],
-    image: "https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=2070",
     reverse: false
   },
   {
