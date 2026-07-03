@@ -1,18 +1,13 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
-
-// Code-split the heavy Three.js animation
-const ParticlesContainer = lazy(() => import('../three/ParticlesContainer'));
+import GalaxyParticles from './GalaxyParticles';
 
 export default function Hero() {
   return (
-    <section className="section-dark relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-navy">
-      {/* High-Performance R3F Particle System */}
-      <Suspense fallback={<div className="absolute inset-0 bg-navy z-0" />}>
-        <ParticlesContainer />
-      </Suspense>
+    <section className="section-dark relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#0a0f1c]">
+      {/* 2D Milky Way Galaxy Animation */}
+      <GalaxyParticles />
 
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none z-0">

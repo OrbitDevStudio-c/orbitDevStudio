@@ -14,19 +14,19 @@ const COLORS = [
 export default function Particles3D() {
   const { size, viewport } = useThree();
   
-  // 50% reduced density for minimal, premium feel
+  // Heavily reduced density as requested
   const isMobile = size.width < 768;
   const isTablet = size.width >= 768 && size.width < 1024;
-  const PARTICLE_COUNT = isMobile ? 500 : isTablet ? 1000 : 2000;
+  const PARTICLE_COUNT = isMobile ? 250 : isTablet ? 500 : 800;
   
   // Very few constellations
-  const CONNECT_COUNT = isMobile ? 15 : 40; 
+  const CONNECT_COUNT = isMobile ? 10 : 25; 
   const SHOOTING_STARS_COUNT = 3;
 
   const pointsRef = useRef<THREE.Points>(null);
   const linesRef = useRef<THREE.LineSegments>(null);
 
-  // Procedural soft circle texture for particles (No square blocks)
+  // Procedural soft circle texture for particles
   const circleTexture = useMemo(() => {
     const canvas = document.createElement('canvas');
     canvas.width = 32;
@@ -42,27 +42,26 @@ export default function Particles3D() {
     return new THREE.CanvasTexture(canvas);
   }, []);
 
-  const { positions, originalPositions, colors, sizes, velocities } = useMemo(() => {
+  const { positions, originalPositions, colors, velocities } = useMemo(() => {
     const pos = new Float32Array(PARTICLE_COUNT * 3);
     const origPos = new Float32Array(PARTICLE_COUNT * 3);
     const col = new Float32Array(PARTICLE_COUNT * 3);
-    const siz = new Float32Array(PARTICLE_COUNT);
     const vel = new Float32Array(PARTICLE_COUNT * 3);
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const isShootingStar = i >= PARTICLE_COUNT - SHOOTING_STARS_COUNT;
 
       // Organic suggested spiral / flowing streams
-      const radius = 2 + Math.pow(Math.random(), 1.5) * 22; // Sweep from center to far edges
+      const radius = 2 + Math.pow(Math.random(), 1.5) * 22; 
       const angle = Math.random() * Math.PI * 2;
       const spiralOffset = radius * 0.3; 
       
       const x = Math.cos(angle + spiralOffset) * radius;
       const z = Math.sin(angle + spiralOffset) * radius;
       
-      // Multiple depth layers (Foreground, Middle, Background)
+      // Multiple depth layers
       const depthSpread = (Math.random() - 0.5) * 12;
-      const y = depthSpread * (Math.random() > 0.6 ? 1 : 0.3); // Some scatter, most concentrated in band
+      const y = depthSpread * (Math.random() > 0.6 ? 1 : 0.3);
 
       pos[i * 3] = x;
       pos[i * 3 + 1] = y;
@@ -78,26 +77,21 @@ export default function Particles3D() {
       col[i * 3 + 1] = color.g;
       col[i * 3 + 2] = color.b;
 
-      // 1px-2px particles (very small sizes in WebGL space)
-      siz[i] = isShootingStar ? 0.08 : (Math.random() * 0.02 + 0.01);
-
       // Velocities
       if (isShootingStar) {
         vel[i * 3] = (Math.random() - 0.5) * 0.8;
         vel[i * 3 + 1] = (Math.random() - 0.5) * 0.5;
         vel[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
       } else {
-        // Slow cinematic orbital drift
         const speed = 0.001 / (radius * 0.1 + 1);
         vel[i * 3] = -z * speed;
         vel[i * 3 + 1] = (Math.random() - 0.5) * 0.001;
         vel[i * 3 + 2] = x * speed;
       }
     }
-    return { positions: pos, originalPositions: origPos, colors: col, sizes: siz, velocities: vel };
+    return { positions: pos, originalPositions: origPos, colors: col, velocities: vel };
   }, [PARTICLE_COUNT]);
 
-  // Constellation lines + 3 shooting star trails
   const maxLines = (CONNECT_COUNT * 2) + SHOOTING_STARS_COUNT; 
   const linePositions = useMemo(() => new Float32Array(maxLines * 6), [maxLines]);
   const lineColors = useMemo(() => new Float32Array(maxLines * 6), [maxLines]);
@@ -124,14 +118,12 @@ export default function Particles3D() {
         posArray[i3 + 1] += velocities[i3 + 1];
         posArray[i3 + 2] += velocities[i3 + 2];
 
-        // Shooting star bounds reset
         if (Math.abs(posArray[i3]) > 25 || Math.abs(posArray[i3 + 1]) > 15 || Math.abs(posArray[i3 + 2]) > 25) {
           posArray[i3] = (Math.random() - 0.5) * 30;
           posArray[i3 + 1] = (Math.random() - 0.5) * 20;
           posArray[i3 + 2] = (Math.random() - 0.5) * 10 - 10;
         }
 
-        // Draw trail for shooting star
         linePositions[lineIndex * 6] = posArray[i3];
         linePositions[lineIndex * 6 + 1] = posArray[i3 + 1];
         linePositions[lineIndex * 6 + 2] = posArray[i3 + 2];
@@ -140,16 +132,15 @@ export default function Particles3D() {
         linePositions[lineIndex * 6 + 5] = posArray[i3 + 2] - velocities[i3 + 2] * 4;
 
         lineColors[lineIndex * 6] = 1; lineColors[lineIndex * 6 + 1] = 1; lineColors[lineIndex * 6 + 2] = 1;
-        lineColors[lineIndex * 6 + 3] = 0; lineColors[lineIndex * 6 + 4] = 0; lineColors[lineIndex * 6 + 5] = 0; // fade out trail
+        lineColors[lineIndex * 6 + 3] = 0; lineColors[lineIndex * 6 + 4] = 0; lineColors[lineIndex * 6 + 5] = 0;
         lineIndex++;
-        continue; // skip rest of loop for shooting stars
+        continue;
       }
       
       const ox = originalPositions[i3];
       const oy = originalPositions[i3 + 1];
       const oz = originalPositions[i3 + 2];
       
-      // Extremely slow flowing stream
       const angle = time * 0.02; 
       const cosA = Math.cos(angle);
       const sinA = Math.sin(angle);
@@ -161,7 +152,6 @@ export default function Particles3D() {
       posArray[i3 + 1] += (oy - posArray[i3 + 1]) * 0.01;
       posArray[i3 + 2] += (targetZ - posArray[i3 + 2]) * 0.01;
 
-      // Soft Mouse Parallax Repulsion
       const dx = mouseX - posArray[i3];
       const dy = mouseY - posArray[i3 + 1];
       const distSq = dx * dx + dy * dy;
@@ -172,7 +162,6 @@ export default function Particles3D() {
         posArray[i3 + 1] += dy * force;
       }
 
-      // Constellation logic (Occasional thin glowing connections)
       if (i < CONNECT_COUNT && connectionCounts[i] < 2) {
         for (let j = i + 1; j < CONNECT_COUNT; j++) {
           if (connectionCounts[j] >= 2) continue;
@@ -194,7 +183,7 @@ export default function Particles3D() {
               linePositions[lineIndex * 6 + 4] = posArray[j3 + 1];
               linePositions[lineIndex * 6 + 5] = posArray[j3 + 2];
 
-              const fadedAlpha = alpha * 0.1; // Extremely low opacity
+              const fadedAlpha = alpha * 0.05; 
 
               lineColors[lineIndex * 6] = fadedAlpha;
               lineColors[lineIndex * 6 + 1] = fadedAlpha;
@@ -223,7 +212,6 @@ export default function Particles3D() {
     linePosAttr.needsUpdate = true;
     lineColorAttr.needsUpdate = true;
 
-    // Cinematic Parallax
     const targetRotX = (pointer.y * 0.05); 
     const targetRotY = (pointer.x * 0.05);
     
@@ -236,13 +224,13 @@ export default function Particles3D() {
 
   return (
     <group position={[0, 0, -8]}>
-      {/* Soft energy core center */}
+      {/* Soft energy core center - greatly reduced opacity */}
       <mesh>
-        <sphereGeometry args={[2, 32, 32]} />
+        <sphereGeometry args={[2.5, 32, 32]} />
         <meshBasicMaterial 
           color="#bfdbfe" 
           transparent 
-          opacity={0.015} 
+          opacity={0.005} 
           blending={THREE.AdditiveBlending} 
           depthWrite={false} 
         />
@@ -252,13 +240,14 @@ export default function Particles3D() {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" count={PARTICLE_COUNT} array={positions} itemSize={3} />
           <bufferAttribute attach="attributes-color" count={PARTICLE_COUNT} array={colors} itemSize={3} />
-          <bufferAttribute attach="attributes-size" count={PARTICLE_COUNT} array={sizes} itemSize={1} />
         </bufferGeometry>
+        {/* Pass the uniform size directly to pointsMaterial. sizeAttenuation handles depth scaling. */}
         <pointsMaterial 
+          size={0.05}
           map={circleTexture}
           vertexColors 
           transparent 
-          opacity={0.35} 
+          opacity={0.3} 
           sizeAttenuation={true} 
           blending={THREE.AdditiveBlending}
           depthWrite={false}

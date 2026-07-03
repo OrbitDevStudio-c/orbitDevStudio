@@ -3,6 +3,8 @@ import ServicesHero from '../components/sections/ServicesHero';
 import ServicesGrid from '../components/sections/ServicesGrid';
 import ServicesDomains from '../components/sections/ServicesDomains';
 import ServicesProcess from '../components/sections/ServicesProcess';
+import ServicesTechnologies from '../components/sections/ServicesTechnologies';
+import ServicesCTA from '../components/sections/ServicesCTA';
 
 export default function Services() {
   return (
@@ -23,6 +25,8 @@ export default function Services() {
           <ServicesGrid />
           <ServicesDomains />
           <ServicesProcess />
+          <ServicesTechnologies />
+          <ServicesCTA />
         </div>
 
       </div>

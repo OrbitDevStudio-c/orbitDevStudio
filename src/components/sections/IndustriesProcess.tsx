@@ -1,12 +1,12 @@
 import { useRef } from 'react';
-import { Search, PenTool, Code2, Rocket } from 'lucide-react';
+import { Search, Compass, ShieldCheck, Rocket } from 'lucide-react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 const steps = [
   {
     id: 1,
-    title: "Discovery & Strategy",
-    desc: "We deep-dive into your business goals, user needs, and technical constraints to build a foolproof roadmap.",
+    title: "Market & Compliance Discovery",
+    desc: "We analyze your specific industry landscape, including regulatory requirements, competitor offerings, and user expectations.",
     icon: <Search size={24} className="text-[#2E5BE5]" />,
     x: 20,
     y: 80,
@@ -14,26 +14,26 @@ const steps = [
   },
   {
     id: 2,
-    title: "Design & Prototyping",
-    desc: "Our designers translate strategy into wireframes, modern UI systems, and interactive prototypes for early validation.",
-    icon: <PenTool size={24} className="text-[#2E5BE5]" />,
+    title: "Industry-Specific Design",
+    desc: "Our UX team architects flows tailored to your audience—whether it's an accessible patient portal or a visually immersive design portfolio.",
+    icon: <Compass size={24} className="text-[#2E5BE5]" />,
     x: 40,
     y: 220,
     textTop: false,
   },
   {
     id: 3,
-    title: "Agile Engineering",
-    desc: "Experienced engineers build your product in iterative sprints with robust automated testing and daily deployments.",
-    icon: <Code2 size={24} className="text-[#2E5BE5]" />,
+    title: "Tailored Engineering",
+    desc: "We build custom infrastructure that supports your unique business logic, integrating with legacy systems and specialized third-party APIs.",
+    icon: <ShieldCheck size={24} className="text-[#2E5BE5]" />,
     x: 60,
     y: 80,
     textTop: true,
   },
   {
     id: 4,
-    title: "Launch & Growth",
-    desc: "We deploy to production with zero-downtime releases, then continuously monitor, maintain, and scale based on data.",
+    title: "Launch & Iterate",
+    desc: "We deploy with zero-downtime and establish analytics specific to your industry's KPIs to ensure continuous, data-driven growth.",
     icon: <Rocket size={24} className="text-[#2E5BE5]" />,
     x: 80,
     y: 220,
@@ -41,7 +41,7 @@ const steps = [
   }
 ];
 
-export default function ServicesProcess() {
+export default function IndustriesProcess() {
   const containerRef = useRef<HTMLElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -60,10 +60,10 @@ export default function ServicesProcess() {
       
       <div className="text-center max-w-3xl mx-auto mb-32">
         <h2 className="text-3xl md:text-5xl font-bold text-[#1a2b4b] tracking-tight mb-6">
-          How We Take Your Idea to Production
+          An Adaptable Engineering Process
         </h2>
         <p className="text-slate-500 text-[16px] leading-relaxed max-w-2xl mx-auto">
-          Great digital products don't happen by accident. Our four-phase delivery model is designed to minimize risk, maximize alignment, and ship production-ready software seamlessly.
+          We don't believe in one-size-fits-all. Our four-phase delivery model is completely customized to meet the strict demands of your sector.
         </p>
       </div>
 
