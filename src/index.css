@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --color-background: #060B1A;
+  --color-surface: #0F172A;
+  --color-primary: #1F3A93;
+  --color-accent: #4F8CFF;
+  --color-white-section: #ffffff;
+  --color-gray-section: #f7f8fa;
+  --color-navy: #060B1A;
+  --color-text-dark: #0f172a;
+  --color-text-muted: #64748b;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: white;
+  }
+}
+
+@layer utilities {
+  /* === Section Backgrounds === */
+  .section-dark {
+    background-color: var(--color-navy);
+    color: white;
+  }
+
+  .section-white {
+    background-color: #f8fafc;
+    color: var(--color-text-dark);
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .section-gray {
+    background-color: var(--color-gray-section);
+    color: var(--color-text-dark);
+  }
+
+  /* === Glass Panels (Dark Background) === */
+  .glass-panel {
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* === White Theme Cards === */
+  .card-white {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 1.5rem;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-white:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+  }
+
+  /* === Buttons === */
+  .glass-button {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    font-weight: 600;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 0 0 rgba(79, 140, 255, 0);
+  }
+
+  .btn-primary:hover {
+    background-color: #3d7ae8;
+    box-shadow: 0 4px 20px rgba(79, 140, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* === Text Gradients === */
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, var(--color-accent), #7c3aed);
+  }
+
+  .text-gradient-blue {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  }
+
+  /* === Utilities === */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 140, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 140, 255, 0.5);
+}
+
+/* === Subtle Animations === */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(100px);
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(400px) translateY(-400px);
+  }
+}
+
+/* Orbit animation for stats */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
