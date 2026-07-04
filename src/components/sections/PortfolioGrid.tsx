@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: 'The Artisan Roastery',
     category: 'Hospitality',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800',
     description: 'A modern, high-performance website for a boutique cafe featuring online ordering and table reservations.',
     size: 'large' // Spans 2 columns or taller
   },
@@ -17,7 +17,7 @@ const projects = [
     id: 2,
     title: 'Lumina Interiors',
     category: 'Architecture',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800',
     description: 'An elegant showcase platform for a luxury home design firm with interactive 3D tours.',
     size: 'normal'
   },
@@ -25,7 +25,7 @@ const projects = [
     id: 3,
     title: 'Horizon Architects',
     category: 'Architecture',
-    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09be1587?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09be1587?auto=format&fit=crop&q=80&w=800',
     description: 'A structural portfolio site featuring high-res imagery and project timelines.',
     size: 'normal'
   },
@@ -33,7 +33,7 @@ const projects = [
     id: 4,
     title: 'Ever After Memories',
     category: 'Personal',
-    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800',
     description: 'A bespoke marriage portfolio and digital invitation platform with RSVP management.',
     size: 'large'
   },
@@ -41,7 +41,7 @@ const projects = [
     id: 5,
     title: 'NexGen Workspaces',
     category: 'Corporate',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
     description: 'A corporate platform for a leading co-working space provider with a custom booking engine.',
     size: 'normal'
   },
@@ -49,23 +49,23 @@ const projects = [
     id: 6,
     title: 'Synergy Consulting',
     category: 'Corporate',
-    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80',
-    description: 'A professional consulting firm website with an integrated client portal and knowledge base.',
+    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800',
+    description: 'A lead-generating website for a regional plumbing service, complete with emergency call routing.',
     size: 'normal'
   },
   {
     id: 7,
-    title: 'ProFlow Plumbing',
-    category: 'Local Business',
-    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80',
-    description: 'A lead-generating website for a local plumbing shop with emergency call-to-actions and service booking.',
-    size: 'normal'
+    title: 'FinancePro Dashboard',
+    category: 'Fintech',
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800',
+    description: 'A secure, high-performance financial dashboard for wealth management advisors.',
+    size: 'large'
   },
   {
     id: 8,
     title: 'Chapter & Verse',
     category: 'E-commerce',
-    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800',
     description: 'A highly scalable e-commerce bookstore featuring AI-driven recommendations and secure checkout.',
     size: 'large'
   }
