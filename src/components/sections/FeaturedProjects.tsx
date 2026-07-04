@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SiReact, SiPython, SiPostgresql, SiNextdotjs, SiNodedotjs, SiTypescript } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiNodedotjs, SiTypescript, SiTailwindcss, SiVuedotjs, SiPostgresql } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
 
@@ -18,38 +18,38 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Nexus Cloud',
-    category: 'FinTech',
-    description: 'Transaction processing engine handling 2M+ operations per second with 99.99% uptime across 12 global regions.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-    tech: [FaAws, SiNodedotjs, SiTypescript],
+    title: 'The Artisan Roastery',
+    category: 'Hospitality',
+    description: 'A modern, high-performance website for a boutique cafe featuring online ordering and table reservations.',
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80',
+    tech: [SiReact, SiNodedotjs, SiTailwindcss],
     span: 'md:col-span-1 md:row-span-2',
   },
   {
     id: 2,
-    title: 'Aura Analytics',
-    category: 'Machine Learning',
-    description: 'Predictive analytics platform that reduced client churn by 34% through real-time behavioral modeling.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
-    tech: [SiReact, SiPython, SiPostgresql],
+    title: 'Lumina Interiors',
+    category: 'Architecture',
+    description: 'An elegant showcase platform for a luxury home design firm with interactive 3D tours.',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80',
+    tech: [SiNextdotjs, SiTypescript, FaAws],
     span: 'md:col-span-1 md:row-span-2',
   },
   {
     id: 3,
-    title: 'MediSync',
-    category: 'Healthcare',
-    description: 'HIPAA-compliant telemedicine platform connecting 500+ providers with patients in real-time.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
-    tech: [SiNextdotjs, SiReact],
+    title: 'NexGen Workspaces',
+    category: 'Corporate',
+    description: 'A corporate platform for a leading co-working space provider with a custom booking engine.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+    tech: [SiVuedotjs, SiNodedotjs, SiPostgresql],
     span: 'md:col-span-1 md:row-span-1',
   },
   {
     id: 4,
-    title: 'ShopSphere',
-    category: 'E-Commerce',
-    description: 'Headless commerce engine powering $40M+ in annual GMV with sub-200ms page loads.',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=800&auto=format&fit=crop',
-    tech: [SiNextdotjs, SiNodedotjs, FaAws],
+    title: 'Chapter & Verse',
+    category: 'E-commerce',
+    description: 'A highly scalable e-commerce bookstore featuring AI-driven recommendations and secure checkout.',
+    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80',
+    tech: [SiNextdotjs, SiReact, FaAws],
     span: 'md:col-span-1 md:row-span-1',
   },
 ];

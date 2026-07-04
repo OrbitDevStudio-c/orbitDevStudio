@@ -92,7 +92,7 @@ export default function IndustriesGrid() {
       </div>
 
       {/* Bento Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[280px] gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[320px] gap-6">
         {bentoItems.map((item, index) => (
           <motion.div
             key={item.id}
@@ -109,7 +109,7 @@ export default function IndustriesGrid() {
               <>
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0" />
                 {item.bgImage && (
-                  <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 mix-blend-overlay">
+                  <div className="absolute inset-0 z-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 mix-blend-overlay">
                     <img src={item.bgImage} alt="" className="w-full h-full object-cover" />
                   </div>
                 )}
@@ -119,7 +119,7 @@ export default function IndustriesGrid() {
             <div className="relative z-10 flex flex-col h-full">
               
               {/* Header: Icon & Title */}
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex items-start justify-between mb-6 shrink-0">
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${item.isDark ? 'bg-white/10 border border-white/10' : 'bg-white border border-slate-200 shadow-sm'}`}>
                   {item.icon}
                 </div>
@@ -131,16 +131,30 @@ export default function IndustriesGrid() {
                 )}
               </div>
               
-              <h3 className="text-xl font-bold mb-3 tracking-tight">
+              <h3 className="text-xl font-bold mb-3 tracking-tight shrink-0">
                 {item.title}
               </h3>
               
-              <p className={`text-[14px] leading-relaxed mb-8 flex-grow ${item.isDark ? 'text-white/70' : 'text-slate-500'}`}>
+              <p className={`text-[14px] leading-relaxed mb-8 shrink-0 ${item.isDark ? 'text-white/70' : 'text-slate-500'}`}>
                 {item.desc}
               </p>
               
+              {/* Optional Inline Image to fill large cards */}
+              {item.isDark && item.bgImage && (
+                <div className="flex-1 w-full min-h-[120px] rounded-2xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl shrink-0 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-shadow duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10" />
+                  <img src={item.bgImage} alt={item.title} className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 text-white/90 text-[10px] font-bold uppercase tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" /> Live System Preview
+                  </div>
+                </div>
+              )}
+              
+              {/* Spacer to push footer to bottom if no inline image fills the flex */}
+              {!item.isDark && <div className="flex-grow" />}
+
               {/* Footer: Tech Stack & CTA */}
-              <div className="mt-auto flex items-center justify-between border-t border-slate-200/50 pt-5">
+              <div className="mt-auto flex items-center justify-between border-t border-slate-200/50 pt-5 shrink-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   {item.tech.map(t => (
                     <span key={t} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide ${item.isDark ? 'bg-white/10 text-white/90' : 'bg-white/80 text-slate-600 border border-slate-200/50'}`}>

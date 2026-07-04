@@ -1,23 +1,21 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import PortfolioHero from '../components/sections/PortfolioHero';
+import PortfolioGrid from '../components/sections/PortfolioGrid';
 
 export default function Portfolio() {
   return (
     <>
       <Helmet>
         <title>Portfolio | OrbitDevStudio</title>
-        <meta name="description" content="OrbitDevStudio - Premium Web Experience" />
+        <meta name="description" content="OrbitDevStudio - Digital excellence in action. Explore our portfolio of premium web experiences." />
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">Portfolio</h1>
-        <p className="text-gray-400">Content coming soon...</p>
-      </motion.div>
+      
+      <div className="relative min-h-screen bg-white">
+        <PortfolioHero />
+        <div className="section-white">
+          <PortfolioGrid />
+        </div>
+      </div>
     </>
   );
 }

@@ -22,6 +22,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const HireUs = lazy(() => import('./pages/HireUs'));
 
 function App() {
   return (
@@ -38,9 +39,13 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/industries" element={<Industries />} />
                   <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/hire" element={<HireUs />} />
+                  <Route path="/hire-us" element={<HireUs />} />
                   <Route path="/case-studies" element={<CaseStudies />} />
                   <Route path="/process" element={<Process />} />
                   <Route path="/tech" element={<TechStack />} />
+                  <Route path="/tec" element={<TechStack />} />
+                  <Route path="/technologies" element={<TechStack />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/contact" element={<Contact />} />

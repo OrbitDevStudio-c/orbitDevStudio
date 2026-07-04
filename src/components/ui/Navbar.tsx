@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Industries', path: '/industries' },
   { label: 'Technologies', path: '/tech' },
   { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Hire Us', path: '/contact' },
+  { label: 'Hire Us', path: '/hire' },
 ];
 
 export default function Navbar() {
@@ -29,18 +29,15 @@ export default function Navbar() {
         className="fixed top-3 left-0 right-0 z-50 flex justify-center px-4 md:px-6"
       >
         <motion.div
-          style={{ paddingTop: py, paddingBottom: py }}
           className="w-full max-w-6xl px-5 md:px-6 rounded-2xl flex items-center justify-between border border-white/[0.08]"
-          // Apply dynamic glass effect
-          {...{
-            style: {
-              paddingTop: py,
-              paddingBottom: py,
-              backgroundColor: `rgba(6, 11, 26, 0.55)`,
-              backdropFilter: `blur(16px)`,
-              WebkitBackdropFilter: `blur(16px)`,
-              borderColor: 'rgba(255,255,255,0.08)',
-            },
+          // Apply dynamic glass effect and padding together
+          style={{
+            paddingTop: py,
+            paddingBottom: py,
+            backgroundColor: `rgba(6, 11, 26, 0.55)`,
+            backdropFilter: `blur(16px)`,
+            WebkitBackdropFilter: `blur(16px)`,
+            borderColor: 'rgba(255,255,255,0.08)',
           }}
         >
           {/* Logo */}
@@ -75,10 +72,10 @@ export default function Navbar() {
               );
             })}
             <Link
-              to="/contact"
+              to="/about"
               className="ml-3 px-5 py-2 text-[13px] font-semibold rounded-lg bg-white text-gray-900 hover:bg-gray-100 transition-colors"
             >
-              Contact
+              About Us
             </Link>
           </div>
 
@@ -112,11 +109,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/about"
             onClick={() => setMobileOpen(false)}
             className="mt-4 px-8 py-3 rounded-full bg-white text-gray-900 font-semibold text-lg"
           >
-            Contact Us
+            About Us
           </Link>
         </motion.div>
       )}

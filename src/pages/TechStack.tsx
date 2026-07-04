@@ -1,23 +1,25 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import TechHero from '../components/sections/TechHero';
+import TechLayers from '../components/sections/TechLayers';
+import TechWhyUs from '../components/sections/TechWhyUs';
+import TechDelivery from '../components/sections/TechDelivery';
 
 export default function TechStack() {
   return (
     <>
       <Helmet>
-        <title>TechStack | OrbitDevStudio</title>
-        <meta name="description" content="OrbitDevStudio - Premium Web Experience" />
+        <title>Technologies | OrbitDevStudio</title>
+        <meta name="description" content="The cutting-edge engineering stack we use to build highly scalable digital products." />
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">TechStack</h1>
-        <p className="text-gray-400">Content coming soon...</p>
-      </motion.div>
+      
+      <div className="relative min-h-screen bg-white">
+        <TechHero />
+        <div className="section-white">
+          <TechLayers />
+          <TechWhyUs />
+          <TechDelivery />
+        </div>
+      </div>
     </>
   );
 }

@@ -3,7 +3,7 @@ import ServiceParticles from './ServiceParticles';
 
 export default function ServicesHero() {
   return (
-    <section className="relative w-full min-h-[90vh] bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       

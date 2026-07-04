@@ -1,23 +1,21 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import ContactHero from '../components/sections/ContactHero';
+import HireForm from '../components/sections/HireForm';
 
 export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | OrbitDevStudio</title>
-        <meta name="description" content="OrbitDevStudio - Premium Web Experience" />
+        <title>Contact Us | OrbitDevStudio</title>
+        <meta name="description" content="Get in touch with OrbitDevStudio to discuss your next big digital product." />
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">Contact</h1>
-        <p className="text-gray-400">Content coming soon...</p>
-      </motion.div>
+      
+      <div className="relative min-h-screen bg-white">
+        <ContactHero />
+        <div className="section-white">
+          <HireForm />
+        </div>
+      </div>
     </>
   );
 }

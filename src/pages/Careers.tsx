@@ -1,23 +1,24 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import CareersHero from '../components/sections/CareersHero';
+import CareersBenefits from '../components/sections/CareersBenefits';
+import CareersOpenings from '../components/sections/CareersOpenings';
 
 export default function Careers() {
   return (
     <>
       <Helmet>
         <title>Careers | OrbitDevStudio</title>
-        <meta name="description" content="OrbitDevStudio - Premium Web Experience" />
+        <meta name="description" content="Join OrbitDevStudio and help us build the future of digital products. Explore our open roles and benefits." />
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24"
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">Careers</h1>
-        <p className="text-gray-400">Content coming soon...</p>
-      </motion.div>
+      
+      <div className="relative min-h-screen bg-white">
+        <CareersHero />
+        
+        <div className="section-white">
+          <CareersBenefits />
+          <CareersOpenings />
+        </div>
+      </div>
     </>
   );
 }
