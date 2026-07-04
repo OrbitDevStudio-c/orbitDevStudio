@@ -94,7 +94,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="min-w-[320px] md:min-w-[380px] snap-center card-white p-8 flex flex-col justify-between"
+                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-white p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
                   <Quote size={32} className="text-accent/20 mb-4" />

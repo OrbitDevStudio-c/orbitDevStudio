@@ -17,7 +17,7 @@ export default function StoryStats() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left: Orbital System */}
-        <div className="relative h-[420px] md:h-[550px] flex items-center justify-center">
+        <div className="relative h-[420px] md:h-[550px] flex items-center justify-center scale-[0.55] sm:scale-[0.7] md:scale-100">
           {/* Central Sun */}
           <div className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-amber-300 via-orange-400 to-orange-500 z-10 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full bg-amber-300/40 blur-[20px]" />

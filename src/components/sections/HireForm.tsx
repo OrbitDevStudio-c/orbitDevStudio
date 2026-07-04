@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Send, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { COUNTRY_CODES } from '../../utils/countryCodes';
 
 export default function HireForm() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -122,12 +123,13 @@ export default function HireForm() {
                     </label>
                     <div className="flex gap-2">
                       <select 
-                        className="w-24 px-2 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50 text-slate-700"
+                        className="w-[110px] px-2 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50 text-slate-700"
                       >
-                        <option value="+91">IND +91</option>
-                        <option value="+44">UK +44</option>
-                        <option value="+1">US +1</option>
-                        <option value="+61">AUS +61</option>
+                        {COUNTRY_CODES.map((c) => (
+                          <option key={`${c.country}-${c.code}`} value={c.code}>
+                            {c.country} {c.code}
+                          </option>
+                        ))}
                       </select>
                       <input 
                         type="text" 
