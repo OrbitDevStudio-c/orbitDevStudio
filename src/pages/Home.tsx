@@ -1,11 +1,33 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../components/sections/Hero';
-import StoryStats from '../components/sections/StoryStats';
-import TechStackMarquee from '../components/sections/TechStackMarquee';
-import FeaturedProjects from '../components/sections/FeaturedProjects';
-import Industries from '../components/sections/Industries';
-import Testimonials from '../components/sections/Testimonials';
-import ProcessTimeline from '../components/sections/ProcessTimeline';
+
+const StoryStats = lazy(() => import('../components/sections/StoryStats'));
+const TechStackMarquee = lazy(() => import('../components/sections/TechStackMarquee'));
+const FeaturedProjects = lazy(() => import('../components/sections/FeaturedProjects'));
+const ProcessTimeline = lazy(() => import('../components/sections/ProcessTimeline'));
+const Testimonials = lazy(() => import('../components/sections/Testimonials'));
+
+function DeferredHomeSections() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setReady(true), 200);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  if (!ready) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <StoryStats />
+      <TechStackMarquee />
+      <FeaturedProjects />
+      <ProcessTimeline />
+      <Testimonials />
+    </Suspense>
+  );
+}
 
 export default function Home() {
   return (
@@ -17,11 +39,7 @@ export default function Home() {
       
       <main className="w-full">
         <Hero />
-        <StoryStats />
-        <TechStackMarquee />
-        <FeaturedProjects />
-        <ProcessTimeline />
-        <Testimonials />
+        <DeferredHomeSections />
       </main>
     </>
   );

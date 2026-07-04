@@ -1,6 +1,25 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import Navbar from '../components/ui/Navbar';
-import Footer from '../components/ui/Footer';
+
+const Footer = lazy(() => import('../components/ui/Footer'));
+
+function DeferredFooter() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setReady(true), 300);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  if (!ready) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <Footer />
+    </Suspense>
+  );
+}
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +29,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         <main className="flex-grow flex flex-col">
           {children}
         </main>
-        <Footer />
+        <DeferredFooter />
       </div>
     </div>
   );

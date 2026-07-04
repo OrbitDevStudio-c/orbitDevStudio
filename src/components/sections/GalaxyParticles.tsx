@@ -10,9 +10,11 @@ export default function GalaxyParticles() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
+    let startTimeoutId = 0;
     let width = 0;
     let height = 0;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
     
     // Premium SaaS particle colors
     const colors = [
@@ -49,7 +51,7 @@ export default function GalaxyParticles() {
     const shootingStars: ShootingStar[] = [];
     let lastShootingStarTime = 0;
 
-    const createGalaxyParticle = (i: number, total: number): Particle => {
+    const createGalaxyParticle = (i: number): Particle => {
       const branches = 4;
       const spin = 4.5;
       // Make radius much larger to cover the entire width
@@ -78,9 +80,9 @@ export default function GalaxyParticles() {
     const resize = () => {
       width = canvas.offsetWidth;
       height = canvas.offsetHeight;
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      ctx.scale(pixelRatio, pixelRatio);
       init();
     };
 
@@ -89,7 +91,7 @@ export default function GalaxyParticles() {
       // Increase particle count so it stays dense when spread over the wider area
       const PARTICLE_COUNT = window.innerWidth > 768 ? 1400 : 500;
       for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push(createGalaxyParticle(i, PARTICLE_COUNT));
+        particles.push(createGalaxyParticle(i));
       }
     };
 
@@ -217,16 +219,19 @@ export default function GalaxyParticles() {
 
     width = canvas.offsetWidth;
     height = canvas.offsetHeight;
-    canvas.width = width * window.devicePixelRatio;
-    canvas.height = height * window.devicePixelRatio;
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    canvas.width = width * pixelRatio;
+    canvas.height = height * pixelRatio;
+    ctx.scale(pixelRatio, pixelRatio);
     
-    init();
-    draw(0);
+    startTimeoutId = window.setTimeout(() => {
+      init();
+      draw(0);
+    }, 120);
 
     window.addEventListener('resize', resize);
     return () => {
       window.removeEventListener('resize', resize);
+      window.clearTimeout(startTimeoutId);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

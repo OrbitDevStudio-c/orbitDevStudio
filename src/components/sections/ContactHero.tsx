@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import ServiceParticles from './ServiceParticles';
 
 export default function ContactHero() {

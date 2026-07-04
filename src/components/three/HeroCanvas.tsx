@@ -117,7 +117,7 @@ export default function HeroCanvas() {
     <group ref={groupRef} position={[0, 0, 0]}>
       <points ref={particlesRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={particleCount} array={positions} itemSize={3} />
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial 
           color="#ffffff" 
@@ -131,8 +131,8 @@ export default function HeroCanvas() {
       
       <lineSegments ref={linesRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={maxLines * 2} array={linePositions} itemSize={3} />
-          <bufferAttribute attach="attributes-color" count={maxLines * 2} array={lineColors} itemSize={3} />
+          <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
+          <bufferAttribute attach="attributes-color" args={[lineColors, 3]} />
         </bufferGeometry>
         <lineBasicMaterial 
           vertexColors 

@@ -16,8 +16,6 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const bgOpacity = useTransform(scrollY, [0, 80], [0.3, 0.6]);
-  const blur = useTransform(scrollY, [0, 80], [12, 20]);
   const py = useTransform(scrollY, [0, 100], ['0.875rem', '0.5rem']);
 
   return (
@@ -43,7 +41,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setMobileOpen(false)}>
             <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/10 transition-all group-hover:border-white/20 group-hover:bg-white/15">
-              <img src="/companylogo.png" alt="OrbitDevStudio" className="w-5 h-5 object-contain" />
+              <img src="/companylogo-96.png" alt="OrbitDevStudio" className="w-5 h-5 object-contain" width={20} height={20} />
             </div>
             <span className="text-[15px] font-semibold text-white tracking-tight hidden sm:block">
               Orbit<span className="font-light text-gray-400">DevStudio</span>

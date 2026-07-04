@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const categories = ['All', 'E-commerce', 'Corporate', 'Hospitality', 'Architecture', 'Personal', 'Local Business'];
 

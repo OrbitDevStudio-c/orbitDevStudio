@@ -238,8 +238,8 @@ export default function Particles3D() {
       
       <points ref={pointsRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={PARTICLE_COUNT} array={positions} itemSize={3} />
-          <bufferAttribute attach="attributes-color" count={PARTICLE_COUNT} array={colors} itemSize={3} />
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+          <bufferAttribute attach="attributes-color" args={[colors, 3]} />
         </bufferGeometry>
         {/* Pass the uniform size directly to pointsMaterial. sizeAttenuation handles depth scaling. */}
         <pointsMaterial 
@@ -256,8 +256,8 @@ export default function Particles3D() {
       
       <lineSegments ref={linesRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={maxLines * 2} array={linePositions} itemSize={3} />
-          <bufferAttribute attach="attributes-color" count={maxLines * 2} array={lineColors} itemSize={3} />
+          <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
+          <bufferAttribute attach="attributes-color" args={[lineColors, 3]} />
         </bufferGeometry>
         <lineBasicMaterial 
           vertexColors 

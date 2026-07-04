@@ -83,6 +83,10 @@ export default function Hero() {
                   alt="Client" 
                   className="w-full h-full object-cover" 
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  width={32}
+                  height={32}
                 />
               </div>
             ))}

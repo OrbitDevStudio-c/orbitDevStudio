@@ -54,6 +54,9 @@ const projects: Project[] = [
   },
 ];
 
+const getProjectImage = (url: string, width: number) =>
+  url.replace('q=80', 'q=65').replace('w=800', `w=${width}`) + '&fm=webp';
+
 export default function FeaturedProjects() {
   return (
     <section className="section-white py-24 md:py-32 relative">
@@ -100,10 +103,16 @@ export default function FeaturedProjects() {
               {/* Image Container (Top half) */}
               <div className="w-full h-1/2 md:h-[55%] relative overflow-hidden bg-gray-100">
                 <img
-                  src={project.image}
+                  src={getProjectImage(project.image, 640)}
+                  srcSet={`${getProjectImage(project.image, 420)} 420w, ${getProjectImage(project.image, 640)} 640w, ${getProjectImage(project.image, 800)} 800w`}
+                  sizes="(min-width: 768px) 33vw, 100vw"
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  width={800}
+                  height={520}
                 />
               </div>
 

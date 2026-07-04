@@ -40,7 +40,7 @@ export default function IndustriesShowcase() {
       </div>
 
       <div className="flex flex-col gap-32">
-        {cases.map((project, index) => (
+        {cases.map((project) => (
           <div key={project.id} className={`flex flex-col ${project.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}>
             
             {/* Image Side */}
