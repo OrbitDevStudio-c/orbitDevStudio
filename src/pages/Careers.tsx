@@ -1,7 +1,24 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import CareersHero from '../components/sections/CareersHero';
-import CareersBenefits from '../components/sections/CareersBenefits';
-import CareersOpenings from '../components/sections/CareersOpenings';
+
+// Below-fold sections lazy loaded
+const CareersBenefits = lazy(() => import('../components/sections/CareersBenefits'));
+const CareersOpenings = lazy(() => import('../components/sections/CareersOpenings'));
+
+function DeferredSections() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setShow(true), 200); return () => clearTimeout(t); }, []);
+  if (!show) return null;
+  return (
+    <Suspense fallback={null}>
+      <div className="section-white">
+        <CareersBenefits />
+        <CareersOpenings />
+      </div>
+    </Suspense>
+  );
+}
 
 export default function Careers() {
   return (
@@ -14,10 +31,7 @@ export default function Careers() {
       <div className="relative min-h-screen bg-white">
         <CareersHero />
         
-        <div className="section-white">
-          <CareersBenefits />
-          <CareersOpenings />
-        </div>
+        <DeferredSections />
       </div>
     </>
   );

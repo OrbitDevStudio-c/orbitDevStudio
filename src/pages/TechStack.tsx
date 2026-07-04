@@ -1,8 +1,26 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import TechHero from '../components/sections/TechHero';
-import TechLayers from '../components/sections/TechLayers';
-import TechWhyUs from '../components/sections/TechWhyUs';
-import TechDelivery from '../components/sections/TechDelivery';
+
+// Below-fold sections lazy loaded
+const TechLayers = lazy(() => import('../components/sections/TechLayers'));
+const TechWhyUs = lazy(() => import('../components/sections/TechWhyUs'));
+const TechDelivery = lazy(() => import('../components/sections/TechDelivery'));
+
+function DeferredSections() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setShow(true), 200); return () => clearTimeout(t); }, []);
+  if (!show) return null;
+  return (
+    <Suspense fallback={null}>
+      <div className="section-white">
+        <TechLayers />
+        <TechWhyUs />
+        <TechDelivery />
+      </div>
+    </Suspense>
+  );
+}
 
 export default function TechStack() {
   return (
@@ -14,11 +32,7 @@ export default function TechStack() {
       
       <div className="relative min-h-screen bg-white">
         <TechHero />
-        <div className="section-white">
-          <TechLayers />
-          <TechWhyUs />
-          <TechDelivery />
-        </div>
+        <DeferredSections />
       </div>
     </>
   );

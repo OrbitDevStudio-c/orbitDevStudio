@@ -9,6 +9,8 @@ const stats = [
   { label: 'Experts', value: '40+', orbitSize: 325, speed: 44, startAngle: 270 },
 ];
 
+const orbitRingStyle: React.CSSProperties = { border: '1px solid rgba(0,0,0,0.06)' };
+
 export default function StoryStats() {
   return (
     <section className="section-white py-24 md:py-32 relative overflow-hidden">
@@ -28,7 +30,7 @@ export default function StoryStats() {
               {/* Ring path */}
               <div 
                 className="absolute inset-0 rounded-full"
-                style={{ border: '1px solid rgba(0,0,0,0.06)' }}
+                style={orbitRingStyle}
               />
               
               {/* Orbiting card container */}

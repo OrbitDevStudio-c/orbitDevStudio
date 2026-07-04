@@ -207,7 +207,7 @@ export default function TechDelivery() {
           >
             <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-[#2E5BE5] to-[#4F8CFF] rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
                {/* Abstract background */}
-               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
+               <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700" />
                
                <AnimatePresence mode="wait">

@@ -1,11 +1,32 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import IndustriesHero from '../components/sections/IndustriesHero';
-import IndustriesGrid from '../components/sections/IndustriesGrid';
-import IndustriesShowcase from '../components/sections/IndustriesShowcase';
-import IndustriesStory from '../components/sections/IndustriesStory';
-import IndustriesTechClusters from '../components/sections/IndustriesTechClusters';
-import IndustriesWhyUs from '../components/sections/IndustriesWhyUs';
-import IndustriesFAQ from '../components/sections/IndustriesFAQ';
+
+// Below-fold sections lazy loaded
+const IndustriesGrid = lazy(() => import('../components/sections/IndustriesGrid'));
+const IndustriesShowcase = lazy(() => import('../components/sections/IndustriesShowcase'));
+const IndustriesStory = lazy(() => import('../components/sections/IndustriesStory'));
+const IndustriesTechClusters = lazy(() => import('../components/sections/IndustriesTechClusters'));
+const IndustriesWhyUs = lazy(() => import('../components/sections/IndustriesWhyUs'));
+const IndustriesFAQ = lazy(() => import('../components/sections/IndustriesFAQ'));
+
+function DeferredSections() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setShow(true), 200); return () => clearTimeout(t); }, []);
+  if (!show) return null;
+  return (
+    <Suspense fallback={null}>
+      <div className="section-white">
+        <IndustriesGrid />
+        <IndustriesShowcase />
+        <IndustriesStory />
+        <IndustriesTechClusters />
+        <IndustriesWhyUs />
+        <IndustriesFAQ />
+      </div>
+    </Suspense>
+  );
+}
 
 export default function Industries() {
   return (
@@ -19,14 +40,7 @@ export default function Industries() {
         
         <IndustriesHero />
         
-        <div className="section-white">
-          <IndustriesGrid />
-          <IndustriesShowcase />
-          <IndustriesStory />
-          <IndustriesTechClusters />
-          <IndustriesWhyUs />
-          <IndustriesFAQ />
-        </div>
+        <DeferredSections />
 
       </div>
     </>

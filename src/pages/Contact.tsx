@@ -1,6 +1,22 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import ContactHero from '../components/sections/ContactHero';
-import HireForm from '../components/sections/HireForm';
+
+// Below-fold sections lazy loaded
+const HireForm = lazy(() => import('../components/sections/HireForm'));
+
+function DeferredSections() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setShow(true), 200); return () => clearTimeout(t); }, []);
+  if (!show) return null;
+  return (
+    <Suspense fallback={null}>
+      <div className="section-white">
+        <HireForm />
+      </div>
+    </Suspense>
+  );
+}
 
 export default function Contact() {
   return (
@@ -12,9 +28,7 @@ export default function Contact() {
       
       <div className="relative min-h-screen bg-white">
         <ContactHero />
-        <div className="section-white">
-          <HireForm />
-        </div>
+        <DeferredSections />
       </div>
     </>
   );

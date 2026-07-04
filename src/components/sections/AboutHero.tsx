@@ -51,7 +51,7 @@ export default function AboutHero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="w-full max-w-5xl h-[200px] mt-16 rounded-t-[3rem] bg-gradient-to-t from-white/10 to-white/5 border-t border-x border-white/10 backdrop-blur-xl relative overflow-hidden flex items-end justify-center pb-8"
         >
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#4F8CFF] rounded-full blur-[100px] opacity-30" />
           <div className="relative z-10 flex gap-4 opacity-50">
              {/* Simulating code blocks/servers in a data center */}

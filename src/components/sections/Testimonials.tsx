@@ -106,7 +106,7 @@ export default function Testimonials() {
                     {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" />)}
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-gray-200" loading="lazy" />
+                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-gray-200" loading="lazy" width={48} height={48} />
                     <div>
                       <h4 className="text-primary text-sm font-bold">{t.name}</h4>
                       <p className="text-gray-500 text-[11px] font-medium">{t.role}, {t.company}</p>

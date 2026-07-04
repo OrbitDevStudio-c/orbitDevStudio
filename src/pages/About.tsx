@@ -1,8 +1,30 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import AboutHero from '../components/sections/AboutHero';
-import AboutStory from '../components/sections/AboutStory';
-import AboutStats from '../components/sections/AboutStats';
-import AboutValues from '../components/sections/AboutValues';
+
+// Below-fold sections lazy loaded
+const AboutStory = lazy(() => import('../components/sections/AboutStory'));
+const AboutStats = lazy(() => import('../components/sections/AboutStats'));
+const AboutValues = lazy(() => import('../components/sections/AboutValues'));
+
+function DeferredSections() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setShow(true), 200); return () => clearTimeout(t); }, []);
+  if (!show) return null;
+  return (
+    <Suspense fallback={null}>
+      <div className="section-white">
+        <AboutStory />
+      </div>
+      
+      <AboutStats />
+      
+      <div className="section-white">
+        <AboutValues />
+      </div>
+    </Suspense>
+  );
+}
 
 export default function About() {
   return (
@@ -15,15 +37,7 @@ export default function About() {
       <div className="relative min-h-screen bg-white">
         <AboutHero />
         
-        <div className="section-white">
-          <AboutStory />
-        </div>
-        
-        <AboutStats />
-        
-        <div className="section-white">
-          <AboutValues />
-        </div>
+        <DeferredSections />
       </div>
     </>
   );

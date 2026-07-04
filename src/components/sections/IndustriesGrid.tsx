@@ -110,7 +110,7 @@ export default function IndustriesGrid() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0" />
                 {item.bgImage && (
                   <div className="absolute inset-0 z-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 mix-blend-overlay">
-                    <img src={item.bgImage} alt="" className="w-full h-full object-cover" />
+                    <img src={item.bgImage} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                 )}
               </>
@@ -143,7 +143,7 @@ export default function IndustriesGrid() {
               {item.isDark && item.bgImage && (
                 <div className="flex-1 w-full min-h-[120px] rounded-2xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl shrink-0 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-shadow duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10" />
-                  <img src={item.bgImage} alt={item.title} className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+                  <img src={item.bgImage} alt={item.title} className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                   <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 text-white/90 text-[10px] font-bold uppercase tracking-wider">
                     <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" /> Live System Preview
                   </div>

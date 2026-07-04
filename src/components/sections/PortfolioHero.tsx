@@ -84,7 +84,7 @@ export default function PortfolioHero() {
                     <LayoutGrid className="text-[#B08CFF] opacity-50" />
                  </div>
                  <div className="col-span-2 w-full h-24 lg:h-32 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex flex-col items-center justify-center gap-2 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
                     <span className="text-emerald-400 opacity-60 text-[10px] tracking-widest font-bold uppercase relative z-10">Featured Case Study</span>
                     <div className="w-1/3 h-1.5 bg-emerald-400/30 rounded-full relative z-10" />
                  </div>

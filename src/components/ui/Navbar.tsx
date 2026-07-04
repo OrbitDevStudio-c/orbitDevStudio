@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -18,6 +18,15 @@ export default function Navbar() {
 
   const py = useTransform(scrollY, [0, 100], ['0.875rem', '0.5rem']);
 
+  const navStyle = useMemo(() => ({
+    paddingTop: py,
+    paddingBottom: py,
+    backgroundColor: `rgba(6, 11, 26, 0.55)`,
+    backdropFilter: `blur(16px)`,
+    WebkitBackdropFilter: `blur(16px)`,
+    borderColor: 'rgba(255,255,255,0.08)',
+  }), [py]);
+
   return (
     <>
       <motion.nav
@@ -29,14 +38,7 @@ export default function Navbar() {
         <motion.div
           className="w-full max-w-6xl px-5 md:px-6 rounded-2xl flex items-center justify-between border border-white/[0.08]"
           // Apply dynamic glass effect and padding together
-          style={{
-            paddingTop: py,
-            paddingBottom: py,
-            backgroundColor: `rgba(6, 11, 26, 0.55)`,
-            backdropFilter: `blur(16px)`,
-            WebkitBackdropFilter: `blur(16px)`,
-            borderColor: 'rgba(255,255,255,0.08)',
-          }}
+          style={navStyle}
         >
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setMobileOpen(false)}>

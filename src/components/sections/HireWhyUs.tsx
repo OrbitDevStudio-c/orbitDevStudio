@@ -46,7 +46,7 @@ export default function HireWhyUs() {
               <div className="flex flex-col gap-6 pt-12">
                 <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] group">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/80 to-transparent z-10" />
-                  <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" alt="Developer working" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" alt="Developer working" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                   <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-[#4F8CFF] flex items-center justify-center">
                       <CheckCircle2 className="text-white" size={20} />
@@ -59,7 +59,7 @@ export default function HireWhyUs() {
               <div className="flex flex-col gap-6">
                 <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] group">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/80 to-transparent z-10" />
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                   <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center">
                       <Zap className="text-white" size={20} />

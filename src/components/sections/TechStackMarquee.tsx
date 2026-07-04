@@ -1,5 +1,6 @@
 import { SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiDocker, SiTypescript, SiPython } from 'react-icons/si';
 import { FaAws, FaJava } from 'react-icons/fa';
+import { useMemo } from 'react';
 
 const techStack = [
   { name: 'Next.js', Icon: SiNextdotjs },
@@ -15,8 +16,15 @@ const techStack = [
   { name: 'Express', Icon: SiExpress },
 ];
 
+const marqueeKeyframes = `
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); }
+  }
+`;
+
 export default function TechStackMarquee() {
-  const items = [...techStack, ...techStack, ...techStack];
+  const items = useMemo(() => [...techStack, ...techStack, ...techStack], []);
 
   return (
     <section className="section-white py-10 overflow-hidden relative border-t border-gray-100">
@@ -51,12 +59,7 @@ export default function TechStackMarquee() {
         </div>
       </div>
 
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-33.333%); }
-        }
-      `}</style>
+      <style>{marqueeKeyframes}</style>
     </section>
   );
 }

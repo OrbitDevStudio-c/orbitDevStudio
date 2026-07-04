@@ -10,6 +10,8 @@ const reasons = [
   { title: 'Performance Focused', description: 'Highly optimized codebases guaranteeing blazing fast speeds and perfect Lighthouse scores.', icon: Activity },
 ];
 
+const borderMaskStyle: React.CSSProperties = { maskImage: 'linear-gradient(white, white)', maskComposite: 'exclude', WebkitMaskComposite: 'xor' as string, padding: '1px' };
+
 export default function WhyChooseUs() {
   return (
     <section className="py-24 relative z-10">
@@ -50,7 +52,7 @@ export default function WhyChooseUs() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-primary/0 group-hover:from-accent/20 group-hover:via-transparent group-hover:to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 
                 {/* Animated rotating border */}
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" style={{ maskImage: 'linear-gradient(white, white)', maskComposite: 'exclude', WebkitMaskComposite: 'xor', padding: '1px' }}>
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" style={borderMaskStyle}>
                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary w-[200%] h-[200%] animate-[spin_4s_linear_infinite] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"></div>
                 </div>
 
