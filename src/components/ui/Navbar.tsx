@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import CompanyLogo from './CompanyLogo';
 
 const navItems = [
   { label: 'Services', path: '/services' },
@@ -15,78 +16,96 @@ export default function Navbar() {
   const { scrollY } = useScroll();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const py = useTransform(scrollY, [0, 100], ['0.875rem', '0.5rem']);
+  const navStyle = useMemo(
+    () => ({
+      backgroundColor: 'transparent',
+    }),
+    []
+  );
 
-  const navStyle = useMemo(() => ({
-    paddingTop: py,
-    paddingBottom: py,
-    backgroundColor: `rgba(6, 11, 26, 0.55)`,
-    backdropFilter: `blur(16px)`,
-    WebkitBackdropFilter: `blur(16px)`,
-    borderColor: 'rgba(255,255,255,0.08)',
-  }), [py]);
+  const useDarkText = scrolled;
+  const logoText = useDarkText ? 'text-slate-950' : 'text-white';
+  const logoSubText = useDarkText ? 'text-slate-500' : 'text-slate-400';
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setScrolled(latest > 80);
+    });
+  }, [scrollY]);
 
   return (
     <>
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="fixed top-3 left-0 right-0 z-50 flex justify-center px-4 md:px-6"
+        transition={{ duration: 0.45, ease: 'easeInOut' }}
+        className="fixed inset-x-0 top-0 z-40 flex justify-center"
+        style={navStyle}
       >
         <motion.div
-          className="w-full max-w-6xl px-5 md:px-6 rounded-2xl flex items-center justify-between border border-white/[0.08]"
-          // Apply dynamic glass effect and padding together
-          style={navStyle}
+          className="w-full"
+          animate={{
+            backgroundColor: scrolled ? '#ffffff' : 'rgba(255,255,255,0)',
+            boxShadow: scrolled ? '0 22px 70px rgba(15, 23, 42, 0.12)' : '0 0 rgba(0,0,0,0)',
+            borderColor: scrolled ? '#E5E7EB' : 'rgba(255,255,255,0)',
+            borderWidth: scrolled ? 1 : 0,
+            borderStyle: scrolled ? 'solid' : 'none',
+            borderRadius: 0,
+            transform: scrolled ? 'translateY(-6px)' : 'translateY(0px)',
+          }}
+          transition={{ duration: 0.35, ease: 'easeInOut' }}
+          style={{ overflow: 'hidden' }}
         >
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setMobileOpen(false)}>
-            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/10 transition-all group-hover:border-white/20 group-hover:bg-white/15">
-              <img src="/companylogo-96.png" alt="OrbitDevStudio" className="w-5 h-5 object-contain" width={20} height={20} />
-            </div>
-            <span className="text-[15px] font-semibold text-white tracking-tight hidden sm:block">
-              Orbit<span className="font-light text-gray-400">DevStudio</span>
-            </span>
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className={`relative px-3.5 py-2 text-[13px] font-medium transition-colors rounded-lg ${
-                    isActive ? 'text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                  <span
-                    className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-px bg-accent transition-all duration-300 ${
-                      isActive ? 'w-4' : 'w-0 group-hover:w-4'
-                    }`}
-                  />
-                </Link>
-              );
-            })}
-            <Link
-              to="/about"
-              className="ml-3 px-5 py-2 text-[13px] font-semibold rounded-lg bg-white text-gray-900 hover:bg-gray-100 transition-colors"
-            >
-              About Us
+          <motion.div className="flex items-center justify-between gap-3 px-3 py-2 md:px-4 md:py-2" style={{ paddingTop: py as any, paddingBottom: py as any }}>
+            <Link to="/" className="flex items-center gap-3 group" onClick={() => setMobileOpen(false)}>
+              <CompanyLogo size="xs" className="block lg:hidden" />
+              <CompanyLogo size="xs" className="hidden lg:block" />
+              <div className="flex flex-col leading-tight">
+                <span className={`text-sm font-semibold tracking-tight ${logoText}`}>Orbit</span>
+                <span className={`text-[10px] font-bold uppercase tracking-[0.22em] ${logoSubText}`}>DevStudio</span>
+              </div>
             </Link>
-          </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="lg:hidden w-9 h-9 flex items-center justify-center text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <div className="hidden lg:flex items-center gap-2">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                const baseText = scrolled ? 'text-slate-950' : 'text-white';
+                const baseBg = isActive ? (scrolled ? 'bg-accent/10 text-accent shadow-[inset_0_0_0_1px_rgba(59,130,246,0.12)]' : 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]') : baseText;
+
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    className={`group relative rounded-full px-3 py-1.5 text-[13px] font-medium tracking-[0.01em] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${baseBg}`}
+                  >
+                    {item.label}
+                    <span
+                      className={`absolute left-1/2 bottom-2 block h-px w-0 -translate-x-1/2 bg-accent transition-all duration-200 ${isActive ? 'w-6' : 'group-hover:w-6'}`}
+                    />
+                  </Link>
+                );
+              })}
+
+              <Link
+                to="/about"
+                className="ml-2 rounded-full bg-accent px-4 py-1.5 text-[13px] font-semibold text-slate-950 shadow-lg shadow-accent/20 transition duration-200 hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              >
+                About Us
+              </Link>
+            </div>
+
+            <button
+              className={`lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${scrolled ? 'border-slate-300 bg-slate-100 text-slate-900 hover:bg-slate-200' : 'border-white/10 bg-white/10 text-white hover:bg-white/20'}`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </motion.div>
         </motion.div>
       </motion.nav>
 
@@ -96,25 +115,50 @@ export default function Navbar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-40 bg-navy/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 lg:hidden"
+          className="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-3xl flex items-start justify-center py-8 px-4 lg:hidden"
         >
-          {navItems.map((item) => (
+          <div className="w-full max-w-md space-y-8 rounded-[2rem] border border-white/10 bg-slate-950/90 p-6 shadow-2xl shadow-black/40 ring-1 ring-white/10 backdrop-blur-xl">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-lg shadow-cyan-500/15">
+                  <CompanyLogo size="sm" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Orbit DevStudio</p>
+                  <p className="text-base font-semibold text-white">Mobile Menu</p>
+                </div>
+              </div>
+
+              <button
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="grid gap-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full rounded-[1.75rem] border border-white/10 bg-white/5 px-6 py-4 text-lg font-semibold text-white shadow-[0_30px_70px_-40px_rgba(15,23,42,0.8)] transition hover:border-accent hover:bg-accent/10 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
             <Link
-              key={item.label}
-              to={item.path}
+              to="/about"
               onClick={() => setMobileOpen(false)}
-              className="text-2xl font-light text-white hover:text-accent transition-colors"
+              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-8 py-4 text-lg font-semibold text-slate-950 shadow-xl shadow-accent/30 transition hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
             >
-              {item.label}
+              About Us
             </Link>
-          ))}
-          <Link
-            to="/about"
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 px-8 py-3 rounded-full bg-white text-gray-900 font-semibold text-lg"
-          >
-            About Us
-          </Link>
+          </div>
         </motion.div>
       )}
     </>
