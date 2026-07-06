@@ -1,27 +1,28 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const cases = [
   {
     id: 1,
     industry: "Healthcare",
-    title: "MedSync Patient Portal",
-    problem: "Legacy on-premise systems caused slow data retrieval and fragmented patient experiences.",
-    solution: "Engineered a secure, cloud-native portal with real-time EHR synchronization and a unified patient dashboard.",
-    result: "Reduced wait times by 40% and achieved 99.99% uptime with full HIPAA compliance.",
-    tech: ["React", "AWS", "Node.js", "HL7/FHIR"],
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=2070",
+    title: "PharmaCare Platform",
+    problem: "Legacy medical distribution systems caused slow data retrieval and fragmented pharmaceutical supply chain tracking.",
+    solution: "Engineered a secure, highly scalable B2B platform with real-time inventory synchronization and a unified distributor dashboard.",
+    result: "Streamlined order processing by 60% and achieved 99.99% uptime with full medical compliance.",
+    tech: ["React", "Node.js", "Tailwind"],
+    liveUrl: "https://pharmaceutical-demo.vercel.app/",
     reverse: false
   },
   {
     id: 2,
-    industry: "E-Commerce",
-    title: "Aura High-End Retail",
-    problem: "Monolithic architecture led to 3.5s page loads, severely impacting mobile conversion rates.",
-    solution: "Migrated to a headless commerce architecture using Next.js and Shopify Plus for sub-second rendering.",
-    result: "Increased mobile conversion by 65% and handled Black Friday traffic with zero downtime.",
-    tech: ["Next.js", "Shopify Plus", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
+    industry: "Interior Design",
+    title: "Aura Design Studio",
+    problem: "A generic template website failed to capture the studio's premium aesthetic, leading to low engagement from high-end clients.",
+    solution: "Developed a bespoke, high-performance visual portfolio featuring immersive interactions and smooth page transitions.",
+    result: "Increased average session duration by 140% and doubled premium consultation inquiries.",
+    tech: ["Next.js", "Framer", "React"],
+    liveUrl: "https://auradesignstudio.netlify.app/",
     reverse: true
   }
 ];
@@ -43,7 +44,7 @@ export default function IndustriesShowcase() {
         {cases.map((project) => (
           <div key={project.id} className={`flex flex-col ${project.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}>
             
-            {/* Image Side */}
+            {/* Browser Mockup Side */}
             <motion.div 
               initial={{ opacity: 0, x: project.reverse ? 40 : -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -51,25 +52,44 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full lg:w-1/2 relative group perspective-1000"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-slate-200/50">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute bottom-6 left-6 z-20 flex gap-2">
-                  {project.tech.map(t => (
-                     <span key={t} className="px-3 py-1.5 rounded-lg bg-white/20 backdrop-blur-md text-white text-[11px] font-bold tracking-wider uppercase border border-white/20">
-                       {t}
-                     </span>
-                  ))}
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-slate-200 bg-white">
+                
+                {/* macOS Browser Header */}
+                <div className="bg-slate-100/80 backdrop-blur-md border-b border-slate-200 px-4 py-3 flex items-center gap-4 relative z-20">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f56] shadow-sm border border-black/10" />
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-sm border border-black/10" />
+                    <div className="w-3 h-3 rounded-full bg-[#27c93f] shadow-sm border border-black/10" />
+                  </div>
+                  <div className="flex-1 bg-white rounded-md py-1.5 px-3 text-[10px] text-slate-500 text-center font-mono truncate shadow-sm border border-slate-200/50">
+                    {project.liveUrl}
+                  </div>
+                </div>
+
+                {/* Iframe Preview */}
+                <div className="relative h-[350px] md:h-[450px] w-full bg-slate-50 overflow-hidden">
+                  <iframe 
+                    src={project.liveUrl}
+                    className="absolute top-0 left-0 border-0 pointer-events-none origin-top-left"
+                    style={{ width: '125%', height: '125%', transform: 'scale(0.8)' }}
+                    loading="lazy"
+                  />
+                  {/* Overlay to prevent interactions and add subtle shading */}
+                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                  
+                  {/* Tech Stack Pills */}
+                  <div className="absolute bottom-6 left-6 z-20 flex gap-2">
+                    {project.tech.map(t => (
+                       <span key={t} className="px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md text-white text-[11px] font-bold tracking-wider uppercase border border-white/20 shadow-lg">
+                         {t}
+                       </span>
+                    ))}
+                  </div>
                 </div>
               </div>
               
               {/* Decorative Blur */}
-              <div className="absolute -inset-4 bg-[#2E5BE5]/20 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute -inset-4 bg-[#2E5BE5]/20 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </motion.div>
 
             {/* Content Side */}
@@ -106,11 +126,11 @@ export default function IndustriesShowcase() {
                 </div>
               </div>
 
-              <button className="self-start group relative px-8 py-3.5 bg-white text-[#0f172a] font-bold text-[14px] rounded-xl border border-slate-200 overflow-hidden hover:border-[#2E5BE5] transition-colors shadow-sm flex items-center gap-2">
+              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white text-[#0f172a] font-bold text-[14px] rounded-xl border border-slate-200 overflow-hidden hover:border-[#2E5BE5] transition-colors shadow-sm flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-slate-50 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
+              </Link>
             </motion.div>
 
           </div>

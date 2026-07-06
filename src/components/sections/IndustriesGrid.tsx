@@ -1,5 +1,6 @@
 import { HeartPulse, Palette, Building2, ShoppingCart, Plane, Coffee, Briefcase, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const bentoItems = [
   {
@@ -11,7 +12,7 @@ const bentoItems = [
     tech: ["React", "Node.js", "AWS", "PostgreSQL"],
     stats: { label: "Uptime", value: "99.99%" },
     isDark: true,
-    bgImage: "https://images.unsplash.com/photo-1551076805-e18690c5e561?q=80&w=800&auto=format&fit=crop"
+    bgImage: "/healthcare.jpg"
   },
   {
     id: "ecommerce",
@@ -85,10 +86,10 @@ export default function IndustriesGrid() {
             We don't just write code — we engineer handcrafted, interactive solutions tailored to the specific business logic, regulatory requirements, and high aesthetic standards of your sector.
           </p>
         </div>
-        <button className="hidden md:flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors group">
+        <Link to="/portfolio" className="hidden md:flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors group">
           View All Case Studies
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-        </button>
+        </Link>
       </div>
 
       {/* Bento Grid Layout */}
@@ -100,23 +101,25 @@ export default function IndustriesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className={`group relative overflow-hidden rounded-[32px] p-8 border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${
+            className={`group relative overflow-hidden rounded-[32px] border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${
               item.isDark ? 'bg-slate-900/90 text-white border-slate-700' : 'bg-white/60 text-slate-900'
             } ${item.className}`}
           >
+            <Link to="/portfolio" className="absolute inset-0 z-20 cursor-pointer" aria-label={`View ${item.title} case studies`} />
+            
             {/* Ambient Glass Highlight & Image for Dark Cards */}
             {item.isDark && (
               <>
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0 pointer-events-none" />
                 {item.bgImage && (
-                  <div className="absolute inset-0 z-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 mix-blend-overlay">
+                  <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 mix-blend-overlay pointer-events-none">
                     <img src={item.bgImage} alt="" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                 )}
               </>
             )}
 
-            <div className="relative z-10 flex flex-col h-full">
+            <div className="relative z-10 flex flex-col h-full pointer-events-none p-8">
               
               {/* Header: Icon & Title */}
               <div className="flex items-start justify-between mb-6 shrink-0">
@@ -141,7 +144,7 @@ export default function IndustriesGrid() {
               
               {/* Optional Inline Image to fill large cards */}
               {item.isDark && item.bgImage && (
-                <div className="flex-1 w-full min-h-[120px] rounded-2xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl shrink-0 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-shadow duration-500">
+                <div className="flex-1 w-full min-h-[120px] rounded-2xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl shrink-0 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-shadow duration-500 pointer-events-none">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10" />
                   <img src={item.bgImage} alt={item.title} className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                   <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 text-white/90 text-[10px] font-bold uppercase tracking-wider">
@@ -149,8 +152,8 @@ export default function IndustriesGrid() {
                   </div>
                 </div>
               )}
-              
-              {/* Spacer to push footer to bottom if no inline image fills the flex */}
+
+              {/* Spacer to push footer to bottom */}
               {!item.isDark && <div className="flex-grow" />}
 
               {/* Footer: Tech Stack & CTA */}
