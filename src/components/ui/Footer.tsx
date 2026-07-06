@@ -16,17 +16,24 @@ const MailIcon = () => (
 export default function Footer() {
   return (
     <footer className="section-dark relative mt-0 border-t border-white/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
+      {/* Glow Accent Line at Top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" />
+
+      {/* Ambient Background Glows */}
+      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 relative z-10 text-left">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-12 lg:gap-8 justify-items-start">
           
-          {/* Col 1 */}
-          <div className="md:col-span-12 lg:col-span-4 space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center overflow-hidden border border-white/10 transition-all group-hover:border-white/20 group-hover:bg-white/10">
-                <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-6 h-6 object-contain" loading="lazy" decoding="async" width={24} height={24} />
+          {/* Col 1 - Logo & Description */}
+          <div className="col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
+            <Link to="/" className="flex items-center gap-3 group w-fit">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-accent/40 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)]">
+                <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-6 h-6 object-contain transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width={24} height={24} />
               </div>
               <span className="text-2xl font-semibold text-white tracking-tight">
-                Orbit<span className="font-light text-gray-400">DevStudio</span>
+                Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudio</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -34,9 +41,9 @@ export default function Footer() {
             </p>
           </div>
           
-          {/* Col 2 */}
-          <div className="md:col-span-4 lg:col-span-2">
-            <h4 className="text-white font-semibold mb-6 tracking-wide text-sm">Quick Links</h4>
+          {/* Col 2 - Quick Links */}
+          <div className="col-span-1 md:col-span-4 lg:col-span-2">
+            <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Quick Links</h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
               <li><Link to="/about" className="hover:text-white transition-colors relative group inline-block">About Us<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
               <li><Link to="/portfolio" className="hover:text-white transition-colors relative group inline-block">Our Work<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
@@ -44,9 +51,9 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Col 3 */}
-          <div className="md:col-span-4 lg:col-span-3">
-            <h4 className="text-white font-semibold mb-6 tracking-wide text-sm">Services</h4>
+          {/* Col 3 - Services */}
+          <div className="col-span-1 md:col-span-4 lg:col-span-3">
+            <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Services</h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
               <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">Web Development<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
               <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">Mobile Apps<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
@@ -55,35 +62,37 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Col 4 */}
-          <div className="md:col-span-4 lg:col-span-3">
-            <h4 className="text-white font-semibold mb-6 tracking-wide text-sm">Connect</h4>
+          {/* Col 4 - Connect */}
+          <div className="col-span-2 sm:col-span-1 md:col-span-4 lg:col-span-3">
+            <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Connect</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex items-center gap-3">
-                <span className="text-accent mt-0.5"><MailIcon /></span>
+              <li className="flex items-center gap-3 group/link w-fit">
+                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><MailIcon /></span>
                 <a href="mailto:orbitdevstudio@zohomail.in" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio@zohomail.in</a>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="text-accent mt-0.5"><InstagramIcon /></span>
+              <li className="flex items-center gap-3 group/link w-fit">
+                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><InstagramIcon /></span>
                 <a href="https://instagram.com/orbitdevstudio" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">@orbitdevstudio</a>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="text-accent mt-0.5"><LinkedinIcon /></span>
+              <li className="flex items-center gap-3 group/link w-fit">
+                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><LinkedinIcon /></span>
                 <a href="https://linkedin.com/company/orbitdevstudio-c" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio-c</a>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-20 pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 relative">
-          <p>© {new Date().getFullYear()} OrbitDevStudio. All rights reserved.</p>
-          <div className="flex items-center gap-6 mt-4 md:mt-0 font-medium">
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 relative gap-6">
+          <p className="order-2 md:order-1 text-center md:text-left">
+            © {new Date().getFullYear()} OrbitDevStudio. All rights reserved.
+          </p>
+          <div className="order-1 md:order-2 flex flex-wrap items-center justify-center md:justify-end gap-6 font-medium w-full md:w-auto">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-all hover:bg-white/10 ml-2"
+              className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all cursor-pointer shadow-md shadow-black/10"
               aria-label="Back to top"
             >
               <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
