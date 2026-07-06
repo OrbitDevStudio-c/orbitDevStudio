@@ -29,8 +29,8 @@ export default function Footer() {
           {/* Col 1 - Logo & Description */}
           <div className="col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
             <Link to="/" className="flex items-center gap-3 group w-fit">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-accent/40 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)]">
-                <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-6 h-6 object-contain transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width={24} height={24} />
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:scale-105">
+                <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
               <span className="text-2xl font-semibold text-white tracking-tight">
                 Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudio</span>
@@ -68,7 +68,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-center gap-3 group/link w-fit">
                 <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><MailIcon /></span>
-                <a href="mailto:orbitdevstudio@zohomail.in" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio@zohomail.in</a>
+                <a href="mailto:orbitdevstudios@gmail.com" className="hover:text-white transition-colors leading-relaxed">orbitdevstudios@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 group/link w-fit">
                 <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><InstagramIcon /></span>

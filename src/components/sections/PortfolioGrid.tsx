@@ -16,7 +16,7 @@ const projects = [
     technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
     services: ['Frontend Development', 'UI/UX Design', 'Performance Optimization'],
     liveUrl: 'https://auradesignstudio.netlify.app/',
-    gridSpan: 'lg:col-span-2 lg:row-span-2', // Large
+    gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const projects = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     services: ['Frontend Development', 'Responsive Design'],
     liveUrl: 'https://designerss.netlify.app/',
-    gridSpan: 'lg:col-span-1 lg:row-span-2', // Tall
+    gridSpan: 'md:col-span-1 lg:col-span-5', 
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const projects = [
     technologies: ['React', 'Node.js', 'Tailwind CSS'],
     services: ['Full-stack Development', 'Data Visualization'],
     liveUrl: 'https://pharmaceutical-demo.vercel.app/',
-    gridSpan: 'lg:col-span-1 lg:row-span-1', // Small
+    gridSpan: 'md:col-span-1 lg:col-span-5', 
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const projects = [
     technologies: ['React', 'Framer Motion', 'Tailwind CSS'],
     services: ['UI/UX Design', 'Frontend Development'],
     liveUrl: 'https://wedding-portfolio-lilac.vercel.app/',
-    gridSpan: 'lg:col-span-2 lg:row-span-1', // Wide
+    gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
     id: 5,
@@ -64,19 +64,7 @@ const projects = [
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
     services: ['Frontend Development', 'SEO Optimization'],
     liveUrl: 'https://navnidhitrading.netlify.app/',
-    gridSpan: 'lg:col-span-1 lg:row-span-2', // Tall
-  },
-  {
-    id: 6,
-    title: 'AquaFlow Solutions',
-    industry: 'Sanitary Products',
-    category: 'Industrial',
-    tagline: 'Reliable infrastructure, digitally delivered.',
-    description: 'A professional catalog and product discovery platform for premium plumbing and sanitary ware. The engineering focused on creating an intuitive, lightning-fast product filtering system capable of managing hundreds of SKUs.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    services: ['Backend Architecture', 'UI/UX Design'],
-    liveUrl: 'https://example.com/aquaflow',
-    gridSpan: 'lg:col-span-2 lg:row-span-1', // Wide
+    gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
     id: 7,
@@ -88,7 +76,7 @@ const projects = [
     technologies: ['React', 'Next.js', 'TypeScript'],
     services: ['Frontend Development', 'Accessibility'],
     liveUrl: 'https://shivedlifemedicare.vercel.app/',
-    gridSpan: 'lg:col-span-1 lg:row-span-1', // Small
+    gridSpan: 'md:col-span-1 lg:col-span-5', 
   },
   {
     id: 8,
@@ -100,7 +88,7 @@ const projects = [
     technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
     services: ['Backend Development', 'API Integration'],
     liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
-    gridSpan: 'lg:col-span-2 lg:row-span-2', // Large
+    gridSpan: 'md:col-span-2 lg:col-span-12', 
   }
 ];
 
@@ -144,7 +132,7 @@ export default function PortfolioGrid() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[380px] grid-flow-row-dense">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[450px] md:auto-rows-[550px]">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div

@@ -82,7 +82,7 @@ export default function CareersOpenings() {
             Find your next role.
           </h2>
           <p className="text-[15px] text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Don't see a role that fits exactly? We're always open to meeting talented people. Send your resume to <a href="mailto:orbitdevstudio@zohomail.in" className="text-[#4F8CFF] font-semibold hover:underline">orbitdevstudio@zohomail.in</a>.
+            Don't see a role that fits exactly? We're always open to meeting talented people. Send your resume to <a href="mailto:orbitdevstudios@gmail.com" className="text-[#4F8CFF] font-semibold hover:underline">orbitdevstudios@gmail.com</a>.
           </p>
         </div>
 

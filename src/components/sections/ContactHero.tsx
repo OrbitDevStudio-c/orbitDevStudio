@@ -48,7 +48,7 @@ export default function ContactHero() {
              </div>
              <div className="text-center">
                <h3 className="font-bold text-white text-lg mb-1">Email Us</h3>
-               <p className="text-sm text-white/70">orbitdevstudio@zohomail.in</p>
+               <p className="text-sm text-white/70">orbitdevstudios@gmail.com</p>
              </div>
            </motion.div>
         </div>
