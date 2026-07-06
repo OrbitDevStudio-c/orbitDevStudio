@@ -187,32 +187,46 @@ export default function CareersOpenings() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-6" encType="multipart/form-data">
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Full Name *</label>
-                        <input type="text" required placeholder="John Doe" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="text" name="name" required placeholder="John Doe" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Email Address *</label>
-                        <input type="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="john@example.com" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="john@example.com" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Phone Number *</label>
-                        <input type="tel" required pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="00000 00000" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="tel" name="phone" required pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="00000 00000" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Current Position</label>
-                        <input type="text" placeholder="e.g. Student, Freelancer" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="text" name="currentPosition" placeholder="e.g. Student, Freelancer" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Current / Expected CTC</label>
-                        <input type="text" placeholder="e.g. 3 LPA" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="text" name="ctc" placeholder="e.g. 3 LPA" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Experience in Industry *</label>
+                        <select name="experience" required className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50">
+                          <option value="">Select experience</option>
+                          <option value="0-6 months">0-6 months</option>
+                          <option value="6-12 months">6-12 months</option>
+                          <option value="1-2 years">1-2 years</option>
+                          <option value="2+ years">2+ years</option>
+                        </select>
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Resume / CV *</label>
+                        <input type="file" name="resume" required accept=".pdf,.doc,.docx" className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[13px] file:font-semibold file:bg-blue-50 file:text-[#4F8CFF] hover:file:bg-blue-100" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Portfolio / LinkedIn URL</label>
-                        <input type="url" placeholder="https://..." className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
+                        <input type="url" name="portfolio" placeholder="https://..." className="px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] bg-slate-50/50" />
                       </div>
                     </div>
 

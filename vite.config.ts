@@ -8,15 +8,11 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'vendor-react'
-            if (id.includes('framer-motion')) return 'vendor-framer'
-            if (id.includes('lenis')) return 'vendor-lenis'
-            if (id.includes('lucide-react')) return 'vendor-icons'
-
-            return 'vendor'
-          }
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-framer': ['framer-motion'],
+          'vendor-lenis': ['lenis'],
+          'vendor-icons': ['lucide-react'],
         },
       },
     },
