@@ -28,7 +28,7 @@ export default function AboutHero() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.1] mb-8">
-            Engineering digital <br className="hidden sm:block" /> futures since 2018.
+            Engineering digital <br className="hidden sm:block" /> futures since 2023.
           </h1>
 
           <p className="text-base sm:text-[17px] text-white/70 leading-relaxed font-light mb-12 max-w-2xl mx-auto">

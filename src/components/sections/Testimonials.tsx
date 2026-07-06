@@ -5,10 +5,11 @@ import { useRef } from 'react';
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Mitchell',
+    name: 'Riya Mehta',
     role: 'CTO',
-    company: 'Finova',
-    text: 'OrbitDevStudio delivered beyond our expectations. Their architectural decisions and technical expertise helped us scale our platform effortlessly.',
+    company: 'Finova Systems',
+    text: 'OrbitDevStudio really pulled through for us. We had a pretty aggressive timeline and some initial delays, but the team caught up quickly. Solid frontend work and very communicative.',
+    rating: 4,
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
   },
   {
@@ -16,31 +17,35 @@ const testimonials = [
     name: 'James Anderson',
     role: 'Founder',
     company: 'NexGen',
-    text: 'Professional, reliable, and highly skilled. They didn’t just write code; they understood our product vision and turned it into a world-class experience.',
+    text: 'Professional, reliable, and highly skilled. They didn’t just write code; they understood our product vision and turned it into a world-class experience. Worth every penny.',
+    rating: 5,
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
   },
   {
     id: 3,
-    name: 'Emily Roberts',
+    name: 'Sneha Shah',
     role: 'Product Head',
     company: 'HealthPlus',
-    text: 'Outstanding communication and delivery. The team’s dedication to quality and performance is unmatched in the industry.',
+    text: 'Overall a decent experience. The initial architecture planning took a bit longer than expected which pushed our timeline, but the final code quality was actually very good.',
+    rating: 3,
     avatar: 'https://randomuser.me/api/portraits/women/68.jpg'
   },
   {
     id: 4,
-    name: 'Michael Chen',
-    role: 'CEO',
+    name: 'Priya Patel',
+    role: 'VP of Engineering',
     company: 'ShopSphere',
-    text: 'Their engineering quality and design sense elevated our platform to the next level, resulting in a 40% increase in conversion rates.',
-    avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
+    text: 'Their engineering quality elevated our platform to the next level. We saw a noticeable improvement in our app performance. Just minor hiccups in QA, but handled professionally.',
+    rating: 4,
+    avatar: 'https://randomuser.me/api/portraits/women/33.jpg'
   },
   {
     id: 5,
-    name: 'Priya Sharma',
+    name: 'Neha Desai',
     role: 'Director',
     company: 'MedSync',
-    text: 'A truly premium agency experience. They are fast, responsive, and incredibly talented. We consider them an extension of our own team.',
+    text: 'A truly premium agency. They are fast, responsive, and incredibly talented. They practically act like our own in-house team. Highly recommended!',
+    rating: 5,
     avatar: 'https://randomuser.me/api/portraits/women/90.jpg'
   }
 ];
@@ -103,7 +108,14 @@ export default function Testimonials() {
                 
                 <div className="border-t border-gray-100 pt-5 mt-auto">
                   <div className="flex text-amber-400 mb-3">
-                    {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" />)}
+                    {[1,2,3,4,5].map(i => (
+                      <Star 
+                        key={i} 
+                        size={14} 
+                        fill={i <= t.rating ? "currentColor" : "none"} 
+                        className={i <= t.rating ? "" : "text-gray-300"} 
+                      />
+                    ))}
                   </div>
                   <div className="flex items-center gap-4">
                     <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-gray-200" loading="lazy" width={48} height={48} />
