@@ -6,16 +6,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     target: 'es2020',
-    cssCodeSplit: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-framer': ['framer-motion'],
-          'vendor-lenis': ['lenis'],
-          'vendor-icons': ['lucide-react'],
-        },
-      },
-    },
+    cssCodeSplit: true
   },
 })
