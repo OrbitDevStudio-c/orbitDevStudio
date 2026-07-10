@@ -20,7 +20,7 @@ export default function ServicesCTA() {
             <Rocket size={28} className="text-white" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-[white] tracking-tight mb-6">
             Let's Build Something Exceptional Together
           </h2>
           

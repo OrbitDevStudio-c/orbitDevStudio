@@ -55,7 +55,7 @@ export default function ServicesDomains() {
           <span className="text-[10px] font-bold tracking-[0.1em] text-[#244CB3] uppercase">Service Categories</span>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1a2b4b] mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-[white] mb-4">
           Explore Solutions by Business Domain
         </h2>
         <p className="text-slate-500 text-[14px] max-w-2xl mx-auto mb-12">
@@ -99,9 +99,9 @@ export default function ServicesDomains() {
                     <Link
                       key={service}
                       to="/contact"
-                      className="group flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#4F8CFF]/30 transition-all text-left"
+                      className="group flex items-center justify-between p-5 rounded-2xl bg-[#1a3675] border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#4F8CFF]/30 transition-all text-left"
                     >
-                      <span className="text-[13px] font-semibold text-[#1a2b4b] group-hover:text-[#4F8CFF] transition-colors">
+                      <span className="text-[13px] font-semibold text-[white] group-hover:text-[#4F8CFF] transition-colors">
                         {service}
                       </span>
                       <div className="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-[#4F8CFF] group-hover:border-[#4F8CFF] group-hover:text-white transition-all">

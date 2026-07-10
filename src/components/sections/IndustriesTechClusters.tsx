@@ -60,128 +60,186 @@ export default function IndustriesTechClusters() {
   const activeCluster = techClusters.find(c => c.id === activeTab) || techClusters[0];
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10 bg-slate-50/50 rounded-3xl mb-32 border border-slate-200/50">
-      
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
-          Tech Stack by Industry
-        </h2>
-        <p className="text-slate-500 text-[16px] leading-relaxed">
-          We don't force a single technology on every problem. We assemble specialized, highly performant tech stacks based on the unique demands of your specific sector.
-        </p>
-      </div>
+  <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10 bg-slate-900 rounded-3xl mb-32 border border-white/10 overflow-hidden">
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        {/* Left Side: Industry Selector */}
-        <div className="lg:col-span-5 flex flex-col gap-2">
-          {techClusters.map((cluster) => {
-            const isActive = activeTab === cluster.id;
-            return (
-              <button
-                key={cluster.id}
-                onClick={() => setActiveTab(cluster.id)}
-                className={`text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between group ${
-                  isActive 
-                    ? 'bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200' 
-                    : 'hover:bg-white/60 border border-transparent'
+  {/* Ambient Background */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute -top-32 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px]" />
+    <div className="absolute -bottom-32 -right-24 w-80 h-80 bg-cyan-400/10 rounded-full blur-[120px]" />
+  </div>
+
+  {/* Section Header */}
+  <div className="relative z-10 text-center max-w-3xl mx-auto mb-16">
+    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+      Tech Stack by Industry
+    </h2>
+
+    <p className="text-white/70 text-[16px] leading-relaxed">
+      We don't force a single technology on every problem. We assemble
+      specialized, highly performant technology stacks based on the unique
+      demands of your business and industry.
+    </p>
+  </div>
+
+  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+    {/* Left Side */}
+    <div className="lg:col-span-5 flex flex-col gap-3">
+
+      {techClusters.map((cluster) => {
+        const isActive = activeTab === cluster.id;
+
+        return (
+          <button
+            key={cluster.id}
+            onClick={() => setActiveTab(cluster.id)}
+            className={`text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between border backdrop-blur-xl group
+              ${
+                isActive
+                  ? "bg-white/5 border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+                  : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
+              }
+            `}
+          >
+            <div>
+              <h3
+                className={`text-xl font-bold transition-colors mb-1 ${
+                  isActive
+                    ? "text-[#4F8CFF]"
+                    : "text-white group-hover:text-[#4F8CFF]"
                 }`}
               >
-                <div>
-                  <h3 className={`text-xl font-bold mb-1 transition-colors ${isActive ? 'text-[#2E5BE5]' : 'text-[#0f172a] group-hover:text-[#2E5BE5]'}`}>
-                    {cluster.name}
-                  </h3>
-                  <p className="text-[13px] text-slate-500">
-                    {cluster.desc}
-                  </p>
-                </div>
-                <ChevronRight 
-                  size={20} 
-                  className={`transition-all duration-300 ${isActive ? 'text-[#2E5BE5] translate-x-1 opacity-100' : 'text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} 
-                />
-              </button>
-            )
-          })}
-        </div>
+                {cluster.name}
+              </h3>
 
-        {/* Right Side: Interactive Cluster Canvas */}
-        <div className="lg:col-span-7 relative h-[400px] bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
-          
-          {/* Subtle Grid Background */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)] opacity-60" />
+              <p className="text-[13px] text-white/60">
+                {cluster.desc}
+              </p>
+            </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCluster.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute inset-0 w-full h-full"
-            >
-              {/* Center Core */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#f8fafc] border-2 border-white shadow-xl flex items-center justify-center z-10">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#2E5BE5] to-[#4F8CFF] flex items-center justify-center text-white font-bold text-sm tracking-wide">
-                  Core
-                </div>
+            <ChevronRight
+              size={20}
+              className={`transition-all duration-300 ${
+                isActive
+                  ? "text-[#4F8CFF] translate-x-1 opacity-100"
+                  : "text-white/30 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+              }`}
+            />
+          </button>
+        );
+      })}
+
+    </div>
+
+    {/* Right Side */}
+    <div className="lg:col-span-7 relative h-[420px] rounded-3xl bg-slate-950 border border-white/10 overflow-hidden shadow-2xl">
+
+      {/* Grid Background */}
+      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px]" />
+
+      <AnimatePresence mode="wait">
+
+        <motion.div
+          key={activeCluster.id}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 0.4 }}
+          className="absolute inset-0"
+        >
+
+          {/* Center */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+
+            <div className="w-28 h-28 rounded-full bg-slate-800 border border-white/10 shadow-[0_0_60px_rgba(79,140,255,0.3)] flex items-center justify-center">
+
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2E5BE5] to-[#4F8CFF] flex items-center justify-center text-white font-bold text-sm tracking-wide">
+                Core
               </div>
 
-              {/* Connecting Lines */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-                {activeCluster.chips.map((chip, index) => (
-                  <motion.line
-                    key={`line-${index}`}
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 0.2 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    x1="50%"
-                    y1="50%"
-                    x2={`${chip.x}%`}
-                    y2={`${chip.y}%`}
-                    stroke="#2E5BE5"
-                    strokeWidth="1.5"
-                    strokeDasharray="4 4"
-                  />
-                ))}
-              </svg>
+            </div>
 
-              {/* Floating Tech Chips */}
-              {activeCluster.chips.map((chip, index) => (
-                <motion.div
-                  key={chip.name}
-                  initial={{ opacity: 0, x: "50%", y: "50%", scale: 0 }}
-                  animate={{ 
-                    opacity: 1, 
-                    left: `${chip.x}%`, 
-                    top: `${chip.y}%`, 
-                    scale: 1,
-                    x: "-50%",
-                    y: "-50%"
-                  }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 12,
-                    delay: index * 0.1 
-                  }}
-                  className="absolute z-20 px-4 py-2 bg-white border border-slate-200 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] text-[13px] font-bold text-[#0f172a] whitespace-nowrap"
-                >
-                  {chip.name}
-                </motion.div>
-              ))}
+          </div>
 
-              {/* Floating Animation Wrapper for the whole group */}
-              <motion.div 
-                animate={{ rotate: [0, 2, -2, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 z-30 pointer-events-none"
+          {/* Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none">
+
+            {activeCluster.chips.map((chip, index) => (
+
+              <motion.line
+                key={index}
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.25 }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.08,
+                }}
+                x1="50%"
+                y1="50%"
+                x2={`${chip.x}%`}
+                y2={`${chip.y}%`}
+                stroke="#60A5FA"
+                strokeWidth="1.5"
+                strokeDasharray="5 5"
               />
+
+            ))}
+
+          </svg>
+
+          {/* Chips */}
+          {activeCluster.chips.map((chip, index) => (
+
+            <motion.div
+              key={chip.name}
+              initial={{
+                opacity: 0,
+                x: "50%",
+                y: "50%",
+                scale: 0,
+              }}
+              animate={{
+                opacity: 1,
+                left: `${chip.x}%`,
+                top: `${chip.y}%`,
+                x: "-50%",
+                y: "-50%",
+                scale: 1,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 12,
+                delay: index * 0.08,
+              }}
+              className="absolute z-30 px-4 py-2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_12px_35px_rgba(0,0,0,0.35)] text-white text-[13px] font-semibold whitespace-nowrap hover:scale-105 transition-transform"
+            >
+              {chip.name}
             </motion.div>
-          </AnimatePresence>
 
-        </div>
-      </div>
+          ))}
 
-    </section>
+          {/* Floating Animation */}
+          <motion.div
+            animate={{
+              rotate: [0, 2, -2, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute inset-0 pointer-events-none"
+          />
+
+        </motion.div>
+
+      </AnimatePresence>
+
+    </div>
+
+  </div>
+
+</section>
   );
 }

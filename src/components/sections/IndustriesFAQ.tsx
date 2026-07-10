@@ -35,85 +35,142 @@ export default function IndustriesFAQ() {
   const [openId, setOpenId] = useState<number | null>(1); // Open first by default
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
-      
-      {/* Optional faint grid background for FAQ area as seen in screenshot */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDAsMCwwLDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjQwIiB5Mj0iMCIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSI0MCIvPjwvZz48L3N2Zz4=')] z-0 pointer-events-none" />
+ <section
+  className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-24"
+  style={{
+    background:
+      "radial-gradient(circle at 90% 90%, rgba(59,130,246,0.15) 0%, transparent 35%), linear-gradient(135deg,#16233B 0%,#101827 45%,#0B1220 100%)",
+  }}
+>
+  {/* Background Pattern */}
+  <div
+    className="absolute inset-0 opacity-[0.04] pointer-events-none"
+    style={{
+      backgroundImage:
+        "radial-gradient(circle,#ffffff 1px,transparent 1px)",
+      backgroundSize: "28px 28px",
+    }}
+  />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
-        
-        {/* Left Column */}
-        <div className="lg:col-span-4 flex flex-col">
-          
-          <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-[#2E5BE5]/5 text-[#2E5BE5] text-[11px] font-bold tracking-wider uppercase mb-8 border border-[#2E5BE5]/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#2E5BE5]" />
-            FAQ
-          </div>
+  {/* Blue Glow */}
+  <div className="absolute -bottom-52 -right-40 h-[700px] w-[700px] rounded-full bg-blue-600/20 blur-[180px]" />
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2b4b] tracking-tight mb-12">
-            Frequently Asked Questions
-          </h2>
+  <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-            <div className="flex items-center gap-2 text-[#1a2b4b] font-bold text-[11px] tracking-wider uppercase mb-4">
-              <MessageSquare size={16} className="text-[#2E5BE5]" />
-              Need a direct answer?
-            </div>
-            <p className="text-slate-500 text-[14px] leading-relaxed mb-6">
-              Need guidance? Our senior engineering experts are ready to guide you.
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-flex items-center gap-2 text-[#1a2b4b] font-bold text-[14px] hover:text-[#2E5BE5] transition-colors group"
-            >
-              Talk to our experts
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+    {/* Left */}
+    <div className="lg:col-span-4 flex flex-col">
 
+      <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-[#1B2438] border border-[#4F8CFF]/20 text-[#4F8CFF] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+        <span className="w-2 h-2 rounded-full bg-[#4F8CFF]" />
+        FAQ
+      </div>
+
+      <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-8">
+        Frequently Asked Questions
+      </h2>
+
+      <p className="text-slate-400 leading-relaxed mb-10">
+        Find answers to the most common questions about our development
+        process, pricing, timelines, and long-term support.
+      </p>
+
+      <div className="rounded-3xl bg-[#1B2438] border border-[#334155] p-8 shadow-2xl">
+
+        <div className="flex items-center gap-2 text-[#4F8CFF] font-semibold uppercase tracking-[0.15em] text-xs mb-5">
+          <MessageSquare size={16} />
+          Need a direct answer?
         </div>
 
-        {/* Right Column - Accordion */}
-        <div className="lg:col-span-8 flex flex-col gap-4">
-          {faqs.map((faq) => {
-            const isOpen = openId === faq.id;
-            return (
-              <div 
-                key={faq.id}
-                onClick={() => setOpenId(isOpen ? null : faq.id)}
-                className="bg-white rounded-2xl border border-slate-100 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:border-slate-200"
-              >
-                <div className="p-6 flex items-center justify-between gap-6">
-                  <h3 className={`text-[15px] font-bold transition-colors duration-300 ${isOpen ? 'text-[#1a2b4b]' : 'text-slate-700'}`}>
-                    {faq.question}
-                  </h3>
-                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-[#1a2b4b] text-white' : 'bg-slate-50 text-slate-400 border border-slate-200'}`}>
-                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                  </div>
-                </div>
-                
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      <div className="px-6 pb-6 pt-0 text-slate-500 text-[14px] leading-relaxed border-t border-slate-50 mx-6 mt-2">
-                        <div className="pt-4">
-                          {faq.answer}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
+        <p className="text-slate-300 text-sm leading-7 mb-8">
+          Need guidance? Our senior engineering experts are available to
+          discuss your project requirements and recommend the right solution.
+        </p>
+
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 text-[#4F8CFF] font-semibold hover:text-white transition-all duration-300 group"
+        >
+          Talk to our experts
+          <ArrowRight
+            size={18}
+            className="group-hover:translate-x-1 transition-transform"
+          />
+        </Link>
 
       </div>
-    </section>
+
+    </div>
+
+    {/* Right */}
+    <div className="lg:col-span-8 flex flex-col gap-5">
+
+      {faqs.map((faq) => {
+
+        const isOpen = openId === faq.id;
+
+        return (
+
+          <div
+            key={faq.id}
+            onClick={() => setOpenId(isOpen ? null : faq.id)}
+            className="bg-[#1B2438] border border-[#334155] rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-[#4F8CFF]/40 hover:shadow-xl"
+          >
+
+            <div className="flex justify-between items-center p-6">
+
+              <h3 className="text-white text-[16px] font-semibold pr-6">
+                {faq.question}
+              </h3>
+
+              <div
+                className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  isOpen
+                    ? "bg-[#4F8CFF] text-white"
+                    : "bg-[#263248] border border-[#3B4A64] text-slate-300"
+                }`}
+              >
+                {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+              </div>
+
+            </div>
+
+            <AnimatePresence>
+
+              {isOpen && (
+
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+
+                  <div className="mx-6 border-t border-[#334155]">
+
+                    <div className="py-5 text-slate-400 text-[15px] leading-7">
+
+                      {faq.answer}
+
+                    </div>
+
+                  </div>
+
+                </motion.div>
+
+              )}
+
+            </AnimatePresence>
+
+          </div>
+
+        );
+
+      })}
+
+    </div>
+
+  </div>
+
+</section>
   );
 }

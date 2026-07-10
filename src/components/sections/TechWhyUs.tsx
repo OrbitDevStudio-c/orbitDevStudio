@@ -39,11 +39,11 @@ export default function TechWhyUs() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
-        
+
         <div className="flex flex-col xl:flex-row gap-6 items-stretch">
-          
+
           {/* Left Side: Dark Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -83,20 +83,23 @@ export default function TechWhyUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full"
+                  className="bg-[#0B1736] rounded-3xl p-6 border border-[#1E2A4A] shadow-[0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
                 >
-                  <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#2E5BE5] flex items-center justify-center mb-5 shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-white/10 text-[#4F7BFF] flex items-center justify-center mb-5 shrink-0">
                     <benefit.icon size={20} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base font-bold text-[#0f172a] mb-2">{benefit.title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-500 flex-grow">
+
+                  <h3 className="text-base font-bold text-white mb-2">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="text-sm leading-relaxed text-slate-300 flex-grow">
                     {benefit.description}
                   </p>
                 </motion.div>
               ))}
             </div>
           </div>
-
         </div>
 
       </div>

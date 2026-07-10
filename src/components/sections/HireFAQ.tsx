@@ -36,7 +36,7 @@ export default function HireFAQ() {
           <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
             CLEARING DOUBTS
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#1B3675] mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[white] mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-[15px] text-slate-600 leading-relaxed max-w-2xl mx-auto">
