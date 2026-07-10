@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
-            Why <span className="text-gradient">OrbitDevStudio</span>
+            Why <span className="text-accent">OrbitDevStudio</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-white group-hover:text-accent group-hover:scale-110 transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-white group-hover:text-white group-hover:scale-110 transition-all duration-300">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{reason.title}</h3>

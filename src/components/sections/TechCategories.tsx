@@ -39,7 +39,7 @@ export default function TechCategories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45, delay: index * 0.04 }}
-              className="card-dark p-5 transition-colors hover:border-accent/40"
+              className="card-dark p-5 transition-colors hover:border-white/20"
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent">
                 <Icon size={22} />

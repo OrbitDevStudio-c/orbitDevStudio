@@ -128,7 +128,7 @@ export default function PortfolioGrid() {
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   activeCategory === category
                     ? 'bg-accent text-white shadow-lg shadow-accent/20 scale-105'
-                    : 'bg-white/5 border border-white/10 text-slate-300 hover:border-accent hover:text-accent hover:shadow-sm hover:bg-white/10'
+                    : 'bg-white/5 border border-white/10 text-slate-300 hover:border-white/30 hover:text-accent hover:shadow-sm hover:bg-white/10'
                 }`}
               >
                 {category}
@@ -151,7 +151,7 @@ export default function PortfolioGrid() {
                 className={`group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col bg-slate-900 border border-white/10 shadow-sm hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500 col-span-1 ${project.gridSpan}`}
               >
                 {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/0 group-hover:bg-blue-500/10 blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/0 group-hover:bg-blue-500/[0.06] blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
                 
                 {/* macOS Browser Wrapper */}
                 <div className="w-full h-full flex flex-col relative z-10 transform group-hover:-translate-y-1.5 group-hover:scale-[1.01] transition-transform duration-500 ease-out">
@@ -164,7 +164,7 @@ export default function PortfolioGrid() {
                       <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
                     </div>
                     <div className="flex-1 flex justify-center">
-                      <div className="bg-[#0f172a]/60 rounded-md px-4 py-1 text-[10px] text-slate-400 font-medium truncate max-w-[200px] border border-slate-700/50">
+                      <div className="bg-surface/60 rounded-md px-4 py-1 text-[10px] text-slate-400 font-medium truncate max-w-[200px] border border-slate-700/50">
                         {project.liveUrl.replace('https://', '')}
                       </div>
                     </div>
@@ -184,7 +184,7 @@ export default function PortfolioGrid() {
                     />
 
                     {/* Content Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060B1A] via-[#060B1A]/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
                       <div className="transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out">
                         
                         <div className="flex items-center gap-3 mb-3">
@@ -204,7 +204,7 @@ export default function PortfolioGrid() {
                         {/* Technology Chips */}
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.technologies.slice(0, 4).map(tech => (
-                            <span key={tech} className="px-2 py-1 bg-[#1B3675]/60 border border-[#4F8CFF]/30 rounded text-[10px] font-semibold text-blue-100 backdrop-blur-md">
+                            <span key={tech} className="px-2 py-1 bg-[#1E2A4A]/60 border border-accent/30 rounded text-[10px] font-semibold text-blue-100 backdrop-blur-md">
                               {tech}
                             </span>
                           ))}
@@ -216,7 +216,7 @@ export default function PortfolioGrid() {
                             href={project.liveUrl} 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="flex items-center gap-2 text-xs font-semibold text-white bg-[#4F8CFF] hover:bg-blue-500 px-4 py-2.5 rounded-lg transition-colors shadow-lg shadow-blue-500/20"
+                            className="flex items-center gap-2 text-xs font-semibold text-white bg-accent hover:bg-blue-500 px-4 py-2.5 rounded-lg transition-colors shadow-lg shadow-blue-500/20"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Live Demo <ExternalLink size={14} />

@@ -18,7 +18,7 @@ export default function ServiceParticles() {
     // Premium infrastructure colors
     const colors = [
       "#ffffff", // White
-      "#4F8CFF", // Accent Blue
+      "#3B6FE0", // Accent Blue
       "#e0f2fe", // Light Cyan
     ];
 

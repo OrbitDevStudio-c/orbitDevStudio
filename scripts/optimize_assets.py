@@ -48,5 +48,22 @@ def optimize():
         os.remove(giant_favicon)
         print(f"Removed giant favicon: {giant_favicon}")
 
+    # Optimize new downloaded unsplash images to webp
+    new_images = [
+        'about-story-1',
+        'developer-working',
+        'services-tech',
+        'team-collaboration'
+    ]
+    for img_name in new_images:
+        src_path = os.path.join(public_dir, f"{img_name}.jpg")
+        if os.path.exists(src_path):
+            with Image.open(src_path) as img:
+                dest_path = os.path.join(public_dir, f"{img_name}.webp")
+                img.save(dest_path, 'WEBP', quality=80)
+                print(f"Created WebP image for {img_name} at {dest_path}")
+        else:
+            print(f"Warning: {src_path} not found!")
+
 if __name__ == '__main__':
     optimize()

@@ -6,7 +6,7 @@ export default function TechCTA() {
     <section className="bg-[#07111f] px-6 py-24 text-white md:px-12 lg:px-24">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 rounded-lg border border-white/10 bg-white/[0.04] p-8 md:p-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
-          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/20 text-blue-200">
+          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-slate-300">
             <MessageSquareText size={24} />
           </div>
           <h2 className="text-3xl font-bold tracking-normal md:text-5xl">Need help choosing the right stack?</h2>

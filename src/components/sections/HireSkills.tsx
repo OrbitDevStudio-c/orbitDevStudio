@@ -10,15 +10,15 @@ const skillsRow2 = [
 
 export default function HireSkills() {
   return (
-    <section className="py-20 relative bg-[#0B1220] border-t border-b border-slate-800 overflow-hidden">
+    <section className="py-20 relative bg-[#0A0A0C] border-t border-b border-slate-800 overflow-hidden">
   {/* Background Glow */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
-    <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
+    <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-blue-500/[0.06] blur-3xl" />
+    <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-emerald-500/[0.06] blur-3xl" />
   </div>
 
   {/* Side Gradient Fade */}
-  <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#0B1220] via-transparent to-[#0B1220]" />
+  <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#0A0A0C] via-transparent to-[#0A0A0C]" />
 
   {/* Heading */}
   <div className="max-w-[1400px] mx-auto px-6 mb-12 text-center relative z-20">
@@ -42,7 +42,7 @@ export default function HireSkills() {
         {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, index) => (
           <div
             key={index}
-            className="px-6 py-3 rounded-full bg-[#111827] border border-slate-700 shadow-lg whitespace-nowrap text-sm font-semibold text-slate-300 hover:border-[#4F8CFF] hover:text-[#4F8CFF] hover:bg-[#162033] transition-all duration-300 cursor-default"
+            className="px-6 py-3 rounded-full bg-[#111827] border border-slate-700 shadow-lg whitespace-nowrap text-sm font-semibold text-slate-300 hover:border-white/30 hover:text-accent hover:bg-[#162033] transition-all duration-300 cursor-default"
           >
             {skill}
           </div>

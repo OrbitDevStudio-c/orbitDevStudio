@@ -64,8 +64,8 @@ export default function IndustriesTechClusters() {
 
   {/* Ambient Background */}
   <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute -top-32 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px]" />
-    <div className="absolute -bottom-32 -right-24 w-80 h-80 bg-cyan-400/10 rounded-full blur-[120px]" />
+    <div className="absolute -top-32 -left-24 w-80 h-80 bg-blue-500/[0.06] rounded-full blur-[120px]" />
+    <div className="absolute -bottom-32 -right-24 w-80 h-80 bg-cyan-400/[0.06] rounded-full blur-[120px]" />
   </div>
 
   {/* Section Header */}
@@ -105,8 +105,8 @@ export default function IndustriesTechClusters() {
               <h3
                 className={`text-xl font-bold transition-colors mb-1 ${
                   isActive
-                    ? "text-[#4F8CFF]"
-                    : "text-white group-hover:text-[#4F8CFF]"
+                    ? "text-accent"
+                    : "text-white group-hover:text-white"
                 }`}
               >
                 {cluster.name}
@@ -121,7 +121,7 @@ export default function IndustriesTechClusters() {
               size={20}
               className={`transition-all duration-300 ${
                 isActive
-                  ? "text-[#4F8CFF] translate-x-1 opacity-100"
+                  ? "text-accent translate-x-1 opacity-100"
                   : "text-white/30 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
               }`}
             />
@@ -153,7 +153,7 @@ export default function IndustriesTechClusters() {
 
             <div className="w-28 h-28 rounded-full bg-slate-800 border border-white/10 shadow-[0_0_60px_rgba(79,140,255,0.3)] flex items-center justify-center">
 
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2E5BE5] to-[#4F8CFF] flex items-center justify-center text-white font-bold text-sm tracking-wide">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm tracking-wide">
                 Core
               </div>
 

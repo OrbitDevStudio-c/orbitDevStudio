@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useMemo, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
 
@@ -17,6 +17,10 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const py = useTransform(scrollY, [0, 100], ['0.875rem', '0.5rem']);
   const navStyle = useMemo(
@@ -35,6 +39,64 @@ export default function Navbar() {
     });
   }, [scrollY]);
 
+  // Handle focus behavior when mobile menu is opened/closed
+  useEffect(() => {
+    if (mobileOpen) {
+      const focusTimer = setTimeout(() => {
+        if (firstLinkRef.current) {
+          firstLinkRef.current.focus();
+        }
+      }, 50);
+      return () => clearTimeout(focusTimer);
+    } else {
+      if (toggleButtonRef.current) {
+        toggleButtonRef.current.focus();
+      }
+    }
+  }, [mobileOpen]);
+
+  // Focus trap inside the mobile menu
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        if (!containerRef.current) return;
+        const focusableElements = containerRef.current.querySelectorAll(
+          'a[href], button:not([disabled])'
+        );
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          // Tab
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <motion.nav
@@ -47,7 +109,7 @@ export default function Navbar() {
         <motion.div
           className="w-full"
           animate={{
-            backgroundColor: scrolled ? 'rgba(6, 11, 26, 0.85)' : 'rgba(6, 11, 26, 0)',
+            backgroundColor: scrolled ? 'rgba(10, 10, 12, 0.85)' : 'rgba(10, 10, 12, 0)',
             backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
             boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 0 rgba(0,0,0,0)',
             borderColor: scrolled ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255,255,255,0)',
@@ -98,6 +160,7 @@ export default function Navbar() {
             </div>
  
             <button
+              ref={toggleButtonRef}
               className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white hover:bg-white/20"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
@@ -109,58 +172,93 @@ export default function Navbar() {
         </motion.div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-3xl flex items-start justify-center py-8 px-4 lg:hidden"
-        >
-          <div className="w-full max-w-md space-y-8 rounded-[2rem] border border-white/10 bg-slate-950/90 p-6 shadow-2xl shadow-black/40 ring-1 ring-white/10 backdrop-blur-xl">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-lg shadow-cyan-500/15">
-                  <CompanyLogo size="sm" />
+      {/* Mobile Menu Side Drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+
+            {/* Drawer Panel */}
+            <motion.div
+              ref={containerRef}
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[300px] bg-[#141416] border-l border-white/5 shadow-2xl p-6 flex flex-col justify-between lg:hidden"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between pb-6 border-b border-white/5">
+                <div className="flex items-center gap-2">
+                  <CompanyLogo size="xs" />
+                  <div className="flex flex-col leading-tight">
+                    <span className="text-sm font-semibold tracking-tight text-white">Orbit</span>
+                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">DevStudio</span>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Orbit DevStudio</p>
-                  <p className="text-base font-semibold text-white">Mobile Menu</p>
-                </div>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 hover:border-white/20 focus:outline-none"
+                  aria-label="Close menu"
+                >
+                  <X size={16} />
+                </button>
               </div>
 
-              <button
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-                onClick={() => setMobileOpen(false)}
-                aria-label="Close menu"
-              >
-                <X size={20} />
-              </button>
-            </div>
+              {/* Navigation Links */}
+              <nav className="flex-1 py-8 flex flex-col gap-2.5 overflow-y-auto">
+                {navItems.map((item, index) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.04 + 0.1 }}
+                    >
+                      <Link
+                        to={item.path}
+                        ref={index === 0 ? firstLinkRef : undefined}
+                        onClick={() => setMobileOpen(false)}
+                        className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-[14px] font-semibold transition-all duration-200 ${
+                          isActive 
+                            ? 'bg-accent/10 border-accent/25 text-accent' 
+                            : 'bg-white/[0.02] border-white/5 text-white/90 hover:border-white/10 hover:bg-white/[0.04] hover:text-white'
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <span className={`text-[9px] font-mono tracking-wider ${isActive ? 'text-accent' : 'text-slate-500'}`}>0{index + 1}</span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
 
-            <div className="grid gap-4">
-              {navItems.map((item) => (
+              {/* Footer */}
+              <div className="pt-6 border-t border-white/5 space-y-4">
                 <Link
-                  key={item.label}
-                  to={item.path}
+                  to="/about"
                   onClick={() => setMobileOpen(false)}
-                  className="w-full rounded-[1.75rem] border border-white/10 bg-white/5 px-6 py-4 text-lg font-semibold text-white shadow-[0_30px_70px_-40px_rgba(15,23,42,0.8)] transition hover:border-accent hover:bg-accent/10 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  className="flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-accent/10 hover:bg-accent/90 transition-all duration-200"
                 >
-                  {item.label}
+                  About Us
                 </Link>
-              ))}
-            </div>
-
-            <Link
-              to="/about"
-              onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-8 py-4 text-lg font-semibold text-slate-950 shadow-xl shadow-accent/30 transition hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              About Us
-            </Link>
-          </div>
-        </motion.div>
-      )}
+                <div className="text-center">
+                  <p className="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Orbit DevStudio</p>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

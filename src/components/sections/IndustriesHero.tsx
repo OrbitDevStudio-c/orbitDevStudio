@@ -4,14 +4,14 @@ import ServiceParticles from './ServiceParticles';
 
 export default function IndustriesHero() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-background flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#244CB3]/30 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1B3675]/40 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1E2A4A]/30 via-transparent to-transparent opacity-60" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1E2A4A]/40 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
@@ -61,7 +61,7 @@ export default function IndustriesHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#2E5BE5] rounded-full blur-[80px] opacity-30" />
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1E2A4A] rounded-full blur-[80px] opacity-[0.18]" />
           
           <div className="relative w-full max-w-[450px] h-[400px] flex items-center justify-center">
             
@@ -104,8 +104,8 @@ export default function IndustriesHero() {
               className="absolute inset-0 z-20 origin-center"
             >
               {/* Outer Orbit Nodes (r=200) */}
-              <div className="absolute left-1/2 top-1/2 w-12 h-12 rounded-xl bg-[#1B3675]/80 backdrop-blur-sm border border-[#4F8CFF]/30 flex items-center justify-center shadow-lg" style={{ transform: 'translate(-50%, -50%) translate(200px, 0px) rotate(90deg)' }}>
-                <Plane size={20} className="text-[#4F8CFF]" />
+              <div className="absolute left-1/2 top-1/2 w-12 h-12 rounded-xl bg-[#1E2A4A]/80 backdrop-blur-sm border border-accent/30 flex items-center justify-center shadow-lg" style={{ transform: 'translate(-50%, -50%) translate(200px, 0px) rotate(90deg)' }}>
+                <Plane size={20} className="text-accent" />
               </div>
 
               <div className="absolute left-1/2 top-1/2 w-12 h-12 rounded-xl bg-[#132A1C]/80 backdrop-blur-sm border border-[#52C854]/30 flex items-center justify-center shadow-lg" style={{ transform: 'translate(-50%, -50%) translate(0px, 200px) rotate(180deg)' }}>

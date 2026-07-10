@@ -40,12 +40,9 @@ function App() {
                   <Route path="/industries" element={<Industries />} />
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/hire" element={<HireUs />} />
-                  <Route path="/hire-us" element={<HireUs />} />
                   <Route path="/case-studies" element={<CaseStudies />} />
                   <Route path="/process" element={<Process />} />
                   <Route path="/tech" element={<TechStack />} />
-                  <Route path="/tec" element={<TechStack />} />
-                  <Route path="/technologies" element={<TechStack />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/contact" element={<Contact />} />

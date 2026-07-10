@@ -48,7 +48,7 @@ export default function TechWhyUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full xl:w-[35%] bg-[#0B1736] rounded-3xl p-10 md:p-12 text-white shadow-2xl flex flex-col justify-center"
+            className="w-full xl:w-[35%] bg-[#141416] rounded-3xl p-10 md:p-12 text-white shadow-2xl flex flex-col justify-center"
           >
             <div>
               <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
@@ -83,7 +83,7 @@ export default function TechWhyUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-[#0B1736] rounded-3xl p-6 border border-[#1E2A4A] shadow-[0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                  className="bg-[#141416] rounded-3xl p-6 border border-[#1E2A4A] shadow-[0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="w-10 h-10 rounded-2xl bg-white/10 text-[#4F7BFF] flex items-center justify-center mb-5 shrink-0">
                     <benefit.icon size={20} strokeWidth={1.5} />

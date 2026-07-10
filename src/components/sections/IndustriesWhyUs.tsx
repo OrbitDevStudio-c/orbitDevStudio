@@ -13,11 +13,11 @@ import {
 const whyUsItems = [
   {
     id: "experience",
-    icon: <CalendarClock size={20} className="text-[#2E5BE5]" />,
+    icon: <CalendarClock size={20} className="text-[#1E2A4A]" />,
     title: "4+ Years Experience",
     desc: "Delivering high-end engineering solutions consistently.",
     className:
-      "col-span-1 md:col-span-2 lg:col-span-2 bg-[#0F172A]",
+      "col-span-1 md:col-span-2 lg:col-span-2 bg-surface",
   },
   {
     id: "delivery",
@@ -36,7 +36,7 @@ const whyUsItems = [
     subtitle: "Projects Shipped",
     desc: "From startups to enterprise.",
     className:
-      "col-span-1 md:col-span-1 lg:col-span-1 bg-[#0F172A]",
+      "col-span-1 md:col-span-1 lg:col-span-1 bg-surface",
   },
   {
     id: "architecture",
@@ -45,11 +45,11 @@ const whyUsItems = [
     desc:
       "Headless, microservices, and serverless infrastructures built to scale infinitely.",
     className:
-      "col-span-1 md:col-span-1 lg:col-span-1 bg-[#0F172A]",
+      "col-span-1 md:col-span-1 lg:col-span-1 bg-surface",
   },
   {
     id: "security",
-    icon: <ShieldCheck size={20} className="text-[#4F8CFF]" />,
+    icon: <ShieldCheck size={20} className="text-accent" />,
     title: "Enterprise Security",
     desc:
       "Bank-grade encryption, SOC2 compliance readiness, and zero-trust data protection.",
@@ -63,16 +63,16 @@ const whyUsItems = [
     title: "Fast Support",
     desc: "24/7 dedicated engineering SLAs.",
     className:
-      "col-span-1 md:col-span-1 lg:col-span-1 bg-[#0F172A]",
+      "col-span-1 md:col-span-1 lg:col-span-1 bg-surface",
   },
   {
     id: "ai",
-    icon: <Bot size={20} className="text-[#2E5BE5]" />,
+    icon: <Bot size={20} className="text-[#1E2A4A]" />,
     title: "AI Ready",
     desc:
       "Seamlessly integrate LLMs, computer vision, and predictive analytics into your core product.",
     className:
-      "col-span-1 md:col-span-2 lg:col-span-2 bg-[#0F172A]",
+      "col-span-1 md:col-span-2 lg:col-span-2 bg-surface",
   },
   {
     id: "scale",
@@ -81,7 +81,7 @@ const whyUsItems = [
     desc:
       "Architected to handle sudden viral traffic spikes effortlessly.",
     className:
-      "col-span-1 md:col-span-2 lg:col-span-2 bg-[#0F172A]",
+      "col-span-1 md:col-span-2 lg:col-span-2 bg-surface",
   },
 ];
 

@@ -102,7 +102,7 @@ export default function Testimonials() {
                 className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-dark p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
-                  <Quote size={32} className="text-accent/20 mb-4" />
+                  <Quote size={32} className="text-white/10 mb-4" />
                   <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
                 </div>
                 
@@ -118,7 +118,7 @@ export default function Testimonials() {
                     ))}
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-accent/20 text-accent font-bold text-sm shrink-0">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/10 text-slate-300 font-bold text-sm shrink-0">
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>

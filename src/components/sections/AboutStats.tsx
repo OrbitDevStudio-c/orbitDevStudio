@@ -9,10 +9,10 @@ const stats = [
 
 export default function AboutStats() {
   return (
-    <section className="py-20 bg-[#1B3675] relative overflow-hidden">
+    <section className="py-20 bg-[#1E2A4A] relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-[#4F8CFF] blur-[150px] opacity-20 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-accent blur-[150px] opacity-20 pointer-events-none" />
       
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">

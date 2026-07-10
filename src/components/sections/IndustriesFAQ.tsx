@@ -39,7 +39,7 @@ export default function IndustriesFAQ() {
   className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-24"
   style={{
     background:
-      "radial-gradient(circle at 90% 90%, rgba(59,130,246,0.15) 0%, transparent 35%), linear-gradient(135deg,#16233B 0%,#101827 45%,#0B1220 100%)",
+      "radial-gradient(circle at 90% 90%, rgba(59,130,246,0.15) 0%, transparent 35%), linear-gradient(135deg,#16233B 0%,#101827 45%,#0A0A0C 100%)",
   }}
 >
   {/* Background Pattern */}
@@ -60,8 +60,8 @@ export default function IndustriesFAQ() {
     {/* Left */}
     <div className="lg:col-span-4 flex flex-col">
 
-      <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-[#1B2438] border border-[#4F8CFF]/20 text-[#4F8CFF] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
-        <span className="w-2 h-2 rounded-full bg-[#4F8CFF]" />
+      <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-[#1B2438] border border-white/10 text-accent text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+        <span className="w-2 h-2 rounded-full bg-accent" />
         FAQ
       </div>
 
@@ -76,7 +76,7 @@ export default function IndustriesFAQ() {
 
       <div className="rounded-3xl bg-[#1B2438] border border-[#334155] p-8 shadow-2xl">
 
-        <div className="flex items-center gap-2 text-[#4F8CFF] font-semibold uppercase tracking-[0.15em] text-xs mb-5">
+        <div className="flex items-center gap-2 text-accent font-semibold uppercase tracking-[0.15em] text-xs mb-5">
           <MessageSquare size={16} />
           Need a direct answer?
         </div>
@@ -88,7 +88,7 @@ export default function IndustriesFAQ() {
 
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 text-[#4F8CFF] font-semibold hover:text-white transition-all duration-300 group"
+          className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-all duration-300 group"
         >
           Talk to our experts
           <ArrowRight
@@ -113,7 +113,7 @@ export default function IndustriesFAQ() {
           <div
             key={faq.id}
             onClick={() => setOpenId(isOpen ? null : faq.id)}
-            className="bg-[#1B2438] border border-[#334155] rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-[#4F8CFF]/40 hover:shadow-xl"
+            className="bg-[#1B2438] border border-[#334155] rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/20 hover:shadow-xl"
           >
 
             <div className="flex justify-between items-center p-6">
@@ -125,7 +125,7 @@ export default function IndustriesFAQ() {
               <div
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
                   isOpen
-                    ? "bg-[#4F8CFF] text-white"
+                    ? "bg-accent text-white"
                     : "bg-[#263248] border border-[#3B4A64] text-slate-300"
                 }`}
               >

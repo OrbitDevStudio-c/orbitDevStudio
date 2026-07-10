@@ -4,14 +4,14 @@ import ServiceParticles from './ServiceParticles';
 
 export default function ContactHero() {
   return (
-    <section className="relative w-full min-h-[70vh] bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-[70vh] bg-background flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/20 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1B3675]/40 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#3B6FE0]/[0.12] via-transparent to-transparent opacity-[0.38]" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1E2A4A]/40 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center">
@@ -43,8 +43,8 @@ export default function ContactHero() {
              transition={{ duration: 0.5, delay: 0.2 }}
              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex flex-col items-center gap-4 hover:bg-white/10 transition-colors w-full max-w-sm"
            >
-             <div className="w-16 h-16 rounded-full bg-[#4F8CFF]/20 flex items-center justify-center border border-[#4F8CFF]/30">
-               <Mail className="text-[#4F8CFF]" size={28} />
+             <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center border border-accent/30">
+               <Mail className="text-accent" size={28} />
              </div>
              <div className="text-center">
                <h3 className="font-bold text-white text-lg mb-1">Email Us</h3>

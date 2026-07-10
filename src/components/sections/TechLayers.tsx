@@ -46,7 +46,7 @@ export default function TechLayers() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0f172a] mb-6"
           >
             We build every <br />
-            <span className="text-[#2E5BE5]">layer of your product.</span>
+            <span className="text-[#1E2A4A]">layer of your product.</span>
           </motion.h2>
           
           <motion.p 

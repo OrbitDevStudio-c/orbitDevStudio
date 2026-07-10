@@ -9,13 +9,31 @@ export default function HireForm() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [phone, setPhone] = useState('');
   const [details, setDetails] = useState('');
+  const [detailsTouched, setDetailsTouched] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus('submitting');
     
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    // EmailJS Honeypot Spam Protection
+    const honeypot = formData.get('website_url');
+    if (honeypot) {
+      console.warn('Spam submission detected via honeypot.');
+      // Silently succeed to trick bots
+      setToast({
+        type: 'success',
+        message: "Thank you! Your inquiry has been sent successfully. We'll get back to you within 24 hours."
+      });
+      form.reset();
+      setPhone('');
+      setDetails('');
+      setDetailsTouched(false);
+      return;
+    }
+
+    setFormStatus('submitting');
     
     // Extract full phone number (country code + number)
     const countryCode = formData.get('countryCode');
@@ -30,6 +48,9 @@ export default function HireForm() {
     };
 
     try {
+      // NOTE: For full production security, the EmailJS dashboard's allowed-domains setting
+      // should also be restricted to the production domain: https://orbit-dev-studio.vercel.app
+      
       // 1. Send Contact Form details to OrbitDevStudio
       await emailjs.send(
         'service_3icvteb',
@@ -51,6 +72,7 @@ export default function HireForm() {
       form.reset();
       setPhone('');
       setDetails('');
+      setDetailsTouched(false);
       
       setToast({
         type: 'success',
@@ -82,6 +104,8 @@ export default function HireForm() {
                 initial={{ opacity: 0, y: -20, x: '-50%' }}
                 animate={{ opacity: 1, y: 0, x: '-50%' }}
                 exit={{ opacity: 0, y: -20, x: '-50%' }}
+                role={toast.type === 'success' ? 'status' : 'alert'}
+                aria-live={toast.type === 'success' ? 'polite' : 'assertive'}
                 className={`absolute top-6 left-1/2 z-50 px-6 py-3.5 rounded-full shadow-xl border flex items-center gap-3 backdrop-blur-md font-semibold text-sm w-[90%] md:w-auto text-center justify-center
                   ${toast.type === 'success' 
                     ? 'bg-emerald-500/90 border-emerald-400 text-white' 
@@ -95,10 +119,10 @@ export default function HireForm() {
           </AnimatePresence>
 
           {/* Left Sidebar */}
-          <div className="lg:w-[400px] bg-gradient-to-br from-[#2E5BE5] to-[#1B3675] p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center">
+          <div className="lg:w-[400px] bg-gradient-to-br from-surfaceHighlight to-surface p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#4F8CFF] opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
@@ -111,8 +135,8 @@ export default function HireForm() {
               <div className="flex flex-col gap-8">
                 {/* Email Section */}
                 <div className="flex items-start gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-[#1B3675] transition-all duration-300">
-                    <Mail size={20} className="text-white group-hover:text-[#1B3675] transition-colors" />
+                  <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-[#1E2A4A] transition-all duration-300">
+                    <Mail size={20} className="text-white group-hover:text-[#1E2A4A] transition-colors" />
                   </div>
                   <div>
                     <p className="text-[10px] font-bold tracking-widest text-blue-200 uppercase mb-1">Email Us</p>
@@ -128,6 +152,16 @@ export default function HireForm() {
           {/* Right Form */}
           <div className="flex-1 p-10 md:p-14 bg-transparent relative">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative">
+              {/* Honeypot field for spam protection */}
+              <div className="hidden" aria-hidden="true">
+                <input 
+                  type="text" 
+                  name="website_url" 
+                  tabIndex={-1} 
+                  autoComplete="off" 
+                />
+              </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div className="flex flex-col gap-2">
@@ -222,7 +256,11 @@ export default function HireForm() {
                   <label htmlFor="details" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Project Details
                   </label>
-                  <span className={`text-[10px] font-bold ${details.length < 50 || details.length > 300 ? 'text-red-400' : 'text-emerald-500'}`}>
+                  <span className={`text-[10px] font-bold ${
+                    !detailsTouched 
+                      ? 'text-slate-400' 
+                      : (details.length < 50 || details.length > 300 ? 'text-red-400' : 'text-emerald-500')
+                  }`}>
                     {details.length} / 300
                   </span>
                 </div>
@@ -235,6 +273,7 @@ export default function HireForm() {
                   maxLength={300}
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
+                  onBlur={() => setDetailsTouched(true)}
                   placeholder="Tell us about your project or requirements (min 50 characters)..."
                   className="w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white resize-none"
                 ></textarea>

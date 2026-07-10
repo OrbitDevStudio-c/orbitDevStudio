@@ -51,8 +51,8 @@ export default function ServicesDomains() {
         
         {/* Pill header */}
         <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50/50 mb-6">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#244CB3] mr-2" />
-          <span className="text-[10px] font-bold tracking-[0.1em] text-[#244CB3] uppercase">Service Categories</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#1E2A4A] mr-2" />
+          <span className="text-[10px] font-bold tracking-[0.1em] text-[#1E2A4A] uppercase">Service Categories</span>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-[white] mb-4">
@@ -99,12 +99,12 @@ export default function ServicesDomains() {
                     <Link
                       key={service}
                       to="/contact"
-                      className="group flex items-center justify-between p-5 rounded-2xl bg-[#1a3675] border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#4F8CFF]/30 transition-all text-left"
+                      className="group flex items-center justify-between p-5 rounded-2xl bg-[#1a3675] border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-white/30/30 transition-all text-left"
                     >
-                      <span className="text-[13px] font-semibold text-[white] group-hover:text-[#4F8CFF] transition-colors">
+                      <span className="text-[13px] font-semibold text-[white] group-hover:text-white transition-colors">
                         {service}
                       </span>
-                      <div className="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-[#4F8CFF] group-hover:border-[#4F8CFF] group-hover:text-white transition-all">
+                      <div className="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-accent group-hover:border-white/30 group-hover:text-white transition-all">
                         <ArrowRight size={12} />
                       </div>
                     </Link>

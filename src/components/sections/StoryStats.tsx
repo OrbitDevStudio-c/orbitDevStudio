@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 
 const stats = [
   { label: 'Awards',   value: 15,  suffix: '+', orbitSize: 130, speed: 18, startAngle: 30,  color: '#f59e0b', dotColor: '#fbbf24' },
-  { label: 'Projects', value: 200, suffix: '+', orbitSize: 195, speed: 26, startAngle: 130, color: '#4F8CFF', dotColor: '#93c5fd' },
+  { label: 'Projects', value: 200, suffix: '+', orbitSize: 195, speed: 26, startAngle: 130, color: '#3B6FE0', dotColor: '#93c5fd' },
   { label: 'Clients',  value: 50,  suffix: '+', orbitSize: 260, speed: 34, startAngle: 220, color: '#a78bfa', dotColor: '#c4b5fd' },
   { label: 'Experts',  value: 40,  suffix: '+', orbitSize: 325, speed: 42, startAngle: 300, color: '#34d399', dotColor: '#6ee7b7' },
 ];

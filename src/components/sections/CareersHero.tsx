@@ -11,13 +11,13 @@ export default function CareersHero() {
   };
 
   return (
-    <section className="relative w-full min-h-[80vh] bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-[80vh] bg-background flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/20 via-transparent to-transparent opacity-60" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#3B6FE0]/[0.12] via-transparent to-transparent opacity-[0.38]" />
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#B08CFF]/20 via-transparent to-transparent" />
       </div>
 

@@ -1,7 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 
+// Read SITE_URL dynamically from src/config/site.ts
+const siteConfigContent = fs.readFileSync(path.join(process.cwd(), 'src/config/site.ts'), 'utf8');
+const siteUrlMatch = siteConfigContent.match(/export const SITE_URL = '([^']+)';/);
+const SITE_URL = siteUrlMatch ? siteUrlMatch[1] : 'https://orbit-dev-studio.vercel.app';
+
 const routes = [
+  {
+    path: '',
+    title: 'OrbitDevStudio | Premium Digital Agency & Software Engineering',
+    description: "OrbitDevStudio - Engineering premium software solutions, breathtaking aesthetics, and scalable architectures for tomorrow's leading enterprises.",
+  },
   {
     path: 'about',
     title: 'About Us | OrbitDevStudio',
@@ -92,26 +102,28 @@ function prerender() {
     // Replace Title
     html = html.replace(/<title>.*?<\/title>/g, `<title>${route.title}</title>`);
 
+    const routeUrl = route.path ? `${SITE_URL}/${route.path}` : `${SITE_URL}/`;
+
     // Build meta tags
     const metaTags = `
     <title>${route.title}</title>
     <meta name="description" content="${route.description}" />
-    <link rel="canonical" href="https://orbitdevstudios.vercel.app/${route.path}" />
+    <link rel="canonical" href="${routeUrl}" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://orbitdevstudios.vercel.app/${route.path}" />
+    <meta property="og:url" content="${routeUrl}" />
     <meta property="og:title" content="${route.title}" />
     <meta property="og:description" content="${route.description}" />
-    <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+    <meta property="og:image" content="${SITE_URL}/companylogo-social.webp" />
     <meta property="og:site_name" content="OrbitDevStudio" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/${route.path}" />
+    <meta name="twitter:url" content="${routeUrl}" />
     <meta name="twitter:title" content="${route.title}" />
     <meta name="twitter:description" content="${route.description}" />
-    <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+    <meta name="twitter:image" content="${SITE_URL}/companylogo-social.webp" />
     `;
 
     // Inject meta tags before </head>

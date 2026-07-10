@@ -58,12 +58,12 @@ export default function IndustriesTestimonials() {
                   height={192}
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#2E5BE5] rounded-full flex items-center justify-center text-white shadow-lg z-20 group-hover:scale-110 transition-transform duration-500 delay-100">
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1E2A4A] rounded-full flex items-center justify-center text-white shadow-lg z-20 group-hover:scale-110 transition-transform duration-500 delay-100">
                 <Quote size={24} fill="currentColor" />
               </div>
               
               {/* Decorative abstract shape behind image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full bg-[#2E5BE5]/5 blur-2xl z-0" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full bg-[#1E2A4A]/[0.03] blur-2xl z-0" />
             </div>
 
             {/* Right: Content */}

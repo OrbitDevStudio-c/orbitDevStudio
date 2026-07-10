@@ -11,7 +11,7 @@ const services = [
     microUI: (
       <div className="flex flex-wrap gap-2 mt-6">
         {['React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind'].map(tech => (
-          <span key={tech} className="px-3 py-1 bg-[#244CB3]/5 text-[white] text-xs font-semibold rounded-full border border-[#244CB3]/10">
+          <span key={tech} className="px-3 py-1 bg-[#1E2A4A]/5 text-[white] text-xs font-semibold rounded-full border border-[#1E2A4A]/10">
             {tech}
           </span>
         ))}
@@ -116,7 +116,7 @@ export default function ServicesGrid() {
     >
       {/* Icon + Title */}
       <div className="flex items-center gap-4 mb-5">
-        <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-[#4F8CFF]/20 text-[#4F8CFF] group-hover:bg-[#4F8CFF] group-hover:text-white group-hover:scale-110 transition-all duration-300">
+        <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 transition-all duration-300">
           {service.icon}
         </div>
 

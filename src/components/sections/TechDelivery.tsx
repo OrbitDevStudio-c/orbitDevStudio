@@ -53,7 +53,7 @@ export default function TechDelivery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-[#0B1736] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white shadow-xl"
+          className="bg-[#141416] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white shadow-xl"
         >
           <div className="mb-10">
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-3">
@@ -91,7 +91,7 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#2E5BE5] uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#1E2A4A] uppercase block mb-3">
               FULL-STACK DELIVERY
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0f172a] mb-6 max-w-lg">
@@ -102,7 +102,7 @@ export default function TechDelivery() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2E5BE5] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 shadow-md"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1E2A4A] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 shadow-md"
             >
               Get Free Quote
               <ArrowRight size={16} />
@@ -115,7 +115,7 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1 w-full"
           >
-            <div className="bg-[#0B1736] rounded-[2rem] p-8 lg:p-10 shadow-2xl border border-white/5">
+            <div className="bg-[#141416] rounded-[2rem] p-8 lg:p-10 shadow-2xl border border-white/5">
               <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-8">
                 TECHNOLOGIES
               </span>
@@ -155,9 +155,9 @@ export default function TechDelivery() {
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
-  className="flex-1 bg-[#0B1736] rounded-[2rem] p-8 md:p-12 shadow-xl border border-[#1E2A4A]"
+  className="flex-1 bg-[#141416] rounded-[2rem] p-8 md:p-12 shadow-xl border border-[#1E2A4A]"
 >
-  <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
+  <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
     OUR DELIVERY APPROACH
   </span>
 
@@ -173,7 +173,7 @@ export default function TechDelivery() {
 
   <div className="flex flex-col relative">
     {/* Connecting vertical line */}
-    <div className="absolute left-4 top-4 bottom-8 w-px bg-[#24345D] z-0" />
+    <div className="absolute left-4 top-4 bottom-8 w-px bg-[#141416] z-0" />
 
     {operatingModel.map((item, i) => (
       <div
@@ -184,8 +184,8 @@ export default function TechDelivery() {
         <div
           className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${
             activeStep === i
-              ? "bg-[#2E5BE5] text-white"
-              : "bg-[#101F45] border border-[#24345D] text-slate-300 group-hover:border-[#4F8CFF] group-hover:text-white"
+              ? "bg-[#1E2A4A] text-white"
+              : "bg-[#1C1C1F] border border-[#141416] text-slate-300 group-hover:border-white/30 group-hover:text-white"
           }`}
         >
           {i + 1}
@@ -194,7 +194,7 @@ export default function TechDelivery() {
         <div
           className={`pt-1 transition-all duration-300 w-full ${
             activeStep === i
-              ? "bg-[#101F45] p-5 rounded-2xl border border-[#24345D] -mt-4 shadow-lg"
+              ? "bg-[#1C1C1F] p-5 rounded-2xl border border-[#141416] -mt-4 shadow-lg"
               : ""
           }`}
         >
@@ -232,7 +232,7 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1 flex flex-col justify-end lg:mb-12" 
           >
-            <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-[#2E5BE5] to-[#4F8CFF] rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
+            <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-primary to-accent rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
                {/* Abstract background */}
                <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700" />

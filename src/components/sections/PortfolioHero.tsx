@@ -4,13 +4,13 @@ import ServiceParticles from './ServiceParticles';
 
 export default function PortfolioHero() {
   return (
-    <section className="relative w-full min-h-[90vh] bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-[90vh] bg-background flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/20 via-transparent to-transparent opacity-60" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#3B6FE0]/[0.12] via-transparent to-transparent opacity-[0.38]" />
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#B08CFF]/20 via-transparent to-transparent" />
       </div>
 
@@ -40,7 +40,7 @@ export default function PortfolioHero() {
               onClick={() => {
                 document.getElementById('portfolio-grid')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#4F8CFF] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
             >
               View Projects
               <ArrowRight size={18} />
@@ -56,7 +56,7 @@ export default function PortfolioHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-indigo-500 rounded-full blur-[100px] opacity-20" />
+          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-indigo-500 rounded-full blur-[100px] opacity-[0.12]" />
           
           <div className="relative w-full max-w-[500px] h-[450px]">
             
@@ -75,9 +75,9 @@ export default function PortfolioHero() {
               </div>
               {/* Image Content (Wireframe representation) */}
               <div className="flex-1 p-4 grid grid-cols-2 gap-4">
-                 <div className="w-full h-20 lg:h-24 rounded-lg bg-[#4F8CFF]/10 border border-[#4F8CFF]/20 flex items-center justify-center relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#4F8CFF]/0 to-[#4F8CFF]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Monitor className="text-[#4F8CFF] opacity-50" />
+                 <div className="w-full h-20 lg:h-24 rounded-lg bg-accent/10 border border-white/10 flex items-center justify-center relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#3B6FE0]/0 to-[#3B6FE0]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Monitor className="text-accent opacity-50" />
                  </div>
                  <div className="w-full h-20 lg:h-24 rounded-lg bg-[#B08CFF]/10 border border-[#B08CFF]/20 flex items-center justify-center relative overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#B08CFF]/0 to-[#B08CFF]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -98,10 +98,10 @@ export default function PortfolioHero() {
               className="absolute left-4 lg:-left-8 bottom-4 lg:bottom-12 w-[120px] md:w-[150px] h-[240px] md:h-[300px] bg-slate-800/90 backdrop-blur-md border border-white/20 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30 flex flex-col items-center p-2"
             >
               <div className="w-12 h-4 bg-black rounded-b-xl absolute top-0 z-40" />
-              <div className="w-full h-full rounded-[1.2rem] bg-gradient-to-b from-[#152A5A] to-[#0A1430] overflow-hidden flex flex-col gap-2 p-3 mt-4 relative">
+              <div className="w-full h-full rounded-[1.2rem] bg-gradient-to-b from-surface to-background overflow-hidden flex flex-col gap-2 p-3 mt-4 relative">
                  {/* Mobile screen content */}
                  <div className="w-full h-24 bg-white/5 rounded-xl border border-white/10 relative overflow-hidden">
-                   <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/20 blur-xl rounded-full" />
+                   <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/[0.12] blur-xl rounded-full" />
                  </div>
                  <div className="w-3/4 h-2 bg-white/20 rounded-full mt-1" />
                  <div className="w-1/2 h-2 bg-white/10 rounded-full" />
@@ -128,7 +128,7 @@ export default function PortfolioHero() {
             </motion.div>
 
             {/* Decorative Stars */}
-            <div className="absolute left-10 top-10 text-[#4F8CFF] animate-pulse">✦</div>
+            <div className="absolute left-10 top-10 text-accent animate-pulse">✦</div>
             <div className="absolute right-12 top-0 text-white/40 text-xl animate-pulse">✦</div>
 
           </div>

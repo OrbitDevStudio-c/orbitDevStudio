@@ -16,7 +16,7 @@ const bentoItems = [
   },
   {
     id: "ecommerce",
-    icon: <ShoppingCart size={24} className="text-[#4F8CFF]" />,
+    icon: <ShoppingCart size={24} className="text-accent" />,
     title: "E-Commerce",
     desc: "High-converting, globally scalable storefronts featuring lightning-fast checkouts and headless architecture.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -25,7 +25,7 @@ const bentoItems = [
   },
   {
     id: "architecture",
-    icon: <Building2 size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    icon: <Building2 size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
     title: "Architecture",
     desc: "Robust firm websites showcasing high-res blueprints and project timelines.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -34,7 +34,7 @@ const bentoItems = [
   },
   {
     id: "interior",
-    icon: <Palette size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    icon: <Palette size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
     title: "Interior Design",
     desc: "Immersive 3D visualization galleries that close premium clients.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -43,7 +43,7 @@ const bentoItems = [
   },
   {
     id: "portfolio",
-    icon: <Briefcase size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    icon: <Briefcase size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
     title: "Custom Portfolios",
     desc: "Bespoke digital resumes, creative showcases, and interactive wedding portals that tell your unique story beautifully.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -52,7 +52,7 @@ const bentoItems = [
   },
   {
     id: "travel",
-    icon: <Plane size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    icon: <Plane size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
     title: "Travel Agencies",
     desc: "Dynamic booking engines and automated ticketing systems.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -61,7 +61,7 @@ const bentoItems = [
   },
   {
     id: "cafe",
-    icon: <Coffee size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    icon: <Coffee size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
     title: "Restaurant",
     desc: "QR menu systems and real-time reservations.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",

@@ -33,7 +33,7 @@ export default function HireFAQ() {
       <div className="max-w-4xl mx-auto px-6">
         
         <div className="text-center mb-16">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             CLEARING DOUBTS
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[white] mb-6">
@@ -55,16 +55,16 @@ export default function HireFAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`bg-white rounded-2xl border transition-all duration-300 ${isOpen ? 'border-[#4F8CFF] shadow-lg shadow-blue-500/10' : 'border-slate-200 hover:border-slate-300 shadow-sm'}`}
+                className={`bg-white rounded-2xl border transition-all duration-300 ${isOpen ? 'border-accent shadow-lg shadow-blue-500/10' : 'border-slate-200 hover:border-slate-300 shadow-sm'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                 >
-                  <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-[#4F8CFF]' : 'text-[#0B1736]'}`}>
+                  <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-accent' : 'text-[#141416]'}`}>
                     {faq.question}
                   </span>
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-[#4F8CFF] text-white' : 'bg-slate-100 text-slate-500'}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-accent text-white' : 'bg-slate-100 text-slate-500'}`}>
                     {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>

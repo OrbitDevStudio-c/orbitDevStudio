@@ -99,11 +99,11 @@ export default function CareersOpenings() {
               
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider rounded-full border border-accent/20">
+                  <span className="px-3 py-1 bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider rounded-full border border-white/10">
                     {job.department}
                   </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
                   {job.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 font-medium mb-4">
@@ -130,7 +130,7 @@ export default function CareersOpenings() {
               <div className="shrink-0 md:ml-8">
                 <button 
                   onClick={() => setSelectedJob(job.title)}
-                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 font-semibold text-white transition-all group-hover:bg-accent group-hover:text-slate-950 group-hover:border-accent cursor-pointer"
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 font-semibold text-white transition-all group-hover:bg-accent group-hover:text-slate-950 group-hover:border-white/30 cursor-pointer"
                 >
                   Apply Now
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

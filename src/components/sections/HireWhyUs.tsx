@@ -40,15 +40,15 @@ export default function HireWhyUs() {
             className="relative"
           >
             {/* Background Blob */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-3xl -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
             
             <div className="grid grid-cols-2 gap-6 relative">
               <div className="flex flex-col gap-6 pt-12">
                 <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] group border border-white/10">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/80 to-transparent z-10" />
-                  <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" alt="Developer working" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141416]/80 to-transparent z-10" />
+                  <img src="/developer-working.webp" alt="Developer working" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                   <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#4F8CFF] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
                       <CheckCircle2 className="text-white" size={20} />
                     </div>
                     <span className="text-white font-bold text-sm tracking-wide">Vetted Experts</span>
@@ -58,8 +58,8 @@ export default function HireWhyUs() {
               
               <div className="flex flex-col gap-6">
                 <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] group border border-white/10">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/80 to-transparent z-10" />
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141416]/80 to-transparent z-10" />
+                  <img src="/team-collaboration.webp" alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                   <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center">
                       <Zap className="text-white" size={20} />
@@ -84,7 +84,7 @@ export default function HireWhyUs() {
 
           {/* Right Side: Content */}
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
               THE ORBIT ADVANTAGE
             </span>
             <h2 className="text-h2 text-white mb-6 leading-tight">
@@ -104,8 +104,8 @@ export default function HireWhyUs() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-[#4F8CFF] group-hover:scale-110 transition-all duration-300">
-                    <benefit.icon size={22} className="text-accent group-hover:text-white transition-colors" strokeWidth={2} />
+                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                    <benefit.icon size={22} className="text-slate-400 group-hover:text-white transition-colors" strokeWidth={2} />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3">{benefit.title}</h3>
                   <p className="text-sm leading-relaxed text-slate-400">

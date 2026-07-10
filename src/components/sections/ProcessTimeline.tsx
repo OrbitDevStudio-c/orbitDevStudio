@@ -38,7 +38,7 @@ export default function ProcessTimeline() {
                 className="card-dark p-8 flex flex-col items-start group"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:bg-accent/20 transition-colors duration-300">
                   <Icon size={20} className="text-accent" />
                 </div>
 

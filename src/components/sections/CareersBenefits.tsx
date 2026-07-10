@@ -62,10 +62,10 @@ export default function CareersBenefits() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="card-dark p-8 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-[#4F8CFF] group-hover:scale-110 transition-all duration-300">
-                <benefit.icon size={24} className="text-accent group-hover:text-white transition-colors" />
+              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                <benefit.icon size={24} className="text-slate-400 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors">
                 {benefit.title}
               </h3>
               <p className="text-sm leading-relaxed text-slate-400">

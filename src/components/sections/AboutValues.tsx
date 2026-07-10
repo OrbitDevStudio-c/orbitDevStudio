@@ -49,11 +49,11 @@ export default function AboutValues() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="card-dark p-8 md:p-12 transition-all duration-300 group flex flex-col md:flex-row gap-8 items-start"
             >
-              <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-accent group-hover:scale-110 transition-all duration-500">
-                <value.icon size={28} className="text-accent group-hover:text-accent transition-colors" />
+              <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-white/30 group-hover:scale-110 transition-all duration-500">
+                <value.icon size={28} className="text-slate-400 group-hover:text-white transition-colors" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors">
                   {value.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-slate-400">

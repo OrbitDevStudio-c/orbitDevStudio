@@ -35,7 +35,7 @@ export default function HireProcess() {
 
     {/* Header */}
     <div className="text-center max-w-3xl mx-auto mb-20 md:mb-32">
-      <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
+      <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
         SIMPLE PROCESS
       </span>
 
@@ -43,7 +43,7 @@ export default function HireProcess() {
         How We Work
       </h2>
 
-      <div className="w-16 h-1.5 bg-[#4F8CFF] mx-auto mb-8 rounded-full" />
+      <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full" />
 
       <p className="text-[15px] text-slate-300 leading-relaxed max-w-2xl mx-auto">
         Our streamlined development workflow ensures transparency,
@@ -60,7 +60,7 @@ export default function HireProcess() {
       {/* Horizontal Line Background (Desktop) */}
      <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] z-0">
 
-  <div className="h-[2px] w-full bg-[#24345D] rounded-full" />
+  <div className="h-[2px] w-full bg-[#141416] rounded-full" />
 
   <motion.div
     initial={{ width: 0 }}
@@ -69,7 +69,7 @@ export default function HireProcess() {
     transition={{ duration: 2 }}
     className="absolute top-0 left-0 h-[2px] rounded-full
     bg-gradient-to-r
-    from-[#4F8CFF]
+    from-[#3B6FE0]
     via-[#7C5CFF]
     to-[#00D4FF]
     shadow-[0_0_20px_rgba(79,140,255,0.9)]"
@@ -81,13 +81,13 @@ export default function HireProcess() {
     viewport={{ once: true }}
     transition={{ duration: 2 }}
     className="absolute -top-[7px] w-4 h-4 rounded-full
-    bg-[#4F8CFF]
-    shadow-[0_0_25px_#4F8CFF]"
+    bg-accent
+    shadow-[0_0_25px_#3B6FE0]"
   />
 </div>
 
       {/* Vertical Line Background (Mobile) */}
-      <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-[#24345D] z-0" />
+      <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-[#141416] z-0" />
 
       {/* Vertical Line Animated Fill (Mobile) */}
       <motion.div
@@ -95,7 +95,7 @@ export default function HireProcess() {
         whileInView={{ height: "80%" }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
-        className="block md:hidden absolute left-[50px] top-[10%] w-[2px] bg-[#4F8CFF] z-0"
+        className="block md:hidden absolute left-[50px] top-[10%] w-[2px] bg-accent z-0"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
@@ -112,15 +112,15 @@ export default function HireProcess() {
             <div className="relative">
 
               {/* Number Badge */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#4F8CFF] text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#0B1736] shadow-md">
+              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#141416] shadow-md">
                 {step.num}
               </div>
 
               {/* Circle */}
-              <div className="w-[100px] h-[100px] rounded-full bg-[#101F45] border-2 border-[#4F8CFF] flex items-center justify-center shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_8px_rgba(79,140,255,0.15)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_12px_rgba(79,140,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
+              <div className="w-[100px] h-[100px] rounded-full bg-[#1C1C1F] border-2 border-accent flex items-center justify-center shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_8px_rgba(79,140,255,0.15)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_12px_rgba(79,140,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
                 <step.icon
                   size={32}
-                  className="text-[#4F8CFF]"
+                  className="text-accent"
                   strokeWidth={1.5}
                 />
               </div>

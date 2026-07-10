@@ -27,11 +27,11 @@ export default function TechStackMarquee() {
   const items = useMemo(() => [...techStack, ...techStack, ...techStack], []);
 
   return (
-   <section className="py-10 overflow-hidden relative bg-[#0B1220] border-t border-b border-slate-800">
+   <section className="py-10 overflow-hidden relative bg-[#0A0A0C] border-t border-b border-slate-800">
   {/* Background Glow */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
-    <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
+    <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-blue-500/[0.06] blur-3xl" />
+    <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-emerald-500/[0.06] blur-3xl" />
   </div>
 
   <div className="max-w-7xl mx-auto px-6 mb-6 relative z-20">
@@ -41,10 +41,10 @@ export default function TechStackMarquee() {
   </div>
 
   {/* Left Fade */}
-  <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#0B1220] to-transparent z-10 pointer-events-none" />
+  <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#0A0A0C] to-transparent z-10 pointer-events-none" />
 
   {/* Right Fade */}
-  <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#0B1220] to-transparent z-10 pointer-events-none" />
+  <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#0A0A0C] to-transparent z-10 pointer-events-none" />
 
   <div className="flex overflow-hidden group relative z-20">
     <div

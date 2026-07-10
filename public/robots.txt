@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orbitdevstudios.vercel.app/sitemap.xml
+Sitemap: https://orbit-dev-studio.vercel.app/sitemap.xml

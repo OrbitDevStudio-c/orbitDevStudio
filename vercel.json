@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/hire-us", "destination": "/hire", "permanent": true },
+    { "source": "/tec", "destination": "/tech", "permanent": true },
+    { "source": "/technologies", "destination": "/tech", "permanent": true }
+  ]
+}

@@ -92,7 +92,7 @@ export default function IndustriesShowcase() {
               </div>
               
               {/* Decorative Blur */}
-              <div className="absolute -inset-4 bg-[#2E5BE5]/10 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute -inset-4 bg-[#1E2A4A]/[0.06] blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </motion.div>
 
             {/* Content Side */}
@@ -103,7 +103,7 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="w-full lg:w-1/2 flex flex-col"
             >
-              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-accent/15 text-accent text-[11px] font-bold tracking-wider uppercase mb-6 border border-accent/25">
+              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-white/5 text-slate-300 text-[11px] font-bold tracking-wider uppercase mb-6 border border-white/10">
                 {project.industry}
               </div>
               
@@ -118,7 +118,7 @@ export default function IndustriesShowcase() {
                 </div>
                 <div>
                   <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Solution</h4>
-                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-accent pl-4">{project.solution}</p>
+                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-white/20 pl-4">{project.solution}</p>
                 </div>
                 <div>
                   <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Result</h4>
@@ -129,7 +129,7 @@ export default function IndustriesShowcase() {
                 </div>
               </div>
 
-              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/5 text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent transition-colors shadow-sm flex items-center gap-2">
+              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/5 text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-white/30 transition-colors shadow-sm flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white/5 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

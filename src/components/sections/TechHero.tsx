@@ -5,14 +5,14 @@ import ServiceParticles from './ServiceParticles';
 
 export default function TechHero() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-[#152A5A] to-[#132E7B] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-background flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#244CB3]/30 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1B3675]/40 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1E2A4A]/30 via-transparent to-transparent opacity-60" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1E2A4A]/40 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
@@ -39,7 +39,7 @@ export default function TechHero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#4F8CFF] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
             >
               Plan My Stack
               <ArrowRight size={18} />
@@ -61,20 +61,20 @@ export default function TechHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#4F8CFF] rounded-full blur-[100px] opacity-20" />
+          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent rounded-full blur-[100px] opacity-20" />
           
           <div className="relative w-full max-w-[450px] h-[450px] flex items-center justify-center">
             
             {/* Center Server Core */}
             <div className="absolute z-10 w-32 h-32 rounded-3xl bg-white/5 border border-white/20 backdrop-blur-xl flex items-center justify-center shadow-[0_0_60px_rgba(79,140,255,0.4)]">
-               <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#2E5BE5] to-[#4F8CFF] flex items-center justify-center">
+               <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center">
                  <Cpu size={40} className="text-white opacity-90" />
                </div>
             </div>
 
             {/* Glowing Rings */}
             <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none">
-              <div className="w-[250px] h-[250px] rounded-full border border-white/10 border-t-[#4F8CFF]/50 animate-[spin_8s_linear_infinite]" />
+              <div className="w-[250px] h-[250px] rounded-full border border-white/10 border-t-[#3B6FE0]/50 animate-[spin_8s_linear_infinite]" />
               <div className="absolute w-[350px] h-[350px] rounded-full border border-white/5 border-b-[#52C854]/30 animate-[spin_12s_linear_infinite_reverse]" />
             </div>
 
@@ -83,10 +83,10 @@ export default function TechHero() {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-4 top-1/4 z-20 bg-[#1B3675]/80 backdrop-blur-md border border-[#4F8CFF]/30 p-3.5 rounded-2xl shadow-2xl flex flex-col items-center gap-2"
+              className="absolute left-4 top-1/4 z-20 bg-[#1E2A4A]/80 backdrop-blur-md border border-accent/30 p-3.5 rounded-2xl shadow-2xl flex flex-col items-center gap-2"
             >
               <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                <Database size={20} className="text-[#4F8CFF]" />
+                <Database size={20} className="text-accent" />
               </div>
               <div className="w-8 h-1 rounded-full bg-white/30" />
             </motion.div>
@@ -122,7 +122,7 @@ export default function TechHero() {
             <motion.div 
               animate={{ scale: [0.8, 1.2, 0.8], opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="absolute right-1/4 top-1/3 w-2 h-2 bg-[#4F8CFF] rounded-full blur-[2px]"
+              className="absolute right-1/4 top-1/3 w-2 h-2 bg-accent rounded-full blur-[2px]"
             />
             <motion.div 
               animate={{ scale: [0.8, 1.2, 0.8], opacity: [0, 1, 0] }}
@@ -131,7 +131,7 @@ export default function TechHero() {
             />
 
             {/* Decorative Stars */}
-            <div className="absolute -left-4 bottom-32 text-[#4F8CFF] animate-pulse">✦</div>
+            <div className="absolute -left-4 bottom-32 text-accent animate-pulse">✦</div>
             <div className="absolute right-12 -bottom-4 text-white/40 text-xl animate-pulse">✦</div>
 
           </div>
