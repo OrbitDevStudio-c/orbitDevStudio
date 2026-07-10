@@ -26,7 +26,7 @@ export default function ServicesTechnologies() {
   const [activeTab, setActiveTab] = useState<TabType>("Frameworks");
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 w-full relative z-10">
+    <section className="py-24 px-6 md:px-12 lg:px-24 w-full bg-navy relative z-10">
       
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
         
@@ -41,9 +41,13 @@ export default function ServicesTechnologies() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" 
               alt="Global Network" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              width={700}
+              height={500}
             />
             {/* Dark Blue Overlay for readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b1221] via-[#0b1221]/60 to-transparent" />

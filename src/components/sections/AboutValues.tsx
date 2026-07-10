@@ -26,17 +26,17 @@ const values = [
 
 export default function AboutValues() {
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-navy relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             OUR CORE VALUES
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#1B3675] mb-6">
+          <h2 className="text-h2 text-white mb-6">
             What drives us forward.
           </h2>
-          <div className="w-16 h-1.5 bg-[#1B3675] mx-auto mb-8 rounded-full" />
+          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -47,16 +47,16 @@ export default function AboutValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-100 rounded-[2rem] p-8 md:p-12 hover:shadow-xl transition-all duration-300 group flex flex-col md:flex-row gap-8 items-start"
+              className="card-dark p-8 md:p-12 transition-all duration-300 group flex flex-col md:flex-row gap-8 items-start"
             >
-              <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-slate-200 group-hover:border-[#4F8CFF] group-hover:scale-110 transition-all duration-500">
-                <value.icon size={28} className="text-[#1B3675] group-hover:text-[#4F8CFF] transition-colors" />
+              <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-accent group-hover:scale-110 transition-all duration-500">
+                <value.icon size={28} className="text-accent group-hover:text-accent transition-colors" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[#1B3675] mb-3 group-hover:text-[#4F8CFF] transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-500">
+                <p className="text-sm leading-relaxed text-slate-400">
                   {value.description}
                 </p>
               </div>

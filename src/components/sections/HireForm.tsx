@@ -70,10 +70,10 @@ export default function HireForm() {
   };
 
   return (
-    <section id="hire-form" className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section id="hire-form" className="py-24 md:py-32 bg-navy relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         
-        <div className="bg-white rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col lg:flex-row overflow-hidden relative">
+        <div className="bg-slate-900 rounded-[2rem] border border-white/10 flex flex-col lg:flex-row overflow-hidden relative shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
           
           {/* Custom Toast Overlay */}
           <AnimatePresence>
@@ -82,7 +82,7 @@ export default function HireForm() {
                 initial={{ opacity: 0, y: -20, x: '-50%' }}
                 animate={{ opacity: 1, y: 0, x: '-50%' }}
                 exit={{ opacity: 0, y: -20, x: '-50%' }}
-                className={`absolute top-6 left-1/2 z-50 px-6 py-3.5 rounded-full shadow-xl shadow-black/5 border flex items-center gap-3 backdrop-blur-md font-semibold text-sm w-[90%] md:w-auto text-center justify-center
+                className={`absolute top-6 left-1/2 z-50 px-6 py-3.5 rounded-full shadow-xl border flex items-center gap-3 backdrop-blur-md font-semibold text-sm w-[90%] md:w-auto text-center justify-center
                   ${toast.type === 'success' 
                     ? 'bg-emerald-500/90 border-emerald-400 text-white' 
                     : 'bg-red-500/90 border-red-400 text-white'
@@ -126,12 +126,12 @@ export default function HireForm() {
           </div>
 
           {/* Right Form */}
-          <div className="flex-1 p-10 md:p-14 bg-white relative">
+          <div className="flex-1 p-10 md:p-14 bg-transparent relative">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Full Name
                   </label>
                   <input 
@@ -140,13 +140,13 @@ export default function HireForm() {
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50"
+                    className="w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white"
                   />
                 </div>
                 
                 {/* Email Address */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <label htmlFor="email" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Email Address
                   </label>
                   <input 
@@ -156,22 +156,22 @@ export default function HireForm() {
                     required
                     pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50"
+                    className="w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white"
                   />
                 </div>
 
                 {/* Phone Number */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="phone" className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <label htmlFor="phone" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Phone Number
                   </label>
                   <div className="flex gap-2">
                     <select 
                       name="countryCode"
-                      className="w-[110px] px-2 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50 text-slate-700"
+                      className="w-[110px] px-2 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white select-dark"
                     >
                       {COUNTRY_CODES.map((c) => (
-                        <option key={`${c.country}-${c.code}`} value={c.code}>
+                        <option key={`${c.country}-${c.code}`} value={c.code} className="bg-slate-900 text-white">
                           {c.country} {c.code}
                         </option>
                       ))}
@@ -189,14 +189,14 @@ export default function HireForm() {
                       pattern="\d{10}"
                       title="Please enter exactly 10 digits"
                       placeholder="00000 00000"
-                      className="flex-1 w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50"
+                      className="flex-1 w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white"
                     />
                   </div>
                 </div>
 
                 {/* Interested Service */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="service" className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <label htmlFor="service" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Interested Service
                   </label>
                   <select 
@@ -204,14 +204,14 @@ export default function HireForm() {
                     name="service"
                     required
                     defaultValue=""
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50 text-slate-700"
+                    className="w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white select-dark"
                   >
-                    <option value="" disabled>Select a service</option>
-                    <option value="web">Web Development</option>
-                    <option value="mobile">Mobile Development</option>
-                    <option value="full-stack">Full-Stack Team</option>
-                    <option value="uiux">UI/UX Design</option>
-                    <option value="other">Other / Not Sure</option>
+                    <option value="" disabled className="bg-slate-900 text-white">Select a service</option>
+                    <option value="web" className="bg-slate-900 text-white">Web Development</option>
+                    <option value="mobile" className="bg-slate-900 text-white">Mobile Development</option>
+                    <option value="full-stack" className="bg-slate-900 text-white">Full-Stack Team</option>
+                    <option value="uiux" className="bg-slate-900 text-white">UI/UX Design</option>
+                    <option value="other" className="bg-slate-900 text-white">Other / Not Sure</option>
                   </select>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function HireForm() {
               {/* Project Details */}
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-end">
-                  <label htmlFor="details" className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <label htmlFor="details" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Project Details
                   </label>
                   <span className={`text-[10px] font-bold ${details.length < 50 || details.length > 300 ? 'text-red-400' : 'text-emerald-500'}`}>
@@ -236,7 +236,7 @@ export default function HireForm() {
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                   placeholder="Tell us about your project or requirements (min 50 characters)..."
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-slate-50/50 resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all bg-white/5 text-white resize-none"
                 ></textarea>
               </div>
 
@@ -244,10 +244,10 @@ export default function HireForm() {
               <button 
                 type="submit" 
                 disabled={formStatus === 'submitting'}
-                className="mt-4 w-full bg-[#1B3675] text-white py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-[#152A5A] transition-colors shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
+                className="mt-4 w-full bg-accent text-slate-950 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {formStatus === 'submitting' ? (
-                  <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
                 ) : (
                   <>
                     Submit Inquiry

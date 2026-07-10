@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
             <Link to="/" className="flex items-center gap-3 group w-fit">
               <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:scale-105">
-                <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <img src="/companylogo.webp" alt="OrbitDevStudio Logo" width={40} height={40} className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
               <span className="text-2xl font-semibold text-white tracking-tight">
                 Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudio</span>

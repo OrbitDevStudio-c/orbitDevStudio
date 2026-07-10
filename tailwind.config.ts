@@ -14,9 +14,7 @@ export default {
         primary: '#1F3A93',
         accent: '#4F8CFF',
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
+
       animation: {
         'spin-slow': 'spin 8s linear infinite',
         'float': 'float 6s ease-in-out infinite',

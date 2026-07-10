@@ -66,14 +66,14 @@ export default function Testimonials() {
         
         <div className="mb-14 text-center flex flex-col items-center">
           <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">Client Stories</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">What our partners say</h2>
+          <h2 className="text-h2 text-white tracking-tight">What our partners say</h2>
         </div>
         
         <div className="relative group">
           {/* Slider Controls */}
           <button 
             onClick={() => scroll('left')}
-            className="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center justify-center text-gray-900 z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex"
+            className="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -81,7 +81,7 @@ export default function Testimonials() {
           
           <button 
             onClick={() => scroll('right')}
-            className="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center justify-center text-gray-900 z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex"
+            className="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -99,29 +99,31 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-white p-6 md:p-8 flex flex-col justify-between"
+                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-dark p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
                   <Quote size={32} className="text-accent/20 mb-4" />
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
+                  <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
                 </div>
                 
-                <div className="border-t border-gray-100 pt-5 mt-auto">
+                <div className="border-t border-white/10 pt-5 mt-auto">
                   <div className="flex text-amber-400 mb-3">
                     {[1,2,3,4,5].map(i => (
                       <Star 
                         key={i} 
                         size={14} 
                         fill={i <= t.rating ? "currentColor" : "none"} 
-                        className={i <= t.rating ? "" : "text-gray-300"} 
+                        className={i <= t.rating ? "" : "text-white/10"} 
                       />
                     ))}
                   </div>
                   <div className="flex items-center gap-4">
-                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-gray-200" loading="lazy" width={48} height={48} />
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-accent/20 text-accent font-bold text-sm shrink-0">
+                      {t.name.split(' ').map(n => n[0]).join('')}
+                    </div>
                     <div>
-                      <h4 className="text-primary text-sm font-bold">{t.name}</h4>
-                      <p className="text-gray-500 text-[11px] font-medium">{t.role}, {t.company}</p>
+                      <h4 className="text-white text-sm font-bold">{t.name}</h4>
+                      <p className="text-slate-400 text-[11px] font-medium">{t.role}, {t.company}</p>
                     </div>
                   </div>
                 </div>

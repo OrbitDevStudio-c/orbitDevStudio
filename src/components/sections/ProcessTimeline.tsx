@@ -22,7 +22,7 @@ export default function ProcessTimeline() {
           className="mb-16 text-center flex flex-col items-center"
         >
           <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">How We Work</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">Our Engineering Process</h2>
+          <h2 className="text-h2 text-white tracking-tight">Our Engineering Process</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
@@ -35,16 +35,16 @@ export default function ProcessTimeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="card-white p-8 flex flex-col items-start group"
+                className="card-dark p-8 flex flex-col items-start group"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-blue-50/60 flex items-center justify-center mb-6 border border-blue-100 group-hover:bg-blue-100/50 transition-colors duration-300">
-                  <Icon size={20} className="text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
+                  <Icon size={20} className="text-accent" />
                 </div>
 
                 {/* Text */}
-                <h3 className="text-lg font-bold text-primary mb-3">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
             );
           })}

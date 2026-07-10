@@ -29,13 +29,13 @@ const cases = [
 
 export default function IndustriesShowcase() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
+    <section className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10 text-white">
       
       <div className="text-center max-w-3xl mx-auto mb-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
           Industry Success Stories
         </h2>
-        <p className="text-slate-500 text-[16px] leading-relaxed">
+        <p className="text-slate-400 text-[16px] leading-relaxed">
           We don't just build software; we engineer measurable business outcomes. Explore how our tailored solutions solve complex, industry-specific challenges.
         </p>
       </div>
@@ -52,30 +52,33 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full lg:w-1/2 relative group perspective-1000"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-slate-200 bg-white">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-white/10 bg-slate-900">
                 
                 {/* macOS Browser Header */}
-                <div className="bg-slate-100/80 backdrop-blur-md border-b border-slate-200 px-4 py-3 flex items-center gap-4 relative z-20">
+                <div className="bg-slate-900 border-b border-white/10 px-4 py-3 flex items-center gap-4 relative z-20">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-[#ff5f56] shadow-sm border border-black/10" />
                     <div className="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-sm border border-black/10" />
                     <div className="w-3 h-3 rounded-full bg-[#27c93f] shadow-sm border border-black/10" />
                   </div>
-                  <div className="flex-1 bg-white rounded-md py-1.5 px-3 text-[10px] text-slate-500 text-center font-mono truncate shadow-sm border border-slate-200/50">
+                  <div className="flex-1 bg-slate-950 rounded-md py-1.5 px-3 text-[10px] text-slate-400 text-center font-mono truncate shadow-sm border border-white/5">
                     {project.liveUrl}
                   </div>
                 </div>
 
-                {/* Iframe Preview */}
-                <div className="relative h-[350px] md:h-[450px] w-full bg-slate-50 overflow-hidden">
-                  <iframe 
-                    src={project.liveUrl}
-                    className="absolute top-0 left-0 border-0 pointer-events-none origin-top-left"
-                    style={{ width: '125%', height: '125%', transform: 'scale(0.8)' }}
+                {/* Image Preview instead of heavy iframe */}
+                <div className="relative h-[350px] md:h-[450px] w-full bg-slate-950 overflow-hidden">
+                  <img 
+                    src={project.id === 1 ? "/projects/pharmacare.webp" : "/projects/aura.webp"}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"
                     loading="lazy"
+                    decoding="async"
+                    width={640}
+                    height={400}
                   />
-                  {/* Overlay to prevent interactions and add subtle shading */}
-                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                  {/* Overlay to add subtle shading */}
+                  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                   
                   {/* Tech Stack Pills */}
                   <div className="absolute bottom-6 left-6 z-20 flex gap-2">
@@ -89,7 +92,7 @@ export default function IndustriesShowcase() {
               </div>
               
               {/* Decorative Blur */}
-              <div className="absolute -inset-4 bg-[#2E5BE5]/20 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute -inset-4 bg-[#2E5BE5]/10 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             </motion.div>
 
             {/* Content Side */}
@@ -100,36 +103,36 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="w-full lg:w-1/2 flex flex-col"
             >
-              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-[#2E5BE5]/10 text-[#2E5BE5] text-[11px] font-bold tracking-wider uppercase mb-6 border border-[#2E5BE5]/20">
+              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-accent/15 text-accent text-[11px] font-bold tracking-wider uppercase mb-6 border border-accent/25">
                 {project.industry}
               </div>
               
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
                 {project.title}
               </h3>
 
               <div className="space-y-6 mb-10">
                 <div>
                   <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Problem</h4>
-                  <p className="text-slate-600 text-[15px] leading-relaxed border-l-2 border-slate-200 pl-4">{project.problem}</p>
+                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-white/10 pl-4">{project.problem}</p>
                 </div>
                 <div>
                   <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Solution</h4>
-                  <p className="text-slate-600 text-[15px] leading-relaxed border-l-2 border-[#2E5BE5] pl-4">{project.solution}</p>
+                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-accent pl-4">{project.solution}</p>
                 </div>
                 <div>
                   <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Result</h4>
-                  <p className="text-slate-800 font-semibold text-[15px] leading-relaxed flex items-start gap-2">
+                  <p className="text-slate-200 font-semibold text-[15px] leading-relaxed flex items-start gap-2">
                     <CheckCircle2 size={20} className="text-[#52C854] shrink-0 mt-0.5" />
                     {project.result}
                   </p>
                 </div>
               </div>
 
-              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white text-[#0f172a] font-bold text-[14px] rounded-xl border border-slate-200 overflow-hidden hover:border-[#2E5BE5] transition-colors shadow-sm flex items-center gap-2">
+              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/5 text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent transition-colors shadow-sm flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-slate-50 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-white/5 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
             </motion.div>
 

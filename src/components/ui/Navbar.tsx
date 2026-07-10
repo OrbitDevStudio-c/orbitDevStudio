@@ -26,9 +26,8 @@ export default function Navbar() {
     []
   );
 
-  const useDarkText = scrolled;
-  const logoText = useDarkText ? 'text-slate-950' : 'text-white';
-  const logoSubText = useDarkText ? 'text-slate-500' : 'text-slate-400';
+  const logoText = 'text-white';
+  const logoSubText = 'text-slate-400';
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -48,13 +47,14 @@ export default function Navbar() {
         <motion.div
           className="w-full"
           animate={{
-            backgroundColor: scrolled ? '#ffffff' : 'rgba(255,255,255,0)',
-            boxShadow: scrolled ? '0 22px 70px rgba(15, 23, 42, 0.12)' : '0 0 rgba(0,0,0,0)',
-            borderColor: scrolled ? '#E5E7EB' : 'rgba(255,255,255,0)',
+            backgroundColor: scrolled ? 'rgba(6, 11, 26, 0.85)' : 'rgba(6, 11, 26, 0)',
+            backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
+            boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 0 rgba(0,0,0,0)',
+            borderColor: scrolled ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255,255,255,0)',
             borderWidth: scrolled ? 1 : 0,
             borderStyle: scrolled ? 'solid' : 'none',
             borderRadius: 0,
-            transform: scrolled ? 'translateY(-6px)' : 'translateY(0px)',
+            transform: scrolled ? 'translateY(-2px)' : 'translateY(0px)',
           }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
           style={{ overflow: 'hidden' }}
@@ -68,13 +68,13 @@ export default function Navbar() {
                 <span className={`text-[10px] font-bold uppercase tracking-[0.22em] ${logoSubText}`}>DevStudio</span>
               </div>
             </Link>
-
+ 
             <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
-                const baseText = scrolled ? 'text-slate-950' : 'text-white';
-                const baseBg = isActive ? (scrolled ? 'bg-accent/10 text-accent shadow-[inset_0_0_0_1px_rgba(59,130,246,0.12)]' : 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]') : baseText;
-
+                const baseText = 'text-white/80 hover:text-white';
+                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]' : baseText;
+ 
                 return (
                   <Link
                     key={item.label}
@@ -88,7 +88,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-
+ 
               <Link
                 to="/about"
                 className="ml-2 rounded-full bg-accent px-4 py-1.5 text-[13px] font-semibold text-slate-950 shadow-lg shadow-accent/20 transition duration-200 hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
@@ -96,9 +96,9 @@ export default function Navbar() {
                 About Us
               </Link>
             </div>
-
+ 
             <button
-              className={`lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${scrolled ? 'border-slate-300 bg-slate-100 text-slate-900 hover:bg-slate-200' : 'border-white/10 bg-white/10 text-white hover:bg-white/20'}`}
+              className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white hover:bg-white/20"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}

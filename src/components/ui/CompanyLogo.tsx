@@ -57,9 +57,11 @@ export default function CompanyLogo({ className = 'relative', size = 'md' }: Com
               style={{ width: dimensions.inner, height: dimensions.inner }}
             >
               <img
-                src="/companylogo-96.png"
+                src="/companylogo.webp"
                 alt="OrbitDevStudio"
                 className="object-contain"
+                width={dimensions.icon}
+                height={dimensions.icon}
                 style={{ width: dimensions.icon, height: dimensions.icon }}
               />
             </div>

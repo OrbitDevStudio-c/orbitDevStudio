@@ -33,10 +33,47 @@ export default function Services() {
       <Helmet>
         <title>Services | OrbitDevStudio</title>
         <meta name="description" content="End-to-End Digital Services Engineered for Growth" />
+        <link rel="canonical" href="https://orbitdevstudios.vercel.app/services" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://orbitdevstudios.vercel.app/services" />
+        <meta property="og:title" content="Services | OrbitDevStudio" />
+        <meta property="og:description" content="End-to-End Digital Services Engineered for Growth" />
+        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/services" />
+        <meta name="twitter:title" content="Services | OrbitDevStudio" />
+        <meta name="twitter:description" content="End-to-End Digital Services Engineered for Growth" />
+        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+
+        {/* JSON-LD Breadcrumbs */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://orbitdevstudios.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://orbitdevstudios.vercel.app/services"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       {/* Root container overrides dark theme */}
-      <div className="relative min-h-screen bg-white">
+      <div className="relative min-h-screen bg-navy">
         
         {/* Galaxy Blue Hero Section (Contains confined particles) */}
         <ServicesHero />

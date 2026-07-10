@@ -43,17 +43,17 @@
   }
 
   .section-white {
-    background-color: #f8fafc;
-    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    color: white;
     background-image: 
-      linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   .section-gray {
-    background-color: var(--color-gray-section);
-    color: var(--color-text-dark);
+    background-color: var(--color-surface);
+    color: white;
   }
 
   /* === Glass Panels (Dark Background) === */
@@ -64,18 +64,61 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
-  /* === White Theme Cards === */
-  .card-white {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  /* === Dark Theme Cards === */
+  .card-dark {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem;
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .card-white:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  .card-dark:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* === Typographic Scale === */
+  .text-display {
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .text-h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+  .text-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+  .text-h4 {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+  }
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0em;
+  }
+  .text-caption {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    letter-spacing: 0.005em;
   }
 
   /* === Buttons === */
@@ -191,4 +234,61 @@
 @keyframes orbit-reverse {
   from { transform: rotate(0deg); }
   to { transform: rotate(-360deg); }
+}
+
+@keyframes sun-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0px rgba(251,191,36,0.6),
+      0 0 30px 10px rgba(251,146,60,0.4),
+      0 0 60px 20px rgba(251,191,36,0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 12px rgba(251,191,36,0),
+      0 0 50px 20px rgba(251,146,60,0.55),
+      0 0 90px 40px rgba(251,191,36,0.2);
+  }
+}
+
+@keyframes sun-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ring-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes dot-glow {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes card-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes card-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes comet {
+  0% { opacity: 0; stroke-dashoffset: 1000; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; stroke-dashoffset: 0; }
+}
+
+@keyframes orbit-glow-ring {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.18; }
 }

@@ -68,7 +68,7 @@ export default function IndustriesHero() {
             {/* Center Core Node */}
             <div className="absolute z-10 w-24 h-24 rounded-full bg-white/10 border-2 border-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(46,91,229,0.5)]">
                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite] overflow-hidden">
-                 <img src="/companylogo-96.png" alt="Core" className="w-full h-full object-cover" />
+                 <img src="/companylogo.webp" alt="Core" width={64} height={64} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                </div>
             </div>
 

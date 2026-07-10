@@ -49,18 +49,18 @@ export default function IndustriesStory() {
   });
 
   return (
-    <section ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24 w-full bg-white text-slate-900 relative z-10 overflow-hidden border-t border-slate-100">
+    <section ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24 w-full bg-navy text-white relative z-10 overflow-hidden border-t border-white/10">
       
       {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-blue-500 rounded-[100%] blur-[120px] opacity-5 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-accent rounded-[100%] blur-[120px] opacity-[0.02] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         
         <div className="mb-24 md:w-1/2">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-slate-900">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
             Why We Understand Your Industry
           </h2>
-          <p className="text-slate-500 text-[16px] leading-relaxed">
+          <p className="text-slate-400 text-[16px] leading-relaxed">
             Our engineering methodology isn't generic. It's a highly refined, stage-by-stage process designed to eliminate risk and ensure your software meets the strict demands of your market.
           </p>
         </div>
@@ -69,11 +69,11 @@ export default function IndustriesStory() {
         <div className="hidden lg:block relative pt-12 pb-24">
           
           {/* Base Line */}
-          <div className="absolute top-[48px] left-0 right-0 h-px bg-slate-200" />
+          <div className="absolute top-[48px] left-0 right-0 h-px bg-white/10" />
           
           {/* Animated Progress Line */}
           <motion.div 
-            className="absolute top-[48px] left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 to-blue-400 origin-left shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+            className="absolute top-[48px] left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-blue-400 origin-left shadow-[0_0_15px_rgba(79,140,255,0.3)]"
             style={{ scaleX }}
           />
 
@@ -96,17 +96,17 @@ export default function IndustriesStory() {
                 <motion.div key={stage.id} style={{ opacity, y }} className="relative pt-12">
                   
                   {/* Node */}
-                  <div className="absolute top-[-54px] left-0 w-3 h-3 rounded-full bg-white border-2 border-blue-500 z-10" />
-                  <div className="absolute top-[-58px] left-[-4px] w-5 h-5 rounded-full bg-blue-400 blur-[8px] opacity-30" />
+                  <div className="absolute top-[-54px] left-0 w-3 h-3 rounded-full bg-slate-900 border-2 border-accent z-10" />
+                  <div className="absolute top-[-58px] left-[-4px] w-5 h-5 rounded-full bg-accent blur-[8px] opacity-30" />
                   
                   {/* Content */}
-                  <div className="text-[10px] font-bold tracking-widest text-blue-600 uppercase mb-3">
+                  <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-3">
                     0{stage.id}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
+                  <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
                     {stage.title}
                   </h3>
-                  <p className="text-[13px] text-slate-500 leading-relaxed pr-4">
+                  <p className="text-[13px] text-slate-400 leading-relaxed pr-4">
                     {stage.desc}
                   </p>
                   
@@ -119,11 +119,11 @@ export default function IndustriesStory() {
         {/* Mobile/Tablet Vertical Timeline */}
         <div className="lg:hidden relative pl-6">
           {/* Base Line */}
-          <div className="absolute top-0 bottom-0 left-[7px] w-px bg-slate-200" />
+          <div className="absolute top-0 bottom-0 left-[7px] w-px bg-white/10" />
           
           {/* Animated Progress Line */}
           <motion.div 
-            className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-gradient-to-b from-blue-600 to-blue-400 origin-top shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+            className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-gradient-to-b from-accent to-blue-400 origin-top shadow-[0_0_15px_rgba(79,140,255,0.3)]"
             style={{ scaleY: scaleX }}
           />
 
@@ -144,16 +144,16 @@ export default function IndustriesStory() {
               return (
                 <motion.div key={stage.id} style={{ opacity, x }} className="relative pl-8">
                   {/* Node */}
-                  <div className="absolute top-[6px] left-[-11px] w-3 h-3 rounded-full bg-white border-2 border-blue-500 z-10" />
+                  <div className="absolute top-[6px] left-[-11px] w-3 h-3 rounded-full bg-slate-900 border-2 border-accent z-10" />
                   
                   {/* Content */}
-                  <div className="text-[10px] font-bold tracking-widest text-blue-600 uppercase mb-2">
+                  <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-2">
                     0{stage.id}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                     {stage.title}
                   </h3>
-                  <p className="text-[14px] text-slate-500 leading-relaxed">
+                  <p className="text-[14px] text-slate-400 leading-relaxed">
                     {stage.desc}
                   </p>
                 </motion.div>

@@ -8,8 +8,14 @@ function DeferredFooter() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const id = window.setTimeout(() => setReady(true), 300);
-    return () => window.clearTimeout(id);
+    const win = window as any;
+    if ('requestIdleCallback' in win) {
+      const handle = win.requestIdleCallback(() => setReady(true), { timeout: 2000 });
+      return () => win.cancelIdleCallback(handle);
+    } else {
+      const id = setTimeout(() => setReady(true), 300);
+      return () => clearTimeout(id);
+    }
   }, []);
 
   if (!ready) return null;

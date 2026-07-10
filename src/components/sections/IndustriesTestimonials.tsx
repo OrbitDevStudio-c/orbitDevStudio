@@ -26,10 +26,10 @@ const testimonials = [
 
 export default function IndustriesTestimonials() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto w-full relative z-10">
+    <section className="py-32 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto w-full relative z-10 text-white">
       
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
           Don't just take our word for it.
         </h2>
       </div>
@@ -42,16 +42,20 @@ export default function IndustriesTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
-            className="group relative bg-white rounded-[32px] p-8 md:p-12 border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 flex flex-col md:flex-row gap-10 md:gap-16 items-center"
+            className="group relative card-dark rounded-[32px] p-8 md:p-12 transition-shadow duration-500 flex flex-col md:flex-row gap-10 md:gap-16 items-center"
           >
             
             {/* Left: Portrait */}
             <div className="relative shrink-0">
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500">
+              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-slate-900 shadow-xl relative z-10 group-hover:scale-105 transition-transform duration-500">
                 <img 
                   src={testi.image} 
                   alt={testi.name} 
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={192}
+                  height={192}
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#2E5BE5] rounded-full flex items-center justify-center text-white shadow-lg z-20 group-hover:scale-110 transition-transform duration-500 delay-100">
@@ -71,19 +75,19 @@ export default function IndustriesTestimonials() {
                 ))}
               </div>
 
-              <p className="text-xl md:text-2xl font-medium text-[#0f172a] leading-relaxed mb-8 tracking-tight">
+              <p className="text-xl md:text-2xl font-medium text-white leading-relaxed mb-8 tracking-tight">
                 "{testi.quote}"
               </p>
 
               <div className="mt-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h4 className="text-[17px] font-bold text-[#0f172a] tracking-tight">{testi.name}</h4>
-                  <p className="text-[14px] text-slate-500 font-medium">
-                    {testi.designation} at <span className="text-[#2E5BE5]">{testi.company}</span>
+                  <h4 className="text-[17px] font-bold text-white tracking-tight">{testi.name}</h4>
+                  <p className="text-[14px] text-slate-400 font-medium">
+                    {testi.designation} at <span className="text-accent">{testi.company}</span>
                   </p>
                 </div>
                 
-                <div className="inline-flex px-3 py-1 bg-slate-100 rounded-lg text-slate-500 text-[11px] font-bold tracking-wider uppercase border border-slate-200">
+                <div className="inline-flex px-3 py-1 bg-white/5 rounded-lg text-slate-300 text-[11px] font-bold tracking-wider uppercase border border-white/10">
                   {testi.industry}
                 </div>
               </div>

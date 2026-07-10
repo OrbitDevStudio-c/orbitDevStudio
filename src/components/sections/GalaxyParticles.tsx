@@ -4,6 +4,9 @@ export default function GalaxyParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -14,6 +17,7 @@ export default function GalaxyParticles() {
     let startTimeoutId = 0;
     let width = 0;
     let height = 0;
+    let isVisible = true;
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
     
     // Premium SaaS particle colors
@@ -50,6 +54,18 @@ export default function GalaxyParticles() {
     }
     const shootingStars: ShootingStar[] = [];
     let lastShootingStarTime = 0;
+
+    // IntersectionObserver to pause animation when off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) {
+          animationFrameId = requestAnimationFrame(draw);
+        }
+      },
+      { threshold: 0.01 }
+    );
+    observer.observe(canvas);
 
     const createGalaxyParticle = (i: number): Particle => {
       const branches = 4;
@@ -107,6 +123,11 @@ export default function GalaxyParticles() {
     };
 
     const draw = (time: number) => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
       
       // Bright Galaxy Core
@@ -233,6 +254,7 @@ export default function GalaxyParticles() {
       window.removeEventListener('resize', resize);
       window.clearTimeout(startTimeoutId);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, []);
 
