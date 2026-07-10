@@ -1,19 +1,74 @@
 import { HeartPulse, Palette, Building2, ShoppingCart, Plane, Coffee, Briefcase, ArrowRight } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { industries as bentoItems } from '../../data/industries';
 
-const iconMap: Record<string, LucideIcon> = {
-  HeartPulse,
-  Palette,
-  Building2,
-  ShoppingCart,
-  Plane,
-  Coffee,
-  Briefcase
-};
-
+const bentoItems = [
+  {
+    id: "healthcare",
+    icon: <HeartPulse size={28} className="text-white" />,
+    title: "Healthcare & Medical",
+    desc: "Secure, HIPAA-compliant patient portals, telemedicine platforms, and scalable clinical management systems engineered for uncompromising data integrity.",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
+    tech: ["React", "Node.js", "AWS", "PostgreSQL"],
+    stats: { label: "Uptime", value: "99.99%" },
+    isDark: true,
+    bgImage: "/healthcare.webp"
+  },
+  {
+    id: "ecommerce",
+    icon: <ShoppingCart size={24} className="text-[#4F8CFF]" />,
+    title: "E-Commerce",
+    desc: "High-converting, globally scalable storefronts featuring lightning-fast checkouts and headless architecture.",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
+    tech: ["Next.js", "Shopify Plus", "Stripe"],
+    isDark: true,
+  },
+  {
+    id: "architecture",
+    icon: <Building2 size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    title: "Architecture",
+    desc: "Robust firm websites showcasing high-res blueprints and project timelines.",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
+    tech: ["Three.js", "WebGL"],
+    isDark: true,
+  },
+  {
+    id: "interior",
+    icon: <Palette size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    title: "Interior Design",
+    desc: "Immersive 3D visualization galleries that close premium clients.",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
+    tech: ["React", "Framer"],
+    isDark: true,
+  },
+  {
+    id: "portfolio",
+    icon: <Briefcase size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    title: "Custom Portfolios",
+    desc: "Bespoke digital resumes, creative showcases, and interactive wedding portals that tell your unique story beautifully.",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
+    tech: ["Gatsby", "Tailwind"],
+    isDark: true,
+  },
+  {
+    id: "travel",
+    icon: <Plane size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    title: "Travel Agencies",
+    desc: "Dynamic booking engines and automated ticketing systems.",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
+    tech: ["GraphQL", "Redis"],
+    isDark: true,
+  },
+  {
+    id: "cafe",
+    icon: <Coffee size={24} className="text-slate-300 group-hover:text-accent transition-colors" />,
+    title: "Restaurant",
+    desc: "QR menu systems and real-time reservations.",
+    className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
+    tech: ["React Native"],
+    isDark: true,
+  }
+];
 
 export default function IndustriesGrid() {
   return (
@@ -65,10 +120,7 @@ export default function IndustriesGrid() {
               {/* Header: Icon & Title */}
               <div className="flex items-start justify-between mb-6 shrink-0">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 bg-white/5 border border-white/10">
-                  {(() => {
-                    const Icon = iconMap[item.iconName];
-                    return Icon ? <Icon size={item.id === "healthcare" ? 28 : 24} className={item.iconClassName || "text-slate-300 group-hover:text-accent transition-colors"} /> : null;
-                  })()}
+                  {item.icon}
                 </div>
                 {item.stats && (
                   <div className="text-right">

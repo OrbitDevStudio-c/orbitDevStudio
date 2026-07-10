@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-h1 text-white mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Why <span className="text-gradient">OrbitDevStudio</span>
           </motion.h2>
@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto font-normal"
+            className="text-gray-400 max-w-2xl mx-auto font-light"
           >
             We don't just write code; we engineer competitive advantages. Here's why industry leaders trust us with their most critical products.
           </motion.p>
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{reason.title}</h3>
-                  <p className="text-gray-400 font-normal leading-relaxed">{reason.description}</p>
+                  <p className="text-gray-400 font-light leading-relaxed">{reason.description}</p>
                 </div>
               </motion.div>
             )

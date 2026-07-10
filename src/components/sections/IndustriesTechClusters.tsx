@@ -60,13 +60,13 @@ export default function IndustriesTechClusters() {
   const activeCluster = techClusters.find(c => c.id === activeTab) || techClusters[0];
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10 bg-surface/50 rounded-3xl mb-32 border border-white/10">
+    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10 bg-slate-50/50 rounded-3xl mb-32 border border-slate-200/50">
       
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] mb-6 tracking-tight">
           Tech Stack by Industry
         </h2>
-        <p className="text-slate-400 text-[16px] leading-relaxed">
+        <p className="text-slate-500 text-[16px] leading-relaxed">
           We don't force a single technology on every problem. We assemble specialized, highly performant tech stacks based on the unique demands of your specific sector.
         </p>
       </div>
@@ -81,23 +81,23 @@ export default function IndustriesTechClusters() {
               <button
                 key={cluster.id}
                 onClick={() => setActiveTab(cluster.id)}
-                className={`text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between group cursor-pointer ${
+                className={`text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between group ${
                   isActive 
-                    ? 'bg-slate-900 shadow-[0_8px_30px_rgba(0,0,0,0.3)] border border-white/10' 
-                    : 'hover:bg-slate-900/40 border border-transparent'
+                    ? 'bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200' 
+                    : 'hover:bg-white/60 border border-transparent'
                 }`}
               >
                 <div>
-                  <h3 className={`text-xl font-bold mb-1 transition-colors ${isActive ? 'text-accent' : 'text-white group-hover:text-accent'}`}>
+                  <h3 className={`text-xl font-bold mb-1 transition-colors ${isActive ? 'text-[#2E5BE5]' : 'text-[#0f172a] group-hover:text-[#2E5BE5]'}`}>
                     {cluster.name}
                   </h3>
-                  <p className="text-[13px] text-slate-400">
+                  <p className="text-[13px] text-slate-500">
                     {cluster.desc}
                   </p>
                 </div>
                 <ChevronRight 
                   size={20} 
-                  className={`transition-all duration-300 ${isActive ? 'text-accent translate-x-1 opacity-100' : 'text-slate-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} 
+                  className={`transition-all duration-300 ${isActive ? 'text-[#2E5BE5] translate-x-1 opacity-100' : 'text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} 
                 />
               </button>
             )
@@ -105,10 +105,10 @@ export default function IndustriesTechClusters() {
         </div>
 
         {/* Right Side: Interactive Cluster Canvas */}
-        <div className="lg:col-span-7 relative h-[400px] bg-slate-950/40 rounded-3xl border border-white/10 shadow-sm overflow-hidden flex items-center justify-center">
+        <div className="lg:col-span-7 relative h-[400px] bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
           
           {/* Subtle Grid Background */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMjUpIi8+PC9zdmc+')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)] opacity-60" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)] opacity-60" />
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -120,7 +120,7 @@ export default function IndustriesTechClusters() {
               className="absolute inset-0 w-full h-full"
             >
               {/* Center Core */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-slate-900 border-2 border-white/10 shadow-xl flex items-center justify-center z-10">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#f8fafc] border-2 border-white shadow-xl flex items-center justify-center z-10">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#2E5BE5] to-[#4F8CFF] flex items-center justify-center text-white font-bold text-sm tracking-wide">
                   Core
                 </div>
@@ -138,7 +138,7 @@ export default function IndustriesTechClusters() {
                     y1="50%"
                     x2={`${chip.x}%`}
                     y2={`${chip.y}%`}
-                    stroke="#4F8CFF"
+                    stroke="#2E5BE5"
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
@@ -164,7 +164,7 @@ export default function IndustriesTechClusters() {
                     damping: 12,
                     delay: index * 0.1 
                   }}
-                  className="absolute z-20 px-4 py-2 bg-slate-900 border border-white/10 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] text-[13px] font-bold text-white whitespace-nowrap"
+                  className="absolute z-20 px-4 py-2 bg-white border border-slate-200 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] text-[13px] font-bold text-[#0f172a] whitespace-nowrap"
                 >
                   {chip.name}
                 </motion.div>

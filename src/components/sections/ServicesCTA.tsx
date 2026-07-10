@@ -16,29 +16,29 @@ export default function ServicesCTA() {
           className="flex flex-col items-center"
         >
           {/* Top Icon */}
-          <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 mb-8">
+          <div className="w-16 h-16 bg-[#1d4ed8] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 mb-8">
             <Rocket size={28} className="text-white" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] tracking-tight mb-6">
             Let's Build Something Exceptional Together
           </h2>
           
-          <p className="text-slate-400 text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-slate-500 text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mb-10">
             Whether you're launching your first product, scaling an existing platform, or modernizing a legacy system — we have the engineering depth and strategic clarity to make it happen, on time and on budget.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link 
               to="/contact"
-              className="px-8 py-3.5 bg-accent text-white font-bold text-[14px] rounded-xl hover:bg-blue-600 transition-colors shadow-md w-full sm:w-auto flex justify-center"
+              className="px-8 py-3.5 bg-[#1d4ed8] text-white font-bold text-[14px] rounded-xl hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto flex justify-center"
             >
               Book a Free Strategy Call
             </Link>
             
             <Link 
               to="/portfolio"
-              className="px-8 py-3.5 bg-white/5 text-white border border-white/10 font-bold text-[14px] rounded-xl hover:bg-white/10 hover:border-white/20 transition-all w-full sm:w-auto flex justify-center shadow-sm"
+              className="px-8 py-3.5 bg-white text-[#0f172a] border border-slate-200 font-bold text-[14px] rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all w-full sm:w-auto flex justify-center shadow-sm"
             >
               View Our Work
             </Link>

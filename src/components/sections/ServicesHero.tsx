@@ -26,11 +26,11 @@ export default function ServicesHero() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Services</span>
           </div>
 
-          <h1 className="text-display text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
             End-to-End Digital Services <br className="hidden sm:block" /> Engineered for Growth
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-normal mb-12 max-w-lg">
+          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-12 max-w-lg">
             From custom web and mobile applications to AI integration, cloud
             infrastructure, and performance marketing — OrbitDevStudio delivers full-lifecycle
             digital solutions built with senior engineering talent, rigorous quality standards,

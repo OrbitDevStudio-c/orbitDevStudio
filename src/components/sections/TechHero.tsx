@@ -28,11 +28,11 @@ export default function TechHero() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Technologies</span>
           </div>
 
-          <h1 className="text-display text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
             Practical tech stacks for <br className="hidden sm:block" /> serious digital products.
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-normal mb-10 max-w-lg">
+          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-10 max-w-lg">
             We choose the right languages, frameworks, databases, and cloud tools for each product instead of forcing every idea into one template. Built for speed, scale, and uncompromising security.
           </p>
 

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "node --experimental-strip-types scripts/generate-sitemap.ts && node --experimental-strip-types scripts/prerender.js",
+    "postbuild": "node scripts/prerender.js",
     "preview": "vite preview"
   },
   "devDependencies": {

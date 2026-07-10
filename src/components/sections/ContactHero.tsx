@@ -26,11 +26,11 @@ export default function ContactHero() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Contact Us</span>
           </div>
 
-          <h1 className="text-display text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.1] mb-6">
             Let's build something <br className="hidden sm:block" /> incredible together.
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-normal mb-12 max-w-xl mx-auto">
+          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-12 max-w-xl mx-auto">
             Whether you have a fully formed project or just an idea on a napkin, our team is ready to help you navigate the digital landscape. Reach out today.
           </p>
         </motion.div>

@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-display text-white mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white tracking-tight leading-[1.1] mb-6"
         >
           We build software{' '}
           <br className="hidden sm:block" />
@@ -42,7 +42,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-base md:text-lg text-gray-400 max-w-xl mx-auto mb-10 font-normal leading-relaxed"
+          className="text-base md:text-lg text-gray-400 max-w-xl mx-auto mb-10 font-light leading-relaxed"
         >
           From product strategy to production deployment — OrbitDevStudio engineers performant, scalable platforms for teams that move fast.
         </motion.p>
@@ -76,15 +76,10 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 border-t border-white/[0.06] w-full max-w-lg mx-auto"
         >
           <div className="flex -space-x-2.5">
-            {[
-              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=32&h=32',
-              'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=32&h=32',
-              'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=32&h=32',
-              'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=32&h=32'
-            ].map((url, i) => (
-              <div key={i} className="w-8 h-8 rounded-full border-2 border-navy overflow-hidden bg-surface">
+            {[44, 32, 68, 75].map((seed) => (
+              <div key={seed} className="w-8 h-8 rounded-full border-2 border-navy overflow-hidden bg-surface">
                 <img 
-                  src={url} 
+                  src={`https://randomuser.me/api/portraits/${seed % 2 === 0 ? 'women' : 'men'}/${seed}.jpg`} 
                   alt="Client" 
                   className="w-full h-full object-cover" 
                   loading="lazy"

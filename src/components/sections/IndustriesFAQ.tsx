@@ -34,36 +34,37 @@ const faqs = [
 export default function IndustriesFAQ() {
   const [openId, setOpenId] = useState<number | null>(1); // Open first by default
 
-  return (    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
+  return (
+    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
       
       {/* Optional faint grid background for FAQ area as seen in screenshot */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDE1KSIgc3Ryb2tlLXdpZHRoPSIxIj48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSI0MCIgeTI9IjAiLz48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5PSI0MCIvPjwvZz48L3N2Zz4=')] z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDAsMCwwLDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjQwIiB5Mj0iMCIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSI0MCIvPjwvZz48L3N2Zz4=')] z-0 pointer-events-none" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
         
         {/* Left Column */}
         <div className="lg:col-span-4 flex flex-col">
           
-          <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-accent/10 text-accent text-[11px] font-bold tracking-wider uppercase mb-8 border border-accent/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+          <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-[#2E5BE5]/5 text-[#2E5BE5] text-[11px] font-bold tracking-wider uppercase mb-8 border border-[#2E5BE5]/10">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2E5BE5]" />
             FAQ
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-12">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2b4b] tracking-tight mb-12">
             Frequently Asked Questions
           </h2>
 
-          <div className="card-dark p-8">
-            <div className="flex items-center gap-2 text-white font-bold text-[11px] tracking-wider uppercase mb-4">
-              <MessageSquare size={16} className="text-accent" />
+          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <div className="flex items-center gap-2 text-[#1a2b4b] font-bold text-[11px] tracking-wider uppercase mb-4">
+              <MessageSquare size={16} className="text-[#2E5BE5]" />
               Need a direct answer?
             </div>
-            <p className="text-slate-400 text-[14px] leading-relaxed mb-6">
+            <p className="text-slate-500 text-[14px] leading-relaxed mb-6">
               Need guidance? Our senior engineering experts are ready to guide you.
             </p>
             <Link 
               to="/contact" 
-              className="inline-flex items-center gap-2 text-white font-bold text-[14px] hover:text-accent transition-colors group"
+              className="inline-flex items-center gap-2 text-[#1a2b4b] font-bold text-[14px] hover:text-[#2E5BE5] transition-colors group"
             >
               Talk to our experts
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -80,13 +81,13 @@ export default function IndustriesFAQ() {
               <div 
                 key={faq.id}
                 onClick={() => setOpenId(isOpen ? null : faq.id)}
-                className="rounded-2xl border cursor-pointer overflow-hidden transition-all duration-300 bg-slate-900/40 border-white/5 hover:border-white/15 hover:bg-slate-900/60"
+                className="bg-white rounded-2xl border border-slate-100 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:border-slate-200"
               >
                 <div className="p-6 flex items-center justify-between gap-6">
-                  <h3 className={`text-[15px] font-bold transition-colors duration-300 ${isOpen ? 'text-accent' : 'text-white'}`}>
+                  <h3 className={`text-[15px] font-bold transition-colors duration-300 ${isOpen ? 'text-[#1a2b4b]' : 'text-slate-700'}`}>
                     {faq.question}
                   </h3>
-                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-accent text-slate-950' : 'bg-white/5 text-slate-400 border border-white/10'}`}>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-[#1a2b4b] text-white' : 'bg-slate-50 text-slate-400 border border-slate-200'}`}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </div>
                 </div>
@@ -99,7 +100,7 @@ export default function IndustriesFAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 pt-0 text-slate-400 text-[14px] leading-relaxed border-t border-white/10 mx-6 mt-2">
+                      <div className="px-6 pb-6 pt-0 text-slate-500 text-[14px] leading-relaxed border-t border-slate-50 mx-6 mt-2">
                         <div className="pt-4">
                           {faq.answer}
                         </div>

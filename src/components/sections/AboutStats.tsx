@@ -25,7 +25,7 @@ export default function AboutStats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center text-center"
             >
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-2 tracking-tight">
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">
                 {stat.value}
               </h3>
               <p className="text-xs md:text-sm font-bold tracking-widest text-blue-200 uppercase">

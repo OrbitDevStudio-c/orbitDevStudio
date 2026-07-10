@@ -30,7 +30,7 @@ const steps = [
 
 export default function HireProcess() {
   return (
-    <section className="py-24 md:py-32 bg-surface relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-slate-50 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header */}
@@ -38,11 +38,11 @@ export default function HireProcess() {
           <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
             SIMPLE PROCESS
           </span>
-          <h2 className="text-h1 text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#0B1736] mb-6">
             How We Work
           </h2>
-          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full" />
-          <p className="text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <div className="w-16 h-1.5 bg-[#1B3675] mx-auto mb-8 rounded-full" />
+          <p className="text-[15px] text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Our streamlined development workflow ensures transparency, efficiency, and faster project delivery. From understanding your requirements to launching your solution, our team follows a structured process designed to turn your ideas into high-quality digital products.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function HireProcess() {
         {/* Timeline */}
         <div className="relative">
           {/* Horizontal Line Background (Desktop) */}
-          <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-[2px] bg-white/10 z-0" />
+          <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-[2px] bg-blue-100 z-0" />
           
           {/* Horizontal Line Animated Fill (Desktop) */}
           <motion.div 
@@ -62,7 +62,7 @@ export default function HireProcess() {
           />
 
           {/* Vertical Line Background (Mobile) */}
-          <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-white/10 z-0" />
+          <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-blue-100 z-0" />
 
           {/* Vertical Line Animated Fill (Mobile) */}
           <motion.div 
@@ -86,22 +86,22 @@ export default function HireProcess() {
                 {/* Icon Circle */}
                 <div className="relative">
                   {/* Number Badge */}
-                  <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#4F8CFF] text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-slate-900 shadow-md">
+                  <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#4F8CFF] text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-white shadow-md">
                     {step.num}
                   </div>
                   
                   {/* Circle */}
-                  <div className="w-[100px] h-[100px] rounded-full bg-slate-900 border-2 border-[#4F8CFF] flex items-center justify-center shadow-[0_0_0_4px_#0F172A,0_0_0_8px_rgba(79,140,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_#0F172A,0_0_0_12px_rgba(79,140,255,0.2)] transition-all duration-500 relative z-10 shrink-0">
+                  <div className="w-[100px] h-[100px] rounded-full bg-white border-2 border-[#4F8CFF] flex items-center justify-center shadow-[0_0_0_4px_rgba(255,255,255,1),0_0_0_8px_rgba(79,140,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_rgba(255,255,255,1),0_0_0_12px_rgba(79,140,255,0.2)] transition-all duration-500 relative z-10 shrink-0">
                     <step.icon size={32} className="text-[#4F8CFF]" strokeWidth={1.5} />
                   </div>
                 </div>
 
                 {/* Text Content */}
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
+                  <h3 className="text-lg md:text-xl font-bold text-[#0B1736] mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-400 max-w-[280px] mx-auto">
+                  <p className="text-sm leading-relaxed text-slate-500 max-w-[280px] mx-auto">
                     {step.description}
                   </p>
                 </div>

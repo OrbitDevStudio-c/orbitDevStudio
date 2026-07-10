@@ -155,21 +155,21 @@ export default function TechDelivery() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 card-dark rounded-[2rem] p-8 md:p-12"
+            className="flex-1 bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-slate-100"
           >
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#2E5BE5] uppercase block mb-3">
               OUR DELIVERY APPROACH
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0f172a] mb-6">
               A proven operating model built for clarity and results
             </h2>
-            <p className="text-[15px] text-slate-400 leading-relaxed mb-10">
+            <p className="text-[15px] text-slate-600 leading-relaxed mb-10">
               Every engagement at OrbitDevStudio follows a disciplined four-pillar model — quality, transparency, adaptability, and value — so your product ships on schedule, on budget, and above expectations.
             </p>
 
             <div className="flex flex-col relative">
               {/* Connecting vertical line */}
-              <div className="absolute left-4 top-4 bottom-8 w-px bg-white/10 z-0" />
+              <div className="absolute left-4 top-4 bottom-8 w-px bg-slate-200 z-0" />
               
               {operatingModel.map((item, i) => (
                 <div 
@@ -177,11 +177,11 @@ export default function TechDelivery() {
                   className="flex gap-6 relative z-10 mb-6 last:mb-0 group cursor-pointer"
                   onClick={() => setActiveStep(i)}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-colors duration-300 ${activeStep === i ? 'bg-accent text-white' : 'bg-slate-900 border border-white/10 text-slate-400 group-hover:border-accent group-hover:text-accent'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-colors duration-300 ${activeStep === i ? 'bg-[#0B1736] text-white' : 'bg-white border border-slate-200 text-slate-500 group-hover:border-[#2E5BE5] group-hover:text-[#2E5BE5]'}`}>
                     {i + 1}
                   </div>
-                  <div className={`pt-1 transition-all duration-300 w-full ${activeStep === i ? 'bg-slate-900/50 p-5 rounded-2xl border border-white/5 -mt-4 shadow-sm' : ''}`}>
-                    <h3 className={`text-base font-bold mb-1 transition-colors ${activeStep === i ? 'text-white' : 'text-slate-400 group-hover:text-white'}`}>
+                  <div className={`pt-1 transition-all duration-300 w-full ${activeStep === i ? 'bg-slate-50 p-5 rounded-2xl border border-slate-100 -mt-4 shadow-sm' : ''}`}>
+                    <h3 className={`text-base font-bold mb-1 transition-colors ${activeStep === i ? 'text-[#0f172a]' : 'text-slate-600 group-hover:text-[#0f172a]'}`}>
                       {item.title}
                     </h3>
                     <motion.div
@@ -189,7 +189,7 @@ export default function TechDelivery() {
                       animate={{ height: activeStep === i ? 'auto' : 0, opacity: activeStep === i ? 1 : 0 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm text-slate-400 leading-relaxed mt-2 pb-1 pr-4">
+                      <p className="text-sm text-slate-500 leading-relaxed mt-2 pb-1 pr-4">
                         {item.description}
                       </p>
                     </motion.div>

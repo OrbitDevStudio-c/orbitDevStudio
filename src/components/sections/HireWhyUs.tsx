@@ -72,7 +72,7 @@ export default function HireWhyUs() {
               {/* Center Floating Badge */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 border border-white/15 p-5 rounded-2xl shadow-2xl z-30 flex items-center gap-4 animate-[bounce_4s_infinite]">
                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                    <span className="text-2xl font-extrabold text-white">10+</span>
+                    <span className="text-2xl font-black text-white">10+</span>
                  </div>
                  <div>
                     <p className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mb-1">Years Experience</p>

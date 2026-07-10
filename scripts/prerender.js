@@ -1,6 +1,73 @@
 import fs from 'fs';
 import path from 'path';
-import { routes } from '../src/config/routes.ts';
+
+const routes = [
+  {
+    path: 'about',
+    title: 'About Us | OrbitDevStudio',
+    description: 'Learn about OrbitDevStudio, our origin story, and the core values that drive our engineering excellence.',
+  },
+  {
+    path: 'services',
+    title: 'Services | OrbitDevStudio',
+    description: 'End-to-End Digital Services Engineered for Growth',
+  },
+  {
+    path: 'industries',
+    title: 'Industries | OrbitDevStudio',
+    description: 'Custom digital solutions tailored for various industries.',
+  },
+  {
+    path: 'portfolio',
+    title: 'Portfolio | OrbitDevStudio',
+    description: "OrbitDevStudio - Digital excellence in action. Explore our portfolio of premium web experiences.",
+  },
+  {
+    path: 'hire',
+    title: 'Hire Dedicated Talent | OrbitDevStudio',
+    description: 'Augment your team with elite engineering talent. Flexible hiring models tailored for your project.',
+  },
+  {
+    path: 'case-studies',
+    title: 'Case Studies | OrbitDevStudio',
+    description: 'Read our detailed case studies showcasing how OrbitDevStudio engineers high-impact software solutions.',
+  },
+  {
+    path: 'process',
+    title: 'Process & Engineering | OrbitDevStudio',
+    description: 'Discover our stage-by-stage engineering methodology designed to eliminate risk and deliver premium software systems.',
+  },
+  {
+    path: 'tech',
+    title: 'Technologies | OrbitDevStudio',
+    description: 'The cutting-edge engineering stack we use to build highly scalable digital products.',
+  },
+  {
+    path: 'careers',
+    title: 'Careers | OrbitDevStudio',
+    description: 'Join OrbitDevStudio and help us build the future of digital products. Explore our open roles and benefits.',
+  },
+  {
+    path: 'blog',
+    title: 'Blog | OrbitDevStudio',
+    description: 'Insights, engineering stories, and industry updates from the technical minds at OrbitDevStudio.',
+  },
+  {
+    path: 'contact',
+    title: 'Contact Us | OrbitDevStudio',
+    description: 'Get in touch with OrbitDevStudio to discuss your next big digital product.',
+  },
+  {
+    path: 'privacy-policy',
+    title: 'Privacy Policy | OrbitDevStudio',
+    description: 'Read our privacy policy to understand how we protect your personal and project data at OrbitDevStudio.',
+  },
+  {
+    path: 'terms',
+    title: 'Terms & Conditions | OrbitDevStudio',
+    description: 'Read the terms of service and agreement rules for partnering with OrbitDevStudio.',
+  }
+];
 
 function prerender() {
   const distDir = path.join(process.cwd(), 'dist');
@@ -13,35 +80,7 @@ function prerender() {
 
   const baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
-  // Build route list for prerendering (sub-routes only, including aliases)
-  const prerenderRoutes = [];
   routes.forEach((route) => {
-    if (route.path === '*' || route.path === '/') return;
-
-    const canonicalPath = route.path;
-
-    // Add canonical route
-    prerenderRoutes.push({
-      path: route.path.replace(/^\//, ''),
-      canonicalUrl: `https://orbitdevstudio.com${canonicalPath}`,
-      title: route.title,
-      description: route.description
-    });
-
-    // Add alias routes
-    if (route.aliases) {
-      route.aliases.forEach((alias) => {
-        prerenderRoutes.push({
-          path: alias.replace(/^\//, ''),
-          canonicalUrl: `https://orbitdevstudio.com${canonicalPath}`,
-          title: route.title,
-          description: route.description
-        });
-      });
-    }
-  });
-
-  prerenderRoutes.forEach((route) => {
     const routeDir = path.join(distDir, route.path);
     if (!fs.existsSync(routeDir)) {
       fs.mkdirSync(routeDir, { recursive: true });
@@ -57,22 +96,22 @@ function prerender() {
     const metaTags = `
     <title>${route.title}</title>
     <meta name="description" content="${route.description}" />
-    <link rel="canonical" href="${route.canonicalUrl}" />
+    <link rel="canonical" href="https://orbitdevstudios.vercel.app/${route.path}" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="${route.canonicalUrl}" />
+    <meta property="og:url" content="https://orbitdevstudios.vercel.app/${route.path}" />
     <meta property="og:title" content="${route.title}" />
     <meta property="og:description" content="${route.description}" />
-    <meta property="og:image" content="https://orbitdevstudio.com/companylogo-social.webp" />
+    <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
     <meta property="og:site_name" content="OrbitDevStudio" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="${route.canonicalUrl}" />
+    <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/${route.path}" />
     <meta name="twitter:title" content="${route.title}" />
     <meta name="twitter:description" content="${route.description}" />
-    <meta name="twitter:image" content="https://orbitdevstudio.com/companylogo-social.webp" />
+    <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
     `;
 
     // Inject meta tags before </head>
@@ -100,4 +139,3 @@ function prerender() {
 }
 
 prerender();
-
