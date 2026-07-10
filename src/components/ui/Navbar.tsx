@@ -13,10 +13,7 @@ const navItems = [
   { label: 'Hire Us', path: '/hire' },
 ];
 
-const mobileNavItems = [
-  { label: 'About Us', path: '/about' },
-  ...navItems,
-];
+const mobileNavItems = navItems;
 
 export default function Navbar() {
   const { scrollY } = useScroll();
