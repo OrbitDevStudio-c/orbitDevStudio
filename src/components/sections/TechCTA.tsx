@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function TechCTA() {
   return (
-    <section className="bg-[#07111f] px-6 py-24 text-white md:px-12 lg:px-24">
+    <section className="bg-navy-deep px-6 py-16 md:py-20 text-white md:px-12 lg:px-24">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 rounded-lg border border-white/10 bg-white/[0.04] p-8 md:p-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-slate-300">

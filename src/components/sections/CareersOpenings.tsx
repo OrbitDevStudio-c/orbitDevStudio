@@ -71,7 +71,7 @@ export default function CareersOpenings() {
   };
 
   return (
-    <section id="open-positions" className="py-24 md:py-32 bg-navy relative overflow-hidden">
+    <section id="open-positions" className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1000px] mx-auto px-6">
         
         <div className="text-center mb-16 md:mb-20">

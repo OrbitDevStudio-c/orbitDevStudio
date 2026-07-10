@@ -30,7 +30,7 @@ const steps = [
 
 export default function HireProcess() {
   return (
-<section className="py-24 md:py-32 bg-transparent relative overflow-hidden">
+<section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
   <div className="max-w-[1400px] mx-auto px-6">
 
     {/* Header */}

@@ -36,7 +36,7 @@ export default function IndustriesFAQ() {
 
   return (
  <section
-  className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-24"
+  className="bg-navy-soft relative overflow-hidden py-16 md:py-20 px-6 md:px-12 lg:px-24"
   style={{
     background:
       "radial-gradient(circle at 90% 90%, rgba(59,130,246,0.15) 0%, transparent 35%), linear-gradient(135deg,#16233B 0%,#101827 45%,#0A0A0C 100%)",

@@ -103,7 +103,7 @@ export default function IndustriesStory() {
   return (
     <section
       ref={containerRef}
-      className="py-32 px-6 md:px-12 lg:px-24 w-full bg-navy text-white relative z-10 overflow-hidden border-t border-white/10"
+      className="bg-navy-soft py-32 px-6 md:px-12 lg:px-24 w-full text-white relative z-10 overflow-hidden border-t border-white/10"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-accent rounded-[100%] blur-[120px] opacity-[0.012] pointer-events-none" />

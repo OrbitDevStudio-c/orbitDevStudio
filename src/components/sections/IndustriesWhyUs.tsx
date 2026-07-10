@@ -13,7 +13,7 @@ import {
 const whyUsItems = [
   {
     id: "experience",
-    icon: <CalendarClock size={20} className="text-[#1E2A4A]" />,
+    icon: <CalendarClock size={20} className="text-blue-400" />,
     title: "4+ Years Experience",
     desc: "Delivering high-end engineering solutions consistently.",
     className:
@@ -21,7 +21,7 @@ const whyUsItems = [
   },
   {
     id: "delivery",
-    icon: <Target size={20} className="text-[#52C854]" />,
+    icon: <Target size={20} className="text-emerald-400" />,
     title: "99.9%",
     subtitle: "Delivery Rate",
     desc: "On time and exactly to specification.",
@@ -31,7 +31,7 @@ const whyUsItems = [
   },
   {
     id: "projects",
-    icon: <Briefcase size={20} className="text-[#F6B73C]" />,
+    icon: <Briefcase size={20} className="text-amber-400" />,
     title: "50+",
     subtitle: "Projects Shipped",
     desc: "From startups to enterprise.",
@@ -40,7 +40,7 @@ const whyUsItems = [
   },
   {
     id: "architecture",
-    icon: <Cpu size={20} className="text-[#B08CFF]" />,
+    icon: <Cpu size={20} className="text-purple-400" />,
     title: "Modern Architecture",
     desc:
       "Headless, microservices, and serverless infrastructures built to scale infinitely.",
@@ -59,7 +59,7 @@ const whyUsItems = [
   },
   {
     id: "support",
-    icon: <Zap size={20} className="text-[#F36B6B]" />,
+    icon: <Zap size={20} className="text-rose-400" />,
     title: "Fast Support",
     desc: "24/7 dedicated engineering SLAs.",
     className:
@@ -67,7 +67,7 @@ const whyUsItems = [
   },
   {
     id: "ai",
-    icon: <Bot size={20} className="text-[#1E2A4A]" />,
+    icon: <Bot size={20} className="text-cyan-400" />,
     title: "AI Ready",
     desc:
       "Seamlessly integrate LLMs, computer vision, and predictive analytics into your core product.",
@@ -76,7 +76,7 @@ const whyUsItems = [
   },
   {
     id: "scale",
-    icon: <Layers size={20} className="text-[#0f172a]" />,
+    icon: <Layers size={20} className="text-indigo-400" />,
     title: "Scalable Systems",
     desc:
       "Architected to handle sudden viral traffic spikes effortlessly.",
@@ -87,7 +87,8 @@ const whyUsItems = [
 
 export default function IndustriesWhyUs() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
+    <section className="bg-navy-soft w-full relative z-10 overflow-hidden">
+      <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
           Why Clients Choose Us
@@ -118,7 +119,7 @@ export default function IndustriesWhyUs() {
             )}
 
             <div className="relative z-10">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-white/10 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-white/5 border border-white/10 group-hover:border-white/20 group-hover:bg-white/10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] relative z-10 [&>svg]:transition-colors [&>svg]:duration-300 group-hover:[&>svg]:brightness-125">
                 {item.icon}
               </div>
 
@@ -138,6 +139,7 @@ export default function IndustriesWhyUs() {
             </p>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 

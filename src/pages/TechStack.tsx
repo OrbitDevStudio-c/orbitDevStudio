@@ -13,11 +13,11 @@ function DeferredSections() {
   if (!show) return null;
   return (
     <Suspense fallback={null}>
-      <div className="section-white">
+      <>
         <TechLayers />
         <TechWhyUs />
         <TechDelivery />
-      </div>
+      </>
     </Suspense>
   );
 }

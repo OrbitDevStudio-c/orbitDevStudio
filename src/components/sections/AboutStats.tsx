@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: '150+', label: 'Digital Products Launched' },
-  { value: '50+', label: 'Senior Engineers & Experts' },
-  { value: '99%', label: 'Client Retention Rate' },
-  { value: '12+', label: 'Industries Transformed' }
+  { value: '100%', label: 'Commitment to Excellence' },
+  { value: '10+', label: 'Products Launched' },
+  { value: '24/7', label: 'Dedicated Support' },
+  { value: '15+', label: 'Core Technologies' }
 ];
 
 export default function AboutStats() {
   return (
-    <section className="py-20 bg-[#1E2A4A] relative overflow-hidden">
+    <section className="bg-navy-soft py-20 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-accent blur-[150px] opacity-20 pointer-events-none" />

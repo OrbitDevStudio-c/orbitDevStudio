@@ -4,7 +4,7 @@ import ServiceParticles from './ServiceParticles';
 
 export default function PortfolioHero() {
   return (
-    <section className="relative w-full min-h-[90vh] bg-background flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-navy-soft relative w-full min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       

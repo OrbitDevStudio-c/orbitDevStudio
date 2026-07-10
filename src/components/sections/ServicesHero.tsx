@@ -3,7 +3,7 @@ import ServiceParticles from './ServiceParticles';
 
 export default function ServicesHero() {
   return (
-    <section className="relative w-full min-h-screen bg-background flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
@@ -22,11 +22,11 @@ export default function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Services</span>
+          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-8">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-300 uppercase">Services</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white">
             End-to-End Digital Services <br className="hidden sm:block" /> Engineered for Growth
           </h1>
 
@@ -41,7 +41,7 @@ export default function ServicesHero() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-4">
             <div>
-              <h3 className="text-2xl font-bold mb-1">150+</h3>
+              <h3 className="text-2xl font-bold mb-1">10+</h3>
               <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Products Shipped</p>
             </div>
             <div>
@@ -49,7 +49,7 @@ export default function ServicesHero() {
               <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Uptime Guarantee</p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-1">60+</h3>
+              <h3 className="text-2xl font-bold mb-1">15+</h3>
               <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Technologies Mastered</p>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function ServicesHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1E2A4A] rounded-full blur-[80px] opacity-[0.18]" />
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent rounded-full blur-[120px] opacity-[0.06]" />
           
           <div className="relative w-full max-w-[500px] h-[320px]">
             {/* The Main Browser/Dashboard Window */}

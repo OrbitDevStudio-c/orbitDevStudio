@@ -26,7 +26,8 @@ const testimonials = [
 
 export default function IndustriesTestimonials() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto w-full relative z-10 text-white">
+    <section className="bg-navy-soft w-full relative z-10 text-white overflow-hidden">
+      <div className="py-32 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto w-full relative">
       
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
@@ -98,6 +99,7 @@ export default function IndustriesTestimonials() {
         ))}
       </div>
 
+      </div>
     </section>
   );
 }

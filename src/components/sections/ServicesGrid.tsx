@@ -27,10 +27,10 @@ const services = [
     microUI: (
       <div className="flex items-center gap-3 mt-6">
         <div className="flex -space-x-2">
-          <div className="w-8 h-8 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-500">iOS</div>
-          <div className="w-8 h-8 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-500">And</div>
+          <div className="w-8 h-8 rounded-full bg-navy-deep border-2 border-white/20 flex items-center justify-center text-[10px] font-bold text-white/70">iOS</div>
+          <div className="w-8 h-8 rounded-full bg-navy-deep border-2 border-white/20 flex items-center justify-center text-[10px] font-bold text-white/70">And</div>
         </div>
-        <span className="text-xs font-medium text-slate-400">Native & Hybrid</span>
+        <span className="text-xs font-medium text-white/60">Native & Hybrid</span>
       </div>
     )
   },
@@ -48,15 +48,15 @@ const services = [
     desc: "We develop bespoke software systems precisely aligned with your workflows — from automation engines to enterprise data pipelines. Built to scale, maintained to last.",
     className: "md:col-span-2", // Large
     microUI: (
-      <div className="flex gap-4 mt-6 border-t border-slate-100 pt-4">
+      <div className="flex gap-4 mt-6 border-t border-white/10 pt-4">
         <div>
-          <div className="text-xl font-bold text-[white]">150+</div>
-          <div className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Systems Shipped</div>
+          <div className="text-xl font-bold text-white">10+</div>
+          <div className="text-[11px] text-white/50 uppercase tracking-wider font-semibold">Systems Shipped</div>
         </div>
-        <div className="w-px h-8 bg-slate-100"></div>
+        <div className="w-px h-8 bg-white/10"></div>
         <div>
-          <div className="text-xl font-bold text-[white]">0</div>
-          <div className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tech Debt</div>
+          <div className="text-xl font-bold text-white">0</div>
+          <div className="text-[11px] text-white/50 uppercase tracking-wider font-semibold">Tech Debt</div>
         </div>
       </div>
     )
@@ -82,8 +82,8 @@ const services = [
     desc: "Rigorous automated and manual validation for flawless releases.",
     className: "md:col-span-1", // Small
     microUI: (
-      <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-lg text-emerald-600 text-xs font-bold border border-emerald-100">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 text-xs font-bold border border-emerald-500/20">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
         99.9% Reliability
       </div>
     )
@@ -92,13 +92,14 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full relative z-10">
+    <section className="bg-navy-deep w-full relative z-10 overflow-hidden">
+      <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full relative">
       
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-[white] mb-4 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
           Capabilities engineered for scale.
         </h2>
-        <p className="text-slate-500 text-[15px] max-w-xl mx-auto">
+        <p className="text-white/70 text-[15px] max-w-xl mx-auto">
           We combine deep technical expertise with world-class design to build products that dominate their markets.
         </p>
       </div>
@@ -112,11 +113,11 @@ export default function ServicesGrid() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className={`group bg-[#1A3675] rounded-[24px] p-8 border border-[#2A4B96] shadow-[0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 flex flex-col ${service.className}`}
+      className={`group bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] rounded-[24px] p-8 border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(79,140,255,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden ${service.className}`}
     >
       {/* Icon + Title */}
       <div className="flex items-center gap-4 mb-5">
-        <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 transition-all duration-300">
+        <div className="relative w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 text-accent group-hover:bg-accent group-hover:border-accent group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:shadow-[0_0_25px_rgba(79,140,255,0.3)]">
           {service.icon}
         </div>
 
@@ -126,7 +127,7 @@ export default function ServicesGrid() {
       </div>
 
       {/* Description */}
-      <p className="text-slate-300 text-[14px] leading-relaxed flex-grow">
+      <p className="text-white/70 text-[14px] leading-relaxed flex-grow">
         {service.desc}
       </p>
 
@@ -140,6 +141,7 @@ export default function ServicesGrid() {
   ))}
 </div>
       
+      </div>
     </section>
   );
 }

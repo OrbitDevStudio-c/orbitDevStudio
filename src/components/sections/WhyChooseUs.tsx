@@ -14,7 +14,7 @@ const borderMaskStyle: React.CSSProperties = { maskImage: 'linear-gradient(white
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 relative z-10">
+    <section className="bg-navy-deep py-16 md:py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 

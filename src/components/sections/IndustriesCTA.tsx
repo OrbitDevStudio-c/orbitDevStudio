@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function IndustriesCTA() {
   return (
-    <section className="relative w-full overflow-hidden py-32 z-10">
+    <section className="bg-navy-soft relative w-full overflow-hidden py-32 z-10">
       
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         

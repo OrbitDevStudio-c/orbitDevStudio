@@ -47,7 +47,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="bg-navy py-24 md:py-32 relative border-t border-white/10">
+    <section className="bg-navy-soft py-16 md:py-20 relative border-t border-white/[0.03]">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Header */}

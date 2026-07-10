@@ -37,7 +37,7 @@ const benefits = [
 
 export default function TechWhyUs() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         <div className="flex flex-col xl:flex-row gap-6 items-stretch">
@@ -48,7 +48,7 @@ export default function TechWhyUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full xl:w-[35%] bg-[#141416] rounded-3xl p-10 md:p-12 text-white shadow-2xl flex flex-col justify-center"
+            className="w-full xl:w-[35%] bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-3xl p-10 md:p-12 text-white flex flex-col justify-center"
           >
             <div>
               <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
@@ -65,7 +65,7 @@ export default function TechWhyUs() {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-[#0f172a] px-6 py-3.5 font-semibold transition-all hover:bg-slate-100 shadow-md hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white px-6 py-3.5 font-semibold transition-all hover:bg-blue-500 shadow-md hover:shadow-[0_0_20px_rgba(79,140,255,0.3)]"
               >
                 Start Your Project
                 <ArrowRight size={18} />
@@ -83,9 +83,9 @@ export default function TechWhyUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-[#141416] rounded-3xl p-6 border border-[#1E2A4A] shadow-[0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                  className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] rounded-3xl p-6 border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_rgba(79,140,255,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
                 >
-                  <div className="w-10 h-10 rounded-2xl bg-white/10 text-[#4F7BFF] flex items-center justify-center mb-5 shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 text-accent flex items-center justify-center mb-5 shrink-0 group-hover:bg-accent/10 group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(79,140,255,0.2)] transition-all duration-300 group-hover:scale-110">
                     <benefit.icon size={20} strokeWidth={1.5} />
                   </div>
 

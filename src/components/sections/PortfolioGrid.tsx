@@ -106,7 +106,7 @@ export default function PortfolioGrid() {
   );
 
   return (
-    <section id="portfolio-grid" className="py-24 md:py-32 relative overflow-hidden bg-navy border-t border-white/10">
+    <section id="portfolio-grid" className="bg-navy-soft py-16 md:py-20 relative overflow-hidden border-t border-white/[0.03]">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header & Filter */}
@@ -173,14 +173,12 @@ export default function PortfolioGrid() {
                   {/* Browser Body / Image instead of heavy iframe */}
                   <div className="flex-1 relative bg-slate-950 overflow-hidden rounded-b-2xl">
                     
-                    <img 
-                      src={project.screenshot} 
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500" 
+                    <iframe 
+                      src={project.liveUrl} 
+                      title={project.title}
+                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500 border-none" 
                       loading={index < 2 ? "eager" : "lazy"}
-                      decoding="async"
-                      width={640}
-                      height={400}
+                      style={{ pointerEvents: 'none' }}
                     />
 
                     {/* Content Overlay */}

@@ -44,7 +44,7 @@ export default function TechDelivery() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-12 lg:gap-20">
 
         {/* Top Section: Who We Build For */}
@@ -53,7 +53,7 @@ export default function TechDelivery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-[#141416] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white shadow-xl"
+          className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white"
         >
           <div className="mb-10">
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-3">
@@ -66,7 +66,7 @@ export default function TechDelivery() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {scaleCards.map((card, index) => (
-              <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 transition-colors">
+              <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(79,140,255,0.1)] hover:border-white/20 transition-all duration-300">
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-6">
                   <card.icon size={20} className="text-blue-300" />
                 </div>
@@ -115,7 +115,7 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1 w-full"
           >
-            <div className="bg-[#141416] rounded-[2rem] p-8 lg:p-10 shadow-2xl border border-white/5">
+            <div className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_12px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 lg:p-10">
               <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-8">
                 TECHNOLOGIES
               </span>
@@ -155,7 +155,7 @@ export default function TechDelivery() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-[#141416] rounded-[2rem] p-8 md:p-12 shadow-xl border border-[#1E2A4A]"
+            className="flex-1 bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12"
           >
             <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
               OUR DELIVERY APPROACH
@@ -183,8 +183,8 @@ export default function TechDelivery() {
                 >
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${activeStep === i
-                      ? "bg-[#1E2A4A] text-white"
-                      : "bg-[#1C1C1F] border border-[#141416] text-slate-300 group-hover:border-white/30 group-hover:text-white"
+                      ? "bg-accent text-white shadow-[0_0_15px_rgba(79,140,255,0.4)]"
+                      : "bg-white/5 border border-white/10 text-slate-300 group-hover:border-white/30 group-hover:text-white"
                       }`}
                   >
                     {i + 1}
@@ -192,7 +192,7 @@ export default function TechDelivery() {
 
                   <div
                     className={`pt-1 transition-all duration-300 w-full ${activeStep === i
-                      ? "bg-[#1C1C1F] p-5 rounded-2xl border border-[#141416] -mt-4 shadow-lg"
+                      ? "bg-white/5 p-5 rounded-2xl border border-white/10 -mt-4 shadow-lg"
                       : ""
                       }`}
                   >

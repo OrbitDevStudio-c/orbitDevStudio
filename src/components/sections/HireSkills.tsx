@@ -10,7 +10,7 @@ const skillsRow2 = [
 
 export default function HireSkills() {
   return (
-    <section className="py-20 relative bg-[#0A0A0C] border-t border-b border-slate-800 overflow-hidden">
+    <section className="bg-navy-soft py-20 relative border-t border-b border-slate-800 overflow-hidden">
   {/* Background Glow */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-blue-500/[0.06] blur-3xl" />

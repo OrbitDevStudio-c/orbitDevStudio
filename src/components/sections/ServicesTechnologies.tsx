@@ -26,7 +26,7 @@ export default function ServicesTechnologies() {
   const [activeTab, setActiveTab] = useState<TabType>("Frameworks");
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 w-full bg-navy relative z-10">
+    <section className="bg-navy-deep py-16 md:py-20 px-6 md:px-12 lg:px-24 w-full relative z-10">
       
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
         

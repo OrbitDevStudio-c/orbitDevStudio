@@ -21,7 +21,7 @@ const categories: TechItem[] = [
 
 export default function TechCategories() {
   return (
-    <section className="bg-navy px-6 py-24 text-white md:px-12 lg:px-24">
+    <section className="bg-navy-deep px-6 py-16 md:py-20 text-white md:px-12 lg:px-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-12 max-w-3xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">Stack Coverage</p>

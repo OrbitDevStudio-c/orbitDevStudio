@@ -59,7 +59,7 @@ const socialIconMap = {
 
 export default function Footer() {
   return (
-    <footer className="section-dark relative mt-0 border-t border-white/10 overflow-hidden">
+    <footer className="section-dark bg-navy-dark relative mt-0 border-t border-white/[0.05] overflow-hidden">
       {/* Glow Accent Line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" />
 
@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-16 md:pb-12">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-12 lg:gap-8">
 
           {/* Logo */}

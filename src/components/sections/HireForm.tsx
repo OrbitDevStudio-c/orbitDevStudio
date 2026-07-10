@@ -92,7 +92,7 @@ export default function HireForm() {
   };
 
   return (
-    <section id="hire-form" className="py-24 md:py-32 bg-navy relative overflow-hidden">
+    <section id="hire-form" className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         
         <div className="bg-slate-900 rounded-[2rem] border border-white/10 flex flex-col lg:flex-row overflow-hidden relative shadow-[0_10px_40px_rgba(0,0,0,0.3)]">

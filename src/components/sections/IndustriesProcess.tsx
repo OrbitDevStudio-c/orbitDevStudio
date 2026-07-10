@@ -56,7 +56,7 @@ export default function IndustriesProcess() {
   });
 
   return (
-    <section ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden bg-slate-50/50">
+    <section ref={containerRef} className="bg-navy-soft py-32 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
       
       <div className="text-center max-w-3xl mx-auto mb-32">
         <h2 className="text-3xl md:text-5xl font-bold text-[#1a2b4b] tracking-tight mb-6">

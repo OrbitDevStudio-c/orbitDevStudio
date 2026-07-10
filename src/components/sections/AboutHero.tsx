@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full min-h-[85vh] bg-background flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-navy-soft relative w-full min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       

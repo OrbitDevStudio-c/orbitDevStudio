@@ -9,7 +9,7 @@ const principles = [
 
 export default function TechPhilosophy() {
   return (
-    <section className="bg-navy px-6 py-24 text-white md:px-12 lg:px-24">
+    <section className="bg-navy-deep px-6 py-16 md:py-20 text-white md:px-12 lg:px-24">
       <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">Engineering Standard</p>

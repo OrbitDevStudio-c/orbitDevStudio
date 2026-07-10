@@ -29,7 +29,7 @@ export default function HireFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 bg-slate-50 relative overflow-hidden">
+    <section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         
         <div className="text-center mb-16">

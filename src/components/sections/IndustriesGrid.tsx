@@ -72,8 +72,8 @@ const bentoItems = [
 
 export default function IndustriesGrid() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative z-10">
-      
+    <section className="bg-navy-soft w-full relative z-10 overflow-hidden">
+      <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-400/10 rounded-full blur-[100px] -z-10" />
       
@@ -168,7 +168,7 @@ export default function IndustriesGrid() {
           </motion.div>
         ))}
       </div>
-      
+      </div>
     </section>
   );
 }

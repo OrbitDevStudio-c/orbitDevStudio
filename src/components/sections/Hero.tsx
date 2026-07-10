@@ -5,7 +5,7 @@ import GalaxyParticles from './GalaxyParticles';
 
 export default function Hero() {
   return (
-    <section className="section-dark relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#0a0f1c]">
+    <section className="section-dark bg-navy-deep relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* 2D Milky Way Galaxy Animation */}
       <GalaxyParticles />
 

@@ -26,7 +26,7 @@ const values = [
 
 export default function AboutValues() {
   return (
-    <section className="py-24 md:py-32 bg-navy relative overflow-hidden">
+    <section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
