@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 group/link w-fit">
                 <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><LinkedinIcon /></span>
-                <a href="https://linkedin.com/company/orbitdevstudio-c" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio-c</a>
+                <a href="https://www.linkedin.com/company/orbitdevstudio-tech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio-c</a>
               </li>
             </ul>
           </div>
