@@ -46,9 +46,9 @@ export default function TechDelivery() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-12 lg:gap-20">
-        
+
         {/* Top Section: Who We Build For */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -85,16 +85,16 @@ export default function TechDelivery() {
 
         {/* Middle Section: Full-Stack Delivery */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="flex-1"
           >
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#1E2A4A] uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-600 uppercase block mb-3">
               FULL-STACK DELIVERY
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0f172a] mb-6 max-w-lg">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[white] mb-6 max-w-lg">
               End-to-end execution across every discipline.
             </h2>
             <p className="text-[15px] text-slate-600 leading-relaxed mb-8 max-w-lg">
@@ -109,7 +109,7 @@ export default function TechDelivery() {
             </Link>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -151,140 +151,137 @@ export default function TechDelivery() {
 
         {/* Bottom Section: Operating Model */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch mt-12 pb-16">
-        <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="flex-1 bg-[#141416] rounded-[2rem] p-8 md:p-12 shadow-xl border border-[#1E2A4A]"
->
-  <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
-    OUR DELIVERY APPROACH
-  </span>
-
-  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
-    A proven operating model built for clarity and results
-  </h2>
-
-  <p className="text-[15px] text-slate-300 leading-relaxed mb-10">
-    Every engagement at OrbitDevStudio follows a disciplined four-pillar model
-    — quality, transparency, adaptability, and value — so your product ships
-    on schedule, on budget, and above expectations.
-  </p>
-
-  <div className="flex flex-col relative">
-    {/* Connecting vertical line */}
-    <div className="absolute left-4 top-4 bottom-8 w-px bg-[#141416] z-0" />
-
-    {operatingModel.map((item, i) => (
-      <div
-        key={i}
-        className="flex gap-6 relative z-10 mb-6 last:mb-0 group cursor-pointer"
-        onClick={() => setActiveStep(i)}
-      >
-        <div
-          className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${
-            activeStep === i
-              ? "bg-[#1E2A4A] text-white"
-              : "bg-[#1C1C1F] border border-[#141416] text-slate-300 group-hover:border-white/30 group-hover:text-white"
-          }`}
-        >
-          {i + 1}
-        </div>
-
-        <div
-          className={`pt-1 transition-all duration-300 w-full ${
-            activeStep === i
-              ? "bg-[#1C1C1F] p-5 rounded-2xl border border-[#141416] -mt-4 shadow-lg"
-              : ""
-          }`}
-        >
-          <h3
-            className={`text-base font-bold mb-1 transition-colors ${
-              activeStep === i
-                ? "text-white"
-                : "text-slate-300 group-hover:text-white"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex-1 bg-[#141416] rounded-[2rem] p-8 md:p-12 shadow-xl border border-[#1E2A4A]"
           >
-            {item.title}
-          </h3>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
+              OUR DELIVERY APPROACH
+            </span>
+
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              A proven operating model built for clarity and results
+            </h2>
+
+            <p className="text-[15px] text-slate-300 leading-relaxed mb-10">
+              Every engagement at OrbitDevStudio follows a disciplined four-pillar model
+              — quality, transparency, adaptability, and value — so your product ships
+              on schedule, on budget, and above expectations.
+            </p>
+
+            <div className="flex flex-col relative">
+              {/* Connecting vertical line */}
+              <div className="absolute left-4 top-4 bottom-8 w-px bg-[#141416] z-0" />
+
+              {operatingModel.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex gap-6 relative z-10 mb-6 last:mb-0 group cursor-pointer"
+                  onClick={() => setActiveStep(i)}
+                >
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${activeStep === i
+                      ? "bg-[#1E2A4A] text-white"
+                      : "bg-[#1C1C1F] border border-[#141416] text-slate-300 group-hover:border-white/30 group-hover:text-white"
+                      }`}
+                  >
+                    {i + 1}
+                  </div>
+
+                  <div
+                    className={`pt-1 transition-all duration-300 w-full ${activeStep === i
+                      ? "bg-[#1C1C1F] p-5 rounded-2xl border border-[#141416] -mt-4 shadow-lg"
+                      : ""
+                      }`}
+                  >
+                    <h3
+                      className={`text-base font-bold mb-1 transition-colors ${activeStep === i
+                        ? "text-white"
+                        : "text-slate-300 group-hover:text-white"
+                        }`}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: activeStep === i ? "auto" : 0,
+                        opacity: activeStep === i ? 1 : 0,
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-sm text-slate-400 leading-relaxed mt-2 pb-1 pr-4">
+                        {item.description}
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.div
-            initial={false}
-            animate={{
-              height: activeStep === i ? "auto" : 0,
-              opacity: activeStep === i ? 1 : 0,
-            }}
-            className="overflow-hidden"
-          >
-            <p className="text-sm text-slate-400 leading-relaxed mt-2 pb-1 pr-4">
-              {item.description}
-            </p>
-          </motion.div>
-        </div>
-      </div>
-    ))}
-  </div>
-</motion.div>
-
-          <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex-1 flex flex-col justify-end lg:mb-12" 
+            className="flex-1 flex flex-col justify-end lg:mb-12"
           >
             <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-primary to-accent rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
-               {/* Abstract background */}
-               <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700" />
-               
-               <AnimatePresence mode="wait">
-                 <motion.div 
-                   key={activeStep}
-                   initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                   animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -10, 0] }}
-                   exit={{ opacity: 0, scale: 0.8, rotate: 10 }}
-                   transition={{ duration: 0.4, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
-                   className="relative z-10 w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
-                 >
-                   {activeStep === 0 && (
-                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
-                        <path d="M50 5 L90 20 L90 50 C90 75 50 95 50 95 C50 95 10 75 10 50 L10 20 L50 5 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
-                        <path d="M50 12 L82 24 L82 48 C82 68 50 85 50 85 C50 85 18 68 18 48 L18 24 L50 12 Z" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                        <path d="M35 45 L45 55 L65 35" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                   )}
-                   
-                   {activeStep === 1 && (
-                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
-                        <path d="M10 50 C30 20 70 20 90 50 C70 80 30 80 10 50 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
-                        <circle cx="50" cy="50" r="18" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="3" />
-                        <circle cx="50" cy="50" r="8" fill="white" />
-                        <path d="M50 15 L50 35 M50 65 L50 85 M15 50 L35 50 M65 50 L85 50" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" />
-                     </svg>
-                   )}
+              {/* Abstract background */}
+              <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700" />
 
-                   {activeStep === 2 && (
-                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
-                        <path d="M25 50 C25 35 45 35 50 50 C55 65 75 65 75 50 C75 35 55 35 50 50 C45 65 25 65 25 50 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="3" />
-                        <circle cx="25" cy="50" r="12" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" />
-                        <circle cx="75" cy="50" r="12" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" />
-                        <circle cx="50" cy="50" r="8" fill="white" />
-                     </svg>
-                   )}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStep}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -10, 0] }}
+                  exit={{ opacity: 0, scale: 0.8, rotate: 10 }}
+                  transition={{ duration: 0.4, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+                  className="relative z-10 w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
+                >
+                  {activeStep === 0 && (
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
+                      <path d="M50 5 L90 20 L90 50 C90 75 50 95 50 95 C50 95 10 75 10 50 L10 20 L50 5 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+                      <path d="M50 12 L82 24 L82 48 C82 68 50 85 50 85 C50 85 18 68 18 48 L18 24 L50 12 Z" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                      <path d="M35 45 L45 55 L65 35" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
 
-                   {activeStep === 3 && (
-                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
-                        <rect x="20" y="55" width="16" height="30" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
-                        <rect x="42" y="40" width="16" height="45" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" strokeWidth="2" />
-                        <rect x="64" y="20" width="16" height="65" rx="4" fill="white" stroke="white" strokeWidth="2" />
-                        <path d="M15 65 L45 35 L55 45 L85 15" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M70 15 L85 15 L85 30" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                   )}
-                 </motion.div>
-               </AnimatePresence>
+                  {activeStep === 1 && (
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
+                      <path d="M10 50 C30 20 70 20 90 50 C70 80 30 80 10 50 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
+                      <circle cx="50" cy="50" r="18" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="3" />
+                      <circle cx="50" cy="50" r="8" fill="white" />
+                      <path d="M50 15 L50 35 M50 65 L50 85 M15 50 L35 50 M65 50 L85 50" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  )}
+
+                  {activeStep === 2 && (
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
+                      <path d="M25 50 C25 35 45 35 50 50 C55 65 75 65 75 50 C75 35 55 35 50 50 C45 65 25 65 25 50 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="3" />
+                      <circle cx="25" cy="50" r="12" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" />
+                      <circle cx="75" cy="50" r="12" fill="rgba(255,255,255,0.2)" stroke="white" strokeWidth="2" />
+                      <circle cx="50" cy="50" r="8" fill="white" />
+                    </svg>
+                  )}
+
+                  {activeStep === 3 && (
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
+                      <rect x="20" y="55" width="16" height="30" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
+                      <rect x="42" y="40" width="16" height="45" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" strokeWidth="2" />
+                      <rect x="64" y="20" width="16" height="65" rx="4" fill="white" stroke="white" strokeWidth="2" />
+                      <path d="M15 65 L45 35 L55 45 L85 15" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M70 15 L85 15 L85 30" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </motion.div>
+              </AnimatePresence>
             </div>
-            
+
             {/* PER USER REQUEST: Whitespace preserved here */}
           </motion.div>
         </div>

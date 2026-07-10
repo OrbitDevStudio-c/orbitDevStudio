@@ -5,11 +5,17 @@ import { Menu, X } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
 
 const navItems = [
+  { label: 'About Us', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Industries', path: '/industries' },
   { label: 'Technologies', path: '/tech' },
   { label: 'Portfolio', path: '/portfolio' },
   { label: 'Hire Us', path: '/hire' },
+];
+
+const mobileNavItems = [
+  { label: 'About Us', path: '/about' },
+  ...navItems,
 ];
 
 export default function Navbar() {
@@ -127,14 +133,14 @@ export default function Navbar() {
               <CompanyLogo size="xs" className="hidden lg:block" />
               <div className="flex flex-col leading-tight">
                 <span className={`text-sm font-semibold tracking-tight ${logoText}`}>Orbit</span>
-                <span className={`text-[10px] font-bold uppercase tracking-[0.22em] ${logoSubText}`}>DevStudio</span>
+                <span className={`text-[10px] font-bold uppercase tracking-[0.22em] ${logoSubText}`}>DevStudios</span>
               </div>
             </Link>
- 
+
             <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
-                const baseText = 'text-white/80 hover:text-white';
+                const baseText = 'text-white/80 hover:text-white hover:bg-white/5';
                 const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]' : baseText;
  
                 return (
@@ -144,21 +150,11 @@ export default function Navbar() {
                     className={`group relative rounded-full px-3 py-1.5 text-[13px] font-medium tracking-[0.01em] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${baseBg}`}
                   >
                     {item.label}
-                    <span
-                      className={`absolute left-1/2 bottom-2 block h-px w-0 -translate-x-1/2 bg-accent transition-all duration-200 ${isActive ? 'w-6' : 'group-hover:w-6'}`}
-                    />
                   </Link>
                 );
               })}
- 
-              <Link
-                to="/about"
-                className="ml-2 rounded-full bg-accent px-4 py-1.5 text-[13px] font-semibold text-slate-950 shadow-lg shadow-accent/20 transition duration-200 hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-              >
-                About Us
-              </Link>
             </div>
- 
+
             <button
               ref={toggleButtonRef}
               className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white hover:bg-white/20"
@@ -201,7 +197,7 @@ export default function Navbar() {
                   <CompanyLogo size="xs" />
                   <div className="flex flex-col leading-tight">
                     <span className="text-sm font-semibold tracking-tight text-white">Orbit</span>
-                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">DevStudio</span>
+                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">DevStudios</span>
                   </div>
                 </div>
                 <button
@@ -215,7 +211,7 @@ export default function Navbar() {
 
               {/* Navigation Links */}
               <nav className="flex-1 py-8 flex flex-col gap-2.5 overflow-y-auto">
-                {navItems.map((item, index) => {
+                {mobileNavItems.map((item, index) => {
                   const isActive = location.pathname === item.path;
                   return (
                     <motion.div
@@ -228,11 +224,10 @@ export default function Navbar() {
                         to={item.path}
                         ref={index === 0 ? firstLinkRef : undefined}
                         onClick={() => setMobileOpen(false)}
-                        className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-[14px] font-semibold transition-all duration-200 ${
-                          isActive 
-                            ? 'bg-accent/10 border-accent/25 text-accent' 
-                            : 'bg-white/[0.02] border-white/5 text-white/90 hover:border-white/10 hover:bg-white/[0.04] hover:text-white'
-                        }`}
+                        className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-[14px] font-semibold transition-all duration-200 ${isActive
+                          ? 'bg-accent/10 border-accent/25 text-accent'
+                          : 'bg-white/[0.02] border-white/5 text-white/90 hover:border-white/10 hover:bg-white/[0.04] hover:text-white'
+                          }`}
                       >
                         <span>{item.label}</span>
                         <span className={`text-[9px] font-mono tracking-wider ${isActive ? 'text-accent' : 'text-slate-500'}`}>0{index + 1}</span>
@@ -245,11 +240,11 @@ export default function Navbar() {
               {/* Footer */}
               <div className="pt-6 border-t border-white/5 space-y-4">
                 <Link
-                  to="/about"
+                  to="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-accent/10 hover:bg-accent/90 transition-all duration-200"
                 >
-                  About Us
+                  Contact Us
                 </Link>
                 <div className="text-center">
                   <p className="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Orbit DevStudio</p>

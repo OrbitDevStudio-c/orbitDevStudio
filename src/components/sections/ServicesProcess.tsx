@@ -74,7 +74,7 @@ export default function ServicesProcess() {
             <path 
               d="M -100,150 C 60,150 160,80 240,80 S 360,220 480,220 S 600,80 720,80 S 840,220 960,220 S 1080,150 1300,150" 
               fill="none" 
-              stroke="#1E2A4A" 
+              stroke="#3B6FE0" 
               strokeWidth="4"
               strokeOpacity="0.1"
               strokeLinecap="round"
@@ -84,7 +84,7 @@ export default function ServicesProcess() {
               style={{ pathLength }}
               d="M -100,150 C 60,150 160,80 240,80 S 360,220 480,220 S 600,80 720,80 S 840,220 960,220 S 1080,150 1300,150" 
               fill="none" 
-              stroke="#1E2A4A" 
+              stroke="#3B6FE0" 
               strokeWidth="4"
               strokeLinecap="round"
             />
@@ -97,7 +97,7 @@ export default function ServicesProcess() {
             
             {/* Dotted connecting line */}
             <div 
-              className="absolute left-1/2 -translate-x-1/2 border-l-2 border-dashed border-[#2A4B96] -z-10 transition-colors duration-300 group-hover:border-[#1E2A4A]/30"
+              className="absolute left-1/2 -translate-x-1/2 border-l-2 border-dashed border-accent/20 -z-10 transition-colors duration-300 group-hover:border-accent/40"
               style={{ 
                 height: '40px', 
                 top: step.textTop ? `${step.y - 40}px` : `${step.y}px` 
@@ -116,19 +116,19 @@ export default function ServicesProcess() {
                 bottom: step.textTop ? `${300 - step.y + 55}px` : 'auto'
               }}
             >
-              <div className="text-3xl font-black text-[#1E2A4A]/20 mb-1 tracking-tighter">0{step.id}</div>
-              <h3 className="text-[18px] font-bold text-[#1a2b4b] mb-2">{step.title}</h3>
-              <p className="text-[13px] text-slate-500 leading-relaxed px-2">{step.desc}</p>
+              <div className="text-3xl font-black text-white/10 mb-1 tracking-tighter">0{step.id}</div>
+              <h3 className="text-[18px] font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-[13px] text-slate-400 leading-relaxed px-2">{step.desc}</p>
             </motion.div>
 
             {/* The Circle Node with floating animation */}
             <motion.div 
               animate={{ y: [-4, 4, -4] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: index * 0.5 }}
-              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-[#1C1C1F] border-4 border-accent group-hover:border-[#6EA8FF] group-hover:shadow-[0_0_30px_rgba(79,140,255,0.35)] transition-all duration-300 flex items-center justify-center"
+              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-[#1C1C1F] border-4 border-accent group-hover:border-accent/80 group-hover:shadow-[0_0_30px_rgba(59,111,224,0.35)] transition-all duration-300 flex items-center justify-center"
               style={{ top: `${step.y}px` }}
             >
-              <div className="w-14 h-14 rounded-full bg-[#1E2A4A]/5 group-hover:bg-[#1E2A4A]/10 flex items-center justify-center transition-colors duration-300">
+              <div className="w-14 h-14 rounded-full bg-white/5 group-hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
                 {step.icon}
               </div>
             </motion.div>

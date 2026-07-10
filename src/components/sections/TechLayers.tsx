@@ -36,20 +36,20 @@ export default function TechLayers() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0f172a] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[white] mb-6"
           >
             We build every <br />
-            <span className="text-[#1E2A4A]">layer of your product.</span>
+            <span className="text-[white]">layer of your product.</span>
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -91,7 +91,7 @@ export default function TechLayers() {
                     </h3>
                   </div>
                 </div>
-                
+
                 <p className="text-[15px] leading-relaxed text-blue-100/70 font-light max-w-lg">
                   {layer.description}
                 </p>
@@ -101,7 +101,7 @@ export default function TechLayers() {
               <div className="w-full lg:w-auto relative z-10">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 lg:min-w-[450px]">
                   {layer.technologies.map((tech) => (
-                    <div 
+                    <div
                       key={tech}
                       className="px-4 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm flex items-center justify-center text-center hover:bg-white/10 hover:border-white/30 transition-all cursor-default"
                     >

@@ -15,7 +15,7 @@ const projects = [
     technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
     services: ['Frontend Development', 'UI/UX Design', 'Performance Optimization'],
     liveUrl: 'https://auradesignstudio.netlify.app/',
-    screenshot: '/projects/aura.webp',
+    screenshot: '/projects/designerss.png',
     gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     services: ['Frontend Development', 'Responsive Design'],
     liveUrl: 'https://designerss.netlify.app/',
-    screenshot: '/projects/designerss.webp',
+    screenshot: '/projects/designerss.png',
     gridSpan: 'md:col-span-1 lg:col-span-5', 
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     technologies: ['React', 'Node.js', 'Tailwind CSS'],
     services: ['Full-stack Development', 'Data Visualization'],
     liveUrl: 'https://pharmaceutical-demo.vercel.app/',
-    screenshot: '/projects/pharmacare.webp',
+    screenshot: '/projects/pharmacare.png',
     gridSpan: 'md:col-span-1 lg:col-span-5', 
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     technologies: ['React', 'Framer Motion', 'Tailwind CSS'],
     services: ['UI/UX Design', 'Frontend Development'],
     liveUrl: 'https://wedding-portfolio-lilac.vercel.app/',
-    screenshot: '/projects/wedding.webp',
+    screenshot: '/projects/wedding.png',
     gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
@@ -67,7 +67,7 @@ const projects = [
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
     services: ['Frontend Development', 'SEO Optimization'],
     liveUrl: 'https://navnidhitrading.netlify.app/',
-    screenshot: '/projects/navnidhi.webp',
+    screenshot: '/projects/navnidhi.png',
     gridSpan: 'md:col-span-1 lg:col-span-7', 
   },
   {
@@ -93,7 +93,7 @@ const projects = [
     technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
     services: ['Backend Development', 'API Integration'],
     liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
-    screenshot: '/projects/bookverse.webp',
+    screenshot: '/projects/navnidhi.png',
     gridSpan: 'md:col-span-2 lg:col-span-12', 
   }
 ];

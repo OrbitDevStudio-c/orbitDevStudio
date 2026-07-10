@@ -69,7 +69,7 @@ export default function IndustriesShowcase() {
                 {/* Image Preview instead of heavy iframe */}
                 <div className="relative h-[350px] md:h-[450px] w-full bg-slate-950 overflow-hidden">
                   <img 
-                    src={project.id === 1 ? "/projects/pharmacare.webp" : "/projects/aura.webp"}
+                    src={project.id === 1 ? "/projects/pharmacare.png" : "/projects/designerss.png"}
                     alt={project.title}
                     className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"
                     loading="lazy"
