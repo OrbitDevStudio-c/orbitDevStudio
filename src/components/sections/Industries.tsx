@@ -29,7 +29,7 @@ export default function Industries() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto font-light"
+            className="text-gray-400 max-w-2xl mx-auto font-normal"
           >
             We deliver domain-specific digital transformation that solves complex challenges and drives growth across global sectors.
           </motion.p>

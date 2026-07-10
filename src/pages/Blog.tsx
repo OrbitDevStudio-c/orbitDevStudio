@@ -1,50 +1,13 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/ui/SEO';
+import { getRouteMeta } from '../config/routes';
 import { motion } from 'framer-motion';
+
+const meta = getRouteMeta('/blog')!;
 
 export default function Blog() {
   return (
     <>
-      <Helmet>
-        <title>Blog | OrbitDevStudio</title>
-        <meta name="description" content="Insights, engineering stories, and industry updates from the technical minds at OrbitDevStudio." />
-        <link rel="canonical" href="https://orbitdevstudios.vercel.app/blog" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://orbitdevstudios.vercel.app/blog" />
-        <meta property="og:title" content="Blog | OrbitDevStudio" />
-        <meta property="og:description" content="Insights, engineering stories, and industry updates from the technical minds at OrbitDevStudio." />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/blog" />
-        <meta name="twitter:title" content="Blog | OrbitDevStudio" />
-        <meta name="twitter:description" content="Insights, engineering stories, and industry updates from the technical minds at OrbitDevStudio." />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
-
-        {/* JSON-LD Breadcrumbs */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://orbitdevstudios.vercel.app/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://orbitdevstudios.vercel.app/blog"
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+      <SEO {...meta} />
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

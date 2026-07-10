@@ -33,11 +33,11 @@ export default function CareersHero() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Join Our Orbit</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.1] mb-8">
+          <h1 className="text-display text-white mb-8">
             Build the future <br className="hidden sm:block" /> with us.
           </h1>
 
-          <p className="text-base sm:text-[17px] text-white/70 leading-relaxed font-light mb-12 max-w-xl mx-auto">
+          <p className="text-base sm:text-[17px] text-white/70 leading-relaxed font-normal mb-12 max-w-xl mx-auto">
             We are always on the lookout for passionate engineers, creative designers, and visionary thinkers who want to push the boundaries of digital product development.
           </p>
 

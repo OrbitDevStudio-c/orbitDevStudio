@@ -6,23 +6,26 @@ import { AnimatePresence } from 'framer-motion';
 import LenisProvider from './components/providers/LenisProvider';
 import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './layouts/MainLayout';
+import { routes } from './config/routes';
 
 // Lazy loaded pages for performance
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const Services = lazy(() => import('./pages/Services'));
-const Industries = lazy(() => import('./pages/Industries'));
-const Portfolio = lazy(() => import('./pages/Portfolio'));
-const CaseStudies = lazy(() => import('./pages/CaseStudies'));
-const Process = lazy(() => import('./pages/Process'));
-const TechStack = lazy(() => import('./pages/TechStack'));
-const Careers = lazy(() => import('./pages/Careers'));
-const Blog = lazy(() => import('./pages/Blog'));
-const Contact = lazy(() => import('./pages/Contact'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const Terms = lazy(() => import('./pages/Terms'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-const HireUs = lazy(() => import('./pages/HireUs'));
+const pageModules: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
+  Home: lazy(() => import('./pages/Home')),
+  About: lazy(() => import('./pages/About')),
+  Services: lazy(() => import('./pages/Services')),
+  Industries: lazy(() => import('./pages/Industries')),
+  Portfolio: lazy(() => import('./pages/Portfolio')),
+  CaseStudies: lazy(() => import('./pages/CaseStudies')),
+  Process: lazy(() => import('./pages/Process')),
+  TechStack: lazy(() => import('./pages/TechStack')),
+  Careers: lazy(() => import('./pages/Careers')),
+  Blog: lazy(() => import('./pages/Blog')),
+  Contact: lazy(() => import('./pages/Contact')),
+  PrivacyPolicy: lazy(() => import('./pages/PrivacyPolicy')),
+  Terms: lazy(() => import('./pages/Terms')),
+  NotFound: lazy(() => import('./pages/NotFound')),
+  HireUs: lazy(() => import('./pages/HireUs')),
+};
 
 function App() {
   return (
@@ -34,24 +37,17 @@ function App() {
             <Suspense fallback={<div className="flex h-screen items-center justify-center text-white"><div className="w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin"></div></div>}>
               <AnimatePresence mode="wait">
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/industries" element={<Industries />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/hire" element={<HireUs />} />
-                  <Route path="/hire-us" element={<HireUs />} />
-                  <Route path="/case-studies" element={<CaseStudies />} />
-                  <Route path="/process" element={<Process />} />
-                  <Route path="/tech" element={<TechStack />} />
-                  <Route path="/tec" element={<TechStack />} />
-                  <Route path="/technologies" element={<TechStack />} />
-                  <Route path="/careers" element={<Careers />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="*" element={<NotFound />} />
+                  {routes.flatMap((route) => {
+                    const Component = pageModules[route.component];
+                    if (!Component) return [];
+                    
+                    const mainRoute = <Route key={route.path} path={route.path} element={<Component />} />;
+                    const aliasRoutes = route.aliases?.map((alias) => (
+                      <Route key={alias} path={alias} element={<Component />} />
+                    )) || [];
+                    
+                    return [mainRoute, ...aliasRoutes];
+                  })}
                 </Routes>
               </AnimatePresence>
             </Suspense>
@@ -63,3 +59,4 @@ function App() {
 }
 
 export default App;
+

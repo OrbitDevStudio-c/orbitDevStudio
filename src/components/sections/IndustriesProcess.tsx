@@ -56,13 +56,13 @@ export default function IndustriesProcess() {
   });
 
   return (
-    <section ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden bg-slate-50/50">
+    <section ref={containerRef} className="py-32 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden bg-surface/50">
       
       <div className="text-center max-w-3xl mx-auto mb-32">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#1a2b4b] tracking-tight mb-6">
+        <h2 className="text-h1 text-white mb-6">
           An Adaptable Engineering Process
         </h2>
-        <p className="text-slate-500 text-[16px] leading-relaxed max-w-2xl mx-auto">
+        <p className="text-slate-400 text-[16px] leading-relaxed max-w-2xl mx-auto">
           We don't believe in one-size-fits-all. Our four-phase delivery model is completely customized to meet the strict demands of your sector.
         </p>
       </div>
@@ -98,7 +98,7 @@ export default function IndustriesProcess() {
             
             {/* Dotted connecting line */}
             <div 
-              className="absolute left-1/2 -translate-x-1/2 border-l-2 border-dashed border-slate-300/50 -z-10 transition-colors duration-300 group-hover:border-[#2E5BE5]/30"
+              className="absolute left-1/2 -translate-x-1/2 border-l-2 border-dashed border-white/10 -z-10 transition-colors duration-300 group-hover:border-[#2E5BE5]/30"
               style={{ 
                 height: '40px', 
                 top: step.textTop ? `${step.y - 40}px` : `${step.y}px` 
@@ -117,19 +117,19 @@ export default function IndustriesProcess() {
                 bottom: step.textTop ? `${300 - step.y + 55}px` : 'auto'
               }}
             >
-              <div className="text-3xl font-black text-[#2E5BE5]/20 mb-1 tracking-tighter">0{step.id}</div>
-              <h3 className="text-[18px] font-bold text-[#1a2b4b] mb-2">{step.title}</h3>
-              <p className="text-[13px] text-slate-500 leading-relaxed px-2">{step.desc}</p>
+              <div className="text-3xl font-extrabold text-[#2E5BE5]/20 mb-1 tracking-tighter">0{step.id}</div>
+              <h3 className="text-[18px] font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-[13px] text-slate-400 leading-relaxed px-2">{step.desc}</p>
             </motion.div>
 
             {/* The Circle Node with floating animation */}
             <motion.div 
               animate={{ y: [-4, 4, -4] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: index * 0.5 }}
-              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-white border-4 border-slate-100 group-hover:border-[#2E5BE5] group-hover:shadow-[0_0_30px_rgba(46,91,229,0.25)] transition-all duration-300 flex items-center justify-center bg-clip-padding cursor-default"
+              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-slate-900 border-4 border-white/5 group-hover:border-[#2E5BE5] group-hover:shadow-[0_0_30px_rgba(46,91,229,0.25)] transition-all duration-300 flex items-center justify-center bg-clip-padding cursor-default"
               style={{ top: `${step.y}px` }}
             >
-              <div className="w-14 h-14 rounded-full bg-[#2E5BE5]/5 group-hover:bg-[#2E5BE5]/10 flex items-center justify-center transition-colors duration-300">
+              <div className="w-14 h-14 rounded-full bg-white/5 group-hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
                 {step.icon}
               </div>
             </motion.div>
@@ -147,13 +147,13 @@ export default function IndustriesProcess() {
         
         {steps.map((step) => (
           <div key={step.id} className="flex gap-6 relative z-10 group">
-            <div className="w-20 h-20 shrink-0 rounded-full bg-white border-4 border-slate-100 group-hover:border-[#2E5BE5] shadow-sm flex items-center justify-center transition-colors duration-300">
-              <div className="text-xl font-black text-[#2E5BE5]/20 absolute -top-2 -left-2">0{step.id}</div>
+            <div className="w-20 h-20 shrink-0 rounded-full bg-slate-900 border-4 border-white/5 group-hover:border-[#2E5BE5] shadow-sm flex items-center justify-center transition-colors duration-300">
+              <div className="text-xl font-extrabold text-[#2E5BE5]/20 absolute -top-2 -left-2">0{step.id}</div>
               {step.icon}
             </div>
             <div className="pt-2">
-              <h3 className="text-[18px] font-bold text-[#1a2b4b] mb-2">{step.title}</h3>
-              <p className="text-[14px] text-slate-500 leading-relaxed">{step.desc}</p>
+              <h3 className="text-[18px] font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-[14px] text-slate-400 leading-relaxed">{step.desc}</p>
             </div>
           </div>
         ))}

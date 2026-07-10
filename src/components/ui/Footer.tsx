@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import { quickLinks, serviceLinks, socialLinks } from '../../data/navigation';
 
 const LinkedinIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -12,6 +12,12 @@ const InstagramIcon = () => (
 const MailIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 );
+
+const socialIconMap: Record<string, () => JSX.Element> = {
+  email: MailIcon,
+  instagram: InstagramIcon,
+  linkedin: LinkedinIcon
+};
 
 export default function Footer() {
   return (
@@ -33,7 +39,7 @@ export default function Footer() {
                 <img src="/companylogo.webp" alt="OrbitDevStudio Logo" width={40} height={40} className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
               <span className="text-2xl font-semibold text-white tracking-tight">
-                Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudios</span>
+                Orbit<span className="font-normal text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudios</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -45,9 +51,14 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-4 lg:col-span-2">
             <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Quick Links</h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
-              <li><Link to="/about" className="hover:text-white transition-colors relative group inline-block">About Us<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
-              <li><Link to="/portfolio" className="hover:text-white transition-colors relative group inline-block">Our Work<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
-              <li><Link to="/careers" className="hover:text-white transition-colors relative group inline-block">Careers<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link to={link.path} className="hover:text-white transition-colors relative group inline-block">
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
@@ -55,10 +66,14 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-4 lg:col-span-3">
             <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Services</h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
-              <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">Web Development<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">Mobile Apps<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">AI Solutions<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors relative group inline-block">Cloud Architecture<span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span></Link></li>
+              {serviceLinks.map((link, idx) => (
+                <li key={idx}>
+                  <Link to={link.path} className="hover:text-white transition-colors relative group inline-block">
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
@@ -66,18 +81,24 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-1 md:col-span-4 lg:col-span-3">
             <h4 className="text-white font-semibold mb-6 tracking-wider text-xs uppercase text-slate-200">Connect</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex items-center gap-3 group/link w-fit">
-                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><MailIcon /></span>
-                <a href="mailto:orbitdevstudios@gmail.com" className="hover:text-white transition-colors leading-relaxed">orbitdevstudios@gmail.com</a>
-              </li>
-              <li className="flex items-center gap-3 group/link w-fit">
-                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><InstagramIcon /></span>
-                <a href="https://instagram.com/orbitdevstudio" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">@orbitdevstudio</a>
-              </li>
-              <li className="flex items-center gap-3 group/link w-fit">
-                <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white"><LinkedinIcon /></span>
-                <a href="https://www.linkedin.com/company/orbitdevstudio-tech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors leading-relaxed">orbitdevstudio-c</a>
-              </li>
+              {socialLinks.map((link) => {
+                const Icon = socialIconMap[link.platform];
+                return (
+                  <li key={link.platform} className="flex items-center gap-3 group/link w-fit">
+                    <span className="text-accent mt-0.5 transition-transform duration-300 group-hover/link:scale-110 group-hover/link:text-white">
+                      {Icon && <Icon />}
+                    </span>
+                    <a
+                      href={link.url}
+                      target={link.platform !== 'email' ? "_blank" : undefined}
+                      rel={link.platform !== 'email' ? "noopener noreferrer" : undefined}
+                      className="hover:text-white transition-colors leading-relaxed"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

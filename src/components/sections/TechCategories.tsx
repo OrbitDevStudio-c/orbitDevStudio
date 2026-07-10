@@ -1,23 +1,6 @@
 import { motion } from 'framer-motion';
-import { Brain, Cloud, Code2, Database, GitBranch, LayoutTemplate, ShieldCheck, Smartphone } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { techCategories as categories } from '../../data/techStack';
 
-type TechItem = {
-  name: string;
-  detail: string;
-  Icon: LucideIcon;
-};
-
-const categories: TechItem[] = [
-  { name: 'React & Next.js', detail: 'Modern interfaces, dashboards, portals, and storefronts.', Icon: LayoutTemplate },
-  { name: 'Node.js & APIs', detail: 'Fast, maintainable services for product workflows.', Icon: Code2 },
-  { name: 'Python & Django', detail: 'Reliable backend systems, automation, and data-heavy apps.', Icon: Brain },
-  { name: 'Databases', detail: 'PostgreSQL, MongoDB, Redis, and well-modeled data layers.', Icon: Database },
-  { name: 'Cloud & DevOps', detail: 'AWS, Docker, deployment pipelines, and observability.', Icon: Cloud },
-  { name: 'Mobile Ready', detail: 'Responsive web builds and React Native product paths.', Icon: Smartphone },
-  { name: 'Version Control', detail: 'Git-based collaboration, reviews, and release discipline.', Icon: GitBranch },
-  { name: 'Security Basics', detail: 'Auth, permissions, validation, and production hardening.', Icon: ShieldCheck },
-];
 
 export default function TechCategories() {
   return (

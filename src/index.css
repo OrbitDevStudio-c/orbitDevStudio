@@ -5,8 +5,6 @@
   --color-surface: #0F172A;
   --color-primary: #1F3A93;
   --color-accent: #4F8CFF;
-  --color-white-section: #ffffff;
-  --color-gray-section: #f7f8fa;
   --color-navy: #060B1A;
   --color-text-dark: #0f172a;
   --color-text-muted: #64748b;
@@ -42,7 +40,7 @@
     color: white;
   }
 
-  .section-white {
+  .section-grid {
     background-color: var(--color-background);
     color: white;
     background-image: 
@@ -51,7 +49,7 @@
     background-size: 32px 32px;
   }
 
-  .section-gray {
+  .section-surface {
     background-color: var(--color-surface);
     color: white;
   }

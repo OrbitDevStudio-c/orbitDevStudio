@@ -1,50 +1,13 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/ui/SEO';
+import { getRouteMeta } from '../config/routes';
 import { motion } from 'framer-motion';
+
+const meta = getRouteMeta('/terms')!;
 
 export default function Terms() {
   return (
     <>
-      <Helmet>
-        <title>Terms & Conditions | OrbitDevStudio</title>
-        <meta name="description" content="Read the terms of service and agreement rules for partnering with OrbitDevStudio." />
-        <link rel="canonical" href="https://orbitdevstudios.vercel.app/terms" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://orbitdevstudios.vercel.app/terms" />
-        <meta property="og:title" content="Terms & Conditions | OrbitDevStudio" />
-        <meta property="og:description" content="Read the terms of service and agreement rules for partnering with OrbitDevStudio." />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/terms" />
-        <meta name="twitter:title" content="Terms & Conditions | OrbitDevStudio" />
-        <meta name="twitter:description" content="Read the terms of service and agreement rules for partnering with OrbitDevStudio." />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
-
-        {/* JSON-LD Breadcrumbs */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://orbitdevstudios.vercel.app/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Terms & Conditions",
-                "item": "https://orbitdevstudios.vercel.app/terms"
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+      <SEO {...meta} />
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

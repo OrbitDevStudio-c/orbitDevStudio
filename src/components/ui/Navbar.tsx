@@ -3,14 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useMemo, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
+import { navItems } from '../../data/navigation';
 
-const navItems = [
-  { label: 'Services', path: '/services' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Technologies', path: '/tech' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Hire Us', path: '/hire' },
-];
 
 export default function Navbar() {
   const { scrollY } = useScroll();

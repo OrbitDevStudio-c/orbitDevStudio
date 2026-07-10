@@ -92,7 +92,7 @@ export default function TechLayers() {
                   </div>
                 </div>
                 
-                <p className="text-[15px] leading-relaxed text-blue-100/70 font-light max-w-lg">
+                <p className="text-[15px] leading-relaxed text-blue-100/70 font-normal max-w-lg">
                   {layer.description}
                 </p>
               </div>
