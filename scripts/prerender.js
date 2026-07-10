@@ -140,7 +140,7 @@ function prerender() {
     `;
     
     // Inject inside <div id="root">...</div>
-    html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${staticBody}</div>`);
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>(\s*<\/body>)/, `<div id="root">${staticBody}</div>$1`);
 
     const routeHtmlPath = path.join(routeDir, 'index.html');
     fs.writeFileSync(routeHtmlPath, html, 'utf8');
