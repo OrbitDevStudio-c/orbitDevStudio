@@ -33,7 +33,7 @@ export default function Footer() {
                 <img src="/companylogo-96.png" alt="OrbitDevStudio Logo" className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
               <span className="text-2xl font-semibold text-white tracking-tight">
-                Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudio</span>
+                Orbit<span className="font-light text-gray-400 transition-colors duration-300 group-hover:text-accent">DevStudios</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
