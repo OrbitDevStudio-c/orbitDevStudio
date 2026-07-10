@@ -222,12 +222,19 @@ export default function Navbar() {
                         ref={index === 0 ? firstLinkRef : undefined}
                         onClick={() => setMobileOpen(false)}
                         className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-[14px] font-semibold transition-all duration-200 ${isActive
-                          ? 'bg-accent/10 border-accent/25 text-accent'
+                          ? item.path === '/about'
+                            ? 'bg-purple-500/10 border-purple-500/25 text-purple-400 hover:bg-purple-500/20'
+                            : 'bg-accent/10 border-accent/25 text-accent hover:bg-accent/20'
                           : 'bg-white/[0.02] border-white/5 text-white/90 hover:border-white/10 hover:bg-white/[0.04] hover:text-white'
                           }`}
                       >
                         <span>{item.label}</span>
-                        <span className={`text-[9px] font-mono tracking-wider ${isActive ? 'text-accent' : 'text-slate-500'}`}>0{index + 1}</span>
+                        <span className={`text-[9px] font-mono tracking-wider ${isActive
+                          ? item.path === '/about'
+                            ? 'text-purple-400'
+                            : 'text-accent'
+                          : 'text-slate-500'
+                          }`}>0{index + 1}</span>
                       </Link>
                     </motion.div>
                   );

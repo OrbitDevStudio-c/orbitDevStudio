@@ -182,7 +182,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500">
           <p>
-            © {new Date().getFullYear()} OrbitDevStudio. All rights reserved.
+            © {new Date().getFullYear()} OrbitDevStudios. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
