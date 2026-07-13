@@ -8,19 +8,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#070B14',
-        surface: '#101827',
-        surfaceHighlight: '#121B2D',
-        primary: '#0C1220',
-        accent: '#3B6FE0',
+        background: '#0B1220',
+        surface: '#111827',
+        surfaceHighlight: 'rgba(18,26,44,0.82)',
+        primary: '#111827',
+        accent: '#4F8CFF',
+        secondaryAccent: '#7C5CFF',
+        success: '#3DD598',
+        warning: '#F5B942',
+        navy: {
+          deep: '#0B1220',
+          soft: '#0F172A',
+          dark: '#080C16',
+        },
         gray: {
-          300: '#F3F6FF',
-          400: '#A9B5CF',
-          500: '#8F9CB5',
+          300: '#C6D0E3',
+          400: '#94A3B8',
+          500: '#7F8EA3',
         },
         slate: {
-          400: '#7F8CA8',
-          500: '#67738D',
+          400: '#94A3B8',
+          500: '#64748B',
+          900: '#111827',
+          950: '#0B1220',
         }
       },
       animation: {

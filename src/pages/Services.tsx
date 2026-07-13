@@ -6,6 +6,8 @@ import ServicesHero from '../components/sections/ServicesHero';
 const ServicesGrid = lazy(() => import('../components/sections/ServicesGrid'));
 const ServicesDomains = lazy(() => import('../components/sections/ServicesDomains'));
 const ServicesProcess = lazy(() => import('../components/sections/ServicesProcess'));
+const ServicesBenefits = lazy(() => import('../components/sections/ServicesBenefits'));
+const ServicesMetrics = lazy(() => import('../components/sections/ServicesMetrics'));
 const ServicesTechnologies = lazy(() => import('../components/sections/ServicesTechnologies'));
 const ServicesCTA = lazy(() => import('../components/sections/ServicesCTA'));
 
@@ -20,6 +22,8 @@ function DeferredSections() {
         <ServicesGrid />
         <ServicesDomains />
         <ServicesProcess />
+        <ServicesBenefits />
+        <ServicesMetrics />
         <ServicesTechnologies />
         <ServicesCTA />
       </div>

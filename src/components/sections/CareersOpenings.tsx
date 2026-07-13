@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 import { ArrowRight, MapPin, Clock, X, CheckCircle2, Briefcase } from 'lucide-react';
 
 const positions = [
@@ -44,18 +45,29 @@ const positions = [
 export default function CareersOpenings() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const lenis = useLenis();
 
-  // Lock body scroll when modal is open
+  // Keep the careers page fixed while the application form scrolls independently.
   useEffect(() => {
-    if (selectedJob) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    if (!selectedJob) return;
+
+    const { body, documentElement } = document;
+    const previousBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow = documentElement.style.overflow;
+    const previousGutter = documentElement.style.scrollbarGutter;
+
+    lenis?.stop();
+    body.style.overflow = 'hidden';
+    documentElement.style.overflow = 'hidden';
+    documentElement.style.scrollbarGutter = 'stable';
+
     return () => {
-      document.body.style.overflow = 'unset';
+      body.style.overflow = previousBodyOverflow;
+      documentElement.style.overflow = previousHtmlOverflow;
+      documentElement.style.scrollbarGutter = previousGutter;
+      lenis?.start();
     };
-  }, [selectedJob]);
+  }, [selectedJob, lenis]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,7 +83,7 @@ export default function CareersOpenings() {
   };
 
   return (
-    <section id="open-positions" className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
+    <section id="open-positions" className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1000px] mx-auto px-6">
         
         <div className="text-center mb-16 md:mb-20">
@@ -81,7 +93,7 @@ export default function CareersOpenings() {
           <h2 className="text-h2 text-white mb-6">
             Find your next role.
           </h2>
-          <p className="text-[15px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[15px] text-[#C7D2E4] leading-relaxed max-w-2xl mx-auto">
             Don't see a role that fits exactly? We're always open to meeting talented people. Send your resume to <a href="mailto:orbitdevstudios@gmail.com" className="text-accent font-semibold hover:underline">orbitdevstudios@gmail.com</a>.
           </p>
         </div>
@@ -94,7 +106,7 @@ export default function CareersOpenings() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group card-dark p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6"
+              className="group card-dark p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] transition-all duration-300"
             >
               
               <div className="flex-1">
@@ -106,7 +118,7 @@ export default function CareersOpenings() {
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
                   {job.title}
                 </h3>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 font-medium mb-4">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-[#94A3B8] font-medium mb-4">
                   <div className="flex items-center gap-1.5">
                     <MapPin size={16} />
                     {job.location}
@@ -122,7 +134,7 @@ export default function CareersOpenings() {
                     {job.experience}
                   </div>
                 </div>
-                <p className="text-sm text-slate-400 leading-relaxed max-w-2xl line-clamp-2 md:line-clamp-none">
+                <p className="text-sm text-[#94A3B8] leading-relaxed max-w-2xl line-clamp-2 md:line-clamp-none">
                   {job.description}
                 </p>
               </div>
@@ -130,7 +142,7 @@ export default function CareersOpenings() {
               <div className="shrink-0 md:ml-8">
                 <button 
                   onClick={() => setSelectedJob(job.title)}
-                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 font-semibold text-white transition-all group-hover:bg-accent group-hover:text-slate-950 group-hover:border-white/30 cursor-pointer"
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/[0.02] border border-white/5 px-6 py-3 font-semibold text-white transition-all group-hover:bg-accent group-hover:text-white group-hover:border-accent cursor-pointer shadow-sm group-hover:shadow-[0_0_15px_rgba(79,140,255,0.3)]"
                 >
                   Apply Now
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -146,12 +158,12 @@ export default function CareersOpenings() {
       {/* Application Form Modal */}
       <AnimatePresence>
         {selectedJob && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-slate-950/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overscroll-contain p-4 md:p-6 bg-slate-950/80 backdrop-blur-sm">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-slate-900 border border-white/10 rounded-3xl w-full max-w-2xl shadow-2xl relative max-h-[90vh] flex flex-col"
+              className="bg-slate-900 border border-white/10 rounded-3xl w-full max-w-2xl shadow-2xl relative max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-3rem)] flex flex-col"
             >
               
               {/* Header */}
@@ -169,7 +181,7 @@ export default function CareersOpenings() {
               </div>
 
               {/* Form Content */}
-              <div className="p-8 overflow-y-auto">
+              <div className="application-form-scroll min-h-0 p-6 md:p-8 overflow-y-auto overscroll-contain">
                 {formStatus === 'success' ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
                     <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6">

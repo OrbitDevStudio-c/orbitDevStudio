@@ -61,7 +61,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
+    <section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         <div className="mb-14 text-center flex flex-col items-center">
@@ -107,7 +107,7 @@ export default function Testimonials() {
                 </div>
                 
                 <div className="border-t border-white/10 pt-5 mt-auto">
-                  <div className="flex text-amber-400 mb-3">
+                  <div className="flex text-warning mb-3 drop-shadow-[0_0_8px_rgba(245,185,66,0.3)]">
                     {[1,2,3,4,5].map(i => (
                       <Star 
                         key={i} 
@@ -118,7 +118,7 @@ export default function Testimonials() {
                     ))}
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/10 text-slate-300 font-bold text-sm shrink-0">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/10 text-slate-300 font-bold text-sm shrink-0 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>

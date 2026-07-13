@@ -16,7 +16,7 @@ const bentoItems = [
   },
   {
     id: "ecommerce",
-    icon: <ShoppingCart size={24} className="text-accent" />,
+    icon: <ShoppingCart size={24} className="text-white" />,
     title: "E-Commerce",
     desc: "High-converting, globally scalable storefronts featuring lightning-fast checkouts and headless architecture.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -25,7 +25,7 @@ const bentoItems = [
   },
   {
     id: "architecture",
-    icon: <Building2 size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
+    icon: <Building2 size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
     title: "Architecture",
     desc: "Robust firm websites showcasing high-res blueprints and project timelines.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -34,7 +34,7 @@ const bentoItems = [
   },
   {
     id: "interior",
-    icon: <Palette size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
+    icon: <Palette size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
     title: "Interior Design",
     desc: "Immersive 3D visualization galleries that close premium clients.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -43,7 +43,7 @@ const bentoItems = [
   },
   {
     id: "portfolio",
-    icon: <Briefcase size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
+    icon: <Briefcase size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
     title: "Custom Portfolios",
     desc: "Bespoke digital resumes, creative showcases, and interactive wedding portals that tell your unique story beautifully.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -52,7 +52,7 @@ const bentoItems = [
   },
   {
     id: "travel",
-    icon: <Plane size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
+    icon: <Plane size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
     title: "Travel Agencies",
     desc: "Dynamic booking engines and automated ticketing systems.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -61,7 +61,7 @@ const bentoItems = [
   },
   {
     id: "cafe",
-    icon: <Coffee size={24} className="text-slate-300 group-hover:text-white transition-colors" />,
+    icon: <Coffee size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
     title: "Restaurant",
     desc: "QR menu systems and real-time reservations.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -72,7 +72,7 @@ const bentoItems = [
 
 export default function IndustriesGrid() {
   return (
-    <section className="bg-navy-soft w-full relative z-10 overflow-hidden">
+    <section className="bg-[#101A2D] w-full relative z-10 overflow-hidden">
       <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-400/10 rounded-full blur-[100px] -z-10" />
@@ -82,7 +82,7 @@ export default function IndustriesGrid() {
           <h2 className="text-h2 text-white mb-6 tracking-tight">
             Industries We Build For
           </h2>
-          <p className="text-slate-400 text-[16px] leading-relaxed">
+          <p className="text-[#94A3B8] text-[16px] leading-relaxed">
             We don't just write code — we engineer handcrafted, interactive solutions tailored to the specific business logic, regulatory requirements, and high aesthetic standards of your sector.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function IndustriesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className={`group relative overflow-hidden card-dark hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${item.className}`}
+            className={`group relative overflow-hidden card-dark hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${item.className}`}
           >
             <Link to="/portfolio" className="absolute inset-0 z-20 cursor-pointer" aria-label={`View ${item.title} case studies`} />
             
@@ -119,7 +119,7 @@ export default function IndustriesGrid() {
               
               {/* Header: Icon & Title */}
               <div className="flex items-start justify-between mb-6 shrink-0">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 bg-white/5 border border-white/10">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 bg-accent/10 border border-accent/20 text-accent group-hover:bg-accent group-hover:border-accent group-hover:text-white shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:shadow-[0_0_25px_rgba(79,140,255,0.3)]">
                   {item.icon}
                 </div>
                 {item.stats && (
@@ -134,7 +134,7 @@ export default function IndustriesGrid() {
                 {item.title}
               </h3>
               
-              <p className="text-[14px] leading-relaxed mb-8 shrink-0 text-white/70">
+              <p className="text-[14px] leading-relaxed mb-8 shrink-0 text-[#C7D2E4]">
                 {item.desc}
               </p>
               
@@ -153,7 +153,7 @@ export default function IndustriesGrid() {
               <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-5 shrink-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   {item.tech.map(t => (
-                    <span key={t} className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide bg-white/10 text-white/90">
+                    <span key={t} className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide bg-white/[0.03] border border-white/5 text-[#C7D2E4]">
                       {t}
                     </span>
                   ))}

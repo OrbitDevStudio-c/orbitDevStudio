@@ -50,10 +50,10 @@ export default function Process() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24"
+        className="min-h-screen pt-24 px-6 md:px-12 lg:px-24 bg-[#0B1220]"
       >
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">Process</h1>
-        <p className="text-gray-400">Content coming soon...</p>
+        <p className="text-[#C7D2E4]">Content coming soon...</p>
       </motion.div>
     </>
   );

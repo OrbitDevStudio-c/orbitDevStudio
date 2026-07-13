@@ -34,7 +34,7 @@ const layers = [
 
 export default function TechLayers() {
   return (
-    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
+    <section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header */}
@@ -46,7 +46,7 @@ export default function TechLayers() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[white] mb-6"
           >
             We build every <br />
-            <span className="text-[white]">layer of your product.</span>
+            <span className="text-white">layer of your product.</span>
           </motion.h2>
 
           <motion.p
@@ -54,7 +54,7 @@ export default function TechLayers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600 leading-relaxed max-w-2xl"
+            className="text-lg text-[#94A3B8] leading-relaxed max-w-2xl"
           >
             We don't just use the latest frameworks — we deeply understand them. Our
             engineers integrate the right stack into your existing infrastructure to maximize
@@ -71,16 +71,16 @@ export default function TechLayers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="w-full bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_24px_rgba(0,0,0,0.15)] border border-white/[0.06] flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center relative overflow-hidden group hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.3),0_0_20px_rgba(79,140,255,0.1)] hover:-translate-y-1 transition-all duration-500"
+              className="w-full bg-[#152037]/80 backdrop-blur-xl rounded-2xl md:rounded-3xl p-8 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center relative overflow-hidden group hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(79,140,255,0.15)] hover:border-white/20 hover:-translate-y-1 transition-all duration-500"
             >
               {/* Decorative subtle gradient blob */}
-              <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:bg-white/10 transition-colors duration-700 pointer-events-none" />
+              <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-[#4F8CFF]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:bg-[#4F8CFF]/20 transition-colors duration-700 pointer-events-none" />
 
               {/* Left Side: Content */}
               <div className="flex-1 text-white relative z-10 w-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:border-accent group-hover:bg-accent/10 transition-colors duration-500">
-                    <layer.icon size={20} className="text-blue-200" />
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:border-[#4F8CFF]/50 group-hover:bg-[#4F8CFF]/20 group-hover:shadow-[0_0_20px_rgba(79,140,255,0.3)] transition-all duration-500 shadow-inner">
+                    <layer.icon size={26} className="text-[#4F8CFF]" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-1">
@@ -92,7 +92,7 @@ export default function TechLayers() {
                   </div>
                 </div>
 
-                <p className="text-[15px] leading-relaxed text-blue-100/70 font-light max-w-lg">
+                <p className="text-[15px] leading-relaxed text-[#C7D2E4] font-light max-w-lg">
                   {layer.description}
                 </p>
               </div>
@@ -103,9 +103,9 @@ export default function TechLayers() {
                   {layer.technologies.map((tech) => (
                     <div
                       key={tech}
-                      className="px-4 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm flex items-center justify-center text-center hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_15px_rgba(79,140,255,0.15)] transition-all duration-300 cursor-default relative overflow-hidden"
+                      className="px-5 py-4 rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-md flex items-center justify-center text-center hover:bg-white/[0.1] hover:border-[#4F8CFF] hover:shadow-[0_4px_20px_rgba(79,140,255,0.25)] hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden"
                     >
-                      <span className="text-[11px] font-bold tracking-wider text-white/90 uppercase text-center w-full">
+                      <span className="text-[12px] font-bold tracking-[0.15em] text-[#C7D2E4] group-hover:text-white uppercase text-center w-full transition-colors">
                         {tech}
                       </span>
                     </div>

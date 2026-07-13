@@ -4,14 +4,14 @@ import ServiceParticles from './ServiceParticles';
 
 export default function IndustriesHero() {
   return (
-    <section className="bg-navy-soft relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1E2A4A]/30 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1E2A4A]/40 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#7C5CFF]/[0.15] via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
@@ -23,7 +23,7 @@ export default function IndustriesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
+          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Industries</span>
           </div>
 
@@ -31,7 +31,7 @@ export default function IndustriesHero() {
             Empowering Industries <br className="hidden sm:block" /> with Custom Solutions
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-12 max-w-lg">
+          <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-lg">
             From healthcare portals to interactive design portfolios and robust e-commerce platforms — OrbitDevStudio engineers highly specialized digital experiences tailored to the unique regulatory, operational, and aesthetic demands of your sector.
           </p>
 
@@ -61,12 +61,12 @@ export default function IndustriesHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1E2A4A] rounded-full blur-[80px] opacity-[0.18]" />
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#4F8CFF] rounded-full blur-[80px] opacity-[0.08]" />
           
           <div className="relative w-full max-w-[450px] h-[400px] flex items-center justify-center">
             
             {/* Center Core Node */}
-            <div className="absolute z-10 w-24 h-24 rounded-full bg-white/10 border-2 border-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(46,91,229,0.5)]">
+             <div className="absolute z-10 w-24 h-24 rounded-full bg-white/[0.02] border border-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(79,140,255,0.15)]">
                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite] overflow-hidden">
                  <img src="/companylogo.webp" alt="Core" width={64} height={64} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                </div>

@@ -115,9 +115,9 @@ export default function Navbar() {
         <motion.div
           className="w-full"
           animate={{
-            backgroundColor: scrolled ? 'rgba(7, 11, 20, 0.75)' : 'rgba(7, 11, 20, 0)',
-            backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
-            boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 0 rgba(0,0,0,0)',
+            backgroundColor: scrolled ? 'rgba(11, 18, 32, 0.85)' : 'rgba(11, 18, 32, 0)',
+            backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
+            boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.4)' : '0 0 rgba(0,0,0,0)',
             borderColor: scrolled ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255,255,255,0)',
             borderWidth: scrolled ? 1 : 0,
             borderStyle: scrolled ? 'solid' : 'none',
@@ -140,8 +140,8 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
-                const baseText = 'text-white/80 hover:text-white hover:bg-white/5';
-                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]' : baseText;
+                const baseText = 'text-white/80 hover:text-white hover:bg-white/5 transition-all';
+                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] drop-shadow-[0_0_20px_rgba(79,140,255,0.4)] backdrop-blur-xl' : baseText;
  
                 return (
                   <Link
@@ -178,7 +178,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-50 bg-[#0B1220]/80 backdrop-blur-md lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -189,7 +189,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[300px] bg-[#121826] border-l border-white/5 shadow-2xl p-6 flex flex-col justify-between lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-[300px] bg-[#0C1220] border-l border-white/5 shadow-2xl p-6 flex flex-col justify-between lg:hidden"
             >
               {/* Header */}
               <div className="flex items-center justify-between pb-6 border-b border-white/5">

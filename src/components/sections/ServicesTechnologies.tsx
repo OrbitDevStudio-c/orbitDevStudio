@@ -26,9 +26,8 @@ export default function ServicesTechnologies() {
   const [activeTab, setActiveTab] = useState<TabType>("Frameworks");
 
   return (
-    <section className="bg-navy-deep py-16 md:py-20 px-6 md:px-12 lg:px-24 w-full relative z-10">
-      
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch">
+    <section className="bg-[#101A2D] py-16 md:py-20 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch relative z-10">
         
         {/* Left Card: Global Reach Image */}
         <motion.div 
@@ -36,7 +35,9 @@ export default function ServicesTechnologies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex-[3] relative rounded-[2rem] overflow-hidden min-h-[400px] flex items-end p-10 lg:p-12 shadow-xl group"
+          animate={{ y: [-5, 5, -5] }}
+          className="flex-[3] relative rounded-[2rem] overflow-hidden min-h-[400px] flex items-end p-10 lg:p-12 shadow-xl group hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] transition-shadow duration-500"
+          style={{ transition: 'animation 4s ease-in-out infinite' }}
         >
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
@@ -57,7 +58,7 @@ export default function ServicesTechnologies() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
               Built for Global Reach
             </h2>
-            <p className="text-slate-300 text-[15px] leading-relaxed">
+            <p className="text-[#C7D2E4] text-[15px] leading-relaxed">
               We engineer products that scale across geographies, devices, and user bases — with localization, accessibility, and performance built in from day one.
             </p>
           </div>
@@ -69,7 +70,7 @@ export default function ServicesTechnologies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-[2] bg-[#0b1221] rounded-[2rem] p-8 lg:p-10 shadow-xl border border-white/5 flex flex-col"
+          className="card-dark flex-[2] rounded-[2rem] p-8 lg:p-10 flex flex-col hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] transition-all duration-300"
         >
           {/* Header */}
           <div className="flex items-center gap-3 mb-8">
@@ -78,20 +79,28 @@ export default function ServicesTechnologies() {
           </div>
 
           {/* Tabs Container */}
-          <div className="flex p-1 bg-white/[0.03] rounded-xl mb-8 border border-white/5">
-            {(["Frameworks", "Languages", "Databases"] as TabType[]).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`flex-1 py-2.5 text-[13px] font-semibold rounded-lg transition-all duration-300 ${
-                  activeTab === tab 
-                    ? 'bg-[#1d4ed8] text-white shadow-md' 
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+          <div className="flex p-1 bg-white/[0.02] rounded-xl mb-8 border border-white/5 backdrop-blur-sm">
+            {(["Frameworks", "Languages", "Databases"] as TabType[]).map((tab) => {
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`relative flex-1 py-2.5 text-[13px] font-semibold rounded-lg transition-all duration-300 ${
+                    isActive ? 'text-white' : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="techTab"
+                      className="absolute inset-0 bg-accent rounded-lg shadow-[0_0_15px_rgba(79,140,255,0.4)]"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab}</span>
+                </button>
+              );
+            })}
           </div>
 
           {/* List Content */}
@@ -108,13 +117,13 @@ export default function ServicesTechnologies() {
                 {techData[activeTab].map((tech, i) => (
                   <div 
                     key={i} 
-                    className="flex items-center justify-between p-4 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors cursor-pointer group"
+                    className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:shadow-[0_4px_20px_rgba(79,140,255,0.08)] transition-all duration-300 cursor-pointer group"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[#0b1221] flex items-center justify-center border border-white/5 group-hover:border-white/10 transition-colors">
+                      <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-accent/30 group-hover:bg-accent/10 transition-colors">
                         {tech.icon}
                       </div>
-                      <span className="text-[14px] font-bold text-white">{tech.name}</span>
+                      <span className="text-[14px] font-bold text-white tracking-tight">{tech.name}</span>
                     </div>
                     <ArrowRight size={16} className="text-slate-500 group-hover:text-white transition-colors group-hover:translate-x-1" />
                   </div>

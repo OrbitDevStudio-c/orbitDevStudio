@@ -3,14 +3,29 @@ import ServiceParticles from './ServiceParticles';
 
 export default function ServicesHero() {
   return (
-    <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
-      <ServiceParticles />
+      <div className="absolute inset-0 opacity-50 mix-blend-screen">
+        <ServiceParticles />
+      </div>
+
+      {/* Subtle Constellation Lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <motion.path 
+          d="M 100 200 L 300 150 L 500 300 L 800 100" 
+          stroke="rgba(255,255,255,0.1)" 
+          strokeWidth="1" 
+          fill="none" 
+          initial={{ pathLength: 0 }} 
+          animate={{ pathLength: 1 }} 
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }} 
+        />
+      </svg>
       
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1E2A4A]/30 via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#1E2A4A]/40 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#7C5CFF]/[0.15] via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
@@ -22,15 +37,15 @@ export default function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-300 uppercase">Services</span>
+          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Services</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white">
             End-to-End Digital Services <br className="hidden sm:block" /> Engineered for Growth
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-12 max-w-lg">
+          <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-lg">
             From custom web and mobile applications to AI integration, cloud
             infrastructure, and performance marketing — OrbitDevStudio delivers full-lifecycle
             digital solutions built with senior engineering talent, rigorous quality standards,
@@ -63,7 +78,7 @@ export default function ServicesHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent rounded-full blur-[120px] opacity-[0.06]" />
+          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent rounded-full blur-[150px] opacity-[0.1]" />
           
           <div className="relative w-full max-w-[500px] h-[320px]">
             {/* The Main Browser/Dashboard Window */}

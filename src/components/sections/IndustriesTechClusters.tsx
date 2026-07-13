@@ -60,13 +60,13 @@ export default function IndustriesTechClusters() {
   const activeCluster = techClusters.find(c => c.id === activeTab) || techClusters[0];
 
   return (
-  <section className="bg-navy-soft w-full relative z-10 overflow-hidden">
+  <section className="bg-[#101A2D] w-full relative z-10 overflow-hidden">
     <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
 
   {/* Ambient Background */}
   <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute -top-32 -left-24 w-80 h-80 bg-blue-500/[0.06] rounded-full blur-[120px]" />
-    <div className="absolute -bottom-32 -right-24 w-80 h-80 bg-cyan-400/[0.06] rounded-full blur-[120px]" />
+    <div className="absolute -top-32 -left-24 w-80 h-80 bg-[#4F8CFF]/[0.06] rounded-full blur-[120px]" />
+    <div className="absolute -bottom-32 -right-24 w-80 h-80 bg-[#7C5CFF]/[0.06] rounded-full blur-[120px]" />
   </div>
 
   {/* Section Header */}
@@ -75,7 +75,7 @@ export default function IndustriesTechClusters() {
       Tech Stack by Industry
     </h2>
 
-    <p className="text-white/70 text-[16px] leading-relaxed">
+    <p className="text-[#C7D2E4] text-[16px] leading-relaxed">
       We don't force a single technology on every problem. We assemble
       specialized, highly performant technology stacks based on the unique
       demands of your business and industry.
@@ -97,8 +97,8 @@ export default function IndustriesTechClusters() {
             className={`text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between border backdrop-blur-xl group
               ${
                 isActive
-                  ? "bg-white/5 border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
-                  : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
+                  ? "bg-white/[0.03] border-white/10 shadow-[0_4px_15px_rgba(0,0,0,0.1)]"
+                  : "bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5"
               }
             `}
           >
@@ -113,7 +113,7 @@ export default function IndustriesTechClusters() {
                 {cluster.name}
               </h3>
 
-              <p className="text-[13px] text-white/60">
+              <p className="text-[13px] text-[#94A3B8]">
                 {cluster.desc}
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function IndustriesTechClusters() {
     </div>
 
     {/* Right Side */}
-    <div className="lg:col-span-7 relative h-[420px] rounded-3xl bg-slate-950 border border-white/10 overflow-hidden shadow-2xl">
+    <div className="lg:col-span-7 relative h-[420px] rounded-3xl bg-[#0B1220] border border-white/5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
 
       {/* Grid Background */}
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -154,7 +154,7 @@ export default function IndustriesTechClusters() {
 
             <div className="w-28 h-28 rounded-full bg-slate-800 border border-white/10 shadow-[0_0_60px_rgba(79,140,255,0.3)] flex items-center justify-center">
 
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm tracking-wide">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4F8CFF] to-[#0A266A] flex items-center justify-center text-white font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(79,140,255,0.4)]">
                 Core
               </div>
 
@@ -179,7 +179,7 @@ export default function IndustriesTechClusters() {
                 y1="50%"
                 x2={`${chip.x}%`}
                 y2={`${chip.y}%`}
-                stroke="#60A5FA"
+                stroke="#4F8CFF"
                 strokeWidth="1.5"
                 strokeDasharray="5 5"
               />
@@ -213,7 +213,7 @@ export default function IndustriesTechClusters() {
                 damping: 12,
                 delay: index * 0.08,
               }}
-              className="absolute z-30 px-4 py-2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_12px_35px_rgba(0,0,0,0.35)] text-white text-[13px] font-semibold whitespace-nowrap hover:scale-105 transition-transform"
+              className="absolute z-30 px-4 py-2 rounded-xl border border-white/5 bg-[#101A2D] backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.2)] text-white text-[13px] font-semibold whitespace-nowrap hover:scale-105 transition-transform hover:border-accent hover:text-accent"
             >
               {chip.name}
             </motion.div>

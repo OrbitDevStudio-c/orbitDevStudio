@@ -11,8 +11,9 @@ export default function Hero() {
 
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-accent/[0.05] rounded-full blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondaryAccent/[0.04] rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[conic-gradient(from_90deg_at_50%_0%,rgba(11,18,32,1)_0%,rgba(79,140,255,0.03)_50%,rgba(11,18,32,1)_100%)] opacity-30 blur-2xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 w-full flex flex-col items-center text-center">

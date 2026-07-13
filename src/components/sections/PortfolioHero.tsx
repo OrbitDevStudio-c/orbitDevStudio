@@ -4,14 +4,14 @@ import ServiceParticles from './ServiceParticles';
 
 export default function PortfolioHero() {
   return (
-    <section className="bg-navy-soft relative w-full min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-[#0B1220] relative w-full min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#3B6FE0]/[0.12] via-transparent to-transparent opacity-[0.38]" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#B08CFF]/20 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.1] via-transparent to-transparent opacity-[0.38]" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#7C5CFF]/[0.1] via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
@@ -23,7 +23,7 @@ export default function PortfolioHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
+          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Our Portfolio</span>
           </div>
 
@@ -31,7 +31,7 @@ export default function PortfolioHero() {
             Digital excellence <br className="hidden sm:block" /> in action.
           </h1>
 
-          <p className="text-base sm:text-[15px] text-white/70 leading-relaxed font-light mb-10 max-w-lg">
+          <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-10 max-w-lg">
             Explore a curated selection of our most impactful projects. From high-converting e-commerce platforms to sophisticated enterprise architecture, see how we translate complex requirements into beautiful, scalable realities.
           </p>
 
@@ -56,7 +56,7 @@ export default function PortfolioHero() {
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
           {/* Main glowing behind graphic */}
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-indigo-500 rounded-full blur-[100px] opacity-[0.12]" />
+          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-accent rounded-full blur-[100px] opacity-[0.08]" />
           
           <div className="relative w-full max-w-[500px] h-[450px]">
             
@@ -64,10 +64,10 @@ export default function PortfolioHero() {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-0 lg:right-4 top-1/4 w-[85%] md:w-[400px] lg:w-[450px] h-[280px] lg:h-[300px] bg-slate-900/80 backdrop-blur-xl rounded-xl shadow-2xl border border-white/20 overflow-hidden z-20 flex flex-col"
+              className="absolute right-0 lg:right-4 top-1/4 w-[85%] md:w-[400px] lg:w-[450px] h-[280px] lg:h-[300px] bg-[#0E1728]/90 backdrop-blur-xl rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden z-20 flex flex-col"
             >
               {/* Toolbar */}
-              <div className="h-8 w-full bg-slate-800/80 border-b border-white/10 flex items-center px-3 gap-1.5">
+              <div className="h-8 w-full bg-[#101A2D] border-b border-white/5 flex items-center px-3 gap-1.5">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#F36B6B]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#F6B73C]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[#52C854]" />
@@ -79,14 +79,14 @@ export default function PortfolioHero() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#3B6FE0]/0 to-[#3B6FE0]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Monitor className="text-accent opacity-50" />
                  </div>
-                 <div className="w-full h-20 lg:h-24 rounded-lg bg-[#B08CFF]/10 border border-[#B08CFF]/20 flex items-center justify-center relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#B08CFF]/0 to-[#B08CFF]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                 <div className="w-full h-20 lg:h-24 rounded-lg bg-[#B08CFF]/[0.06] border border-[#B08CFF]/10 flex items-center justify-center relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#B08CFF]/0 to-[#B08CFF]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <LayoutGrid className="text-[#B08CFF] opacity-50" />
                  </div>
-                 <div className="col-span-2 w-full h-24 lg:h-32 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex flex-col items-center justify-center gap-2 relative overflow-hidden">
+                 <div className="col-span-2 w-full h-24 lg:h-32 rounded-lg bg-emerald-500/[0.05] border border-emerald-500/10 flex flex-col items-center justify-center gap-2 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
                     <span className="text-emerald-400 opacity-60 text-[10px] tracking-widest font-bold uppercase relative z-10">Featured Case Study</span>
-                    <div className="w-1/3 h-1.5 bg-emerald-400/30 rounded-full relative z-10" />
+                    <div className="w-1/3 h-1.5 bg-emerald-400/20 rounded-full relative z-10" />
                  </div>
               </div>
             </motion.div>
@@ -95,10 +95,10 @@ export default function PortfolioHero() {
             <motion.div 
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute left-4 lg:-left-8 bottom-4 lg:bottom-12 w-[120px] md:w-[150px] h-[240px] md:h-[300px] bg-slate-800/90 backdrop-blur-md border border-white/20 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30 flex flex-col items-center p-2"
+              className="absolute left-4 lg:-left-8 bottom-4 lg:bottom-12 w-[120px] md:w-[150px] h-[240px] md:h-[300px] bg-[#101A2D]/90 backdrop-blur-md border border-white/10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30 flex flex-col items-center p-2"
             >
               <div className="w-12 h-4 bg-black rounded-b-xl absolute top-0 z-40" />
-              <div className="w-full h-full rounded-[1.2rem] bg-gradient-to-b from-surface to-background overflow-hidden flex flex-col gap-2 p-3 mt-4 relative">
+              <div className="w-full h-full rounded-[1.2rem] bg-gradient-to-b from-[#14203A] to-[#0E1728] overflow-hidden flex flex-col gap-2 p-3 mt-4 relative">
                  {/* Mobile screen content */}
                  <div className="w-full h-24 bg-white/5 rounded-xl border border-white/10 relative overflow-hidden">
                    <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/[0.12] blur-xl rounded-full" />
@@ -116,7 +116,7 @@ export default function PortfolioHero() {
             <motion.div 
               animate={{ y: [0, -8, 0], x: [0, 5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute right-8 bottom-24 z-40 bg-white/10 backdrop-blur-lg border border-white/20 p-3 rounded-2xl shadow-xl flex items-center gap-3"
+              className="absolute right-8 bottom-24 z-40 bg-white/[0.03] backdrop-blur-lg border border-white/10 p-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-3"
             >
               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F36B6B] to-[#F6B73C] flex items-center justify-center text-white text-xs font-bold shadow-inner">
                 99%

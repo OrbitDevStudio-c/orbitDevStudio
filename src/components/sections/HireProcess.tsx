@@ -30,7 +30,7 @@ const steps = [
 
 export default function HireProcess() {
   return (
-<section className="bg-navy-soft py-16 md:py-20 relative overflow-hidden">
+<section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
   <div className="max-w-[1400px] mx-auto px-6">
 
     {/* Header */}
@@ -45,7 +45,7 @@ export default function HireProcess() {
 
       <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full" />
 
-      <p className="text-[15px] text-slate-300 leading-relaxed max-w-2xl mx-auto">
+      <p className="text-[15px] text-[#C7D2E4] leading-relaxed max-w-2xl mx-auto">
         Our streamlined development workflow ensures transparency,
         efficiency, and faster project delivery. From understanding your
         requirements to launching your solution, our team follows a
@@ -60,7 +60,7 @@ export default function HireProcess() {
       {/* Horizontal Line Background (Desktop) */}
      <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] z-0">
 
-  <div className="h-[2px] w-full bg-[#141416] rounded-full" />
+  <div className="h-[2px] w-full bg-white/5 rounded-full" />
 
   <motion.div
     initial={{ width: 0 }}
@@ -87,7 +87,7 @@ export default function HireProcess() {
 </div>
 
       {/* Vertical Line Background (Mobile) */}
-      <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-[#141416] z-0" />
+      <div className="block md:hidden absolute left-[50px] top-[10%] bottom-[10%] w-[2px] bg-white/5 z-0" />
 
       {/* Vertical Line Animated Fill (Mobile) */}
       <motion.div
@@ -112,12 +112,12 @@ export default function HireProcess() {
             <div className="relative">
 
               {/* Number Badge */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#141416] shadow-md">
+              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#101A2D] shadow-[0_0_10px_rgba(79,140,255,0.3)]">
                 {step.num}
               </div>
 
               {/* Circle */}
-              <div className="w-[100px] h-[100px] rounded-full bg-[#1C1C1F] border-2 border-accent flex items-center justify-center shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_8px_rgba(79,140,255,0.15)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_rgba(11,23,54,1),0_0_0_12px_rgba(79,140,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
+              <div className="w-[100px] h-[100px] rounded-full bg-white/[0.02] border border-white/10 flex items-center justify-center shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_8px_rgba(79,140,255,0.15)] group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_12px_rgba(79,140,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
                 <step.icon
                   size={32}
                   className="text-accent"
@@ -132,7 +132,7 @@ export default function HireProcess() {
                 {step.title}
               </h3>
 
-              <p className="text-sm leading-relaxed text-slate-300 max-w-[280px] mx-auto">
+              <p className="text-sm leading-relaxed text-[#94A3B8] max-w-[280px] mx-auto">
                 {step.description}
               </p>
             </div>

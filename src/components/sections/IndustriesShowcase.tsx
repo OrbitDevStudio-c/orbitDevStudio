@@ -29,14 +29,14 @@ const cases = [
 
 export default function IndustriesShowcase() {
   return (
-    <section className="bg-navy-soft w-full relative z-10 text-white overflow-hidden">
+    <section className="bg-[#0E1728] w-full relative z-10 text-white overflow-hidden">
       <div className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
       
       <div className="text-center max-w-3xl mx-auto mb-24">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
           Industry Success Stories
         </h2>
-        <p className="text-slate-400 text-[16px] leading-relaxed">
+        <p className="text-[#C7D2E4] text-[16px] leading-relaxed">
           We don't just build software; we engineer measurable business outcomes. Explore how our tailored solutions solve complex, industry-specific challenges.
         </p>
       </div>
@@ -56,19 +56,19 @@ export default function IndustriesShowcase() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-white/10 bg-slate-900">
                 
                 {/* macOS Browser Header */}
-                <div className="bg-slate-900 border-b border-white/10 px-4 py-3 flex items-center gap-4 relative z-20">
+                <div className="bg-[#101A2D] border-b border-white/5 px-4 py-3 flex items-center gap-4 relative z-20">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-[#ff5f56] shadow-sm border border-black/10" />
                     <div className="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-sm border border-black/10" />
                     <div className="w-3 h-3 rounded-full bg-[#27c93f] shadow-sm border border-black/10" />
                   </div>
-                  <div className="flex-1 bg-slate-950 rounded-md py-1.5 px-3 text-[10px] text-slate-400 text-center font-mono truncate shadow-sm border border-white/5">
+                  <div className="flex-1 bg-[#0B1220] rounded-md py-1.5 px-3 text-[10px] text-[#94A3B8] text-center font-mono truncate shadow-sm border border-white/5">
                     {project.liveUrl}
                   </div>
                 </div>
 
                 {/* Image Preview instead of heavy iframe */}
-                <div className="relative h-[350px] md:h-[450px] w-full bg-slate-950 overflow-hidden">
+                <div className="relative h-[350px] md:h-[450px] w-full bg-[#0B1220] overflow-hidden">
                   <img 
                     src={project.id === 1 ? "/projects/pharmacare.png" : "/projects/designerss.png"}
                     alt={project.title}
@@ -104,7 +104,7 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="w-full lg:w-1/2 flex flex-col"
             >
-              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-white/5 text-slate-300 text-[11px] font-bold tracking-wider uppercase mb-6 border border-white/10">
+              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-white/[0.03] text-[#94A3B8] text-[11px] font-bold tracking-wider uppercase mb-6 border border-white/10">
                 {project.industry}
               </div>
               
@@ -114,26 +114,26 @@ export default function IndustriesShowcase() {
 
               <div className="space-y-6 mb-10">
                 <div>
-                  <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Problem</h4>
-                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-white/10 pl-4">{project.problem}</p>
+                  <h4 className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2">The Problem</h4>
+                  <p className="text-[#C7D2E4] text-[15px] leading-relaxed border-l-2 border-white/10 pl-4">{project.problem}</p>
                 </div>
                 <div>
-                  <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Solution</h4>
-                  <p className="text-slate-400 text-[15px] leading-relaxed border-l-2 border-white/20 pl-4">{project.solution}</p>
+                  <h4 className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2">The Solution</h4>
+                  <p className="text-[#C7D2E4] text-[15px] leading-relaxed border-l-2 border-accent/50 pl-4">{project.solution}</p>
                 </div>
                 <div>
-                  <h4 className="text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-2">The Result</h4>
-                  <p className="text-slate-200 font-semibold text-[15px] leading-relaxed flex items-start gap-2">
-                    <CheckCircle2 size={20} className="text-[#52C854] shrink-0 mt-0.5" />
+                  <h4 className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2">The Result</h4>
+                  <p className="text-white font-semibold text-[15px] leading-relaxed flex items-start gap-2">
+                    <CheckCircle2 size={20} className="text-accent shrink-0 mt-0.5" />
                     {project.result}
                   </p>
                 </div>
               </div>
 
-              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/5 text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-white/30 transition-colors shadow-sm flex items-center gap-2">
+              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/[0.03] text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent hover:text-accent transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-white/5 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-accent/10 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
             </motion.div>
 

@@ -44,7 +44,7 @@ export default function TechDelivery() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
+    <section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-12 lg:gap-20">
 
         {/* Top Section: Who We Build For */}
@@ -53,10 +53,10 @@ export default function TechDelivery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white"
+          className="bg-[#0B1220] border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white"
         >
           <div className="mb-10">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
               WHO WE BUILD FOR
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white max-w-2xl">
@@ -66,19 +66,19 @@ export default function TechDelivery() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {scaleCards.map((card, index) => (
-              <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(79,140,255,0.1)] hover:border-white/20 transition-all duration-300">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-6">
-                  <card.icon size={20} className="text-blue-300" />
+              <div key={index} className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
+                <div className="w-10 h-10 rounded-lg bg-[#4F8CFF]/10 flex items-center justify-center mb-6">
+                  <card.icon size={20} className="text-[#4F8CFF]" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">{card.title}</h3>
-                <p className="text-sm text-blue-100/70 leading-relaxed">
+                <p className="text-sm text-[#C7D2E4] leading-relaxed">
                   {card.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:text-blue-300 transition-colors">
+          <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:text-accent transition-colors">
             GET FREE QUOTE <ArrowRight size={16} />
           </Link>
         </motion.div>
@@ -91,21 +91,21 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-600 uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-4">
               FULL-STACK DELIVERY
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[white] mb-6 max-w-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight text-white mb-6 max-w-lg leading-[1.1]">
               End-to-end execution across every discipline.
             </h2>
-            <p className="text-[15px] text-slate-600 leading-relaxed mb-8 max-w-lg">
+            <p className="text-[16px] text-[#C7D2E4] leading-relaxed mb-10 max-w-lg font-light">
               From UX strategy and front-end engineering to cloud infrastructure and security compliance, we cover every layer of your product so your team can focus on growth — not firefighting.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1E2A4A] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 shadow-md"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-8 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5 w-fit"
             >
               Get Free Quote
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </Link>
           </motion.div>
 
@@ -113,36 +113,39 @@ export default function TechDelivery() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full"
+            className="flex-1 w-full lg:max-w-[500px]"
           >
-            <div className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_12px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 lg:p-10">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-8">
-                TECHNOLOGIES
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                {[
-                  { icon: LayoutTemplate, label: 'UX & Design' },
-                  { icon: MonitorSmartphone, label: 'Web Development' },
-                  { icon: Code2, label: 'API Engineering' },
-                  { icon: Cloud, label: 'Cloud Infrastructure' },
-                  { icon: Shield, label: 'Security & Compliance' },
-                  { icon: Zap, label: 'Performance & Scale' }
-                ].map((tech, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-3 hover:bg-white/10 transition-colors">
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                      <tech.icon size={16} className="text-blue-300" />
+            <div className="bg-gradient-to-br from-[#101A2D] to-[#0B1220] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[2rem] p-8 lg:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#4F8CFF]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+              <div className="relative z-10">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-8">
+                  TECHNOLOGIES
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  {[
+                    { icon: LayoutTemplate, label: 'UX & Design' },
+                    { icon: MonitorSmartphone, label: 'Web Development' },
+                    { icon: Code2, label: 'API Engineering' },
+                    { icon: Cloud, label: 'Cloud Infrastructure' },
+                    { icon: Shield, label: 'Security & Compliance' },
+                    { icon: Zap, label: 'Performance & Scale' }
+                  ].map((tech, i) => (
+                    <div key={i} className="flex items-center gap-4 bg-white/[0.04] border border-white/5 rounded-2xl p-4 hover:bg-white/[0.08] hover:border-white/10 transition-colors cursor-default group">
+                      <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shadow-inner group-hover:bg-[#4F8CFF]/10 transition-colors">
+                        <tech.icon size={18} className="text-[#4F8CFF]" />
+                      </div>
+                      <span className="text-[13px] font-semibold text-white tracking-wide">{tech.label}</span>
                     </div>
-                    <span className="text-sm font-medium text-white">{tech.label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-[#122350] rounded-xl p-5 border border-white/10 flex gap-4 items-center">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <Check size={20} className="text-blue-300" />
+                  ))}
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-1 tracking-wider">360° DELIVERY VISIBILITY</h4>
-                  <p className="text-xs text-blue-100/70">Full transparency across design, engineering, and deployment.</p>
+                <div className="bg-[#4F8CFF]/10 rounded-2xl p-6 border border-[#4F8CFF]/20 flex gap-5 items-center">
+                  <div className="w-12 h-12 rounded-xl bg-[#4F8CFF]/20 flex items-center justify-center shrink-0 border border-[#4F8CFF]/30">
+                    <Check size={20} className="text-[#4F8CFF]" />
+                  </div>
+                  <div>
+                    <h4 className="text-[13px] font-bold text-white mb-1.5 tracking-wider">360° DELIVERY VISIBILITY</h4>
+                    <p className="text-xs text-[#C7D2E4] font-light leading-relaxed">Full transparency across design, engineering, and deployment.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,9 +158,9 @@ export default function TechDelivery() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12"
+            className="flex-1 bg-[#0B1220] border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 md:p-12"
           >
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
               OUR DELIVERY APPROACH
             </span>
 
@@ -165,7 +168,7 @@ export default function TechDelivery() {
               A proven operating model built for clarity and results
             </h2>
 
-            <p className="text-[15px] text-slate-300 leading-relaxed mb-10">
+            <p className="text-[15px] text-[#94A3B8] leading-relaxed mb-10">
               Every engagement at OrbitDevStudio follows a disciplined four-pillar model
               — quality, transparency, adaptability, and value — so your product ships
               on schedule, on budget, and above expectations.
@@ -173,7 +176,7 @@ export default function TechDelivery() {
 
             <div className="flex flex-col relative">
               {/* Connecting vertical line */}
-              <div className="absolute left-4 top-4 bottom-8 w-px bg-[#141416] z-0" />
+              <div className="absolute left-4 top-4 bottom-8 w-px bg-white/5 z-0" />
 
               {operatingModel.map((item, i) => (
                 <div
@@ -183,8 +186,8 @@ export default function TechDelivery() {
                 >
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${activeStep === i
-                      ? "bg-accent text-white shadow-[0_0_15px_rgba(79,140,255,0.4)]"
-                      : "bg-white/5 border border-white/10 text-slate-300 group-hover:border-white/30 group-hover:text-white"
+                      ? "bg-accent text-white shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
+                      : "bg-white/[0.03] border border-white/10 text-[#94A3B8] group-hover:border-accent/50 group-hover:text-accent"
                       }`}
                   >
                     {i + 1}
@@ -192,14 +195,14 @@ export default function TechDelivery() {
 
                   <div
                     className={`pt-1 transition-all duration-300 w-full ${activeStep === i
-                      ? "bg-white/5 p-5 rounded-2xl border border-white/10 -mt-4 shadow-lg"
+                      ? "bg-white/[0.03] p-5 rounded-2xl border border-white/10 -mt-4 shadow-lg"
                       : ""
                       }`}
                   >
                     <h3
                       className={`text-base font-bold mb-1 transition-colors ${activeStep === i
                         ? "text-white"
-                        : "text-slate-300 group-hover:text-white"
+                        : "text-[#94A3B8] group-hover:text-white"
                         }`}
                     >
                       {item.title}
@@ -213,7 +216,7 @@ export default function TechDelivery() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm text-slate-400 leading-relaxed mt-2 pb-1 pr-4">
+                      <p className="text-sm text-[#C7D2E4] leading-relaxed mt-2 pb-1 pr-4">
                         {item.description}
                       </p>
                     </motion.div>
@@ -229,7 +232,7 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1 flex flex-col justify-end lg:mb-12"
           >
-            <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-primary to-accent rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
+            <div className="w-full aspect-square md:aspect-auto md:h-[100%] bg-gradient-to-br from-[#0A266A] to-accent rounded-[2rem] shadow-2xl shadow-blue-500/20 flex items-center justify-center p-12 relative overflow-hidden group">
               {/* Abstract background */}
               <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.03)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700" />

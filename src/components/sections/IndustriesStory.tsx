@@ -57,13 +57,13 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
         <div className="absolute top-[6px] left-[-11px] w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-500 z-10" />
 
         {/* Content */}
-        <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-2">
+        <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-2">
           0{stage.id}
         </div>
         <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
           {stage.title}
         </h3>
-        <p className="text-[14px] text-slate-400 leading-relaxed">{stage.desc}</p>
+        <p className="text-[14px] text-[#C7D2E4] leading-relaxed">{stage.desc}</p>
       </motion.div>
     );
   }
@@ -72,16 +72,16 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
     <motion.div style={{ opacity, y: translateVal }} className="relative pt-12">
       {/* Node */}
       <div className="absolute top-[-54px] left-0 w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-500 z-10" />
-      <div className="absolute top-[-58px] left-[-4px] w-5 h-5 rounded-full bg-accent blur-[8px] opacity-[0.18]" />
+      <div className="absolute top-[-58px] left-[-4px] w-5 h-5 rounded-full bg-accent blur-[8px] opacity-[0.08]" />
 
       {/* Content */}
-      <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-3">
+      <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-3">
         0{stage.id}
       </div>
       <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
         {stage.title}
       </h3>
-      <p className="text-[13px] text-slate-400 leading-relaxed pr-4">{stage.desc}</p>
+      <p className="text-[13px] text-[#C7D2E4] leading-relaxed pr-4">{stage.desc}</p>
     </motion.div>
   );
 }
@@ -103,7 +103,7 @@ export default function IndustriesStory() {
   return (
     <section
       ref={containerRef}
-      className="bg-navy-soft py-32 px-6 md:px-12 lg:px-24 w-full text-white relative z-10 overflow-hidden border-t border-white/10"
+      className="bg-[#0B1220] py-32 px-6 md:px-12 lg:px-24 w-full text-white relative z-10 overflow-hidden border-t border-white/5"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-accent rounded-[100%] blur-[120px] opacity-[0.012] pointer-events-none" />
@@ -113,7 +113,7 @@ export default function IndustriesStory() {
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
             Why We Understand Your Industry
           </h2>
-          <p className="text-slate-400 text-[16px] leading-relaxed">
+          <p className="text-[#94A3B8] text-[16px] leading-relaxed">
             Our engineering methodology isn't generic. It's a highly refined, stage-by-stage process
             designed to eliminate risk and ensure your software meets the strict demands of your
             market.

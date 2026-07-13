@@ -106,13 +106,13 @@ export default function PortfolioGrid() {
   );
 
   return (
-    <section id="portfolio-grid" className="bg-navy-soft py-16 md:py-20 relative overflow-hidden border-t border-white/[0.03]">
+    <section id="portfolio-grid" className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden border-t border-white/[0.03]">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header & Filter */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
               SELECTED WORKS
             </span>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
@@ -127,8 +127,8 @@ export default function PortfolioGrid() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-accent text-white shadow-lg shadow-accent/20 scale-105'
-                    : 'bg-white/5 border border-white/10 text-slate-300 hover:border-white/30 hover:text-accent hover:shadow-sm hover:bg-white/10'
+                    ? 'bg-accent text-white shadow-[0_4px_15px_rgba(79,140,255,0.2)] scale-105'
+                    : 'bg-white/[0.03] border border-white/10 text-[#94A3B8] hover:border-accent/50 hover:text-accent hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:bg-white/[0.05]'
                 }`}
               >
                 {category}
@@ -148,30 +148,31 @@ export default function PortfolioGrid() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col bg-slate-900 border border-white/10 shadow-sm hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500 col-span-1 ${project.gridSpan}`}
+                className={`group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col bg-[#0B1220] shadow-[0_10px_40px_rgba(0,0,0,0.3)] col-span-1 ${project.gridSpan}`}
               >
                 {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/0 group-hover:bg-blue-500/[0.06] blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#4F8CFF]/0 group-hover:bg-[#4F8CFF]/[0.06] blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
                 
                 {/* macOS Browser Wrapper */}
-                <div className="w-full h-full flex flex-col relative z-10 transform group-hover:-translate-y-1.5 group-hover:scale-[1.01] transition-transform duration-500 ease-out">
+                <div className="w-full h-full flex flex-col relative z-10 transform group-hover:scale-[1.02] group-hover:rotate-[0.5deg] transition-all duration-700 ease-out">
                   
                   {/* Browser Header */}
-                  <div className="h-10 bg-[#1e293b] flex items-center px-4 shrink-0 border-b border-slate-700/50 rounded-t-2xl">
+                  <div className="h-10 bg-[#14203A]/80 backdrop-blur-md flex items-center px-4 shrink-0 border-b border-white/5 rounded-t-2xl relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     <div className="flex gap-2 mr-4">
                       <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
                       <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                       <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
                     </div>
                     <div className="flex-1 flex justify-center">
-                      <div className="bg-surface/60 rounded-md px-4 py-1 text-[10px] text-slate-400 font-medium truncate max-w-[200px] border border-slate-700/50">
+                      <div className="bg-[#0B1220]/60 rounded-md px-4 py-1 text-[10px] text-[#94A3B8] font-medium truncate max-w-[200px] border border-white/5">
                         {project.liveUrl.replace('https://', '')}
                       </div>
                     </div>
                   </div>
 
                   {/* Browser Body / Image instead of heavy iframe */}
-                  <div className="flex-1 relative bg-slate-950 overflow-hidden rounded-b-2xl">
+                  <div className="flex-1 relative bg-[#0B1220] overflow-hidden rounded-b-2xl">
                     
                     <iframe 
                       src={project.liveUrl} 
@@ -182,11 +183,11 @@ export default function PortfolioGrid() {
                     />
 
                     {/* Content Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-[#0B1220]/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
                       <div className="transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out">
                         
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-md text-[9px] font-bold uppercase tracking-wider text-white border border-white/20">
+                          <span className="px-2.5 py-1 bg-white/[0.03] backdrop-blur-md rounded-md text-[9px] font-bold uppercase tracking-wider text-[#94A3B8] border border-white/10">
                             {project.industry}
                           </span>
                         </div>
@@ -195,14 +196,14 @@ export default function PortfolioGrid() {
                           {project.title}
                         </h3>
                         
-                        <p className="text-sm text-slate-300 leading-relaxed mb-5 line-clamp-3 font-light">
+                        <p className="text-sm text-[#C7D2E4] leading-relaxed mb-5 line-clamp-3 font-light">
                           {project.description}
                         </p>
                         
                         {/* Technology Chips */}
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.technologies.slice(0, 4).map(tech => (
-                            <span key={tech} className="px-2 py-1 bg-[#1E2A4A]/60 border border-accent/30 rounded text-[10px] font-semibold text-blue-100 backdrop-blur-md">
+                            <span key={tech} className="px-2 py-1 bg-[#4F8CFF]/10 border border-[#4F8CFF]/20 rounded text-[10px] font-semibold text-[#4F8CFF] backdrop-blur-md">
                               {tech}
                             </span>
                           ))}
@@ -214,13 +215,13 @@ export default function PortfolioGrid() {
                             href={project.liveUrl} 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="flex items-center gap-2 text-xs font-semibold text-white bg-accent hover:bg-blue-500 px-4 py-2.5 rounded-lg transition-colors shadow-lg shadow-blue-500/20"
+                            className="flex items-center gap-2 text-xs font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-4 py-2.5 rounded-lg transition-colors shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Live Demo <ExternalLink size={14} />
                           </a>
                           <button 
-                            className="flex items-center gap-2 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg transition-colors border border-white/10"
+                            className="flex items-center gap-2 text-xs font-semibold text-white bg-white/[0.03] hover:bg-white/[0.05] backdrop-blur-md px-4 py-2.5 rounded-lg transition-colors border border-white/10"
                             onClick={(e) => { e.stopPropagation(); /* Case study trigger */ }}
                           >
                             Case Study <ArrowRight size={14} />

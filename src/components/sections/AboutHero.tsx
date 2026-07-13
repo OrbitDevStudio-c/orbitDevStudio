@@ -5,14 +5,17 @@ import { Link } from 'react-router-dom';
 
 export default function AboutHero() {
   return (
-    <section className="bg-navy-soft relative w-full min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
-      {/* Confined particle background */}
-      <ServiceParticles />
+    <section className="bg-[#0B1220] relative w-full pt-32 pb-20 overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 opacity-40 mix-blend-screen">
+        <ServiceParticles />
+      </div>
       
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#3B6FE0]/[0.12] via-transparent to-transparent opacity-[0.38]" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#B08CFF]/20 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-[0.38]" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#7C5CFF]/[0.15] via-transparent to-transparent" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center">
@@ -23,7 +26,7 @@ export default function AboutHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-white max-w-4xl"
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Who We Are</span>
           </div>
 
@@ -31,13 +34,13 @@ export default function AboutHero() {
             Engineering digital <br className="hidden sm:block" /> futures since 2023.
           </h1>
 
-          <p className="text-base sm:text-[17px] text-white/70 leading-relaxed font-light mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-[17px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-2xl mx-auto">
             OrbitDevStudio is a premium software engineering agency dedicated to transforming ambitious ideas into scalable, high-performance digital realities. We don't just write code; we build the foundational technology that powers next-generation businesses.
           </p>
 
           <Link
             to="/portfolio"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_25px_rgba(79,140,255,0.4)]"
           >
             See Our Work
             <ArrowRight size={18} />

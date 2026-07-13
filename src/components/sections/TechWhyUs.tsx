@@ -37,8 +37,10 @@ const benefits = [
 
 export default function TechWhyUs() {
   return (
-    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
+      {/* Background Lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#4F8CFF]/[0.08] blur-[150px] pointer-events-none rounded-full" />
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
         <div className="flex flex-col xl:flex-row gap-6 items-stretch">
 
@@ -48,24 +50,26 @@ export default function TechWhyUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full xl:w-[35%] bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.25)] rounded-3xl p-10 md:p-12 text-white flex flex-col justify-center"
+            className="w-full xl:w-[35%] bg-gradient-to-br from-[#101A2D] to-[#0B1220] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] rounded-3xl p-10 md:p-12 text-white flex flex-col justify-center relative overflow-hidden"
           >
-            <div>
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/20 bg-white/5 mb-8">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-white uppercase">WHY CHOOSE ORBITDEVSTUDIO</span>
+            {/* Inner glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#4F8CFF]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-8">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">WHY CHOOSE ORBITDEVSTUDIO</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
                 Where senior expertise meets delivery precision.
               </h2>
 
-              <p className="text-[15px] leading-relaxed text-blue-100/80 mb-12">
+              <p className="text-[15px] leading-relaxed text-[#C7D2E4] mb-12">
                 We combine deep technical mastery with structured delivery practices to ship products that are secure, scalable, and built to grow with your business.
               </p>
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white px-6 py-3.5 font-semibold transition-all hover:bg-blue-500 shadow-md hover:shadow-[0_0_20px_rgba(79,140,255,0.3)]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-6 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
               >
                 Start Your Project
                 <ArrowRight size={18} />
@@ -83,9 +87,9 @@ export default function TechWhyUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-[linear-gradient(180deg,rgba(25,38,70,0.92),rgba(16,22,38,0.95))] rounded-3xl p-6 border border-white/[0.06] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_24px_rgba(0,0,0,0.15)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_rgba(79,140,255,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
+                  className="bg-[#0B1220]/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(79,140,255,0.1)] hover:border-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
                 >
-                  <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 text-accent flex items-center justify-center mb-5 shrink-0 group-hover:bg-accent/10 group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(79,140,255,0.2)] transition-all duration-300 group-hover:scale-110">
+                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/5 text-[#4F8CFF] flex items-center justify-center mb-6 shrink-0 group-hover:bg-[#4F8CFF]/10 group-hover:border-[#4F8CFF]/50 transition-all duration-300 group-hover:scale-110">
                     <benefit.icon size={20} strokeWidth={1.5} />
                   </div>
 
@@ -93,7 +97,7 @@ export default function TechWhyUs() {
                     {benefit.title}
                   </h3>
 
-                  <p className="text-sm leading-relaxed text-slate-300 flex-grow">
+                  <p className="text-sm md:text-[15px] leading-relaxed text-[#94A3B8] flex-grow">
                     {benefit.description}
                   </p>
                 </motion.div>

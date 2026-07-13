@@ -59,9 +59,9 @@ const socialIconMap = {
 
 export default function Footer() {
   return (
-    <footer className="section-dark bg-navy-dark relative mt-0 border-t border-white/[0.05] overflow-hidden">
+    <footer className="section-dark bg-navy-dark relative mt-0 border-t border-white/5 overflow-hidden">
       {/* Glow Accent Line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent pointer-events-none" />
 
       {/* Background Glow */}
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -156,7 +156,7 @@ export default function Footer() {
                     key={link.platform}
                     className="flex items-center gap-3 group w-fit"
                   >
-                    <span className="text-accent transition-all duration-300 group-hover:text-white group-hover:scale-110">
+                    <span className="text-accent transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:rotate-[5deg]">
                       {Icon && <Icon />}
                     </span>
 
@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500">
           <p>
             © {new Date().getFullYear()} OrbitDevStudio. All rights reserved.
           </p>
