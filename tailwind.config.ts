@@ -8,11 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0C',
-        surface: '#141416',
-        surfaceHighlight: '#1C1C1F',
-        primary: '#1E2A4A',
+        background: '#070B14',
+        surface: '#101827',
+        surfaceHighlight: '#121B2D',
+        primary: '#0C1220',
         accent: '#3B6FE0',
+        gray: {
+          300: '#F3F6FF',
+          400: '#A9B5CF',
+          500: '#8F9CB5',
+        },
+        slate: {
+          400: '#7F8CA8',
+          500: '#67738D',
+        }
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',

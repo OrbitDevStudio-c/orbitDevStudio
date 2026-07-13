@@ -115,7 +115,7 @@ export default function Navbar() {
         <motion.div
           className="w-full"
           animate={{
-            backgroundColor: scrolled ? 'rgba(8, 12, 24, 0.75)' : 'rgba(8, 12, 24, 0)',
+            backgroundColor: scrolled ? 'rgba(7, 11, 20, 0.75)' : 'rgba(7, 11, 20, 0)',
             backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
             boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.3)' : '0 0 rgba(0,0,0,0)',
             borderColor: scrolled ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255,255,255,0)',
@@ -141,7 +141,7 @@ export default function Navbar() {
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 const baseText = 'text-white/80 hover:text-white hover:bg-white/5';
-                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]' : baseText;
+                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]' : baseText;
  
                 return (
                   <Link
