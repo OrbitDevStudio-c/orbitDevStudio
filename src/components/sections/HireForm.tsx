@@ -96,7 +96,7 @@ export default function HireForm() {
     <section id="hire-form" className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         
-        <div className="bg-[#0B1220] rounded-[2rem] border border-white/5 flex flex-col lg:flex-row overflow-hidden relative shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+        <div className="bg-[#0B1220] rounded-[1.5rem] lg:rounded-[2rem] border border-white/5 flex flex-col lg:flex-row overflow-hidden relative shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
           
           {/* Custom Toast Overlay */}
           <AnimatePresence>
@@ -124,7 +124,7 @@ export default function HireForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-[480px] bg-gradient-to-br from-[#162137] via-[#0E1627] to-[#0A101C] p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center border-r border-white/10"
+            className="lg:w-[480px] bg-gradient-to-br from-[#162137] via-[#0E1627] to-[#0A101C] p-8 md:p-10 lg:p-14 text-white relative overflow-hidden flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10"
           >
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#4F8CFF] opacity-[0.06] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -159,7 +159,7 @@ export default function HireForm() {
               <div className="flex flex-col items-center mt-2 mb-10 w-full">
                 <div className="flex items-center gap-4 justify-center">
                   <CompanyLogo size="xs" />
-                  <div className="text-[42px] font-bold leading-none tracking-tight flex items-center">
+                  <div className="text-3xl md:text-[42px] font-bold leading-none tracking-tight flex items-center">
                     <span className="text-white">Orbit</span>
                     <span className="text-[#A7B3C8]">DevStudios</span>
                   </div>
@@ -193,26 +193,26 @@ export default function HireForm() {
               {/* CONTACT INFO */}
               <div className="flex flex-col gap-4 mt-auto">
                 {/* Card 1: Email */}
-                <div className="flex items-center gap-5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
-                    <Mail size={20} className="text-[#4F8CFF]" />
+                <div className="flex items-center gap-4 md:gap-5 p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
+                    <Mail size={18} className="text-[#4F8CFF] md:w-5 md:h-5" />
                   </div>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Email</p>
-                    <a href="mailto:orbitdevstudios@gmail.com" className="text-[15px] text-white font-medium group-hover:text-[#4F8CFF] transition-colors">
+                  <div className="flex flex-col justify-center min-w-0 w-full">
+                    <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Email</p>
+                    <a href="mailto:orbitdevstudios@gmail.com" className="text-[13px] sm:text-[15px] text-white font-medium group-hover:text-[#4F8CFF] transition-colors break-all">
                       orbitdevstudios@gmail.com
                     </a>
                   </div>
                 </div>
 
                 {/* Card 2: Location */}
-                <div className="flex items-center gap-5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
-                    <MapPin size={20} className="text-[#4F8CFF]" />
+                <div className="flex items-center gap-4 md:gap-5 p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
+                    <MapPin size={18} className="text-[#4F8CFF] md:w-5 md:h-5" />
                   </div>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Location</p>
-                    <p className="text-[15px] text-white font-medium">
+                  <div className="flex flex-col justify-center min-w-0 w-full">
+                    <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Location</p>
+                    <p className="text-[13px] sm:text-[15px] text-white font-medium truncate">
                       Ahmedabad, Gujarat, India
                     </p>
                   </div>
@@ -223,7 +223,7 @@ export default function HireForm() {
           </motion.div>
 
           {/* Right Form */}
-          <div className="flex-1 p-10 md:p-14 bg-transparent relative">
+          <div className="flex-1 p-6 md:p-10 lg:p-14 bg-transparent relative">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative">
               {/* Honeypot field for spam protection */}
               <div className="hidden" aria-hidden="true">
@@ -272,10 +272,10 @@ export default function HireForm() {
                   <label htmlFor="phone" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Phone Number
                   </label>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-2">
                     <select 
                       name="countryCode"
-                      className="w-[120px] px-3 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
+                      className="w-full sm:w-[120px] px-3 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
                     >
                       {COUNTRY_CODES.map((c) => (
                         <option key={`${c.country}-${c.code}`} value={c.code} className="bg-[#101A2D] text-white py-2">
@@ -388,7 +388,7 @@ export default function HireForm() {
                   onChange={(e) => setDetails(e.target.value)}
                   onBlur={() => setDetailsTouched(true)}
                   placeholder="Tell us about your project or requirements (min 50 characters)..."
-                  className="w-full px-5 py-4 h-[240px] rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] resize-none placeholder:text-slate-500"
+                  className="w-full px-4 sm:px-5 py-4 h-[200px] sm:h-[240px] rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] resize-none placeholder:text-slate-500"
                 ></textarea>
               </div>
 

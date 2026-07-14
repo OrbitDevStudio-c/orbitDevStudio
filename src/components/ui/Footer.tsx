@@ -68,10 +68,10 @@ export default function Footer() {
       <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-16 md:pb-12">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-8">
 
           {/* Logo */}
-          <div className="col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
+          <div className="col-span-1 sm:col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
             <Link to="/" className="flex items-center gap-3 group w-fit">
               <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:scale-105">
                 <img
@@ -142,7 +142,7 @@ export default function Footer() {
           </div>
 
           {/* Connect */}
-          <div className="col-span-2 sm:col-span-1 md:col-span-4 lg:col-span-3">
+          <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-3">
             <h4 className="text-xs uppercase tracking-wider text-slate-200 font-semibold mb-6">
               Connect
             </h4>

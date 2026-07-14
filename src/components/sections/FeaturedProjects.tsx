@@ -123,8 +123,8 @@ export default function FeaturedProjects() {
                   />
 
                   {/* Content Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-[#0B1220]/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
-                    <div className="transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-[#0B1220]/85 to-transparent opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                    <div className="transform translate-y-0 lg:translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out">
 
                       <div className="flex items-center gap-3 mb-3">
                         <span className="px-2.5 py-1 bg-white/[0.03] backdrop-blur-md rounded-md text-[9px] font-bold uppercase tracking-wider text-[#94A3B8] border border-white/10">

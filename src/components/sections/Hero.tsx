@@ -52,18 +52,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full"
         >
           <Link 
             to="/contact" 
-            className="px-7 py-3.5 bg-white text-navy font-semibold rounded-xl flex items-center gap-2.5 transition-all hover:bg-gray-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.2)] hover:-translate-y-px active:translate-y-0 group text-sm"
+            className="w-full sm:w-auto justify-center px-7 py-3.5 bg-white text-navy font-semibold rounded-xl flex items-center gap-2.5 transition-all hover:bg-gray-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.2)] hover:-translate-y-px active:translate-y-0 group text-sm"
           >
             Start a Project
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link 
             to="/portfolio" 
-            className="px-7 py-3.5 text-white font-medium rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
+            className="w-full sm:w-auto text-center px-7 py-3.5 text-white font-medium rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
           >
             View Portfolio
           </Link>

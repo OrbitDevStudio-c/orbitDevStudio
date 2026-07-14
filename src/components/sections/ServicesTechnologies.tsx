@@ -79,14 +79,14 @@ export default function ServicesTechnologies() {
           </div>
 
           {/* Tabs Container */}
-          <div className="flex p-1 bg-white/[0.02] rounded-xl mb-8 border border-white/5 backdrop-blur-sm">
+          <div className="flex p-1 bg-white/[0.02] rounded-xl mb-8 border border-white/5 backdrop-blur-sm overflow-x-auto hide-scrollbar">
             {(["Frameworks", "Languages", "Databases"] as TabType[]).map((tab) => {
               const isActive = activeTab === tab;
               return (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`relative flex-1 py-2.5 text-[13px] font-semibold rounded-lg transition-all duration-300 ${
+                  className={`relative flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-2 text-[13px] font-semibold rounded-lg transition-all duration-300 ${
                     isActive ? 'text-white' : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
                   }`}
                 >

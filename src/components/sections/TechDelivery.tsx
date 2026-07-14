@@ -64,9 +64,9 @@ export default function TechDelivery() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 mb-12 hide-scrollbar pb-4 md:grid md:grid-cols-3 md:pb-0 md:overflow-visible">
             {scaleCards.map((card, index) => (
-              <div key={index} className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
+              <div key={index} className="flex-none w-[85%] md:w-auto snap-center bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
                 <div className="w-10 h-10 rounded-lg bg-[#4F8CFF]/10 flex items-center justify-center mb-6">
                   <card.icon size={20} className="text-[#4F8CFF]" />
                 </div>

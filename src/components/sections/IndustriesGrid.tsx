@@ -93,7 +93,7 @@ export default function IndustriesGrid() {
       </div>
 
       {/* Bento Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[320px] gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-auto md:auto-rows-[320px] gap-6">
         {bentoItems.map((item, index) => (
           <motion.div
             key={item.id}

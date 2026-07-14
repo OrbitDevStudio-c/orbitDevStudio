@@ -14,7 +14,6 @@ const navItems = [
 ];
 
 const mobileNavItems = [
-  { label: 'About Us', path: '/about' },
   ...navItems,
 ];
 
@@ -48,13 +47,18 @@ export default function Navbar() {
   // Handle focus behavior when mobile menu is opened/closed
   useEffect(() => {
     if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
       const focusTimer = setTimeout(() => {
         if (firstLinkRef.current) {
           firstLinkRef.current.focus();
         }
       }, 50);
-      return () => clearTimeout(focusTimer);
+      return () => {
+        document.body.style.overflow = '';
+        clearTimeout(focusTimer);
+      };
     } else {
+      document.body.style.overflow = '';
       if (toggleButtonRef.current) {
         toggleButtonRef.current.focus();
       }

@@ -43,7 +43,7 @@ export default function AboutStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative h-[500px] md:h-[600px] w-full"
+            className="relative h-[350px] sm:h-[450px] md:h-[600px] w-full"
           >
             {/* Background Blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
