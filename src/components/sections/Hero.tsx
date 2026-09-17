@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-accent/[0.05] rounded-full blur-[180px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondaryAccent/[0.04] rounded-full blur-[150px]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[conic-gradient(from_90deg_at_50%_0%,rgba(11,18,32,1)_0%,rgba(79,140,255,0.03)_50%,rgba(11,18,32,1)_100%)] opacity-30 blur-2xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[conic-gradient(from_90deg_at_50%_0%,rgba(11,18,32,1)_0%,rgba(22,119,255,0.03)_50%,rgba(11,18,32,1)_100%)] light:bg-[conic-gradient(from_90deg_at_50%_0%,rgba(255,255,255,1)_0%,rgba(22,119,255,0.05)_50%,rgba(255,255,255,1)_100%)] opacity-30 blur-2xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 w-full flex flex-col items-center text-center">
@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white tracking-tight leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white light:text-slate-900 tracking-tight leading-[1.1] mb-6"
         >
           We build software{' '}
           <br className="hidden sm:block" />
@@ -54,16 +54,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.45 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full"
         >
-          <Link 
-            to="/hire" 
-            className="w-full sm:w-auto justify-center px-7 py-3.5 bg-white text-navy font-semibold rounded-xl flex items-center gap-2.5 transition-all hover:bg-gray-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.2)] hover:-translate-y-px active:translate-y-0 group text-sm"
+          <Link
+            to="/hire"
+            className="btn-primary w-full sm:w-auto justify-center px-7 py-3.5 rounded-xl flex items-center gap-2.5 transition-all hover:-translate-y-px active:translate-y-0 group text-sm"
           >
             Start a Project
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link 
             to="/portfolio" 
-            className="w-full sm:w-auto text-center px-7 py-3.5 text-white font-medium rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
+            className="w-full sm:w-auto text-center px-7 py-3.5 text-white light:text-slate-900 font-medium rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
           >
             View Portfolio
           </Link>

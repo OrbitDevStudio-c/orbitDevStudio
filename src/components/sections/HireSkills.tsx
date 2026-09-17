@@ -18,11 +18,11 @@ export default function HireSkills() {
   </div>
 
   {/* Side Gradient Fade */}
-  <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#0B1220] via-transparent to-[#0B1220]" />
+  <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[var(--rt-surface-1)] via-transparent to-[var(--rt-surface-1)]" />
 
   {/* Heading */}
   <div className="max-w-[1400px] mx-auto px-6 mb-12 text-center relative z-20">
-    <h3 className="text-xl md:text-2xl font-bold text-white">
+    <h3 className="text-xl md:text-2xl font-bold text-white light:text-slate-900">
       Hire experts across 50+ modern technologies
     </h3>
   </div>

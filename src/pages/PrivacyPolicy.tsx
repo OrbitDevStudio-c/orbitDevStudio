@@ -77,11 +77,11 @@ export default function PrivacyPolicy() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 bg-background relative z-10 text-white"
+        className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 bg-background relative z-10 text-white light:text-slate-900"
       >
         <div className="max-w-4xl mx-auto">
           <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">LEGAL COMPLIANCE</span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">Privacy Policy</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white light:text-slate-900 mb-8 tracking-tight">Privacy Policy</h1>
           <p className="text-slate-400 text-sm leading-relaxed mb-12 border-b border-white/10 pb-8">
             Last updated: October 2026. This Privacy Policy details our commitment to safeguarding the data of our clients, prospective partners, and web users.
           </p>
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
           <div className="space-y-10">
             {sections.map((section, idx) => (
               <div key={idx} className="space-y-3">
-                <h2 className="text-xl font-bold text-white tracking-tight">{section.title}</h2>
+                <h2 className="text-xl font-bold text-white light:text-slate-900 tracking-tight">{section.title}</h2>
                 <p className="text-slate-400 text-[14px] leading-relaxed">{section.content}</p>
               </div>
             ))}

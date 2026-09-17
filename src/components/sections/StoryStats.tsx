@@ -45,9 +45,9 @@ function OrbitCard({ stat, index, inView }: { stat: typeof stats[0]; index: numb
         whileHover={{ scale: 1.15, zIndex: 50 }}
         className="relative px-4 py-3 flex flex-col items-center justify-center cursor-default min-w-[84px] rounded-2xl"
         style={{
-          background: 'linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.85) 100%)',
+          background: 'linear-gradient(135deg, var(--rt-pill-bg-1) 0%, var(--rt-pill-bg-2) 100%)',
           border: `1px solid ${stat.color}30`,
-          boxShadow: `0 0 20px ${stat.color}18, 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)`,
+          boxShadow: `0 0 20px ${stat.color}18, 0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 var(--rt-pill-sheen)`,
         }}
       >
         {/* shimmer overlay */}
@@ -121,7 +121,7 @@ export default function StoryStats() {
       {/* ambient blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(79,140,255,0.06) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(22,119,255,0.06) 0%, transparent 70%)' }} />
         <div className="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)' }} />
       </div>
@@ -218,7 +218,7 @@ export default function StoryStats() {
             Our Journey
           </motion.span>
 
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white tracking-tight leading-tight mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white light:text-slate-900 tracking-tight leading-tight mb-6">
             Built for teams that{' '}
             <span className="text-gradient">demand precision</span>
           </h2>
@@ -255,7 +255,7 @@ export default function StoryStats() {
 
           <Link
             to="/about"
-            className="group flex items-center gap-2.5 text-sm font-semibold text-white hover:text-accent transition-colors"
+            className="group flex items-center gap-2.5 text-sm font-semibold text-white light:text-slate-900 hover:text-accent transition-colors"
           >
             Our Story
             <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />

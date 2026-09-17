@@ -21,7 +21,7 @@ const categories: TechItem[] = [
 
 export default function TechCategories() {
   return (
-    <section className="bg-[#101A2D] px-6 py-16 md:py-20 text-white md:px-12 lg:px-24">
+    <section className="bg-[#101A2D] px-6 py-16 md:py-20 text-white light:text-slate-900 md:px-12 lg:px-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-12 max-w-3xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-[#4F8CFF]">Stack Coverage</p>
@@ -44,7 +44,7 @@ export default function TechCategories() {
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-[#4F8CFF]/10 text-[#4F8CFF]">
                 <Icon size={22} />
               </div>
-              <h3 className="text-lg font-bold text-white">{name}</h3>
+              <h3 className="text-lg font-bold text-white light:text-slate-900">{name}</h3>
               <p className="mt-3 text-sm leading-6 text-[#C7D2E4]">{detail}</p>
             </motion.article>
           ))}

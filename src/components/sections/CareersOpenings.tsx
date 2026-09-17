@@ -127,7 +127,7 @@ export default function CareersOpenings() {
           <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             CURRENT OPENINGS
           </span>
-          <h2 className="text-h2 text-white mb-6">
+          <h2 className="text-h2 text-white light:text-slate-900 mb-6">
             Find your next role.
           </h2>
           <p className="text-[15px] text-[#C7D2E4] leading-relaxed max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ export default function CareersOpenings() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group card-dark p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] transition-all duration-300"
+              className="group card-dark p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] transition-all duration-300"
             >
               
               <div className="flex-1">
@@ -152,7 +152,7 @@ export default function CareersOpenings() {
                     {job.department}
                   </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold text-white light:text-slate-900 mb-3 group-hover:text-white light:group-hover:text-slate-900 transition-colors">
                   {job.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-[#94A3B8] font-medium mb-4">
@@ -179,7 +179,7 @@ export default function CareersOpenings() {
               <div className="shrink-0 md:ml-8">
                 <button 
                   onClick={() => setSelectedJob(job.title)}
-                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/[0.02] border border-white/5 px-6 py-3 font-semibold text-white transition-all group-hover:bg-accent group-hover:text-white group-hover:border-accent cursor-pointer shadow-sm group-hover:shadow-[0_0_15px_rgba(79,140,255,0.3)]"
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white/[0.02] border border-white/5 px-6 py-3 font-semibold text-white light:text-slate-900 transition-all group-hover:bg-accent group-hover:text-white group-hover:border-accent cursor-pointer shadow-sm group-hover:shadow-[0_0_15px_rgba(22,119,255,0.3)]"
                 >
                   Apply Now
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -206,12 +206,12 @@ export default function CareersOpenings() {
               {/* Header */}
               <div className="px-8 py-6 border-b border-white/10 flex items-center justify-between shrink-0">
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Apply for {selectedJob}</h3>
+                  <h3 className="text-2xl font-bold text-white light:text-slate-900">Apply for {selectedJob}</h3>
                   <p className="text-sm text-slate-400 mt-1">Please fill in your details below.</p>
                 </div>
                 <button 
                   onClick={closeForm}
-                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition-colors cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/70 light:text-slate-900/70 hover:text-white light:hover:text-slate-900 transition-colors cursor-pointer"
                 >
                   <X size={20} />
                 </button>
@@ -224,7 +224,7 @@ export default function CareersOpenings() {
                     <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6">
                       <CheckCircle2 size={40} className="text-emerald-500" />
                     </div>
-                    <h4 className="text-2xl font-bold text-white mb-2">Application Submitted!</h4>
+                    <h4 className="text-2xl font-bold text-white light:text-slate-900 mb-2">Application Submitted!</h4>
                     <p className="text-slate-400 max-w-sm mx-auto mb-8">
                       Thank you for applying to OrbitDevStudio. Our hiring team will review your application and get back to you soon.
                     </p>
@@ -241,41 +241,41 @@ export default function CareersOpenings() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Full Name *</label>
-                        <input type="text" name="name" required placeholder="John Doe" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="text" name="name" required placeholder="John Doe" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Email Address *</label>
-                        <input type="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="john@example.com" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="john@example.com" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Phone Number *</label>
-                        <input type="tel" name="phone" required pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="00000 00000" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="tel" name="phone" required pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="00000 00000" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Current Position</label>
-                        <input type="text" name="currentPosition" placeholder="e.g. Student, Freelancer" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="text" name="currentPosition" placeholder="e.g. Student, Freelancer" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Current / Expected CTC</label>
-                        <input type="text" name="ctc" placeholder="e.g. 3 LPA" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="text" name="ctc" placeholder="e.g. 3 LPA" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Experience in Industry *</label>
-                        <select name="experience" required className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white">
-                          <option value="" className="bg-slate-900 text-white">Select experience</option>
-                          <option value="0-6 months" className="bg-slate-900 text-white">0-6 months</option>
-                          <option value="6-12 months" className="bg-slate-900 text-white">6-12 months</option>
-                          <option value="1-2 years" className="bg-slate-900 text-white">1-2 years</option>
-                          <option value="2+ years" className="bg-slate-900 text-white">2+ years</option>
+                        <select name="experience" required className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900">
+                          <option value="" className="bg-slate-900 text-white light:text-slate-900">Select experience</option>
+                          <option value="0-6 months" className="bg-slate-900 text-white light:text-slate-900">0-6 months</option>
+                          <option value="6-12 months" className="bg-slate-900 text-white light:text-slate-900">6-12 months</option>
+                          <option value="1-2 years" className="bg-slate-900 text-white light:text-slate-900">1-2 years</option>
+                          <option value="2+ years" className="bg-slate-900 text-white light:text-slate-900">2+ years</option>
                         </select>
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Resume / CV *</label>
-                        <input type="file" name="resume" required accept=".pdf,.doc,.docx" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[13px] file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20" />
+                        <input type="file" name="resume" required accept=".pdf,.doc,.docx" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[13px] file:font-semibold file:bg-white/10 file:text-white light:file:text-slate-900 hover:file:bg-white/20" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Portfolio / LinkedIn URL</label>
-                        <input type="url" name="portfolio" placeholder="https://..." className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white" />
+                        <input type="url" name="portfolio" placeholder="https://..." className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900" />
                       </div>
                     </div>
 
@@ -285,7 +285,7 @@ export default function CareersOpenings() {
                         name="coverLetter"
                         rows={4} 
                         placeholder="Why are you a good fit for this role?" 
-                        className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white resize-none"
+                        className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900 resize-none"
                         value={coverLetter}
                         onChange={(e) => {
                           setCoverLetter(e.target.value);

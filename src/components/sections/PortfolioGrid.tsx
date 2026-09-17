@@ -128,7 +128,7 @@ export default function PortfolioGrid() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
               SELECTED WORKS
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white light:text-slate-900">
               Products we've launched.
             </h2>
           </div>
@@ -140,7 +140,7 @@ export default function PortfolioGrid() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-accent text-white shadow-[0_4px_15px_rgba(79,140,255,0.2)] scale-105'
+                    ? 'bg-accent text-white shadow-[0_4px_15px_rgba(22,119,255,0.2)] scale-105'
                     : 'bg-white/[0.03] border border-white/10 text-[#94A3B8] hover:border-accent/50 hover:text-accent hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:bg-white/[0.05]'
                 }`}
               >
@@ -161,7 +161,7 @@ export default function PortfolioGrid() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col bg-[#0B1220] shadow-[0_10px_40px_rgba(0,0,0,0.3)] col-span-1 ${project.gridSpan}`}
+                className={`mockup-frame group relative rounded-2xl overflow-hidden cursor-pointer flex flex-col bg-[#0B1220] shadow-[0_10px_40px_rgba(0,0,0,0.3)] col-span-1 ${project.gridSpan}`}
               >
                 {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#4F8CFF]/0 group-hover:bg-[#4F8CFF]/[0.06] blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
@@ -228,7 +228,7 @@ export default function PortfolioGrid() {
                             href={project.liveUrl} 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="flex items-center gap-2 text-xs font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-4 py-2.5 rounded-lg transition-colors shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
+                            className="flex items-center gap-2 text-xs font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-4 py-2.5 rounded-lg transition-colors shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Live Demo <ExternalLink size={14} />

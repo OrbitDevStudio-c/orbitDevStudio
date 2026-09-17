@@ -24,10 +24,10 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-white max-w-4xl"
+          className="flex flex-col items-center text-white light:text-slate-900 max-w-4xl"
         >
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Who We Are</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Who We Are</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.1] mb-8">
@@ -40,7 +40,7 @@ export default function AboutHero() {
 
           <Link
             to="/portfolio"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_25px_rgba(79,140,255,0.4)]"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_25px_rgba(22,119,255,0.4)]"
           >
             See Our Work
             <ArrowRight size={18} />
@@ -61,7 +61,7 @@ export default function AboutHero() {
              <div className="w-16 h-32 rounded-t-xl bg-white/20 border-t border-x border-white/30 backdrop-blur-md" />
              <div className="w-16 h-40 rounded-t-xl bg-white/30 border-t border-x border-white/40 backdrop-blur-md relative -translate-y-4 shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
              <div className="w-16 h-24 rounded-t-xl bg-white/10 border-t border-x border-white/20 backdrop-blur-md" />
-             <div className="w-16 h-36 rounded-t-xl bg-accent/30 border-t border-x border-white/20 backdrop-blur-md shadow-[0_0_30px_rgba(79,140,255,0.3)]" />
+             <div className="w-16 h-36 rounded-t-xl bg-accent/30 border-t border-x border-white/20 backdrop-blur-md shadow-[0_0_30px_rgba(22,119,255,0.3)]" />
              <div className="w-16 h-28 rounded-t-xl bg-white/20 border-t border-x border-white/30 backdrop-blur-md" />
           </div>
         </motion.div>

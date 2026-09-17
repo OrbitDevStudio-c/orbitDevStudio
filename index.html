@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://randomuser.me" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OrbitDevStudio</title>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('orbit-theme') === 'light') {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root">
@@ -25,6 +34,17 @@
           gap: 1.5rem;
           color: white;
           font-family: 'Inter', sans-serif;
+        }
+        html.light #initial-loader {
+          background-color: #f8fafc;
+          color: #0f172a;
+        }
+        html.light #initial-loader .logo-text span {
+          color: #64748b;
+        }
+        html.light #initial-loader .spinner {
+          border-color: rgba(15, 23, 42, 0.1);
+          border-top-color: #1677ff;
         }
         .spinner {
           width: 48px;

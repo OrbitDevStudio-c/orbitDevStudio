@@ -22,7 +22,7 @@ export default function ProcessTimeline() {
           className="mb-16 text-center flex flex-col items-center"
         >
           <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">How We Work</span>
-          <h2 className="text-h2 text-white tracking-tight">Our Engineering Process</h2>
+          <h2 className="text-h2 text-white light:text-slate-900 tracking-tight">Our Engineering Process</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
@@ -43,7 +43,7 @@ export default function ProcessTimeline() {
                 </div>
 
                 {/* Text */}
-                <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
+                <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3">{step.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
             );

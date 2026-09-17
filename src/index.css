@@ -1,18 +1,79 @@
 @import "tailwindcss";
 
+/* Enables `light:` prefixed utilities — the site defaults to dark (no class
+   needed); adding `.light` to <html> (see ThemeContext) activates the
+   light-mode variants placed alongside the existing dark-styled classes. */
+@custom-variant light (&:where(.light, .light *));
+
+/* ============================================================
+   Runtime theme tokens — KnowledgeVoice-inspired color system.
+   :root = dark (default). .light overrides the same properties.
+   Declaration order matters: .light must come after :root so it
+   wins when both apply to <html> (equal selector specificity).
+   ============================================================ */
+:root {
+  --rt-bg: #070b16;
+  --rt-surface-1: #0b1222;
+  --rt-surface-2: #101a2d;
+  --rt-border: rgba(148, 163, 184, 0.15);
+  --rt-text-primary: #f8fafc;
+  --rt-text-secondary: #94a3b8;
+  --rt-text-muted: #64748b;
+  --rt-accent: #1677ff;
+  --rt-cyan: #00d9ff;
+  --rt-purple: #6c2bff;
+  --rt-link: #60a5fa;
+  --rt-input-bg: #0b1222;
+  --rt-input-border: #334155;
+  --rt-glass-tint: rgba(255, 255, 255, 0.03);
+  --rt-glass-tint-strong: rgba(255, 255, 255, 0.06);
+  --rt-glass-border: rgba(255, 255, 255, 0.08);
+  --rt-pill-bg-1: rgba(15, 23, 42, 0.95);
+  --rt-pill-bg-2: rgba(15, 23, 42, 0.85);
+  --rt-pill-sheen: rgba(255, 255, 255, 0.06);
+
+  --gradient-primary: linear-gradient(135deg, #050b2e 0%, #1677ff 55%, #00d9ff 100%);
+  --gradient-ai: linear-gradient(135deg, #6c2bff 0%, #6c2bff 45%, #00d9ff 100%);
+}
+
+.light {
+  --rt-bg: #ffffff;
+  --rt-surface-1: #ffffff;
+  --rt-surface-2: #f8fafc;
+  --rt-surface-3: #f1f5f9;
+  --rt-border: #e2e8f0;
+  --rt-text-primary: #0f172a;
+  --rt-text-secondary: #475569;
+  --rt-text-muted: #64748b;
+  --rt-accent: #1677ff;
+  --rt-cyan: #00bfe8;
+  --rt-purple: #6c2bff;
+  --rt-link: #2563eb;
+  --rt-input-bg: #ffffff;
+  --rt-input-border: #e2e8f0;
+  --rt-glass-tint: rgba(15, 23, 42, 0.04);
+  --rt-glass-tint-strong: rgba(15, 23, 42, 0.065);
+  --rt-glass-border: #e2e8f0;
+  --rt-pill-bg-1: rgba(255, 255, 255, 0.97);
+  --rt-pill-bg-2: rgba(248, 250, 252, 0.97);
+  --rt-pill-sheen: rgba(15, 23, 42, 0.03);
+}
+
 @theme {
-  --color-background: #0B1220;
-  --color-surface: #111827;
+  --color-background: var(--rt-bg);
+  --color-surface: var(--rt-surface-1);
   --color-surface-highlight: rgba(18,26,44,0.82);
   --color-surfaceHighlight: rgba(18,26,44,0.82);
   --color-primary: #111827;
-  --color-accent: #4F8CFF;
+  --color-accent: var(--rt-accent);
+  --color-secondaryAccent: var(--rt-purple);
+  --color-brandCyan: var(--rt-cyan);
   --color-white-section: #ffffff;
   --color-gray-section: #FAFAF9;
-  --color-navy: #0B1220;
-  --color-text-dark: #FFFFFF;
-  --color-text-muted: #94A3B8;
-  
+  --color-navy: var(--rt-surface-1);
+  --color-text-dark: var(--rt-text-primary);
+  --color-text-muted: var(--rt-text-secondary);
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   @keyframes float {
@@ -34,6 +95,7 @@
     background-color: var(--color-background);
     color: var(--color-text-muted);
     overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 
   ::selection {
@@ -50,62 +112,75 @@
   }
 
   .bg-navy-deep {
-    background-color: #0B1220;
+    background-color: var(--rt-surface-1);
   }
-  
+
   .bg-navy-soft {
-    background-color: #0F172A;
+    background-color: var(--rt-surface-2);
   }
-  
+
   .bg-navy-dark {
-    background-color: #080C16;
+    background-color: var(--rt-bg);
   }
-  
+
   .bg-surface-dark {
-    background-color: #111827;
+    background-color: var(--rt-surface-1);
   }
 
   .section-white {
     background-color: var(--color-background);
-    color: white;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+    color: var(--rt-text-primary);
+    background-image:
+      linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148,163,184,0.06) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   .section-gray {
     background-color: var(--color-surface);
-    color: white;
+    color: var(--rt-text-primary);
   }
 
-  /* === Glass Panels (Dark Background) === */
+  /* === Glass Panels (theme-aware) === */
   .glass-panel {
-    background: rgba(18, 26, 44, 0.82);
+    background: var(--rt-glass-tint-strong);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(79, 140, 255, 0.05);
+    border: 1px solid var(--rt-glass-border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(22, 119, 255, 0.05);
     border-radius: 1.5rem;
   }
 
-  /* === Dark Theme Cards === */
+  .light .glass-panel {
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06), 0 0 15px rgba(22, 119, 255, 0.04);
+  }
+
+  /* === Theme-aware Cards === */
   .card-dark {
     background-color: transparent;
     background-image: none;
-    background: rgba(18, 26, 44, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--rt-glass-tint-strong);
+    border: 1px solid var(--rt-glass-border);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(79, 140, 255, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(22, 119, 255, 0.05);
     border-radius: 1.5rem;
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-dark:hover {
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(79, 140, 255, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(22, 119, 255, 0.15);
     transform: translateY(-4px);
-    border-color: rgba(79, 140, 255, 0.22);
+    border-color: rgba(22, 119, 255, 0.22);
+  }
+
+  .light .card-dark {
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05), 0 0 15px rgba(22, 119, 255, 0.04);
+  }
+
+  .light .card-dark:hover {
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08), 0 0 25px rgba(22, 119, 255, 0.1);
+    border-color: rgba(22, 119, 255, 0.3);
   }
 
   /* === Typographic Scale === */
@@ -114,28 +189,28 @@
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 800;
-    color: #FFFFFF;
+    color: var(--rt-text-primary);
   }
   .text-h1 {
     font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--rt-text-primary);
   }
   .text-h2 {
     font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
     line-height: 1.25;
     letter-spacing: -0.015em;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--rt-text-primary);
   }
   .text-h3 {
     font-size: clamp(1.25rem, 2.5vw + 0.5rem, 1.75rem);
     line-height: 1.35;
     letter-spacing: -0.01em;
     font-weight: 600;
-    color: #FFFFFF;
+    color: var(--rt-text-primary);
   }
   .text-h4 {
     font-size: clamp(1.1rem, 2vw + 0.5rem, 1.25rem);
@@ -159,20 +234,22 @@
     min-height: 44px;
     background-color: transparent;
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--rt-glass-border);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-button:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(79, 140, 255, 0.22);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(79, 140, 255, 0.1);
+    background-color: var(--rt-glass-tint);
+    border-color: rgba(22, 119, 255, 0.3);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(22, 119, 255, 0.12);
   }
 
+  /* Primary CTA — the KnowledgeVoice brand gradient. Same gradient in both
+     themes since the button surface itself carries the brand color. */
   .btn-primary {
     min-height: 44px;
-    background-image: linear-gradient(135deg, var(--color-accent), #2A52BE);
+    background-image: var(--gradient-primary);
     color: white;
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -181,22 +258,37 @@
   }
 
   .btn-primary:hover {
-    background-image: linear-gradient(135deg, #5C95FF, var(--color-accent));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 25px rgba(79, 140, 255, 0.35);
+    filter: brightness(1.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 25px rgba(0, 217, 255, 0.3);
     transform: translateY(-2px);
+  }
+
+  .light .btn-primary {
+    border: 1px solid rgba(5, 11, 46, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 4px 15px rgba(15, 23, 42, 0.12);
+  }
+
+  .light .btn-primary:hover {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 22px rgba(0, 217, 255, 0.25);
   }
 
   /* === Text Gradients === */
   .text-gradient {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(135deg, var(--color-accent), #7c3aed);
+    background-image: var(--gradient-primary);
+  }
+
+  .text-gradient-ai {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: var(--gradient-ai);
   }
 
   .text-gradient-blue {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    background-image: linear-gradient(135deg, var(--color-accent), var(--rt-cyan));
   }
 
   /* === Utilities === */
@@ -208,35 +300,115 @@
     display: none;
   }
 
-  /* === Premium Overrides === */
+  /* === Premium Overrides ===
+     Retargets the hardcoded dark utility classes used throughout the
+     section components to theme-runtime tokens, so the whole site adapts
+     to light/dark without editing every component. Elements that must
+     always render as a dark UI "screenshot" (macOS-style browser mockups)
+     opt out via the .mockup-frame wrapper. */
   .bg-slate-900 {
     background-color: transparent !important;
     background-image: none !important;
-    background: rgba(18, 26, 44, 0.82) !important;
+    background: var(--rt-glass-tint-strong) !important;
     backdrop-filter: blur(18px) !important;
     -webkit-backdrop-filter: blur(18px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(79, 140, 255, 0.05) !important;
+    border: 1px solid var(--rt-glass-border) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(22, 119, 255, 0.05) !important;
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
   .bg-slate-900:hover {
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(79, 140, 255, 0.15) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(22, 119, 255, 0.15) !important;
     transform: translateY(-4px) !important;
-    border-color: rgba(79, 140, 255, 0.22) !important;
+    border-color: rgba(22, 119, 255, 0.22) !important;
   }
   .bg-slate-950 {
-    background-color: #0B1220 !important;
+    background-color: var(--rt-surface-1) !important;
   }
-  .border-white\/10, .border-white\/15, .border-white\/20, .border-white\/5 {
-    border-color: rgba(255, 255, 255, 0.06) !important;
+
+  .border-white\/10, .border-white\/15, .border-white\/20, .border-white\/5,
+  .border-white\/30, .border-white\/40, .border-white\/\[0\.02\], .border-white\/\[0\.03\],
+  .border-white\/\[0\.06\], .border-white\/\[0\.15\] {
+    border-color: var(--rt-glass-border) !important;
     transition: border-color 300ms ease;
   }
-  .border-white\/10:hover, .border-white\/15:hover, .border-white\/20:hover, .border-white\/5:hover, .group:hover .border-white\/10, .group:hover .border-white\/15, .group:hover .border-white\/20, .group:hover .border-white\/5 {
-    border-color: rgba(79, 140, 255, 0.22) !important;
+  .border-white\/10:hover, .border-white\/15:hover, .border-white\/20:hover, .border-white\/5:hover,
+  .group:hover .border-white\/10, .group:hover .border-white\/15, .group:hover .border-white\/20, .group:hover .border-white\/5 {
+    border-color: rgba(22, 119, 255, 0.3) !important;
   }
+
+  .bg-white\/5, .bg-white\/10, .bg-white\/20, .bg-white\/30, .bg-white\/40,
+  .bg-white\/\[0\.02\], .bg-white\/\[0\.03\], .bg-white\/\[0\.04\], .bg-white\/\[0\.05\],
+  .bg-white\/\[0\.06\], .bg-white\/\[0\.08\], .bg-white\/\[0\.1\] {
+    background-color: var(--rt-glass-tint) !important;
+  }
+
+  .bg-\[\#101A2D\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0B1220\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0E1728\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#14203A\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#1E2A4A\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0C1220\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#152037\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0D0D0D\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0A0A0C\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#141416\]:not(:where(.mockup-frame, .mockup-frame *)) {
+    background-color: var(--rt-surface-2) !important;
+  }
+
+  .border-\[\#101A2D\]:not(:where(.mockup-frame, .mockup-frame *)) {
+    border-color: var(--rt-border) !important;
+  }
+
+  /* Opacity-suffixed variants of the same surfaces (translucent header/backdrop bars) */
+  .bg-\[\#101A2D\]\/60:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0B1220\]\/60:not(:where(.mockup-frame, .mockup-frame *)) {
+    background-color: color-mix(in srgb, var(--rt-surface-2) 60%, transparent) !important;
+  }
+  .bg-\[\#101A2D\]\/80:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0B1220\]\/80:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#14203A\]\/80:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#1E2A4A\]\/80:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#152037\]\/80:not(:where(.mockup-frame, .mockup-frame *)) {
+    background-color: color-mix(in srgb, var(--rt-surface-2) 80%, transparent) !important;
+  }
+  .bg-\[\#101A2D\]\/90:not(:where(.mockup-frame, .mockup-frame *)),
+  .bg-\[\#0E1728\]\/90:not(:where(.mockup-frame, .mockup-frame *)) {
+    background-color: color-mix(in srgb, var(--rt-surface-2) 90%, transparent) !important;
+  }
+  .bg-\[\#1E2A4A\]\/20:not(:where(.mockup-frame, .mockup-frame *)) {
+    background-color: color-mix(in srgb, var(--rt-surface-2) 20%, transparent) !important;
+  }
+
+  .text-\[\#94A3B8\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-\[\#A7B3C8\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-\[\#A5B4D4\]:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-slate-400:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-slate-500:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-slate-300:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-slate-200:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-gray-400:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-gray-500:not(:where(.mockup-frame, .mockup-frame *)),
+  .text-gray-300:not(:where(.mockup-frame, .mockup-frame *)) {
+    color: var(--rt-text-secondary) !important;
+  }
+
+  .text-\[\#C7D2E4\]:not(:where(.mockup-frame, .mockup-frame *)) {
+    color: var(--rt-text-primary) !important;
+    opacity: 0.92;
+  }
+
+  /* Old accent blue (#4F8CFF) and purple (#7C5CFF) literal hex utilities,
+     from before the KnowledgeVoice palette — route to the new brand tokens. */
+  .bg-\[\#4F8CFF\] { background-color: var(--rt-accent) !important; }
+  .text-\[\#4F8CFF\] { color: var(--rt-accent) !important; }
+  .border-\[\#4F8CFF\] { border-color: var(--rt-accent) !important; }
+  .bg-\[\#7C5CFF\], .bg-\[\#B08CFF\] { background-color: var(--rt-purple) !important; }
+  .text-\[\#7C5CFF\], .text-\[\#B08CFF\] { color: var(--rt-purple) !important; }
+  .border-\[\#7C5CFF\], .border-\[\#B08CFF\] { border-color: var(--rt-purple) !important; }
+
   /* === Ambient Lighting Glows === */
   .glow-blue {
-    background: radial-gradient(circle, rgba(59, 111, 224, 0.05) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(22, 119, 255, 0.05) 0%, transparent 60%);
     filter: blur(200px);
   }
   .glow-navy {
@@ -244,9 +416,22 @@
     filter: blur(200px);
   }
   .glow-aurora {
-    background: radial-gradient(circle at top left, rgba(52, 211, 153, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
+    background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(108, 43, 255, 0.04) 0%, transparent 50%);
     filter: blur(250px);
+  }
+
+  /* === Form Inputs === */
+  .input-field {
+    background-color: var(--rt-input-bg);
+    border: 1px solid var(--rt-input-border);
+    color: var(--rt-text-primary);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .input-field:focus {
+    border-color: var(--rt-accent);
+    box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.1);
+    outline: none;
   }
 }
 
@@ -258,17 +443,17 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(79, 140, 255, 0.3);
+  background: rgba(22, 119, 255, 0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(79, 140, 255, 0.5);
+  background: rgba(22, 119, 255, 0.5);
 }
 
 /* Application modal: a contained, unobtrusive scrollbar that does not affect page scrolling. */
 .application-form-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(79, 140, 255, 0.55) transparent;
+  scrollbar-color: rgba(22, 119, 255, 0.55) transparent;
 }
 
 .application-form-scroll::-webkit-scrollbar {
@@ -281,13 +466,13 @@
 }
 
 .application-form-scroll::-webkit-scrollbar-thumb {
-  background: rgba(79, 140, 255, 0.5);
+  background: rgba(22, 119, 255, 0.5);
   border: 2px solid rgba(18, 26, 44, 0.82);
   border-radius: 999px;
 }
 
 .application-form-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(79, 140, 255, 0.8);
+  background: rgba(22, 119, 255, 0.8);
 }
 
 /* === Subtle Animations === */

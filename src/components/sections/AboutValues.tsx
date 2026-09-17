@@ -33,10 +33,10 @@ export default function AboutValues() {
           <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             OUR CORE VALUES
           </span>
-          <h2 className="text-h2 text-white mb-6">
+          <h2 className="text-h2 text-white light:text-slate-900 mb-6">
             What drives us forward.
           </h2>
-          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(79,140,255,0.4)]" />
+          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(22,119,255,0.4)]" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -47,13 +47,13 @@ export default function AboutValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-dark p-8 md:p-12 transition-all duration-500 group flex flex-col md:flex-row gap-8 items-start hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)]"
+              className="card-dark p-8 md:p-12 transition-all duration-500 group flex flex-col md:flex-row gap-8 items-start hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)]"
             >
-              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 border border-accent/20 group-hover:border-accent/50 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(79,140,255,0.2)] group-hover:scale-110 transition-all duration-500">
-                <value.icon size={28} className="text-accent group-hover:text-white transition-colors" />
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 border border-accent/20 group-hover:border-accent/50 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(22,119,255,0.2)] group-hover:scale-110 transition-all duration-500">
+                <value.icon size={28} className="text-accent group-hover:text-white light:group-hover:text-slate-900 transition-colors" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                <h3 className="text-xl font-bold text-white light:text-slate-900 mb-3 tracking-tight">
                   {value.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-[#94A3B8]">

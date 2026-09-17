@@ -43,10 +43,10 @@ export default function CareersBenefits() {
           <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             LIFE AT ORBIT
           </span>
-          <h2 className="text-h2 text-white mb-6">
+          <h2 className="text-h2 text-white light:text-slate-900 mb-6">
             Why you'll love working here.
           </h2>
-          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(79,140,255,0.4)]" />
+          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(22,119,255,0.4)]" />
           <p className="text-[15px] text-[#C7D2E4] leading-relaxed max-w-2xl mx-auto">
             We believe that happy engineers write the best code. That's why we've built a culture and a benefits package designed to support your professional growth and personal well-being.
           </p>
@@ -60,12 +60,12 @@ export default function CareersBenefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-dark p-8 transition-all duration-300 group hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)]"
+              className="card-dark p-8 transition-all duration-300 group hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)]"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:shadow-[0_0_25px_rgba(79,140,255,0.3)]">
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
                 <benefit.icon size={24} className="text-accent group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+              <h3 className="text-xl font-bold text-white light:text-slate-900 mb-3 group-hover:text-white light:group-hover:text-slate-900 transition-colors">
                 {benefit.title}
               </h3>
               <p className="text-sm leading-relaxed text-[#94A3B8]">

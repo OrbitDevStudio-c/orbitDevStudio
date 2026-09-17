@@ -36,9 +36,9 @@ export default function IndustriesFAQ() {
 
   return (
  <section
-  className="bg-[#0B1220] relative overflow-hidden py-16 md:py-20 px-6 md:px-12 lg:px-24"
+  className="relative overflow-hidden py-16 md:py-20 px-6 md:px-12 lg:px-24"
   style={{
-    background: "radial-gradient(circle at 90% 90%, rgba(79,140,255,0.08) 0%, transparent 35%), linear-gradient(135deg,#0B1220 0%,#101A2D 45%,#0B1220 100%)",
+    background: "radial-gradient(circle at 90% 90%, rgba(22,119,255,0.08) 0%, transparent 35%), linear-gradient(135deg, var(--rt-surface-1) 0%, var(--rt-surface-2) 45%, var(--rt-surface-1) 100%)",
   }}
 >
   {/* Background Pattern */}
@@ -46,13 +46,13 @@ export default function IndustriesFAQ() {
     className="absolute inset-0 opacity-[0.04] pointer-events-none"
     style={{
       backgroundImage:
-        "radial-gradient(circle,#ffffff 1px,transparent 1px)",
+        "radial-gradient(circle, var(--rt-text-primary) 1px, transparent 1px)",
       backgroundSize: "28px 28px",
     }}
   />
 
   {/* Blue Glow */}
-  <div className="absolute -bottom-52 -right-40 h-[700px] w-[700px] rounded-full bg-[#4F8CFF]/10 blur-[180px]" />
+  <div className="absolute -bottom-52 -right-40 h-[700px] w-[700px] rounded-full bg-accent/10 blur-[180px]" />
 
   <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
@@ -64,7 +64,7 @@ export default function IndustriesFAQ() {
         FAQ
       </div>
 
-      <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-8">
+      <h2 className="text-4xl lg:text-5xl font-bold text-white light:text-slate-900 tracking-tight mb-8">
         Frequently Asked Questions
       </h2>
 
@@ -87,7 +87,7 @@ export default function IndustriesFAQ() {
 
         <Link
           to="/hire"
-          className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-all duration-300 group"
+          className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white light:hover:text-slate-900 transition-all duration-300 group"
         >
           Talk to our experts
           <ArrowRight
@@ -112,12 +112,12 @@ export default function IndustriesFAQ() {
           <div
             key={faq.id}
             onClick={() => setOpenId(isOpen ? null : faq.id)}
-            className="bg-[#101A2D] border border-white/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/20 hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)]"
+            className="bg-[#101A2D] border border-white/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/20 hover:shadow-[0_8px_30px_rgba(22,119,255,0.1)]"
           >
 
             <div className="flex justify-between items-center p-6">
 
-              <h3 className="text-white text-[16px] font-semibold pr-6">
+              <h3 className="text-white light:text-slate-900 text-[16px] font-semibold pr-6">
                 {faq.question}
               </h3>
 

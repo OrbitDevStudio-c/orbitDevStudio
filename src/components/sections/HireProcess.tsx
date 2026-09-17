@@ -39,7 +39,7 @@ export default function HireProcess() {
         SIMPLE PROCESS
       </span>
 
-      <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+      <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white light:text-slate-900 mb-6">
         How We Work
       </h2>
 
@@ -72,7 +72,7 @@ export default function HireProcess() {
     from-[#3B6FE0]
     via-[#7C5CFF]
     to-[#00D4FF]
-    shadow-[0_0_20px_rgba(79,140,255,0.9)]"
+    shadow-[0_0_20px_rgba(22,119,255,0.9)]"
   />
 
   <motion.div
@@ -112,12 +112,12 @@ export default function HireProcess() {
             <div className="relative">
 
               {/* Number Badge */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#101A2D] shadow-[0_0_10px_rgba(79,140,255,0.3)]">
+              <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px] font-bold z-20 border-2 border-[#101A2D] shadow-[0_0_10px_rgba(22,119,255,0.3)]">
                 {step.num}
               </div>
 
               {/* Circle */}
-              <div className="w-[100px] h-[100px] rounded-full bg-white/[0.02] border border-white/10 flex items-center justify-center shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_8px_rgba(79,140,255,0.15)] group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_12px_rgba(79,140,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
+              <div className="w-[100px] h-[100px] rounded-full bg-white/[0.02] border border-white/10 flex items-center justify-center shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_8px_rgba(22,119,255,0.15)] group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_12px_rgba(22,119,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
                 <step.icon
                   size={32}
                   className="text-accent"
@@ -128,7 +128,7 @@ export default function HireProcess() {
 
             {/* Text Content */}
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">
+              <h3 className="text-lg md:text-xl font-bold text-white light:text-slate-900 mb-3">
                 {step.title}
               </h3>
 

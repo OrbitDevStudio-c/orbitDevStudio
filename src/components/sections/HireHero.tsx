@@ -21,10 +21,10 @@ export default function HireHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white max-w-xl"
+          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Hire Dedicated Talent</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Hire Dedicated Talent</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
@@ -40,7 +40,7 @@ export default function HireHero() {
               onClick={() => {
                 document.getElementById('hire-form')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white font-bold text-[14px] px-8 py-3.5 transition-all hover:bg-blue-600 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-white font-bold text-[14px] px-8 py-3.5 transition-all hover:bg-blue-600 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5"
             >
               Hire Developers Now
               <ArrowRight size={18} />
@@ -88,7 +88,7 @@ export default function HireHero() {
                 <Terminal size={20} className="text-accent" />
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-xs font-bold text-white tracking-wide">Senior React Dev</span>
+                <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Senior React Dev</span>
                 <div className="flex gap-1">
                   <div className="w-2 h-2 rounded-full bg-emerald-400" />
                   <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">Available</span>
@@ -106,8 +106,8 @@ export default function HireHero() {
                 <UserCheck size={18} className="text-purple-400" />
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-xs font-bold text-white tracking-wide">Cloud Architect</span>
-                <span className="text-[10px] text-white/50">AWS & Azure</span>
+                <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Cloud Architect</span>
+                <span className="text-[10px] text-white/50 light:text-slate-900/50">AWS & Azure</span>
               </div>
             </motion.div>
 
@@ -122,8 +122,8 @@ export default function HireHero() {
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <div className="flex justify-between items-center">
-                   <span className="text-xs font-bold text-white tracking-wide">Product Designer</span>
-                   <span className="text-[10px] text-white/50">Figma</span>
+                   <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Product Designer</span>
+                   <span className="text-[10px] text-white/50 light:text-slate-900/50">Figma</span>
                 </div>
                 <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mt-1">
                   <div className="w-[85%] h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full" />
@@ -133,7 +133,7 @@ export default function HireHero() {
 
             {/* Decorative Stars */}
             <div className="absolute left-10 top-10 text-accent animate-pulse">✦</div>
-            <div className="absolute right-20 bottom-20 text-white/40 text-xl animate-pulse">✦</div>
+            <div className="absolute right-20 bottom-20 text-white/40 light:text-slate-900/40 text-xl animate-pulse">✦</div>
 
           </div>
         </motion.div>

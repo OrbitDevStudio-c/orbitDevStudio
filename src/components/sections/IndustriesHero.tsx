@@ -21,10 +21,10 @@ export default function IndustriesHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white max-w-xl"
+          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Industries</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Industries</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
@@ -40,15 +40,15 @@ export default function IndustriesHero() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-4">
             <div>
               <h3 className="text-2xl font-bold mb-1">7+</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Core Industries</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Core Industries</p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">100%</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Customization</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Customization</p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">Scale</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Built into DNA</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Built into DNA</p>
             </div>
           </div>
         </motion.div>
@@ -66,7 +66,7 @@ export default function IndustriesHero() {
           <div className="relative w-full max-w-[450px] h-[400px] flex items-center justify-center">
             
             {/* Center Core Node */}
-             <div className="absolute z-10 w-24 h-24 rounded-full bg-white/[0.02] border border-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(79,140,255,0.15)]">
+             <div className="absolute z-10 w-24 h-24 rounded-full bg-white/[0.02] border border-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_50px_rgba(22,119,255,0.15)]">
                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite] overflow-hidden">
                  <img src="/companylogo.webp" alt="Core" width={64} height={64} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                </div>
@@ -123,8 +123,8 @@ export default function IndustriesHero() {
 
             {/* Decorative Stars */}
             <div className="absolute -left-4 bottom-32 text-[#F6B73C] animate-pulse">✦</div>
-            <div className="absolute left-8 top-1/4 text-white/30 text-sm">✦</div>
-            <div className="absolute right-12 -bottom-4 text-white/40 text-xl animate-pulse">✦</div>
+            <div className="absolute left-8 top-1/4 text-white/30 light:text-slate-900/30 text-sm">✦</div>
+            <div className="absolute right-12 -bottom-4 text-white/40 light:text-slate-900/40 text-xl animate-pulse">✦</div>
 
           </div>
         </motion.div>

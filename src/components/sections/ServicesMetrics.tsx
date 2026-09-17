@@ -51,7 +51,7 @@ export default function ServicesMetrics() {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center px-4"
           >
-            <div className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">
+            <div className="text-4xl md:text-5xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
               <AnimatedCounter value={10} suffix="+" />
             </div>
             <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Projects Delivered</p>
@@ -64,7 +64,7 @@ export default function ServicesMetrics() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center px-4"
           >
-            <div className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">
+            <div className="text-4xl md:text-5xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
               99.9%
             </div>
             <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Deployment Success</p>
@@ -77,7 +77,7 @@ export default function ServicesMetrics() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col items-center px-4"
           >
-            <div className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">
+            <div className="text-4xl md:text-5xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
               24/7
             </div>
             <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Technical Support</p>
@@ -90,7 +90,7 @@ export default function ServicesMetrics() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col items-center px-4"
           >
-            <div className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tight">
+            <div className="text-4xl md:text-5xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
               <AnimatedCounter value={15} suffix="+" />
             </div>
             <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Core Technologies</p>

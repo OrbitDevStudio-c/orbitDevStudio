@@ -26,11 +26,11 @@ const testimonials = [
 
 export default function IndustriesTestimonials() {
   return (
-    <section className="bg-navy-soft w-full relative z-10 text-white overflow-hidden">
+    <section className="bg-navy-soft w-full relative z-10 text-white light:text-slate-900 overflow-hidden">
       <div className="py-32 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto w-full relative">
       
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white light:text-slate-900 mb-6 tracking-tight">
           Don't just take our word for it.
         </h2>
       </div>
@@ -59,7 +59,7 @@ export default function IndustriesTestimonials() {
                   height={192}
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1E2A4A] rounded-full flex items-center justify-center text-white shadow-lg z-20 group-hover:scale-110 transition-transform duration-500 delay-100">
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#1E2A4A] rounded-full flex items-center justify-center text-white light:text-slate-900 shadow-lg z-20 group-hover:scale-110 transition-transform duration-500 delay-100">
                 <Quote size={24} fill="currentColor" />
               </div>
               
@@ -76,13 +76,13 @@ export default function IndustriesTestimonials() {
                 ))}
               </div>
 
-              <p className="text-xl md:text-2xl font-medium text-white leading-relaxed mb-8 tracking-tight">
+              <p className="text-xl md:text-2xl font-medium text-white light:text-slate-900 leading-relaxed mb-8 tracking-tight">
                 "{testi.quote}"
               </p>
 
               <div className="mt-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h4 className="text-[17px] font-bold text-white tracking-tight">{testi.name}</h4>
+                  <h4 className="text-[17px] font-bold text-white light:text-slate-900 tracking-tight">{testi.name}</h4>
                   <p className="text-[14px] text-slate-400 font-medium">
                     {testi.designation} at <span className="text-accent">{testi.company}</span>
                   </p>

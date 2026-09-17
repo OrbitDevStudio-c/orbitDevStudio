@@ -8,18 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0B1220',
-        surface: '#111827',
+        background: '#070B16',
+        surface: '#0B1222',
         surfaceHighlight: 'rgba(18,26,44,0.82)',
         primary: '#111827',
-        accent: '#4F8CFF',
-        secondaryAccent: '#7C5CFF',
+        accent: '#1677FF',
+        secondaryAccent: '#6C2BFF',
+        brandCyan: '#00D9FF',
         success: '#3DD598',
         warning: '#F5B942',
         navy: {
-          deep: '#0B1220',
-          soft: '#0F172A',
-          dark: '#080C16',
+          deep: '#0B1222',
+          soft: '#101A2D',
+          dark: '#070B16',
         },
         gray: {
           300: '#C6D0E3',

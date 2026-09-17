@@ -66,14 +66,14 @@ export default function Testimonials() {
         
         <div className="mb-14 text-center flex flex-col items-center">
           <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">Client Stories</span>
-          <h2 className="text-h2 text-white tracking-tight">What our partners say</h2>
+          <h2 className="text-h2 text-white light:text-slate-900 tracking-tight">What our partners say</h2>
         </div>
         
         <div className="relative group">
           {/* Slider Controls */}
           <button 
             onClick={() => scroll('left')}
-            className="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
+            className="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white light:text-slate-900 z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -81,7 +81,7 @@ export default function Testimonials() {
           
           <button 
             onClick={() => scroll('right')}
-            className="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
+            className="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white light:text-slate-900 z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:text-accent hidden md:flex border border-white/15 cursor-pointer"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-dark p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
-                  <Quote size={32} className="text-white/10 mb-4" />
+                  <Quote size={32} className="text-white/10 light:text-slate-900/10 mb-4" />
                   <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
                 </div>
                 
@@ -113,7 +113,7 @@ export default function Testimonials() {
                         key={i} 
                         size={14} 
                         fill={i <= t.rating ? "currentColor" : "none"} 
-                        className={i <= t.rating ? "" : "text-white/10"} 
+                        className={i <= t.rating ? "" : "text-white/10 light:text-slate-900/10"}
                       />
                     ))}
                   </div>
@@ -122,7 +122,7 @@ export default function Testimonials() {
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <h4 className="text-white text-sm font-bold">{t.name}</h4>
+                      <h4 className="text-white light:text-slate-900 text-sm font-bold">{t.name}</h4>
                       <p className="text-slate-400 text-[11px] font-medium">{t.role}, {t.company}</p>
                     </div>
                   </div>

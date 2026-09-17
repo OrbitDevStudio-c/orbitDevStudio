@@ -22,7 +22,7 @@ export default function TechHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white max-w-xl"
+          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">Technologies</span>
@@ -39,14 +39,14 @@ export default function TechHero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/hire"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-slate-950 transition-colors hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-slate-950 transition-colors hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
             >
               Plan My Stack
               <ArrowRight size={18} />
             </Link>
             <Link
               to="/portfolio"
-              className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3.5 font-semibold text-[#94A3B8] transition-colors hover:bg-white/[0.05] hover:text-white"
+              className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3.5 font-semibold text-[#94A3B8] transition-colors hover:bg-white/[0.05] hover:text-white light:hover:text-slate-900"
             >
               View Work
             </Link>
@@ -66,7 +66,7 @@ export default function TechHero() {
           <div className="relative w-full max-w-[450px] h-[450px] flex items-center justify-center">
             
             {/* Center Server Core */}
-            <div className="absolute z-10 w-32 h-32 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-[0_0_60px_rgba(79,140,255,0.2)]">
+            <div className="absolute z-10 w-32 h-32 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-[0_0_60px_rgba(22,119,255,0.2)]">
                <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#0A266A] to-accent flex items-center justify-center border border-white/10">
                  <Cpu size={40} className="text-white opacity-90" />
                </div>
@@ -110,7 +110,7 @@ export default function TechHero() {
               className="absolute left-1/2 bottom-8 -translate-x-1/2 z-20 bg-[#101A2D]/80 backdrop-blur-md border border-[#0A266A]/30 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-3"
             >
               <div className="w-10 h-10 rounded-xl bg-[#0A266A]/20 flex items-center justify-center border border-[#0A266A]/30">
-                <Network size={20} className="text-white/70" />
+                <Network size={20} className="text-white/70 light:text-slate-900/70" />
               </div>
               <div className="flex flex-col gap-1.5">
                 <div className="w-16 h-1.5 rounded-full bg-white/50" />
@@ -132,7 +132,7 @@ export default function TechHero() {
 
             {/* Decorative Stars */}
             <div className="absolute -left-4 bottom-32 text-accent animate-pulse">✦</div>
-            <div className="absolute right-12 -bottom-4 text-white/40 text-xl animate-pulse">✦</div>
+            <div className="absolute right-12 -bottom-4 text-white/40 light:text-slate-900/40 text-xl animate-pulse">✦</div>
 
           </div>
         </motion.div>

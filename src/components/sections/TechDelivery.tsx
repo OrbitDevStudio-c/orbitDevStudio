@@ -53,20 +53,20 @@ export default function TechDelivery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-[#0B1220] border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white"
+          className="bg-[#0B1220] border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-[2rem] p-8 md:p-12 lg:p-16 text-white light:text-slate-900"
         >
           <div className="mb-10">
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-3">
               WHO WE BUILD FOR
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white light:text-slate-900 max-w-2xl">
               Tailored technology solutions for every business scale.
             </h2>
           </div>
 
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 mb-12 hide-scrollbar pb-4 md:grid md:grid-cols-3 md:pb-0 md:overflow-visible">
             {scaleCards.map((card, index) => (
-              <div key={index} className="flex-none w-[85%] md:w-auto snap-center bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
+              <div key={index} className="flex-none w-[85%] md:w-auto snap-center bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(22,119,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
                 <div className="w-10 h-10 rounded-lg bg-[#4F8CFF]/10 flex items-center justify-center mb-6">
                   <card.icon size={20} className="text-[#4F8CFF]" />
                 </div>
@@ -78,7 +78,7 @@ export default function TechDelivery() {
             ))}
           </div>
 
-          <Link to="/hire" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white hover:text-accent transition-colors">
+          <Link to="/hire" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white light:text-slate-900 hover:text-accent transition-colors">
             GET FREE QUOTE <ArrowRight size={16} />
           </Link>
         </motion.div>
@@ -94,7 +94,7 @@ export default function TechDelivery() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase block mb-4">
               FULL-STACK DELIVERY
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight text-white mb-6 max-w-lg leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold tracking-tight text-white light:text-slate-900 mb-6 max-w-lg leading-[1.1]">
               End-to-end execution across every discipline.
             </h2>
             <p className="text-[16px] text-[#C7D2E4] leading-relaxed mb-10 max-w-lg font-light">
@@ -102,7 +102,7 @@ export default function TechDelivery() {
             </p>
             <Link
               to="/hire"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-8 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5 w-fit"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-8 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5 w-fit"
             >
               Get Free Quote
               <ArrowRight size={18} />
@@ -115,10 +115,10 @@ export default function TechDelivery() {
             viewport={{ once: true }}
             className="flex-1 w-full lg:max-w-[500px]"
           >
-            <div className="bg-gradient-to-br from-[#101A2D] to-[#0B1220] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[2rem] p-8 lg:p-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#4F8CFF]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="bg-gradient-to-br from-[var(--rt-surface-2)] to-[var(--rt-surface-1)] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[2rem] p-8 lg:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
               <div className="relative z-10">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-8">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 light:text-slate-900/50 uppercase block mb-8">
                   TECHNOLOGIES
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -131,19 +131,19 @@ export default function TechDelivery() {
                     { icon: Zap, label: 'Performance & Scale' }
                   ].map((tech, i) => (
                     <div key={i} className="flex items-center gap-4 bg-white/[0.04] border border-white/5 rounded-2xl p-4 hover:bg-white/[0.08] hover:border-white/10 transition-colors cursor-default group">
-                      <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shadow-inner group-hover:bg-[#4F8CFF]/10 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shadow-inner group-hover:bg-accent/10 transition-colors">
                         <tech.icon size={18} className="text-[#4F8CFF]" />
                       </div>
-                      <span className="text-[13px] font-semibold text-white tracking-wide">{tech.label}</span>
+                      <span className="text-[13px] font-semibold text-white light:text-slate-900 tracking-wide">{tech.label}</span>
                     </div>
                   ))}
                 </div>
-                <div className="bg-[#4F8CFF]/10 rounded-2xl p-6 border border-[#4F8CFF]/20 flex gap-5 items-center">
-                  <div className="w-12 h-12 rounded-xl bg-[#4F8CFF]/20 flex items-center justify-center shrink-0 border border-[#4F8CFF]/30">
+                <div className="bg-accent/10 rounded-2xl p-6 border border-accent/20 flex gap-5 items-center">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30">
                     <Check size={20} className="text-[#4F8CFF]" />
                   </div>
                   <div>
-                    <h4 className="text-[13px] font-bold text-white mb-1.5 tracking-wider">360° DELIVERY VISIBILITY</h4>
+                    <h4 className="text-[13px] font-bold text-white light:text-slate-900 mb-1.5 tracking-wider">360° DELIVERY VISIBILITY</h4>
                     <p className="text-xs text-[#C7D2E4] font-light leading-relaxed">Full transparency across design, engineering, and deployment.</p>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function TechDelivery() {
               OUR DELIVERY APPROACH
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white light:text-slate-900 mb-6">
               A proven operating model built for clarity and results
             </h2>
 
@@ -186,7 +186,7 @@ export default function TechDelivery() {
                 >
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${activeStep === i
-                      ? "bg-accent text-white shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
+                      ? "bg-accent text-white shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
                       : "bg-white/[0.03] border border-white/10 text-[#94A3B8] group-hover:border-accent/50 group-hover:text-accent"
                       }`}
                   >
@@ -201,8 +201,8 @@ export default function TechDelivery() {
                   >
                     <h3
                       className={`text-base font-bold mb-1 transition-colors ${activeStep === i
-                        ? "text-white"
-                        : "text-[#94A3B8] group-hover:text-white"
+                        ? "text-white light:text-slate-900"
+                        : "text-[#94A3B8] group-hover:text-white light:group-hover:text-slate-900"
                         }`}
                     >
                       {item.title}

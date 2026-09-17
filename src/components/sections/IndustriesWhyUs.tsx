@@ -90,7 +90,7 @@ export default function IndustriesWhyUs() {
     <section className="bg-[#101A2D] w-full relative z-10 overflow-hidden">
       <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-bold text-white light:text-slate-900 mb-6 tracking-tight">
           Why Clients Choose Us
         </h2>
 
@@ -110,8 +110,8 @@ export default function IndustriesWhyUs() {
             transition={{ duration: 0.5, delay: index * 0.05 }}
             className={`group relative overflow-hidden rounded-[24px] p-6 border ${
               item.isDark
-                ? "border-transparent shadow-[0_8px_30px_rgba(79,140,255,0.1)]"
-                : "border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgba(79,140,255,0.15)] hover:border-accent/30"
+                ? "border-transparent shadow-[0_8px_30px_rgba(22,119,255,0.1)]"
+                : "border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] hover:border-accent/30"
             } hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between backdrop-blur-xl ${item.className}`}
           >
             {item.isDark && (
@@ -119,16 +119,16 @@ export default function IndustriesWhyUs() {
             )}
 
             <div className="relative z-10">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-white/[0.03] border border-white/5 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.2)] relative z-10 [&>svg]:transition-colors [&>svg]:duration-300 group-hover:[&>svg]:brightness-125">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-white/[0.03] border border-white/5 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(22,119,255,0.2)] relative z-10 [&>svg]:transition-colors [&>svg]:duration-300 group-hover:[&>svg]:brightness-125">
                 {item.icon}
               </div>
 
-              <h3 className="text-2xl font-bold tracking-tight mb-1 text-white">
+              <h3 className="text-2xl font-bold tracking-tight mb-1 text-white light:text-slate-900">
                 {item.title}
               </h3>
 
               {item.subtitle && (
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] mb-2 text-white/60">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] mb-2 text-white/60 light:text-slate-900/60">
                   {item.subtitle}
                 </div>
               )}

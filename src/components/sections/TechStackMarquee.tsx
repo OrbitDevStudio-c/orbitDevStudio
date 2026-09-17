@@ -41,10 +41,10 @@ export default function TechStackMarquee() {
   </div>
 
   {/* Left Fade */}
-  <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#0A0A0C] to-transparent z-10 pointer-events-none" />
+  <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[var(--rt-surface-1)] to-transparent z-10 pointer-events-none" />
 
   {/* Right Fade */}
-  <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#0A0A0C] to-transparent z-10 pointer-events-none" />
+  <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[var(--rt-surface-1)] to-transparent z-10 pointer-events-none" />
 
   <div className="flex overflow-hidden group relative z-20">
     <div
@@ -54,7 +54,7 @@ export default function TechStackMarquee() {
       {items.map((tech, idx) => (
         <div
           key={idx}
-          className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-all duration-300 cursor-default shrink-0"
+          className="flex items-center gap-2.5 text-slate-400 hover:text-white light:hover:text-slate-900 transition-all duration-300 cursor-default shrink-0"
         >
           <tech.Icon
             size={18}

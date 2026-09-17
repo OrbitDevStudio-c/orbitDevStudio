@@ -29,11 +29,11 @@ const cases = [
 
 export default function IndustriesShowcase() {
   return (
-    <section className="bg-[#0E1728] w-full relative z-10 text-white overflow-hidden">
+    <section className="bg-[#0E1728] w-full relative z-10 text-white light:text-slate-900 overflow-hidden">
       <div className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
-      
+
       <div className="text-center max-w-3xl mx-auto mb-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-white light:text-slate-900 mb-6 tracking-tight">
           Industry Success Stories
         </h2>
         <p className="text-[#C7D2E4] text-[16px] leading-relaxed">
@@ -53,7 +53,7 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full lg:w-1/2 relative group perspective-1000"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-white/10 bg-slate-900">
+              <div className="mockup-frame relative rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:rotate-y-2 group-hover:rotate-x-2 border border-white/10 bg-[#0B1220]">
                 
                 {/* macOS Browser Header */}
                 <div className="bg-[#101A2D] border-b border-white/5 px-4 py-3 flex items-center gap-4 relative z-20">
@@ -108,7 +108,7 @@ export default function IndustriesShowcase() {
                 {project.industry}
               </div>
               
-              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white light:text-slate-900 tracking-tight mb-8">
                 {project.title}
               </h3>
 
@@ -123,14 +123,14 @@ export default function IndustriesShowcase() {
                 </div>
                 <div>
                   <h4 className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2">The Result</h4>
-                  <p className="text-white font-semibold text-[15px] leading-relaxed flex items-start gap-2">
+                  <p className="text-white light:text-slate-900 font-semibold text-[15px] leading-relaxed flex items-start gap-2">
                     <CheckCircle2 size={20} className="text-accent shrink-0 mt-0.5" />
                     {project.result}
                   </p>
                 </div>
               </div>
 
-              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/[0.03] text-white font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent hover:text-accent transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex items-center gap-2">
+              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/[0.03] text-white light:text-slate-900 font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent hover:text-accent transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-accent/10 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

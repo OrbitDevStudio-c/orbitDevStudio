@@ -70,13 +70,13 @@ export default function HireWhyUs() {
               </div>
 
               {/* Center Floating Badge */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0B1220] border border-white/10 p-5 rounded-2xl shadow-[0_8px_30px_rgba(79,140,255,0.15)] z-30 flex items-center gap-4 animate-[bounce_4s_infinite]">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0B1220] border border-white/10 p-5 rounded-2xl shadow-[0_8px_30px_rgba(22,119,255,0.15)] z-30 flex items-center gap-4 animate-[bounce_4s_infinite]">
                  <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                    <span className="text-2xl font-black text-white">10+</span>
+                    <span className="text-2xl font-black text-white light:text-slate-900">10+</span>
                  </div>
                  <div>
                     <p className="text-[10px] font-bold text-[#94A3B8] tracking-wider uppercase mb-1">Years Experience</p>
-                    <p className="text-sm font-bold text-white">Building Software</p>
+                    <p className="text-sm font-bold text-white light:text-slate-900">Building Software</p>
                  </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function HireWhyUs() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
               THE ORBIT ADVANTAGE
             </span>
-            <h2 className="text-h2 text-white mb-6 leading-tight">
+            <h2 className="text-h2 text-white light:text-slate-900 mb-6 leading-tight">
               Why augment your team with us?
             </h2>
             <p className="text-[15px] text-[#C7D2E4] leading-relaxed mb-12">
@@ -104,10 +104,10 @@ export default function HireWhyUs() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:shadow-[0_0_25px_rgba(79,140,255,0.3)]">
+                  <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
                     <benefit.icon size={22} className="text-accent group-hover:text-white transition-colors" strokeWidth={2} />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-white transition-colors">{benefit.title}</h3>
+                  <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3 group-hover:text-white light:group-hover:text-slate-900 transition-colors">{benefit.title}</h3>
                   <p className="text-sm leading-relaxed text-[#94A3B8]">
                     {benefit.description}
                   </p>

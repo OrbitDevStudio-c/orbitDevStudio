@@ -21,13 +21,13 @@ export default function ContactHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-white max-w-3xl"
+          className="flex flex-col items-center text-white light:text-slate-900 max-w-3xl"
         >
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-10">
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">Hire Us</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-bold tracking-tight leading-[1.1] mb-8 text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-bold tracking-tight leading-[1.1] mb-8 text-white light:text-slate-900">
             Let's build something <br className="hidden sm:block" /> incredible together.
           </h1>
 
@@ -42,13 +42,13 @@ export default function ContactHero() {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.5, delay: 0.2 }}
-             className="bg-[#0B1220] backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col items-center gap-5 hover:border-white/10 transition-all duration-300 w-full max-w-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(79,140,255,0.1)] shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
+             className="bg-[#0B1220] backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col items-center gap-5 hover:border-white/10 transition-all duration-300 w-full max-w-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(22,119,255,0.1)] shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
            >
              <div className="w-16 h-16 rounded-2xl bg-[#4F8CFF]/10 flex items-center justify-center border border-white/5">
                <Mail className="text-[#4F8CFF]" size={28} />
              </div>
              <div className="text-center">
-               <h3 className="font-bold text-white text-lg mb-1">Email Us</h3>
+               <h3 className="font-bold text-white light:text-slate-900 text-lg mb-1">Email Us</h3>
                <p className="text-sm text-[#94A3B8]">orbitdevstudios@gmail.com</p>
              </div>
            </motion.div>

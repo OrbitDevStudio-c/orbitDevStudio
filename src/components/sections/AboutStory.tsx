@@ -18,7 +18,7 @@ export default function AboutStory() {
             <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
               OUR ORIGIN STORY
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white light:text-slate-900 mb-8 leading-tight">
               Built by engineers, for forward-thinking businesses.
             </h2>
             
@@ -49,7 +49,7 @@ export default function AboutStory() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
             
             {/* Main large image */}
-            <div className="absolute right-0 top-0 w-3/4 h-[80%] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),_0_0_40px_rgba(79,140,255,0.15)] z-10 border border-white/10">
+            <div className="absolute right-0 top-0 w-3/4 h-[80%] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),_0_0_40px_rgba(22,119,255,0.15)] z-10 border border-white/10">
               <img 
                 src="/about-story-1.webp" 
                 alt="OrbitDevStudio team collaborating" 
@@ -62,7 +62,7 @@ export default function AboutStory() {
             </div>
             
             {/* Secondary overlapping image */}
-            <div className="absolute left-0 bottom-0 w-[55%] h-[55%] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),_0_0_30px_rgba(79,140,255,0.1)] z-20 border border-white/10">
+            <div className="absolute left-0 bottom-0 w-[55%] h-[55%] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5),_0_0_30px_rgba(22,119,255,0.1)] z-20 border border-white/10">
               <img 
                 src="/developer-working.webp" 
                 alt="Developer writing code" 
@@ -80,7 +80,7 @@ export default function AboutStory() {
                 50+
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-bold text-white">Global Experts</span>
+                <span className="text-sm font-bold text-white light:text-slate-900">Global Experts</span>
                 <span className="text-[10px] text-slate-400 font-bold tracking-wider uppercase">In-house</span>
               </div>
             </div>

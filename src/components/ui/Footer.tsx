@@ -73,7 +73,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="col-span-1 sm:col-span-2 md:col-span-12 lg:col-span-4 space-y-6">
             <Link to="/" className="flex items-center gap-3 group w-fit">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.15)] group-hover:scale-105">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:scale-105">
                 <img
                   src="/companylogo.webp"
                   alt="OrbitDevStudio Logo"
@@ -85,9 +85,9 @@ export default function Footer() {
                 />
               </div>
 
-              <span className="text-2xl font-semibold text-white tracking-tight">
+              <span className="text-2xl font-semibold text-white light:text-slate-900 tracking-tight">
                 Orbit
-                <span className="font-normal text-gray-400 group-hover:text-white transition-colors duration-300">
+                <span className="font-normal text-gray-400 group-hover:text-white light:group-hover:text-slate-900 transition-colors duration-300">
                   DevStudios
                 </span>
               </span>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.path}
-                    className="relative inline-block hover:text-white transition-colors group"
+                    className="relative inline-block hover:text-white light:hover:text-slate-900 transition-colors group"
                   >
                     {link.label}
                     <span className="absolute left-0 -bottom-1 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
@@ -131,7 +131,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     to={link.path}
-                    className="relative inline-block hover:text-white transition-colors group"
+                    className="relative inline-block hover:text-white light:hover:text-slate-900 transition-colors group"
                   >
                     {link.label}
                     <span className="absolute left-0 -bottom-1 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
@@ -156,7 +156,7 @@ export default function Footer() {
                     key={link.platform}
                     className="flex items-center gap-3 group w-fit"
                   >
-                    <span className="text-accent transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:rotate-[5deg]">
+                    <span className="text-accent transition-all duration-300 group-hover:text-white light:group-hover:text-slate-900 group-hover:scale-110 group-hover:rotate-[5deg]">
                       {Icon && <Icon />}
                     </span>
 
@@ -168,7 +168,7 @@ export default function Footer() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="hover:text-white transition-colors"
+                      className="hover:text-white light:hover:text-slate-900 transition-colors"
                     >
                       {link.label}
                     </a>
@@ -188,14 +188,14 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link
               to="/privacy-policy"
-              className="hover:text-white transition-colors"
+              className="hover:text-white light:hover:text-slate-900 transition-colors"
             >
               Privacy Policy
             </Link>
 
             <Link
               to="/terms"
-              className="hover:text-white transition-colors"
+              className="hover:text-white light:hover:text-slate-900 transition-colors"
             >
               Terms of Service
             </Link>
@@ -208,7 +208,7 @@ export default function Footer() {
                 })
               }
               aria-label="Back to top"
-              className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all"
+              className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white light:hover:text-slate-900 hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all"
             >
               <svg
                 viewBox="0 0 24 24"

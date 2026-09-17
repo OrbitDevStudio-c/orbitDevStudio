@@ -51,7 +51,7 @@ export default function HireModels() {
           WHAT WE DO
         </span>
 
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white light:text-slate-900 mb-6 leading-tight">
           Flexible Hiring Models for Your Development Needs
         </h2>
 
@@ -101,7 +101,7 @@ export default function HireModels() {
 
         <Link
           to="/hire"
-          className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 font-bold text-slate-950 text-[14px] transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
+          className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 font-bold text-slate-950 text-[14px] transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5"
         >
           Request Quote
         </Link>
@@ -116,22 +116,22 @@ export default function HireModels() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: model.delay }}
-            className="bg-[#0B1220] border border-white/5 rounded-3xl p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group flex flex-col md:flex-row gap-6 md:gap-8 md:items-center justify-between shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(79,140,255,0.1)] hover:border-white/10"
+            className="bg-[#0B1220] border border-white/5 rounded-3xl p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group flex flex-col md:flex-row gap-6 md:gap-8 md:items-center justify-between shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(22,119,255,0.1)] hover:border-white/10"
           >
             {/* Decorative background circle */}
             <div className="absolute right-0 top-0 bottom-0 w-48 bg-[#4F8CFF]/5 rounded-l-full translate-x-24 group-hover:bg-[#4F8CFF]/10 transition-colors duration-500 z-0 pointer-events-none blur-2xl" />
 
             {/* Left Part */}
             <div className="flex items-center gap-5 relative z-10 lg:w-[250px] shrink-0">
-              <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#4F8CFF]/10 group-hover:border-[#4F8CFF]/30 group-hover:shadow-[0_0_15px_rgba(79,140,255,0.2)] transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#4F8CFF]/10 group-hover:border-[#4F8CFF]/30 group-hover:shadow-[0_0_15px_rgba(22,119,255,0.2)] transition-all duration-300">
                 <model.icon
                   size={24}
-                  className="text-[#4F8CFF] group-hover:text-white transition-colors duration-300"
+                  className="text-[#4F8CFF] group-hover:text-white light:group-hover:text-slate-900 transition-colors duration-300"
                 />
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#4F8CFF] transition-colors">
+                <h3 className="text-xl font-bold text-white light:text-slate-900 mb-1 group-hover:text-[#4F8CFF] transition-colors">
                   {model.title}
                 </h3>
 
@@ -150,7 +150,7 @@ export default function HireModels() {
               </p>
 
               <div className="inline-flex items-center px-3 py-1.5 rounded-md bg-white/[0.03] border border-white/5 w-fit">
-                <p className="text-[13px] font-bold text-white">
+                <p className="text-[13px] font-bold text-white light:text-slate-900">
                   {model.hours}
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default function HireModels() {
               </p>
 
               <div className="inline-flex items-center px-3 py-1.5 rounded-md bg-white/[0.03] border border-white/5 w-fit">
-                <p className="text-[13px] font-bold text-white">
+                <p className="text-[13px] font-bold text-white light:text-slate-900">
                   {model.minimum}
                 </p>
               </div>

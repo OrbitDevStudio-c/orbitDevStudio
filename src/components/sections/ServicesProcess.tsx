@@ -7,7 +7,7 @@ const steps = [
     id: 1,
     title: "Discovery & Strategy",
     desc: "We deep-dive into your business goals, user needs, and technical constraints to build a foolproof roadmap.",
-    icon: <Search size={24} className="text-white" />,
+    icon: <Search size={24} className="text-white light:text-slate-900" />,
     x: 20,
     y: 80,
     textTop: true,
@@ -16,7 +16,7 @@ const steps = [
     id: 2,
     title: "Design & Prototyping",
     desc: "Our designers translate strategy into wireframes, modern UI systems, and interactive prototypes for early validation.",
-    icon: <PenTool size={24} className="text-white" />,
+    icon: <PenTool size={24} className="text-white light:text-slate-900" />,
     x: 40,
     y: 220,
     textTop: false,
@@ -25,7 +25,7 @@ const steps = [
     id: 3,
     title: "Agile Engineering",
     desc: "Experienced engineers build your product in iterative sprints with robust automated testing and daily deployments.",
-    icon: <Code2 size={24} className="text-white" />,
+    icon: <Code2 size={24} className="text-white light:text-slate-900" />,
     x: 60,
     y: 80,
     textTop: true,
@@ -34,7 +34,7 @@ const steps = [
     id: 4,
     title: "Launch & Growth",
     desc: "We deploy to production with zero-downtime releases, then continuously monitor, maintain, and scale based on data.",
-    icon: <Rocket size={24} className="text-white" />,
+    icon: <Rocket size={24} className="text-white light:text-slate-900" />,
     x: 80,
     y: 220,
     textTop: false,
@@ -58,7 +58,7 @@ export default function ServicesProcess() {
     <section ref={containerRef} className="bg-[#101A2D] py-32 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
       
       <div className="text-center max-w-3xl mx-auto mb-32">
-        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-white light:text-slate-900 tracking-tight mb-6">
           How We Take Your Idea to Production
         </h2>
         <p className="text-[#C7D2E4] text-[16px] leading-relaxed max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ export default function ServicesProcess() {
             <path 
               d="M -100,150 C 60,150 160,80 240,80 S 360,220 480,220 S 600,80 720,80 S 840,220 960,220 S 1080,150 1300,150" 
               fill="none" 
-              stroke="rgba(79,140,255,0.15)" 
+              stroke="rgba(22,119,255,0.15)" 
               strokeWidth="4"
               strokeLinecap="round"
             />
@@ -115,8 +115,8 @@ export default function ServicesProcess() {
                 bottom: step.textTop ? `${300 - step.y + 55}px` : 'auto'
               }}
             >
-              <div className="text-3xl font-black text-white/10 mb-1 tracking-tighter">0{step.id}</div>
-              <h3 className="text-[18px] font-bold text-white mb-2">{step.title}</h3>
+              <div className="text-3xl font-black text-white/10 light:text-slate-900/10 mb-1 tracking-tighter">0{step.id}</div>
+              <h3 className="text-[18px] font-bold text-white light:text-slate-900 mb-2">{step.title}</h3>
               <p className="text-[13px] text-[#94A3B8] leading-relaxed px-2">{step.desc}</p>
             </motion.div>
 
@@ -124,7 +124,7 @@ export default function ServicesProcess() {
             <motion.div 
               animate={{ y: [-4, 4, -4] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: index * 0.5 }}
-              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-[#101A2D] border-4 border-accent group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(79,140,255,0.4)] transition-all duration-300 flex items-center justify-center shadow-[0_0_15px_rgba(79,140,255,0.1)]"
+              className="absolute left-1/2 -translate-x-1/2 w-20 h-20 -translate-y-1/2 rounded-full bg-[#101A2D] border-4 border-accent group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(22,119,255,0.4)] transition-all duration-300 flex items-center justify-center shadow-[0_0_15px_rgba(22,119,255,0.1)]"
               style={{ top: `${step.y}px` }}
             >
               <div className="w-14 h-14 rounded-full bg-white/5 group-hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
@@ -139,21 +139,21 @@ export default function ServicesProcess() {
       <div className="md:hidden flex flex-col gap-12 mt-12 relative">
         <motion.div 
           style={{ scaleY: scrollYProgress, originY: 0 }}
-          className="absolute left-[39px] top-4 bottom-4 w-1 bg-accent rounded-full z-0 shadow-[0_0_10px_rgba(79,140,255,0.3)]" 
+          className="absolute left-[39px] top-4 bottom-4 w-1 bg-accent rounded-full z-0 shadow-[0_0_10px_rgba(22,119,255,0.3)]" 
         />
         <div className="absolute left-[39px] top-4 bottom-4 w-1 bg-white/5 rounded-full z-0" />
         
     {steps.map((step) => (
   <div key={step.id} className="flex gap-6 relative z-10 group">
-    <div className="w-20 h-20 shrink-0 rounded-full bg-[#101A2D] border-4 border-white/10 group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(79,140,255,0.3)] flex items-center justify-center transition-all duration-300 relative overflow-hidden">
- <div className="text-3xl font-black text-white/5 mb-1 tracking-tighter absolute">
+    <div className="w-20 h-20 shrink-0 rounded-full bg-[#101A2D] border-4 border-white/10 group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(22,119,255,0.3)] flex items-center justify-center transition-all duration-300 relative overflow-hidden">
+ <div className="text-3xl font-black text-white/5 light:text-slate-900/5 mb-1 tracking-tighter absolute">
   0{step.id}
 </div>
       <div className="relative z-10">{step.icon}</div>
     </div>
 
     <div className="pt-2">
-<h3 className="text-[18px] font-bold text-white mb-2">
+<h3 className="text-[18px] font-bold text-white light:text-slate-900 mb-2">
   {step.title}
 </h3>
 

@@ -175,7 +175,7 @@ export default function HireForm() {
                     animate={{ opacity: [0.3, 0.8, 0.3] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="w-[120px] h-[1px] bg-gradient-to-r from-transparent via-[#4F8CFF] to-transparent"
-                    style={{ boxShadow: '0 0 12px 1px rgba(79, 140, 255, 0.5)' }}
+                    style={{ boxShadow: '0 0 12px 1px rgba(22, 119, 255, 0.5)' }}
                   />
                 </div>
               </div>
@@ -241,13 +241,13 @@ export default function HireForm() {
                   <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Full Name
                   </label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="name"
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] placeholder:text-slate-500"
+                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] placeholder:text-slate-500"
                   />
                 </div>
                 
@@ -256,14 +256,14 @@ export default function HireForm() {
                   <label htmlFor="email" className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     Email Address
                   </label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     id="email"
                     name="email"
                     required
                     pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                     placeholder="john@example.com"
-                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] placeholder:text-slate-500"
+                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] placeholder:text-slate-500"
                   />
                 </div>
 
@@ -275,17 +275,17 @@ export default function HireForm() {
                   <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-2">
                     <select 
                       name="countryCode"
-                      className="w-full sm:w-[120px] px-3 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
+                      className="w-full sm:w-[120px] px-3 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] cursor-pointer"
                     >
                       {COUNTRY_CODES.map((c) => (
-                        <option key={`${c.country}-${c.code}`} value={c.code} className="bg-[#101A2D] text-white py-2">
+                        <option key={`${c.country}-${c.code}`} value={c.code} className="bg-[#101A2D] text-white light:text-slate-900 py-2">
                           {c.country} {c.code}
                         </option>
                       ))}
                     </select>
-                    <input 
-                      type="text" 
-                      id="phone" 
+                    <input
+                      type="text"
+                      id="phone"
                       name="phone"
                       required
                       value={phone}
@@ -296,7 +296,7 @@ export default function HireForm() {
                       pattern="\d{10}"
                       title="Please enter exactly 10 digits"
                       placeholder="00000 00000"
-                      className="flex-1 w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] placeholder:text-slate-500"
+                      className="flex-1 w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] placeholder:text-slate-500"
                     />
                   </div>
                 </div>
@@ -311,14 +311,14 @@ export default function HireForm() {
                     name="service"
                     required
                     defaultValue=""
-                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
+                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] cursor-pointer"
                   >
-                    <option value="" disabled className="bg-[#101A2D] text-white">Select a service</option>
-                    <option value="web" className="bg-[#101A2D] text-white">Web Development</option>
-                    <option value="mobile" className="bg-[#101A2D] text-white">Mobile Development</option>
-                    <option value="full-stack" className="bg-[#101A2D] text-white">Full-Stack Team</option>
-                    <option value="uiux" className="bg-[#101A2D] text-white">UI/UX Design</option>
-                    <option value="other" className="bg-[#101A2D] text-white">Other / Not Sure</option>
+                    <option value="" disabled className="bg-[#101A2D] text-white light:text-slate-900">Select a service</option>
+                    <option value="web" className="bg-[#101A2D] text-white light:text-slate-900">Web Development</option>
+                    <option value="mobile" className="bg-[#101A2D] text-white light:text-slate-900">Mobile Development</option>
+                    <option value="full-stack" className="bg-[#101A2D] text-white light:text-slate-900">Full-Stack Team</option>
+                    <option value="uiux" className="bg-[#101A2D] text-white light:text-slate-900">UI/UX Design</option>
+                    <option value="other" className="bg-[#101A2D] text-white light:text-slate-900">Other / Not Sure</option>
                   </select>
                 </div>
 
@@ -332,14 +332,14 @@ export default function HireForm() {
                     name="budget"
                     required
                     defaultValue=""
-                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
+                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] cursor-pointer"
                   >
-                    <option value="" disabled className="bg-[#101A2D] text-white">Select budget range</option>
-                    <option value="10k-25k" className="bg-[#101A2D] text-white">$10k - $25k</option>
-                    <option value="25k-50k" className="bg-[#101A2D] text-white">$25k - $50k</option>
-                    <option value="50k-100k" className="bg-[#101A2D] text-white">$50k - $100k</option>
-                    <option value="100k+" className="bg-[#101A2D] text-white">$100k+</option>
-                    <option value="undecided" className="bg-[#101A2D] text-white">Undecided / TBD</option>
+                    <option value="" disabled className="bg-[#101A2D] text-white light:text-slate-900">Select budget range</option>
+                    <option value="10k-25k" className="bg-[#101A2D] text-white light:text-slate-900">$10k - $25k</option>
+                    <option value="25k-50k" className="bg-[#101A2D] text-white light:text-slate-900">$25k - $50k</option>
+                    <option value="50k-100k" className="bg-[#101A2D] text-white light:text-slate-900">$50k - $100k</option>
+                    <option value="100k+" className="bg-[#101A2D] text-white light:text-slate-900">$100k+</option>
+                    <option value="undecided" className="bg-[#101A2D] text-white light:text-slate-900">Undecided / TBD</option>
                   </select>
                 </div>
 
@@ -353,13 +353,13 @@ export default function HireForm() {
                     name="timeline"
                     required
                     defaultValue=""
-                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] cursor-pointer"
+                    className="w-full px-5 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] cursor-pointer"
                   >
-                    <option value="" disabled className="bg-[#101A2D] text-white">Select timeline</option>
-                    <option value="immediate" className="bg-[#101A2D] text-white">Immediate start</option>
-                    <option value="1-3-months" className="bg-[#101A2D] text-white">Within 1-3 months</option>
-                    <option value="3-6-months" className="bg-[#101A2D] text-white">3-6 months</option>
-                    <option value="flexible" className="bg-[#101A2D] text-white">Flexible</option>
+                    <option value="" disabled className="bg-[#101A2D] text-white light:text-slate-900">Select timeline</option>
+                    <option value="immediate" className="bg-[#101A2D] text-white light:text-slate-900">Immediate start</option>
+                    <option value="1-3-months" className="bg-[#101A2D] text-white light:text-slate-900">Within 1-3 months</option>
+                    <option value="3-6-months" className="bg-[#101A2D] text-white light:text-slate-900">3-6 months</option>
+                    <option value="flexible" className="bg-[#101A2D] text-white light:text-slate-900">Flexible</option>
                   </select>
                 </div>
               </div>
@@ -388,7 +388,7 @@ export default function HireForm() {
                   onChange={(e) => setDetails(e.target.value)}
                   onBlur={() => setDetailsTouched(true)}
                   placeholder="Tell us about your project or requirements (min 50 characters)..."
-                  className="w-full px-4 sm:px-5 py-4 h-[200px] sm:h-[240px] rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white hover:bg-white/[0.06] resize-none placeholder:text-slate-500"
+                  className="w-full px-4 sm:px-5 py-4 h-[200px] sm:h-[240px] rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] resize-none placeholder:text-slate-500"
                 ></textarea>
               </div>
 
@@ -403,7 +403,7 @@ export default function HireForm() {
               <button 
                 type="submit" 
                 disabled={formStatus === 'submitting'}
-                className="mt-4 w-full bg-accent text-slate-950 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="mt-4 w-full bg-accent text-slate-950 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {formStatus === 'submitting' ? (
                   <div className="w-6 h-6 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />

@@ -26,12 +26,12 @@ export default function AboutStats() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center text-center bg-white/[0.02] border border-white/5 rounded-3xl py-6 px-4 hover:-translate-y-1 hover:bg-white/[0.04] hover:border-white/10 hover:shadow-[0_8px_30px_rgba(79,140,255,0.08)] transition-all duration-300 relative group"
+                className="flex flex-col items-center text-center bg-white/[0.02] border border-white/5 rounded-3xl py-6 px-4 hover:-translate-y-1 hover:bg-white/[0.04] hover:border-white/10 hover:shadow-[0_8px_30px_rgba(22,119,255,0.08)] transition-all duration-300 relative group"
               >
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent mb-4 group-hover:scale-110 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent mb-4 group-hover:scale-110 group-hover:text-white light:group-hover:text-slate-900 transition-all duration-300">
                   <Icon size={20} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
                   {stat.value}
                 </h3>
                 <p className="text-xs font-bold tracking-[0.15em] text-[#94A3B8] uppercase">

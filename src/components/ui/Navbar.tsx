@@ -1,8 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
+import { useTheme } from '../../context/ThemeContext';
 
 const navItems = [
   { label: 'About Us', path: '/about' },
@@ -20,6 +21,7 @@ const mobileNavItems = [
 export default function Navbar() {
   const { scrollY } = useScroll();
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,7 +37,8 @@ export default function Navbar() {
     []
   );
 
-  const logoText = 'text-white';
+  const isLight = theme === 'light';
+  const logoText = 'text-white light:text-slate-900';
   const logoSubText = 'text-slate-400';
 
   useEffect(() => {
@@ -119,10 +122,16 @@ export default function Navbar() {
         <motion.div
           className="w-full"
           animate={{
-            backgroundColor: scrolled ? 'rgba(11, 18, 32, 0.85)' : 'rgba(11, 18, 32, 0)',
+            backgroundColor: scrolled
+              ? (isLight ? 'rgba(255, 255, 255, 0.85)' : 'rgba(11, 18, 32, 0.85)')
+              : (isLight ? 'rgba(255, 255, 255, 0)' : 'rgba(11, 18, 32, 0)'),
             backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
-            boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.4)' : '0 0 rgba(0,0,0,0)',
-            borderColor: scrolled ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255,255,255,0)',
+            boxShadow: scrolled
+              ? (isLight ? '0 10px 30px rgba(15, 23, 42, 0.08)' : '0 10px 30px rgba(0, 0, 0, 0.4)')
+              : '0 0 rgba(0,0,0,0)',
+            borderColor: scrolled
+              ? (isLight ? 'rgba(15, 23, 42, 0.08)' : 'rgba(255, 255, 255, 0.05)')
+              : 'rgba(255,255,255,0)',
             borderWidth: scrolled ? 1 : 0,
             borderStyle: scrolled ? 'solid' : 'none',
             borderRadius: 0,
@@ -144,9 +153,9 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
-                const baseText = 'text-white/80 hover:text-white hover:bg-white/5 transition-all';
-                const baseBg = isActive ? 'bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] drop-shadow-[0_0_20px_rgba(79,140,255,0.4)] backdrop-blur-xl' : baseText;
- 
+                const baseText = 'text-white/80 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-white/5 transition-all';
+                const baseBg = isActive ? 'bg-white/10 text-white light:text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] drop-shadow-[0_0_20px_rgba(22,119,255,0.4)] backdrop-blur-xl' : baseText;
+
                 return (
                   <Link
                     key={item.label}
@@ -159,15 +168,25 @@ export default function Navbar() {
               })}
             </div>
 
-            <button
-              ref={toggleButtonRef}
-              className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white hover:bg-white/20"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white light:text-slate-700 hover:bg-white/20"
+                aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+              >
+                {isLight ? <Moon size={16} /> : <Sun size={16} />}
+              </button>
+
+              <button
+                ref={toggleButtonRef}
+                className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white light:text-slate-700 hover:bg-white/20"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       </motion.nav>
@@ -200,13 +219,13 @@ export default function Navbar() {
                 <div className="flex items-center gap-2">
                   <CompanyLogo size="xs" />
                   <div className="flex flex-col leading-tight">
-                    <span className="text-sm font-semibold tracking-tight text-white">Orbit</span>
+                    <span className="text-sm font-semibold tracking-tight text-white light:text-slate-900">Orbit</span>
                     <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">DevStudios</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 hover:border-white/20 focus:outline-none"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white light:text-slate-700 transition hover:bg-white/10 hover:border-white/20 focus:outline-none"
                   aria-label="Close menu"
                 >
                   <X size={16} />
@@ -230,7 +249,7 @@ export default function Navbar() {
                         onClick={() => setMobileOpen(false)}
                         className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-[14px] font-semibold transition-all duration-200 ${isActive
                           ? 'bg-accent/10 border-accent/25 text-accent'
-                          : 'bg-white/[0.02] border-white/5 text-white/90 hover:border-white/10 hover:bg-white/[0.04] hover:text-white'
+                          : 'bg-white/[0.02] border-white/5 text-white/90 light:text-slate-700 hover:border-white/10 hover:bg-white/[0.04] hover:text-white light:hover:text-slate-900'
                           }`}
                       >
                         <span>{item.label}</span>

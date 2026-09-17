@@ -71,7 +71,7 @@ export default function IndustriesTechClusters() {
 
   {/* Section Header */}
   <div className="relative z-10 text-center max-w-3xl mx-auto mb-16">
-    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+    <h2 className="text-3xl md:text-5xl font-bold text-white light:text-slate-900 mb-6 tracking-tight">
       Tech Stack by Industry
     </h2>
 
@@ -107,7 +107,7 @@ export default function IndustriesTechClusters() {
                 className={`text-xl font-bold transition-colors mb-1 ${
                   isActive
                     ? "text-accent"
-                    : "text-white group-hover:text-white"
+                    : "text-white light:text-slate-900 group-hover:text-white light:group-hover:text-slate-900"
                 }`}
               >
                 {cluster.name}
@@ -123,7 +123,7 @@ export default function IndustriesTechClusters() {
               className={`transition-all duration-300 ${
                 isActive
                   ? "text-accent translate-x-1 opacity-100"
-                  : "text-white/30 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                  : "text-white/30 light:text-slate-900/30 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
               }`}
             />
           </button>
@@ -152,9 +152,9 @@ export default function IndustriesTechClusters() {
           {/* Center */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
 
-            <div className="w-28 h-28 rounded-full bg-slate-800 border border-white/10 shadow-[0_0_60px_rgba(79,140,255,0.3)] flex items-center justify-center">
+            <div className="w-28 h-28 rounded-full bg-slate-800 border border-white/10 shadow-[0_0_60px_rgba(22,119,255,0.3)] flex items-center justify-center">
 
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4F8CFF] to-[#0A266A] flex items-center justify-center text-white font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(79,140,255,0.4)]">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4F8CFF] to-[#0A266A] flex items-center justify-center text-white font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(22,119,255,0.4)]">
                 Core
               </div>
 
@@ -213,7 +213,7 @@ export default function IndustriesTechClusters() {
                 damping: 12,
                 delay: index * 0.08,
               }}
-              className="absolute z-30 px-4 py-2 rounded-xl border border-white/5 bg-[#101A2D] backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.2)] text-white text-[13px] font-semibold whitespace-nowrap hover:scale-105 transition-transform hover:border-accent hover:text-accent"
+              className="absolute z-30 px-4 py-2 rounded-xl border border-white/5 bg-[#101A2D] backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.2)] text-white light:text-slate-900 text-[13px] font-semibold whitespace-nowrap hover:scale-105 transition-transform hover:border-accent hover:text-accent"
             >
               {chip.name}
             </motion.div>

@@ -38,7 +38,7 @@ export default function FeaturedProjects() {
           >
             <Link
               to="/portfolio"
-              className="text-[#94A3B8] hover:text-white flex items-center gap-2 text-sm font-medium transition-colors group bg-white/[0.03] border border-white/10 px-5 py-2.5 rounded-full shadow-sm hover:bg-white/[0.05]"
+              className="text-[#94A3B8] hover:text-white light:hover:text-slate-900 flex items-center gap-2 text-sm font-medium transition-colors group bg-white/[0.03] border border-white/10 px-5 py-2.5 rounded-full shadow-sm hover:bg-white/[0.05]"
             >
               View all projects
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -58,7 +58,7 @@ export default function FeaturedProjects() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group relative rounded-2xl overflow-hidden bg-[#0B1220] shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/5"
+              className="mockup-frame group relative rounded-2xl overflow-hidden bg-[#0B1220] shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/5"
             >
               {/* Background Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#4F8CFF]/0 group-hover:bg-[#4F8CFF]/[0.06] blur-[100px] transition-colors duration-700 pointer-events-none z-0" />
@@ -115,7 +115,7 @@ export default function FeaturedProjects() {
                 {project.industry}
               </span>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-white light:text-slate-900 mb-4 leading-tight">
                 {project.title}
               </h3>
 
@@ -138,13 +138,13 @@ export default function FeaturedProjects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-sm font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-5 py-3 rounded-lg transition-colors shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
+                  className="flex items-center gap-2 text-sm font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-5 py-3 rounded-lg transition-colors shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
                 >
                   Live Demo <ExternalLink size={15} />
                 </a>
                 <Link
                   to="/portfolio"
-                  className="flex items-center gap-2 text-sm font-semibold text-white bg-white/[0.03] hover:bg-white/[0.05] px-5 py-3 rounded-lg transition-colors border border-white/10"
+                  className="flex items-center gap-2 text-sm font-semibold text-white light:text-slate-900 bg-white/[0.03] hover:bg-white/[0.05] px-5 py-3 rounded-lg transition-colors border border-white/10"
                 >
                   Case Study <ArrowRight size={15} />
                 </Link>

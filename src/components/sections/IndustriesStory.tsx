@@ -60,7 +60,7 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
         <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-2">
           0{stage.id}
         </div>
-        <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+        <h3 className="text-xl font-bold text-white light:text-slate-900 mb-2 tracking-tight">
           {stage.title}
         </h3>
         <p className="text-[14px] text-[#C7D2E4] leading-relaxed">{stage.desc}</p>
@@ -78,7 +78,7 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
       <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-3">
         0{stage.id}
       </div>
-      <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
+      <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3 tracking-tight">
         {stage.title}
       </h3>
       <p className="text-[13px] text-[#C7D2E4] leading-relaxed pr-4">{stage.desc}</p>
@@ -103,14 +103,14 @@ export default function IndustriesStory() {
   return (
     <section
       ref={containerRef}
-      className="bg-[#0B1220] py-32 px-6 md:px-12 lg:px-24 w-full text-white relative z-10 overflow-hidden border-t border-white/5"
+      className="bg-[#0B1220] py-32 px-6 md:px-12 lg:px-24 w-full text-white light:text-slate-900 relative z-10 overflow-hidden border-t border-white/5"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-accent rounded-[100%] blur-[120px] opacity-[0.012] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="mb-24 md:w-1/2">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white light:text-slate-900">
             Why We Understand Your Industry
           </h2>
           <p className="text-[#94A3B8] text-[16px] leading-relaxed">
@@ -127,7 +127,7 @@ export default function IndustriesStory() {
 
           {/* Animated Progress Line */}
           <motion.div
-            className="absolute top-[48px] left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-blue-400 origin-left shadow-[0_0_15px_rgba(79,140,255,0.3)]"
+            className="absolute top-[48px] left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-blue-400 origin-left shadow-[0_0_15px_rgba(22,119,255,0.3)]"
             style={{ scaleX }}
           />
 
@@ -150,7 +150,7 @@ export default function IndustriesStory() {
 
           {/* Animated Progress Line */}
           <motion.div
-            className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-gradient-to-b from-accent to-blue-400 origin-top shadow-[0_0_15px_rgba(79,140,255,0.3)]"
+            className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-gradient-to-b from-accent to-blue-400 origin-top shadow-[0_0_15px_rgba(22,119,255,0.3)]"
             style={{ scaleY: scaleX }}
           />
 

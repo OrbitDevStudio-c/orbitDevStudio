@@ -35,13 +35,13 @@ export default function ServicesHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white max-w-xl"
+          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Services</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Services</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">
             End-to-End Digital Services <br className="hidden sm:block" /> Engineered for Growth
           </h1>
 
@@ -57,15 +57,15 @@ export default function ServicesHero() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-4">
             <div>
               <h3 className="text-2xl font-bold mb-1">10+</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Products Shipped</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Products Shipped</p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">99.9%</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Uptime Guarantee</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Uptime Guarantee</p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-1">15+</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 uppercase">Technologies Mastered</p>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Technologies Mastered</p>
             </div>
           </div>
         </motion.div>
@@ -174,8 +174,8 @@ export default function ServicesHero() {
 
             {/* Decorative Stars */}
             <div className="absolute -left-4 bottom-32 text-[#F6B73C]">✦</div>
-            <div className="absolute left-8 top-1/3 text-white/30 text-sm">✦</div>
-            <div className="absolute right-12 -bottom-4 text-white/40 text-xl">✦</div>
+            <div className="absolute left-8 top-1/3 text-white/30 light:text-slate-900/30 text-sm">✦</div>
+            <div className="absolute right-12 -bottom-4 text-white/40 light:text-slate-900/40 text-xl">✦</div>
 
           </div>
         </motion.div>

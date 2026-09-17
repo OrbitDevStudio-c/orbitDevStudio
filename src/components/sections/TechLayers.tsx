@@ -43,10 +43,10 @@ export default function TechLayers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[white] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[white] light:text-slate-900 mb-6"
           >
             We build every <br />
-            <span className="text-white">layer of your product.</span>
+            <span className="text-white light:text-slate-900">layer of your product.</span>
           </motion.h2>
 
           <motion.p
@@ -71,22 +71,22 @@ export default function TechLayers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="w-full bg-[#152037]/80 backdrop-blur-xl rounded-2xl md:rounded-3xl p-8 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center relative overflow-hidden group hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(79,140,255,0.15)] hover:border-white/20 hover:-translate-y-1 transition-all duration-500"
+              className="w-full bg-[#152037]/80 backdrop-blur-xl rounded-2xl md:rounded-3xl p-8 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center relative overflow-hidden group hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(22,119,255,0.15)] hover:border-white/20 hover:-translate-y-1 transition-all duration-500"
             >
               {/* Decorative subtle gradient blob */}
               <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-[#4F8CFF]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:bg-[#4F8CFF]/20 transition-colors duration-700 pointer-events-none" />
 
               {/* Left Side: Content */}
-              <div className="flex-1 text-white relative z-10 w-full">
+              <div className="flex-1 text-white light:text-slate-900 relative z-10 w-full">
                 <div className="flex items-center gap-5 mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:border-[#4F8CFF]/50 group-hover:bg-[#4F8CFF]/20 group-hover:shadow-[0_0_20px_rgba(79,140,255,0.3)] transition-all duration-500 shadow-inner">
+                  <div className="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:border-[#4F8CFF]/50 group-hover:bg-[#4F8CFF]/20 group-hover:shadow-[0_0_20px_rgba(22,119,255,0.3)] transition-all duration-500 shadow-inner">
                     <layer.icon size={26} className="text-[#4F8CFF]" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 uppercase block mb-1">
+                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 light:text-slate-900/50 uppercase block mb-1">
                       CAPABILITY
                     </span>
-                    <h3 className="text-2xl font-semibold tracking-tight text-white">
+                    <h3 className="text-2xl font-semibold tracking-tight text-white light:text-slate-900">
                       {layer.title}
                     </h3>
                   </div>
@@ -103,9 +103,9 @@ export default function TechLayers() {
                   {layer.technologies.map((tech) => (
                     <div
                       key={tech}
-                      className="px-5 py-4 rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-md flex items-center justify-center text-center hover:bg-white/[0.1] hover:border-[#4F8CFF] hover:shadow-[0_4px_20px_rgba(79,140,255,0.25)] hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden"
+                      className="px-5 py-4 rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-md flex items-center justify-center text-center hover:bg-white/[0.1] hover:border-[#4F8CFF] hover:shadow-[0_4px_20px_rgba(22,119,255,0.25)] hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden"
                     >
-                      <span className="text-[12px] font-bold tracking-[0.15em] text-[#C7D2E4] group-hover:text-white uppercase text-center w-full transition-colors">
+                      <span className="text-[12px] font-bold tracking-[0.15em] text-[#C7D2E4] group-hover:text-white light:group-hover:text-slate-900 uppercase text-center w-full transition-colors">
                         {tech}
                       </span>
                     </div>

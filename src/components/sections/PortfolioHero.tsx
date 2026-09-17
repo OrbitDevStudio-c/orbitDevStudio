@@ -21,10 +21,10 @@ export default function PortfolioHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white max-w-xl"
+          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">Our Portfolio</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Our Portfolio</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
@@ -40,7 +40,7 @@ export default function PortfolioHero() {
               onClick={() => {
                 document.getElementById('portfolio-grid')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(79,140,255,0.3)]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500 shadow-[0_0_20px_rgba(22,119,255,0.3)]"
             >
               View Projects
               <ArrowRight size={18} />
@@ -122,14 +122,14 @@ export default function PortfolioHero() {
                 99%
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-xs font-bold text-white tracking-wide">Client Rating</div>
+                <div className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Client Rating</div>
                 <div className="w-12 h-1 rounded-full bg-white/30" />
               </div>
             </motion.div>
 
             {/* Decorative Stars */}
             <div className="absolute left-10 top-10 text-accent animate-pulse">✦</div>
-            <div className="absolute right-12 top-0 text-white/40 text-xl animate-pulse">✦</div>
+            <div className="absolute right-12 top-0 text-white/40 light:text-slate-900/40 text-xl animate-pulse">✦</div>
 
           </div>
         </motion.div>
