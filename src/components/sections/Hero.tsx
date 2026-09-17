@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GalaxyParticles from './GalaxyParticles';
 
@@ -55,7 +55,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full"
         >
           <Link 
-            to="/contact" 
+            to="/hire" 
             className="w-full sm:w-auto justify-center px-7 py-3.5 bg-white text-navy font-semibold rounded-xl flex items-center gap-2.5 transition-all hover:bg-gray-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.2)] hover:-translate-y-px active:translate-y-0 group text-sm"
           >
             Start a Project
@@ -69,34 +69,22 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Trust Badge */}
-        <motion.div 
+        {/* Code Line */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 border-t border-white/[0.06] w-full max-w-lg mx-auto"
+          className="flex items-center justify-center pt-8 border-t border-white/[0.06] w-full max-w-lg mx-auto"
         >
-          <div className="flex -space-x-2.5">
-            {[44, 32, 68, 75].map((seed) => (
-              <div key={seed} className="w-8 h-8 rounded-full border-2 border-navy overflow-hidden bg-surface">
-                <img 
-                  src={`https://randomuser.me/api/portraits/${seed % 2 === 0 ? 'women' : 'men'}/${seed}.jpg`} 
-                  alt="Client" 
-                  className="w-full h-full object-cover" 
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="low"
-                  width={32}
-                  height={32}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-col items-center sm:items-start">
-            <div className="flex text-amber-400 mb-0.5">
-              {[1, 2, 3, 4, 5].map((i) => <Star key={i} size={12} fill="currentColor" />)}
-            </div>
-            <span className="text-[11px] text-gray-400 font-medium">Trusted by 50+ global teams</span>
+          <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white/[0.03] border border-white/10 font-mono text-xs sm:text-sm">
+            <span className="text-gray-500">{'>'}</span>
+            <span>
+              <span className="text-accent">innovate</span>
+              <span className="text-gray-500">.</span>
+              <span className="text-emerald-400">elevate</span>
+              <span className="text-gray-500">()</span>
+            </span>
+            <span className="w-[2px] h-4 bg-accent animate-pulse" />
           </div>
         </motion.div>
       </div>

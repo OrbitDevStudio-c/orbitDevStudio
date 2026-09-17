@@ -6,12 +6,12 @@ import { ArrowRight, MapPin, Clock, X, CheckCircle2, Briefcase } from 'lucide-re
 const positions = [
   {
     id: 1,
-    title: 'SEO Intern',
-    department: 'Marketing',
+    title: 'MERN Stack Intern',
+    department: 'Engineering',
     location: 'Remote',
     type: 'Internship',
     experience: '0-6 months',
-    description: 'Learn and execute search engine optimization strategies, conduct keyword research, and optimize content for maximum visibility.'
+    description: 'Work alongside senior engineers building full-stack web applications using MongoDB, Express, React, and Node.js.'
   },
   {
     id: 2,
@@ -24,12 +24,12 @@ const positions = [
   },
   {
     id: 3,
-    title: 'MERN Stack Intern',
-    department: 'Engineering',
+    title: 'HR Associate Intern',
+    department: 'Human Resources',
     location: 'Remote',
     type: 'Internship',
     experience: '0-6 months',
-    description: 'Work alongside senior engineers building full-stack web applications using MongoDB, Express, React, and Node.js.'
+    description: 'Assist in recruitment, employee engagement, and onboarding processes while gaining hands-on HR experience.'
   },
   {
     id: 4,
@@ -44,7 +44,10 @@ const positions = [
 
 export default function CareersOpenings() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [coverLetter, setCoverLetter] = useState('');
+  const [wordError, setWordError] = useState('');
   const lenis = useLenis();
 
   // Keep the careers page fixed while the application form scrolls independently.
@@ -69,16 +72,50 @@ export default function CareersOpenings() {
     };
   }, [selectedJob, lenis]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage('');
+    
+    const wordCount = coverLetter.trim().split(/\s+/).filter(w => w.length > 0).length;
+    if (wordCount > 200) {
+      setWordError(`Maximum 200 words allowed. You have ${wordCount} words.`);
+      return;
+    }
+    setWordError('');
     setFormStatus('submitting');
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
+
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    if (selectedJob) {
+      formData.append('positionApplied', selectedJob);
+    }
+    
+    try {
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setFormStatus('success');
+        setCoverLetter('');
+        formElement.reset();
+      } else {
+        setFormStatus('error');
+        setErrorMessage(data.message || 'Something went wrong.');
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setErrorMessage('Failed to connect to the server. Please try again.');
+    }
   };
 
   const closeForm = () => {
     setSelectedJob(null);
+    setWordError('');
+    setErrorMessage('');
     setTimeout(() => setFormStatus('idle'), 300);
   };
 
@@ -158,7 +195,7 @@ export default function CareersOpenings() {
       {/* Application Form Modal */}
       <AnimatePresence>
         {selectedJob && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overscroll-contain p-4 md:p-6 bg-slate-950/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overscroll-contain p-4 md:p-6 bg-slate-950/80 backdrop-blur-sm" data-lenis-prevent>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -243,9 +280,26 @@ export default function CareersOpenings() {
                     </div>
 
                     <div className="flex flex-col gap-2 mt-2">
-                      <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Cover Letter / Note</label>
-                      <textarea rows={4} placeholder="Why are you a good fit for this role?" className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white resize-none"></textarea>
+                      <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Cover Letter / Note (Max 200 words)</label>
+                      <textarea 
+                        name="coverLetter"
+                        rows={4} 
+                        placeholder="Why are you a good fit for this role?" 
+                        className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white resize-none"
+                        value={coverLetter}
+                        onChange={(e) => {
+                          setCoverLetter(e.target.value);
+                          if (wordError) setWordError('');
+                        }}
+                      ></textarea>
+                      {wordError && <p className="text-red-500 text-xs mt-1">{wordError}</p>}
                     </div>
+
+                    {formStatus === 'error' && (
+                      <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                        {errorMessage}
+                      </div>
+                    )}
 
                     <div className="mt-4 pt-6 border-t border-white/10 flex justify-end gap-4">
                       <button 

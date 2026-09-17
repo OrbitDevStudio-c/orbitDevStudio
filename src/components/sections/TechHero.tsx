@@ -38,7 +38,7 @@ export default function TechHero() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/contact"
+              to="/hire"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-slate-950 transition-colors hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)]"
             >
               Plan My Stack

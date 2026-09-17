@@ -86,7 +86,7 @@ export default function IndustriesFAQ() {
         </p>
 
         <Link
-          to="/contact"
+          to="/hire"
           className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-all duration-300 group"
         >
           Talk to our experts

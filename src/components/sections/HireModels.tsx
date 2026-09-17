@@ -100,7 +100,7 @@ export default function HireModels() {
         </ul>
 
         <Link
-          to="/contact"
+          to="/hire"
           className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 font-bold text-slate-950 text-[14px] transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
         >
           Request Quote

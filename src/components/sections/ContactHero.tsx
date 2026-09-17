@@ -24,7 +24,7 @@ export default function ContactHero() {
           className="flex flex-col items-center text-white max-w-3xl"
         >
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-10">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">Contact Us</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">Hire Us</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-bold tracking-tight leading-[1.1] mb-8 text-white">

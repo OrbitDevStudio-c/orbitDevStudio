@@ -103,7 +103,7 @@ export default function ServicesDomains() {
                   {domain.services.map((service) => (
                     <Link
                       key={service}
-                      to="/contact"
+                      to="/hire"
                       className="card-dark group flex items-center justify-between p-5 rounded-2xl border border-white/[0.06] hover:border-white/[0.15] hover:-translate-y-1 transition-all duration-300 text-left overflow-hidden relative hover:shadow-[0_8px_30px_rgba(79,140,255,0.1)]"
                     >
                       <span className="text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors relative z-10">

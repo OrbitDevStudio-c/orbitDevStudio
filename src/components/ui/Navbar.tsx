@@ -244,11 +244,11 @@ export default function Navbar() {
               {/* Footer */}
               <div className="pt-6 border-t border-white/5 space-y-4">
                 <Link
-                  to="/contact"
+                  to="/hire"
                   onClick={() => setMobileOpen(false)}
                   className="flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-accent/10 hover:bg-accent/90 transition-all duration-200"
                 >
-                  Contact Us
+                  Hire Us
                 </Link>
                 <div className="text-center">
                   <p className="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Orbit DevStudio</p>

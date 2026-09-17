@@ -32,7 +32,7 @@ export default function ServicesCTA() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link 
-              to="/contact"
+              to="/hire"
               className="px-8 py-3.5 bg-accent text-white font-bold text-[14px] rounded-xl hover:bg-blue-600 transition-all shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] w-full sm:w-auto flex justify-center hover:-translate-y-0.5"
             >
               Book a Free Strategy Call

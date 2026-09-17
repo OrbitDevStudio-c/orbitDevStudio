@@ -11,7 +11,7 @@ export default function CareersHero() {
   };
 
   return (
-    <section className="bg-[#0B1220] relative w-full min-h-[80vh] flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       

@@ -19,10 +19,10 @@ export default function TechCTA() {
         </div>
 
         <Link
-          to="/contact"
+          to="/hire"
           className="relative z-10 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-accent px-8 py-4 font-bold text-slate-950 transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
         >
-          Contact Us
+          Hire Us
           <ArrowRight size={20} />
         </Link>
       </div>

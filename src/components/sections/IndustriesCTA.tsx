@@ -30,7 +30,7 @@ export default function IndustriesCTA() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link 
-              to="/contact"
+              to="/hire"
               className="px-8 py-3.5 bg-[#1d4ed8] text-white font-bold text-[14px] rounded-xl hover:bg-blue-700 transition-colors shadow-md w-full sm:w-auto flex justify-center"
             >
               Book a Strategy Call

@@ -68,7 +68,7 @@ export default function TechWhyUs() {
               </p>
 
               <Link
-                to="/contact"
+                to="/hire"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-6 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(79,140,255,0.3)] hover:shadow-[0_6px_25px_rgba(79,140,255,0.5)] hover:-translate-y-0.5"
               >
                 Start Your Project

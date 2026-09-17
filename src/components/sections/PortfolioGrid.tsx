@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 
-const categories = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Personal', 'Industrial'];
+const categories = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Personal', 'Industrial', 'AI & SaaS'];
 
 const projects = [
   {
@@ -94,7 +94,20 @@ const projects = [
     services: ['Backend Development', 'API Integration'],
     liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
     screenshot: '/projects/navnidhi.png',
-    gridSpan: 'md:col-span-2 lg:col-span-12', 
+    gridSpan: 'md:col-span-2 lg:col-span-12',
+  },
+  {
+    id: 9,
+    title: 'KnowledgeVoice',
+    industry: 'AI & Knowledge Management',
+    category: 'AI & SaaS',
+    tagline: 'Turn your documents into an assistant that actually knows them.',
+    description: 'An AI-powered knowledge base assistant. We engineered a full-stack RAG pipeline that reads and indexes uploaded PDFs, Word docs, and text files, then lets users ask questions by typing or speaking and get accurate answers grounded in their own content, with every answer citing its source document.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'OpenRouter AI', 'LiveKit'],
+    services: ['Full-stack Development', 'AI/RAG Integration', 'Voice Interface'],
+    liveUrl: 'https://w24-knowledge-agent.vercel.app/',
+    screenshot: '/projects/knowledgevoice.png',
+    gridSpan: 'md:col-span-2 lg:col-span-12',
   }
 ];
 
