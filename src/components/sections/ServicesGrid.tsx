@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const services = [
   {
     id: "web",
-    icon: <Monitor size={22} />,
+    icon: <Monitor size={22} className="services-icon" />,
     title: "Web Application Engineering",
     desc: "Our engineers deliver full-stack web applications — from SaaS dashboards and customer portals to complex e-commerce platforms. Architected for performance, accessibility, and long-term maintainability.",
     className: "md:col-span-2", // Large
@@ -20,7 +20,7 @@ const services = [
   },
   {
     id: "mobile",
-    icon: <Smartphone size={22} />,
+    icon: <Smartphone size={22} className="services-icon" />,
     title: "Mobile Development",
     desc: "We build high-performance native and cross-platform apps that combine pixel-perfect design with blazing-fast performance.",
     className: "md:col-span-1", // Medium
@@ -36,14 +36,14 @@ const services = [
   },
   {
     id: "ux",
-    icon: <Lightbulb size={22} />,
+    icon: <Lightbulb size={22} className="services-icon" />,
     title: "UX/UI & Product Design",
     desc: "We craft intuitive digital experiences through research-backed UX strategy, modern UI design systems, and interactive prototyping.",
     className: "md:col-span-1", // Medium
   },
   {
     id: "custom",
-    icon: <TerminalSquare size={22} />,
+    icon: <TerminalSquare size={22} className="services-icon" />,
     title: "Custom Software Solutions",
     desc: "We develop bespoke software systems precisely aligned with your workflows — from automation engines to enterprise data pipelines. Built to scale, maintained to last.",
     className: "md:col-span-2", // Large
@@ -63,21 +63,21 @@ const services = [
   },
   {
     id: "ai",
-    icon: <Cpu size={22} />,
+    icon: <Cpu size={22} className="services-icon" />,
     title: "AI & Emerging Tech",
     desc: "Integrate intelligent automation and LLM capabilities into your products.",
     className: "md:col-span-1", // Small
   },
   {
     id: "growth",
-    icon: <LineChart size={22} />,
+    icon: <LineChart size={22} className="services-icon" />,
     title: "Growth Engineering",
     desc: "Data-driven strategies that increase traffic and accelerate revenue.",
     className: "md:col-span-1", // Small
   },
   {
     id: "qa",
-    icon: <ShieldCheck size={22} />,
+    icon: <ShieldCheck size={22} className="services-icon" />,
     title: "QA & Testing",
     desc: "Rigorous automated and manual validation for flawless releases.",
     className: "md:col-span-1", // Small
@@ -113,11 +113,11 @@ export default function ServicesGrid() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className={`card-dark group p-8 rounded-[24px] hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] flex flex-col relative overflow-hidden ${service.className}`}
+      className={`services-card group p-8 rounded-[24px] flex flex-col relative overflow-hidden ${service.className}`}
     >
       {/* Icon + Title */}
       <div className="flex items-center gap-4 mb-5">
-        <div className="relative w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20 text-accent group-hover:bg-accent group-hover:border-accent group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
+        <div className="services-icon-wrap relative w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
           {service.icon}
         </div>
 

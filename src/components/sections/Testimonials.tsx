@@ -99,31 +99,31 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center card-dark p-6 md:p-8 flex flex-col justify-between"
+                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center testimonial-card p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
-                  <Quote size={32} className="text-white/10 light:text-slate-900/10 mb-4" />
-                  <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
+                  <Quote size={32} className="text-white/10 light:text-accent/25 mb-4" />
+                  <p className="text-slate-300 light:text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
                 </div>
-                
-                <div className="border-t border-white/10 pt-5 mt-auto">
-                  <div className="flex text-warning mb-3 drop-shadow-[0_0_8px_rgba(245,185,66,0.3)]">
+
+                <div className="border-t border-white/10 light:border-slate-200 pt-5 mt-auto">
+                  <div className="flex text-warning light:text-accent mb-3 drop-shadow-[0_0_8px_rgba(245,185,66,0.3)] light:drop-shadow-none">
                     {[1,2,3,4,5].map(i => (
-                      <Star 
-                        key={i} 
-                        size={14} 
-                        fill={i <= t.rating ? "currentColor" : "none"} 
-                        className={i <= t.rating ? "" : "text-white/10 light:text-slate-900/10"}
+                      <Star
+                        key={i}
+                        size={14}
+                        fill={i <= t.rating ? "currentColor" : "none"}
+                        className={i <= t.rating ? "" : "text-white/10 light:text-slate-300"}
                       />
                     ))}
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/10 text-slate-300 font-bold text-sm shrink-0 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                    <div className="w-12 h-12 rounded-full border border-white/10 light:border-slate-200 flex items-center justify-center bg-white/10 light:bg-white text-slate-300 light:text-slate-900 font-bold text-sm shrink-0 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.5)] light:shadow-[0_4px_12px_rgba(15,23,42,0.08)]">
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
                       <h4 className="text-white light:text-slate-900 text-sm font-bold">{t.name}</h4>
-                      <p className="text-slate-400 text-[11px] font-medium">{t.role}, {t.company}</p>
+                      <p className="text-slate-400 light:text-slate-500 text-[11px] font-medium">{t.role}, {t.company}</p>
                     </div>
                   </div>
                 </div>

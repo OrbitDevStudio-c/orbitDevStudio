@@ -78,7 +78,18 @@ export default function Services() {
       
       {/* Root container overrides dark theme */}
       <div className="relative min-h-screen bg-navy">
-        
+
+        {/* Shared gradient definition for service icons (brand blue -> cyan) */}
+        <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="services-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#050b2e" />
+              <stop offset="55%" stopColor="#1677ff" />
+              <stop offset="100%" stopColor="#00d9ff" />
+            </linearGradient>
+          </defs>
+        </svg>
+
         {/* Galaxy Blue Hero Section (Contains confined particles) */}
         <ServicesHero />
         

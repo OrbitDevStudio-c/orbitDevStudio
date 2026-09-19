@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <Link
             to="/hire"
-            className="btn-primary w-full sm:w-auto justify-center px-7 py-3.5 rounded-xl flex items-center gap-2.5 transition-all hover:-translate-y-px active:translate-y-0 group text-sm"
+            className="btn-primary w-full sm:w-auto justify-center px-7 py-3.5 rounded-2xl flex items-center gap-2.5 transition-all hover:-translate-y-px active:translate-y-0 group text-sm"
           >
             Start a Project
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

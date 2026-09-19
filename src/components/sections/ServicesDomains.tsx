@@ -52,7 +52,7 @@ export default function ServicesDomains() {
         {/* Pill header */}
         <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-6 shadow-sm backdrop-blur-md">
           <div className="w-1.5 h-1.5 rounded-full bg-accent mr-2" />
-          <span className="text-[10px] font-bold tracking-[0.1em] text-[#C7D2E4] uppercase">Service Categories</span>
+          <span className="text-[10px] font-bold tracking-[0.1em] text-accent uppercase">Service Categories</span>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-white light:text-slate-900 mb-4 tracking-tight">
@@ -104,7 +104,7 @@ export default function ServicesDomains() {
                     <Link
                       key={service}
                       to="/hire"
-                      className="card-dark group flex items-center justify-between p-5 rounded-2xl border border-white/[0.06] hover:border-white/[0.15] hover:-translate-y-1 transition-all duration-300 text-left overflow-hidden relative hover:shadow-[0_8px_30px_rgba(22,119,255,0.1)]"
+                      className="services-card group flex items-center justify-between p-5 rounded-2xl transition-all duration-300 text-left overflow-hidden relative"
                     >
                       <span className="text-[13px] font-semibold text-white/90 light:text-slate-900/90 group-hover:text-white light:group-hover:text-slate-900 transition-colors relative z-10">
                         {service}

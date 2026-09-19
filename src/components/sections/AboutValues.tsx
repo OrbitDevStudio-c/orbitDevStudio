@@ -26,20 +26,33 @@ const values = [
 
 export default function AboutValues() {
   return (
-    <section className="bg-[#0E1728] py-16 md:py-20 relative overflow-hidden">
+    <section className="core-values-band py-14 md:py-16 relative overflow-hidden">
+      {/* Shared gradient definition for value icons */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="value-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#050b2e" />
+            <stop offset="55%" stopColor="#1677ff" />
+            <stop offset="100%" stopColor="#00d9ff" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[680px] h-[420px] rounded-full core-values-glow hidden light:block pointer-events-none" />
+
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase block mb-3">
             OUR CORE VALUES
           </span>
-          <h2 className="text-h2 text-white light:text-slate-900 mb-6">
+          <h2 className="text-h2 text-white light:text-slate-900 mb-4">
             What drives us forward.
           </h2>
-          <div className="w-16 h-1.5 bg-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(22,119,255,0.4)]" />
+          <div className="w-14 h-1 core-values-accent-line mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {values.map((value, index) => (
             <motion.div
               key={index}
@@ -47,16 +60,16 @@ export default function AboutValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-dark p-8 md:p-12 transition-all duration-500 group flex flex-col md:flex-row gap-8 items-start hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)]"
+              className="core-value-card p-6 md:p-7 transition-all duration-500 group flex flex-col md:flex-row gap-5 items-start"
             >
-              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 border border-accent/20 group-hover:border-accent/50 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_rgba(22,119,255,0.2)] group-hover:scale-110 transition-all duration-500">
-                <value.icon size={28} className="text-accent group-hover:text-white light:group-hover:text-slate-900 transition-colors" />
+              <div className="value-icon-wrap w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-500">
+                <value.icon size={22} className="value-icon" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white light:text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-[17px] font-bold text-white light:text-slate-900 mb-2 tracking-tight">
                   {value.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#94A3B8]">
+                <p className="text-[13px] leading-relaxed text-[#94A3B8]">
                   {value.description}
                 </p>
               </div>

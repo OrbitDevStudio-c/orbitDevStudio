@@ -70,11 +70,11 @@ export default function ServicesTechnologies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="card-dark flex-[2] rounded-[2rem] p-8 lg:p-10 flex flex-col hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] transition-all duration-300"
+          className="services-card flex-[2] rounded-[2rem] p-8 lg:p-10 flex flex-col transition-all duration-300"
         >
           {/* Header */}
           <div className="flex items-center gap-3 mb-8">
-            <Cpu size={24} className="text-[#3b82f6]" />
+            <Cpu size={24} className="text-accent" />
             <h3 className="text-xl font-bold text-white light:text-slate-900 tracking-tight">Tech Stack Navigator</h3>
           </div>
 

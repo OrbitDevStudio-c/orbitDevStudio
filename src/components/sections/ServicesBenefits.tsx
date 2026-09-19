@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 
 const benefits = [
   {
-    icon: <Zap size={24} />,
+    icon: <Zap size={24} className="services-icon" />,
     title: "Faster Delivery",
     desc: "Agile methodologies and automated pipelines ensure rapid feature deployment without sacrificing quality."
   },
   {
-    icon: <Server size={24} />,
+    icon: <Server size={24} className="services-icon" />,
     title: "Scalable Architecture",
     desc: "Systems engineered to grow with your user base, preventing technical debt and costly rewrites."
   },
   {
-    icon: <Shield size={24} />,
+    icon: <Shield size={24} className="services-icon" />,
     title: "Enterprise Security",
     desc: "Bank-grade security protocols and rigorous compliance standards baked into every line of code."
   },
   {
-    icon: <HeartHandshake size={24} />,
+    icon: <HeartHandshake size={24} className="services-icon" />,
     title: "Long-Term Partnership",
     desc: "We function as an extension of your team, providing continuous support, maintenance, and strategic guidance."
   }
@@ -43,9 +43,9 @@ export default function ServicesBenefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-dark group p-8 rounded-[24px] hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] flex flex-col items-start transition-all duration-300 hover:-translate-y-1"
+              className="services-card group p-8 rounded-[24px] flex flex-col items-start transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 border border-accent/20 group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(22,119,255,0.3)] transition-all duration-300">
+              <div className="services-icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                 {benefit.icon}
               </div>
               <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3 tracking-tight">

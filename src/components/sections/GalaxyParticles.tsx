@@ -1,7 +1,14 @@
 import { useEffect, useRef } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function GalaxyParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
+  const themeRef = useRef(theme);
+
+  useEffect(() => {
+    themeRef.current = theme;
+  }, [theme]);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -20,13 +27,22 @@ export default function GalaxyParticles() {
     let isVisible = true;
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
     
-    // Premium SaaS particle colors
-    const colors = [
+    // Premium SaaS particle colors — dark theme sits on a near-black sky,
+    // light theme needs saturated brand colors since white/screen-blend
+    // particles disappear entirely against a near-white background.
+    const darkColors = [
       "#ffffff",
       "#AFCBFF",
       "#7AA8FF",
       "#6C63FF",
       "#B08CFF"
+    ];
+    const lightColors = [
+      "#1677ff",
+      "#3b82f6",
+      "#0ea5e9",
+      "#6c2bff",
+      "#7c8cff"
     ];
 
     interface Particle {
@@ -38,7 +54,7 @@ export default function GalaxyParticles() {
       y: number;
       alpha: number;
       size: number;
-      color: string;
+      colorIndex: number;
       isDust: boolean;
     }
 
@@ -88,7 +104,7 @@ export default function GalaxyParticles() {
         y: height / 2 + Math.sin(angle) * r * 0.45 + randomOffset,
         alpha: Math.random() * 0.6 + 0.3,
         size: Math.random() * 1.5 + 0.5,
-        color: colors[Math.floor(Math.random() * colors.length)],
+        colorIndex: Math.floor(Math.random() * darkColors.length),
         isDust: i % 5 === 0
       };
     };
@@ -128,16 +144,25 @@ export default function GalaxyParticles() {
         return;
       }
 
+      const isLight = themeRef.current === 'light';
+      const colors = isLight ? lightColors : darkColors;
+
       ctx.clearRect(0, 0, width, height);
-      
+
       // Bright Galaxy Core
       const coreGradient = ctx.createRadialGradient(
         width / 2, height / 2, 0,
         width / 2, height / 2, 250
       );
-      coreGradient.addColorStop(0, "rgba(255,255,255,0.25)");
-      coreGradient.addColorStop(0.2, "rgba(170,180,255,0.1)");
-      coreGradient.addColorStop(1, "rgba(0,0,0,0)");
+      if (isLight) {
+        coreGradient.addColorStop(0, "rgba(22,119,255,0.16)");
+        coreGradient.addColorStop(0.2, "rgba(108,43,255,0.07)");
+        coreGradient.addColorStop(1, "rgba(0,0,0,0)");
+      } else {
+        coreGradient.addColorStop(0, "rgba(255,255,255,0.25)");
+        coreGradient.addColorStop(0.2, "rgba(170,180,255,0.1)");
+        coreGradient.addColorStop(1, "rgba(0,0,0,0)");
+      }
       ctx.fillStyle = coreGradient;
       ctx.beginPath();
       ctx.arc(width/2, height/2, 250, 0, Math.PI*2);
@@ -146,7 +171,8 @@ export default function GalaxyParticles() {
       // Draw Particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
-        
+        const color = colors[p.colorIndex];
+
         // Orbit animation
         p.angle += p.speed;
         const randomOffset = (Math.random() - 0.5) * 0.5; // slight jitter
@@ -155,23 +181,23 @@ export default function GalaxyParticles() {
 
         // Dust Clouds
         if (p.isDust) {
-          ctx.shadowBlur = 18;
-          ctx.shadowColor = "rgba(120,140,255,0.7)";
+          ctx.shadowBlur = isLight ? 10 : 18;
+          ctx.shadowColor = isLight ? "rgba(22,119,255,0.5)" : "rgba(120,140,255,0.7)";
         } else {
-          ctx.shadowBlur = 4;
-          ctx.shadowColor = p.color;
+          ctx.shadowBlur = isLight ? 2 : 4;
+          ctx.shadowColor = color;
         }
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = isLight ? p.alpha * 0.7 : p.alpha;
         ctx.fill();
-        
+
         ctx.shadowBlur = 0; // reset for lines
 
         // Reduced Connections
-        if (Math.random() < 0.005) { 
+        if (Math.random() < 0.005) {
           for (let j = i + 1; j < particles.length; j+=20) {
             const p2 = particles[j];
             const dx = p.x - p2.x;
@@ -182,7 +208,7 @@ export default function GalaxyParticles() {
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(255,255,255,0.05)`;
+              ctx.strokeStyle = isLight ? `rgba(22,119,255,0.08)` : `rgba(255,255,255,0.05)`;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }
@@ -191,15 +217,17 @@ export default function GalaxyParticles() {
       }
       ctx.globalAlpha = 1.0;
 
-      // Make Text Readable (Fade center)
+      // Make Text Readable (Fade center) — fades back toward the page's own
+      // background color so it works whether that's near-black or near-white.
       const fade = ctx.createRadialGradient(
         width / 2, height / 2, 0,
         width / 2, height / 2, 340
       );
-      fade.addColorStop(0, "rgba(10, 15, 30, 0.88)");
-      fade.addColorStop(0.55, "rgba(10, 15, 30, 0.45)");
-      fade.addColorStop(1, "rgba(10, 15, 30, 0)");
-      
+      const fadeRgb = isLight ? "255, 255, 255" : "10, 15, 30";
+      fade.addColorStop(0, `rgba(${fadeRgb}, 0.88)`);
+      fade.addColorStop(0.55, `rgba(${fadeRgb}, 0.45)`);
+      fade.addColorStop(1, `rgba(${fadeRgb}, 0)`);
+
       ctx.fillStyle = fade;
       ctx.beginPath();
       ctx.arc(width/2, height/2, 340, 0, Math.PI*2);
@@ -217,16 +245,17 @@ export default function GalaxyParticles() {
 
         ctx.beginPath();
         ctx.moveTo(star.x, star.y);
-        
+
         star.x += star.vx;
         star.y += star.vy;
         star.life -= 0.015;
 
+        const starRgb = isLight ? "22,119,255" : "255,255,255";
         ctx.lineTo(star.x, star.y);
         ctx.lineWidth = 1.5;
         ctx.shadowBlur = 18;
-        ctx.shadowColor = "rgba(255,255,255,0.7)";
-        ctx.strokeStyle = `rgba(255,255,255,${Math.max(0, star.life)})`;
+        ctx.shadowColor = `rgba(${starRgb},0.7)`;
+        ctx.strokeStyle = `rgba(${starRgb},${Math.max(0, star.life)})`;
         ctx.stroke();
         ctx.shadowBlur = 0;
 
@@ -261,7 +290,7 @@ export default function GalaxyParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 mix-blend-screen opacity-90"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0 light:mix-blend-normal mix-blend-screen opacity-90 light:opacity-80"
     />
   );
 }

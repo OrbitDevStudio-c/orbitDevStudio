@@ -38,7 +38,7 @@ export default function ServicesHero() {
           className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
           <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Services</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase">Services</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">

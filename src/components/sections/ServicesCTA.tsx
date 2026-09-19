@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Rocket } from 'lucide-react';
+import { Rocket, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function ServicesCTA() {
@@ -18,8 +18,8 @@ export default function ServicesCTA() {
           className="flex flex-col items-center"
         >
           {/* Top Icon */}
-          <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(22,119,255,0.2)] mb-8 border border-accent/20">
-            <Rocket size={36} className="text-accent" />
+          <div className="services-icon-wrap w-20 h-20 rounded-2xl flex items-center justify-center mb-8">
+            <Rocket size={36} className="services-icon" />
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black text-white light:text-slate-900 tracking-tight mb-6">
@@ -31,16 +31,17 @@ export default function ServicesCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Link 
+            <Link
               to="/hire"
-              className="px-8 py-3.5 bg-accent text-white font-bold text-[14px] rounded-xl hover:bg-blue-600 transition-all shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] w-full sm:w-auto flex justify-center hover:-translate-y-0.5"
+              className="btn-primary group w-full sm:w-auto px-8 py-3.5 rounded-xl flex items-center justify-center gap-2.5 font-bold text-[14px] transition-all hover:-translate-y-0.5"
             >
               Book a Free Strategy Call
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
-            
-            <Link 
+
+            <Link
               to="/portfolio"
-              className="px-8 py-3.5 bg-white/5 text-white light:text-slate-900 border border-white/10 font-bold text-[14px] rounded-xl hover:bg-white/10 hover:border-white/30 transition-all w-full sm:w-auto flex justify-center shadow-sm hover:-translate-y-0.5"
+              className="px-8 py-3.5 text-white light:text-slate-900 border border-white/15 font-bold text-[14px] rounded-xl hover:border-white/30 hover:bg-white/[0.04] transition-all w-full sm:w-auto flex justify-center hover:-translate-y-0.5"
             >
               View Our Work
             </Link>

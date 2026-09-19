@@ -42,7 +42,7 @@ export default function ServicesMetrics() {
   return (
     <section className="bg-[#14203A] py-16 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden border-t border-b border-white/[0.02]">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-white/10 light:divide-slate-200">
           
           <motion.div
             initial={{ opacity: 0, y: 10 }}
