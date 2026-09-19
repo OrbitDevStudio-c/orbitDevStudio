@@ -1,7 +1,14 @@
 import { useEffect, useRef } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function ServiceParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
+  const themeRef = useRef(theme);
+
+  useEffect(() => {
+    themeRef.current = theme;
+  }, [theme]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -14,12 +21,19 @@ export default function ServiceParticles() {
     let width = 0;
     let height = 0;
     let isVisible = true;
-    
-    // Premium infrastructure colors
-    const colors = [
+
+    // Premium infrastructure colors — dark theme sits on a near-black sky,
+    // light theme swaps in saturated brand blues/cyan/purple since pale or
+    // white dots (and screen-blend) disappear entirely against a white page.
+    const darkColors = [
       "#ffffff", // White
       "#3B6FE0", // Accent Blue
       "#e0f2fe", // Light Cyan
+    ];
+    const lightColors = [
+      "#1677ff", // Brand blue
+      "#0ea5e9", // Light cyan-blue
+      "#6c2bff", // Soft purple/blue
     ];
 
     interface Particle {
@@ -28,7 +42,7 @@ export default function ServiceParticles() {
       vx: number;
       vy: number;
       baseSize: number;
-      color: string;
+      colorIndex: number;
       pulseSpeed: number;
       pulseOffset: number;
       isGlowingNode: boolean;
@@ -38,9 +52,6 @@ export default function ServiceParticles() {
     const particles: Particle[] = [];
     const CLUSTERS = 8;
     const clusterCenters: {x: number, y: number}[] = [];
-
-    // Cached gradient (recreated only on resize)
-    let fadeGradient: CanvasGradient | null = null;
 
     // IntersectionObserver to pause animation when off-screen
     const observer = new IntersectionObserver(
@@ -96,22 +107,13 @@ export default function ServiceParticles() {
           vx: (Math.random() - 0.5) * 0.15, // Extremely slow drift
           vy: (Math.random() - 0.5) * 0.15,
           baseSize: Math.random() > 0.85 ? Math.random() * 2 + 1.5 : Math.random() * 1 + 0.5, // Depth via size
-          color: colors[Math.floor(Math.random() * colors.length)],
+          colorIndex: Math.floor(Math.random() * darkColors.length),
           pulseSpeed: 0.005 + Math.random() * 0.015,
           pulseOffset: Math.random() * Math.PI * 2,
           isGlowingNode: Math.random() > 0.9,
           clusterId
         });
       }
-
-      // Cache gradient (only recreated on resize)
-      fadeGradient = ctx.createRadialGradient(
-        width / 2, height / 2, 0,
-        width / 2, height / 2, 380
-      );
-      fadeGradient.addColorStop(0, "rgba(21, 42, 90, 0.95)");
-      fadeGradient.addColorStop(0.5, "rgba(21, 42, 90, 0.6)");
-      fadeGradient.addColorStop(1, "rgba(21, 42, 90, 0)");
     };
 
     const draw = (time: number) => {
@@ -121,14 +123,18 @@ export default function ServiceParticles() {
         return;
       }
 
+      const isLight = themeRef.current === 'light';
+      const colors = isLight ? lightColors : darkColors;
+      const alphaMultiplier = isLight ? 0.6 : 1;
+
       ctx.clearRect(0, 0, width, height);
-      
+
       // Batch shadowBlur: set once for glowing nodes, draw them, then reset
       // First pass: draw non-glowing particles
       ctx.shadowBlur = 0;
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
-        
+
         p.x += p.vx;
         p.y += p.vy;
 
@@ -137,28 +143,29 @@ export default function ServiceParticles() {
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
         // Slow pulsing alpha
-        const currentAlpha = 0.2 + (Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5 + 0.5) * 0.8;
+        const currentAlpha = (0.2 + (Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5 + 0.5) * 0.8) * alphaMultiplier;
 
         if (!p.isGlowingNode) {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.baseSize, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
+          ctx.fillStyle = colors[p.colorIndex];
           ctx.globalAlpha = currentAlpha;
           ctx.fill();
         }
       }
 
       // Second pass: draw glowing nodes with shadowBlur set once
-      ctx.shadowBlur = 15;
+      ctx.shadowBlur = isLight ? 8 : 15;
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         if (!p.isGlowingNode) continue;
-        
-        const currentAlpha = 0.2 + (Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5 + 0.5) * 0.8;
-        ctx.shadowColor = p.color;
+
+        const currentAlpha = (0.2 + (Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5 + 0.5) * 0.8) * alphaMultiplier;
+        const color = colors[p.colorIndex];
+        ctx.shadowColor = color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.baseSize, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
+        ctx.fillStyle = color;
         ctx.globalAlpha = currentAlpha;
         ctx.fill();
       }
@@ -187,7 +194,9 @@ export default function ServiceParticles() {
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(255, 255, 255, ${distAlpha * 0.08})`; // Extremely thin/low opacity
+              ctx.strokeStyle = isLight
+                ? `rgba(22, 119, 255, ${distAlpha * 0.06})`
+                : `rgba(255, 255, 255, ${distAlpha * 0.08})`; // Extremely thin/low opacity
               ctx.lineWidth = 0.5;
               ctx.globalAlpha = 1.0;
               ctx.stroke();
@@ -198,13 +207,21 @@ export default function ServiceParticles() {
       
       ctx.globalAlpha = 1.0;
 
-      // Dark radial fade for text readability (using cached gradient)
-      if (fadeGradient) {
-        ctx.fillStyle = fadeGradient;
-        ctx.beginPath();
-        ctx.arc(width/2, height/2, 380, 0, Math.PI*2);
-        ctx.fill();
-      }
+      // Radial fade for text readability — fades back toward the section's
+      // own background color so it blends whether that's near-black or white.
+      const fadeGradient = ctx.createRadialGradient(
+        width / 2, height / 2, 0,
+        width / 2, height / 2, 380
+      );
+      const fadeRgb = isLight ? "255, 255, 255" : "21, 42, 90";
+      fadeGradient.addColorStop(0, `rgba(${fadeRgb}, 0.95)`);
+      fadeGradient.addColorStop(0.5, `rgba(${fadeRgb}, 0.6)`);
+      fadeGradient.addColorStop(1, `rgba(${fadeRgb}, 0)`);
+
+      ctx.fillStyle = fadeGradient;
+      ctx.beginPath();
+      ctx.arc(width/2, height/2, 380, 0, Math.PI*2);
+      ctx.fill();
 
       animationFrameId = requestAnimationFrame(draw);
     };
@@ -229,7 +246,7 @@ export default function ServiceParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 mix-blend-screen opacity-90"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0 light:mix-blend-normal mix-blend-screen opacity-90 light:opacity-70"
     />
   );
 }

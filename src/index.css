@@ -860,6 +860,82 @@
     filter: brightness(1.18);
   }
 
+  /* === Services grid card text (Capabilities section) ===
+     Dedicated, explicit colors per element tier so every card shares the
+     exact same hierarchy in both themes — title strongest, description
+     medium, badges/metadata clear-but-secondary, metric number strong,
+     metric label muted. Kept separate from the generic slate/gray
+     retargeting rules above so this section's contrast can be tuned
+     without affecting any other part of the site. */
+  .services-title {
+    color: #f8fafc;
+  }
+  .light .services-title {
+    color: #0f172a;
+  }
+
+  .services-desc {
+    color: #94a3b8;
+  }
+  .light .services-desc {
+    color: #475569;
+  }
+
+  .services-badge-text {
+    color: #e2e8f0;
+  }
+  .light .services-badge-text {
+    color: #334155;
+  }
+
+  .services-metric-number {
+    color: #f8fafc;
+  }
+  .light .services-metric-number {
+    color: #0f172a;
+  }
+
+  .services-metric-label {
+    color: #94a3b8;
+  }
+  .light .services-metric-label {
+    color: #64748b;
+  }
+
+  .services-reliability-text {
+    color: #34d399;
+  }
+  .light .services-reliability-text {
+    color: #059669;
+  }
+
+  /* === Services hero — light-theme-only accents ===
+     Dark theme already reads well as plain white text, so these stay
+     inert (inherit the parent's color) in dark and only switch to a
+     brand gradient once `.light` is active, per the light-theme polish
+     pass. Keeps dark mode pixel-identical to before. */
+  .svc-heading-accent {
+    color: inherit;
+  }
+  .light .svc-heading-accent {
+    background-image: linear-gradient(135deg, var(--rt-accent), var(--rt-cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .svc-kpi-number {
+    color: inherit;
+  }
+  .light .svc-kpi-number {
+    background-image: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
   /* === Form Inputs === */
   .input-field {
     background-color: var(--rt-input-bg);

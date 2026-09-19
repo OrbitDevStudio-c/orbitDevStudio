@@ -5,20 +5,20 @@ export default function ServicesHero() {
   return (
     <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
-      <div className="absolute inset-0 opacity-50 mix-blend-screen">
+      <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
         <ServiceParticles />
       </div>
 
       {/* Subtle Constellation Lines */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
-        <motion.path 
-          d="M 100 200 L 300 150 L 500 300 L 800 100" 
-          stroke="rgba(255,255,255,0.1)" 
-          strokeWidth="1" 
-          fill="none" 
-          initial={{ pathLength: 0 }} 
-          animate={{ pathLength: 1 }} 
-          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }} 
+        <motion.path
+          d="M 100 200 L 300 150 L 500 300 L 800 100"
+          className="stroke-white/10 light:stroke-[#1677ff]/40"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
         />
       </svg>
       
@@ -37,12 +37,14 @@ export default function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
+          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] light:bg-[rgba(22,119,255,0.06)] light:border-[rgba(22,119,255,0.18)] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
             <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase">Services</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">
-            End-to-End Digital Services <br className="hidden sm:block" /> Engineered for Growth
+            End-to-End Digital <br className="hidden sm:block" />
+            Services <br className="hidden sm:block" />
+            <span className="svc-heading-accent">Engineered for Growth</span>
           </h1>
 
           <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-lg">
@@ -52,20 +54,20 @@ export default function ServicesHero() {
             and a relentless focus on measurable business outcomes.
           </p>
 
-          <div className="w-full h-px bg-white/10 mb-8" />
+          <div className="w-full h-px bg-white/10 light:bg-slate-200 mb-8" />
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-4">
             <div>
-              <h3 className="text-2xl font-bold mb-1">10+</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Products Shipped</p>
+              <h3 className="svc-kpi-number text-2xl font-bold mb-1.5">10+</h3>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-600 uppercase">Products Shipped</p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-1">99.9%</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Uptime Guarantee</p>
+              <h3 className="svc-kpi-number text-2xl font-bold mb-1.5">99.9%</h3>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-600 uppercase">Uptime Guarantee</p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-1">15+</h3>
-              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-900/50 uppercase">Technologies Mastered</p>
+              <h3 className="svc-kpi-number text-2xl font-bold mb-1.5">15+</h3>
+              <p className="text-[9px] font-bold tracking-wider text-white/50 light:text-slate-600 uppercase">Technologies Mastered</p>
             </div>
           </div>
         </motion.div>
