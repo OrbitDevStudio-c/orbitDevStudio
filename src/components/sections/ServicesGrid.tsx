@@ -11,7 +11,7 @@ const services = [
     microUI: (
       <div className="flex flex-wrap gap-2 mt-6">
         {['React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind'].map(tech => (
-          <span key={tech} className="px-3 py-1 bg-white/[0.03] text-white light:text-slate-900 text-[11px] font-bold rounded-full border border-white/10 shadow-sm">
+          <span key={tech} className="px-3 py-1 bg-white/[0.03] services-badge-text text-[11px] font-bold rounded-full border border-white/10 shadow-sm">
             {tech}
           </span>
         ))}
@@ -27,10 +27,10 @@ const services = [
     microUI: (
       <div className="flex items-center gap-3 mt-6">
         <div className="flex -space-x-2">
-          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold text-white/70 light:text-slate-900/70">iOS</div>
-          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold text-white/70 light:text-slate-900/70">And</div>
+          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold services-badge-text">iOS</div>
+          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold services-badge-text">And</div>
         </div>
-        <span className="text-[11px] font-bold text-[#C7D2E4] uppercase tracking-wider">Native & Hybrid</span>
+        <span className="text-[11px] font-bold services-badge-text uppercase tracking-wider">Native & Hybrid</span>
       </div>
     )
   },
@@ -50,13 +50,13 @@ const services = [
     microUI: (
       <div className="flex gap-6 mt-6 border-t border-white/10 pt-5">
         <div>
-          <div className="text-xl font-black text-white light:text-slate-900 mb-1">10+</div>
-          <div className="text-[10px] text-[#94A3B8] uppercase tracking-[0.1em] font-bold">Systems Shipped</div>
+          <div className="text-xl font-black services-metric-number mb-1">10+</div>
+          <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Systems Shipped</div>
         </div>
         <div className="w-px h-10 bg-white/10"></div>
         <div>
-          <div className="text-xl font-black text-white light:text-slate-900 mb-1">0</div>
-          <div className="text-[10px] text-[#94A3B8] uppercase tracking-[0.1em] font-bold">Tech Debt</div>
+          <div className="text-xl font-black services-metric-number mb-1">0</div>
+          <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Tech Debt</div>
         </div>
       </div>
     )
@@ -82,7 +82,7 @@ const services = [
     desc: "Rigorous automated and manual validation for flawless releases.",
     className: "md:col-span-1", // Small
     microUI: (
-      <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 text-[11px] uppercase tracking-wider font-bold border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
+      <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-lg services-reliability-text text-[11px] uppercase tracking-wider font-bold border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
         99.9% Reliability
       </div>
@@ -121,13 +121,13 @@ export default function ServicesGrid() {
           {service.icon}
         </div>
 
-        <h3 className="text-lg font-bold text-white light:text-slate-900 tracking-tight">
+        <h3 className="services-title text-lg font-bold tracking-tight">
           {service.title}
         </h3>
       </div>
 
       {/* Description */}
-      <p className="text-[#94A3B8] text-[14px] leading-relaxed flex-grow">
+      <p className="services-desc text-[14px] leading-relaxed flex-grow">
         {service.desc}
       </p>
 
