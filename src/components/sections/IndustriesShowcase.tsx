@@ -104,7 +104,7 @@ export default function IndustriesShowcase() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="w-full lg:w-1/2 flex flex-col"
             >
-              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-white/[0.03] text-[#94A3B8] text-[11px] font-bold tracking-wider uppercase mb-6 border border-white/10">
+              <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-white/[0.03] light:bg-[rgba(22,119,255,0.06)] text-accent text-[11px] font-bold tracking-wider uppercase mb-6 border border-white/10 light:border-[rgba(22,119,255,0.18)]">
                 {project.industry}
               </div>
               

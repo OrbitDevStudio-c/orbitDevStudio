@@ -59,7 +59,7 @@ export default function IndustriesFAQ() {
     {/* Left */}
     <div className="lg:col-span-4 flex flex-col">
 
-      <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 text-[#4F8CFF] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+      <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-white/[0.03] light:bg-[rgba(22,119,255,0.06)] border border-white/10 light:border-[rgba(22,119,255,0.18)] text-accent text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
         <span className="w-2 h-2 rounded-full bg-accent" />
         FAQ
       </div>
@@ -75,7 +75,7 @@ export default function IndustriesFAQ() {
 
       <div className="rounded-3xl bg-[#101A2D] border border-white/5 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
 
-        <div className="flex items-center gap-2 text-[#4F8CFF] font-semibold uppercase tracking-[0.15em] text-xs mb-5">
+        <div className="flex items-center gap-2 text-accent font-semibold uppercase tracking-[0.15em] text-xs mb-5">
           <MessageSquare size={16} />
           Need a direct answer?
         </div>

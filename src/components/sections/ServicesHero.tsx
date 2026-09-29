@@ -79,8 +79,11 @@ export default function ServicesHero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
-          {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent rounded-full blur-[150px] opacity-[0.1]" />
+          {/* Main glowing behind graphic — controlled multicolor accent (amber -> blue -> purple -> cyan), kept soft/premium via heavy blur rather than a hard rainbow ring */}
+          <div
+            className="absolute right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-[0.16] light:opacity-[0.12]"
+            style={{ background: 'conic-gradient(from 180deg, #f6b73c, #1677ff, #6c2bff, #00d9ff, #f6b73c)' }}
+          />
           
           <div className="relative w-full max-w-[500px] h-[320px]">
             {/* The Main Browser/Dashboard Window */}
@@ -141,7 +144,7 @@ export default function ServicesHero() {
             <motion.div 
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute right-0 top-20 z-20 bg-[#132A1C] border border-[#52C854]/30 p-2 rounded-xl shadow-xl flex items-center gap-2"
+              className="absolute right-0 top-20 z-20 bg-[#132A1C] light:bg-[rgba(82,200,84,0.08)] border border-[#52C854]/30 light:border-[rgba(82,200,84,0.35)] p-2 rounded-xl shadow-xl flex items-center gap-2"
             >
               <div className="flex flex-col gap-1 w-10">
                 <div className="w-full h-1.5 rounded-full bg-[#52C854]/40" />
@@ -153,7 +156,7 @@ export default function ServicesHero() {
             <motion.div 
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute right-4 bottom-12 z-20 bg-[#1A1A3A] border border-accent/30 p-2.5 rounded-xl shadow-xl flex items-center gap-2"
+              className="absolute right-4 bottom-12 z-20 bg-[#1A1A3A] light:bg-[rgba(22,119,255,0.07)] border border-accent/30 light:border-[rgba(22,119,255,0.28)] p-2.5 rounded-xl shadow-xl flex items-center gap-2"
             >
               <div className="w-4 h-3 rounded bg-accent/50" />
               <div className="flex flex-col gap-1 w-10">
@@ -175,7 +178,7 @@ export default function ServicesHero() {
             </motion.div>
 
             {/* Decorative Stars */}
-            <div className="absolute -left-4 bottom-32 text-[#F6B73C]">✦</div>
+            <div className="absolute -left-4 bottom-32 text-[#F6B73C] light:text-[#B45309]">✦</div>
             <div className="absolute left-8 top-1/3 text-white/30 light:text-slate-900/30 text-sm">✦</div>
             <div className="absolute right-12 -bottom-4 text-white/40 light:text-slate-900/40 text-xl">✦</div>
 

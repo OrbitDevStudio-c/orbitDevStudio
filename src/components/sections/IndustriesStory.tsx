@@ -54,10 +54,10 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
     return (
       <motion.div style={{ opacity, x: translateVal }} className="relative pl-8">
         {/* Node */}
-        <div className="absolute top-[6px] left-[-11px] w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-500 z-10" />
+        <div className="absolute top-[6px] left-[-11px] w-3 h-3 rounded-full bg-slate-900 light:bg-white border-2 border-slate-500 light:border-slate-300 z-10" />
 
         {/* Content */}
-        <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-2">
+        <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-2">
           0{stage.id}
         </div>
         <h3 className="text-xl font-bold text-white light:text-slate-900 mb-2 tracking-tight">
@@ -71,11 +71,11 @@ function TimelineStage({ stage, index, scrollYProgress, isMobile = false }: Time
   return (
     <motion.div style={{ opacity, y: translateVal }} className="relative pt-12">
       {/* Node */}
-      <div className="absolute top-[-54px] left-0 w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-500 z-10" />
+      <div className="absolute top-[-54px] left-0 w-3 h-3 rounded-full bg-slate-900 light:bg-white border-2 border-slate-500 light:border-slate-300 z-10" />
       <div className="absolute top-[-58px] left-[-4px] w-5 h-5 rounded-full bg-accent blur-[8px] opacity-[0.08]" />
 
       {/* Content */}
-      <div className="text-[10px] font-bold tracking-widest text-[#4F8CFF] uppercase mb-3">
+      <div className="text-[10px] font-bold tracking-widest text-accent uppercase mb-3">
         0{stage.id}
       </div>
       <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3 tracking-tight">

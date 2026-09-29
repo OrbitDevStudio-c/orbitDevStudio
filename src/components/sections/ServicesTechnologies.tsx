@@ -87,13 +87,14 @@ export default function ServicesTechnologies() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`relative flex-1 min-w-[110px] sm:min-w-0 py-2.5 px-2 text-[13px] font-semibold rounded-lg transition-all duration-300 ${
-                    isActive ? 'text-white' : 'text-[#94A3B8] hover:text-white light:hover:text-slate-900 hover:bg-white/5'
+                    isActive ? 'text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.35)]' : 'text-[#94A3B8] hover:text-white light:hover:text-slate-900 hover:bg-white/5'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="techTab"
-                      className="absolute inset-0 bg-accent rounded-lg shadow-[0_0_15px_rgba(22,119,255,0.4)]"
+                      className="absolute inset-0 rounded-lg shadow-[0_0_15px_rgba(22,119,255,0.4)]"
+                      style={{ background: 'var(--gradient-primary)' }}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}

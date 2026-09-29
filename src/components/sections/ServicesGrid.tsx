@@ -50,12 +50,12 @@ const services = [
     microUI: (
       <div className="flex gap-6 mt-6 border-t border-white/10 pt-5">
         <div>
-          <div className="text-xl font-black services-metric-number mb-1">10+</div>
+          <div className="text-xl font-black gradient-text-primary mb-1">10+</div>
           <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Systems Shipped</div>
         </div>
         <div className="w-px h-10 bg-white/10"></div>
         <div>
-          <div className="text-xl font-black services-metric-number mb-1">0</div>
+          <div className="text-xl font-black gradient-text-primary mb-1">0</div>
           <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Tech Debt</div>
         </div>
       </div>

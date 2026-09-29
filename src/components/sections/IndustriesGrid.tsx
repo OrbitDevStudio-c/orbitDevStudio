@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const bentoItems = [
   {
     id: "healthcare",
-    icon: <HeartPulse size={28} className="text-white light:text-slate-900" />,
+    icon: <HeartPulse size={28} className="industries-icon" />,
     title: "Healthcare & Medical",
     desc: "Secure, HIPAA-compliant patient portals, telemedicine platforms, and scalable clinical management systems engineered for uncompromising data integrity.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
@@ -16,7 +16,7 @@ const bentoItems = [
   },
   {
     id: "ecommerce",
-    icon: <ShoppingCart size={24} className="text-white light:text-slate-900" />,
+    icon: <ShoppingCart size={24} className="industries-icon" />,
     title: "E-Commerce",
     desc: "High-converting, globally scalable storefronts featuring lightning-fast checkouts and headless architecture.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -25,7 +25,7 @@ const bentoItems = [
   },
   {
     id: "architecture",
-    icon: <Building2 size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
+    icon: <Building2 size={24} className="industries-icon" />,
     title: "Architecture",
     desc: "Robust firm websites showcasing high-res blueprints and project timelines.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -34,7 +34,7 @@ const bentoItems = [
   },
   {
     id: "interior",
-    icon: <Palette size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
+    icon: <Palette size={24} className="industries-icon" />,
     title: "Interior Design",
     desc: "Immersive 3D visualization galleries that close premium clients.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -43,7 +43,7 @@ const bentoItems = [
   },
   {
     id: "portfolio",
-    icon: <Briefcase size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
+    icon: <Briefcase size={24} className="industries-icon" />,
     title: "Custom Portfolios",
     desc: "Bespoke digital resumes, creative showcases, and interactive wedding portals that tell your unique story beautifully.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
@@ -52,7 +52,7 @@ const bentoItems = [
   },
   {
     id: "travel",
-    icon: <Plane size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
+    icon: <Plane size={24} className="industries-icon" />,
     title: "Travel Agencies",
     desc: "Dynamic booking engines and automated ticketing systems.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -61,7 +61,7 @@ const bentoItems = [
   },
   {
     id: "cafe",
-    icon: <Coffee size={24} className="text-[#94A3B8] group-hover:text-white transition-colors" />,
+    icon: <Coffee size={24} className="industries-icon" />,
     title: "Restaurant",
     desc: "QR menu systems and real-time reservations.",
     className: "col-span-1 md:col-span-1 lg:col-span-1 row-span-1",
@@ -101,7 +101,7 @@ export default function IndustriesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className={`group relative overflow-hidden card-dark hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)] hover:-translate-y-1 transition-all duration-500 flex flex-col backdrop-blur-xl ${item.className}`}
+            className={`group relative overflow-hidden industries-card transition-all duration-500 flex flex-col backdrop-blur-xl ${item.className}`}
           >
             <Link to="/portfolio" className="absolute inset-0 z-20 cursor-pointer" aria-label={`View ${item.title} case studies`} />
             
@@ -119,13 +119,13 @@ export default function IndustriesGrid() {
               
               {/* Header: Icon & Title */}
               <div className="flex items-start justify-between mb-6 shrink-0">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 bg-accent/10 border border-accent/20 text-accent group-hover:bg-accent group-hover:border-accent group-hover:text-white shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
+                <div className="industries-icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                   {item.icon}
                 </div>
                 {item.stats && (
                   <div className="text-right">
                     <div className="text-2xl font-bold tracking-tight text-white light:text-slate-900">{item.stats.value}</div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-white/50 light:text-slate-900/50">{item.stats.label}</div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-white/50 light:text-slate-600">{item.stats.label}</div>
                   </div>
                 )}
               </div>
@@ -159,7 +159,7 @@ export default function IndustriesGrid() {
                   ))}
                 </div>
                 
-                <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-white text-slate-900">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-accent text-white">
                   <ArrowRight size={14} />
                 </div>
               </div>

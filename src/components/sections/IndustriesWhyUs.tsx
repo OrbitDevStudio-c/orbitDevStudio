@@ -128,7 +128,7 @@ export default function IndustriesWhyUs() {
               </h3>
 
               {item.subtitle && (
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] mb-2 text-white/60 light:text-slate-900/60">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] mb-2 text-white/60 light:text-slate-600">
                   {item.subtitle}
                 </div>
               )}
