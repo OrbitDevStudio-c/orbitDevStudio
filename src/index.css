@@ -999,6 +999,33 @@
     filter: brightness(1.18);
   }
 
+  .tech-icon-wrap {
+    background: rgba(22, 119, 255, 0.08);
+    border: 1px solid rgba(22, 119, 255, 0.22);
+    box-shadow: 0 0 12px rgba(22, 119, 255, 0.06);
+    transition: border-color 400ms ease, box-shadow 400ms ease, background-color 400ms ease;
+  }
+
+  .light .tech-icon-wrap {
+    background: rgba(22, 119, 255, 0.06);
+    border-color: rgba(22, 119, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(22, 119, 255, 0.07);
+  }
+
+  .group:hover .tech-icon-wrap {
+    border-color: rgba(22, 119, 255, 0.45);
+    box-shadow: 0 0 20px rgba(22, 119, 255, 0.16);
+  }
+
+  .tech-icon {
+    stroke: url(#tech-icon-gradient) var(--rt-accent);
+    transition: filter 400ms ease;
+  }
+
+  .group:hover .tech-icon {
+    filter: brightness(1.18);
+  }
+
   /* === Multicolor accent chips ===
      A small, reusable "chip" system for tags/badges that should each carry
      their own distinct hue (tech stack pills, mini stat labels) rather than

@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 import { Smartphone, Database, Server, Layout } from 'lucide-react';
 
+// Cycles the shared `.chip-*` accent colors across each layer's technology
+// list (same palette as the Industries tech tags) so the grid reads as
+// colorful stack metadata instead of a flat gray wall of labels.
+const chipColors: Array<'amber' | 'blue' | 'purple' | 'green' | 'cyan'> = ['amber', 'blue', 'purple', 'green', 'cyan'];
+
 const layers = [
   {
     id: 'mobile',
@@ -100,12 +105,13 @@ export default function TechLayers() {
               {/* Right Side: Technologies Grid */}
               <div className="w-full lg:w-auto relative z-10">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 lg:min-w-[450px]">
-                  {layer.technologies.map((tech) => (
+                  {layer.technologies.map((tech, i) => (
                     <div
                       key={tech}
-                      className="px-5 py-4 rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-md flex items-center justify-center text-center hover:bg-white/[0.1] hover:border-[#4F8CFF] hover:shadow-[0_4px_20px_rgba(22,119,255,0.25)] hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden"
+                      className={`chip-${chipColors[i % chipColors.length]} px-5 py-4 rounded-xl backdrop-blur-md flex items-center justify-center gap-2 text-center hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden`}
                     >
-                      <span className="text-[12px] font-bold tracking-[0.15em] text-[#C7D2E4] group-hover:text-white light:group-hover:text-slate-900 uppercase text-center w-full transition-colors">
+                      <span className="chip-dot" />
+                      <span className="text-[12px] font-bold tracking-[0.15em] uppercase text-center transition-colors">
                         {tech}
                       </span>
                     </div>

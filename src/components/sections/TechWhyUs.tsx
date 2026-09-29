@@ -55,8 +55,19 @@ export default function TechWhyUs() {
             {/* Inner glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="relative z-10">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-8">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">WHY CHOOSE ORBITDEVSTUDIO</span>
+              <div
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
+                style={{
+                  background: 'var(--rt-pill-bg-2)',
+                  border: '1px solid rgba(100,116,139,0.28)',
+                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+                />
+                <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">WHY CHOOSE ORBITDEVSTUDIO</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">
@@ -69,7 +80,7 @@ export default function TechWhyUs() {
 
               <Link
                 to="/hire"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-6 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5"
+                className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold hover:-translate-y-0.5"
               >
                 Start Your Project
                 <ArrowRight size={18} />
@@ -89,8 +100,8 @@ export default function TechWhyUs() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-[#0B1220]/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_20px_rgba(22,119,255,0.1)] hover:border-white/10 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/5 text-[#4F8CFF] flex items-center justify-center mb-6 shrink-0 group-hover:bg-[#4F8CFF]/10 group-hover:border-[#4F8CFF]/50 transition-all duration-300 group-hover:scale-110">
-                    <benefit.icon size={20} strokeWidth={1.5} />
+                  <div className="tech-icon-wrap w-12 h-12 rounded-full flex items-center justify-center mb-6 shrink-0 transition-all duration-300 group-hover:scale-110">
+                    <benefit.icon size={20} strokeWidth={1.5} className="tech-icon" />
                   </div>
 
                   <h3 className="text-base font-bold text-white light:text-slate-900 mb-2">

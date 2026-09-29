@@ -7,8 +7,23 @@ export default function TechHero() {
   return (
     <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
-      <ServiceParticles />
-      
+      <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
+        <ServiceParticles />
+      </div>
+
+      {/* Subtle Constellation Lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <motion.path
+          d="M 140 260 L 340 190 L 560 280 L 820 160"
+          className="stroke-white/10 light:stroke-[#1677ff]/40"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+        />
+      </svg>
+
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
@@ -24,12 +39,23 @@ export default function TechHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#4F8CFF] uppercase">Technologies</span>
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
+            style={{
+              background: 'var(--rt-pill-bg-2)',
+              border: '1px solid rgba(100,116,139,0.28)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+            />
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Technologies</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
-            Practical tech stacks for <br className="hidden sm:block" /> serious digital products.
+            Practical tech stacks for <br className="hidden sm:block" /> <span className="text-gradient">serious digital products.</span>
           </h1>
 
           <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-10 max-w-lg">
@@ -39,7 +65,7 @@ export default function TechHero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/hire"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-slate-950 transition-colors hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
+              className="btn-primary inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 font-semibold"
             >
               Plan My Stack
               <ArrowRight size={18} />
@@ -60,8 +86,11 @@ export default function TechHero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
-          {/* Main glowing behind graphic */}
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent rounded-full blur-[100px] opacity-[0.08]" />
+          {/* Main glowing behind graphic — controlled multicolor accent (amber -> blue -> purple -> cyan), kept soft/premium via heavy blur rather than a hard rainbow ring */}
+          <div
+            className="absolute right-20 top-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full blur-[150px] opacity-[0.16] light:opacity-[0.12]"
+            style={{ background: 'conic-gradient(from 180deg, #f6b73c, #1677ff, #6c2bff, #00d9ff, #f6b73c)' }}
+          />
           
           <div className="relative w-full max-w-[450px] h-[450px] flex items-center justify-center">
             
@@ -85,8 +114,8 @@ export default function TechHero() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute left-4 top-1/4 z-20 bg-[#101A2D]/80 backdrop-blur-md border border-accent/20 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                <Database size={20} className="text-accent" />
+              <div className="tech-icon-wrap w-10 h-10 rounded-full flex items-center justify-center">
+                <Database size={20} className="tech-icon" />
               </div>
               <div className="w-8 h-1 rounded-full bg-white/30" />
             </motion.div>
@@ -97,8 +126,8 @@ export default function TechHero() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute right-8 top-1/4 z-20 bg-[#101A2D]/80 backdrop-blur-md border border-[#7C5CFF]/20 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#7C5CFF]/10 flex items-center justify-center border border-[#7C5CFF]/20">
-                <Code2 size={20} className="text-[#7C5CFF]" />
+              <div className="tech-icon-wrap w-10 h-10 rounded-full flex items-center justify-center">
+                <Code2 size={20} className="tech-icon" />
               </div>
               <div className="w-8 h-1 rounded-full bg-white/30" />
             </motion.div>
@@ -109,8 +138,8 @@ export default function TechHero() {
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="absolute left-1/2 bottom-8 -translate-x-1/2 z-20 bg-[#101A2D]/80 backdrop-blur-md border border-[#0A266A]/30 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#0A266A]/20 flex items-center justify-center border border-[#0A266A]/30">
-                <Network size={20} className="text-white/70 light:text-slate-900/70" />
+              <div className="tech-icon-wrap w-10 h-10 rounded-full flex items-center justify-center">
+                <Network size={20} className="tech-icon" />
               </div>
               <div className="flex flex-col gap-1.5">
                 <div className="w-16 h-1.5 rounded-full bg-white/50" />

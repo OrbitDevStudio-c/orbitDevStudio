@@ -6,8 +6,23 @@ export default function IndustriesHero() {
   return (
     <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
-      <ServiceParticles />
-      
+      <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
+        <ServiceParticles />
+      </div>
+
+      {/* Subtle Constellation Lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <motion.path
+          d="M 120 180 L 320 240 L 480 120 L 780 220"
+          className="stroke-white/10 light:stroke-[#1677ff]/40"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+        />
+      </svg>
+
       {/* Decorative radial gradients for the galaxy feel */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
@@ -23,12 +38,23 @@ export default function IndustriesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] light:bg-[rgba(22,119,255,0.06)] light:border-[rgba(22,119,255,0.18)] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase">Industries</span>
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
+            style={{
+              background: 'var(--rt-pill-bg-2)',
+              border: '1px solid rgba(100,116,139,0.28)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+            />
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Industries</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">
-            Empowering Industries <br className="hidden sm:block" /> with <span className="text-gradient-blue">Custom Solutions</span>
+            Empowering Industries <br className="hidden sm:block" /> with <span className="text-gradient">Custom Solutions</span>
           </h1>
 
           <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-lg">
@@ -60,8 +86,11 @@ export default function IndustriesHero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
         >
-          {/* Main glowing behind graphic */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#4F8CFF] rounded-full blur-[80px] opacity-[0.08]" />
+          {/* Main glowing behind graphic — controlled multicolor accent (amber -> blue -> purple -> cyan), kept soft/premium via heavy blur rather than a hard rainbow ring */}
+          <div
+            className="absolute right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-[0.16] light:opacity-[0.12]"
+            style={{ background: 'conic-gradient(from 180deg, #f6b73c, #1677ff, #6c2bff, #00d9ff, #f6b73c)' }}
+          />
           
           <div className="relative w-full max-w-[450px] h-[400px] flex items-center justify-center">
             

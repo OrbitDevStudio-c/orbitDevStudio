@@ -9,6 +9,7 @@ const IndustriesStory = lazy(() => import('../components/sections/IndustriesStor
 const IndustriesTechClusters = lazy(() => import('../components/sections/IndustriesTechClusters'));
 const IndustriesWhyUs = lazy(() => import('../components/sections/IndustriesWhyUs'));
 const IndustriesFAQ = lazy(() => import('../components/sections/IndustriesFAQ'));
+const IndustriesCTA = lazy(() => import('../components/sections/IndustriesCTA'));
 
 function DeferredSections() {
   const [show, setShow] = useState(false);
@@ -23,6 +24,7 @@ function DeferredSections() {
         <IndustriesTechClusters />
         <IndustriesWhyUs />
         <IndustriesFAQ />
+        <IndustriesCTA />
       </div>
     </Suspense>
   );

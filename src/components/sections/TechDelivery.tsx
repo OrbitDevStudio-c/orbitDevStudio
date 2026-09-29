@@ -66,9 +66,9 @@ export default function TechDelivery() {
 
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 mb-12 hide-scrollbar pb-4 md:grid md:grid-cols-3 md:pb-0 md:overflow-visible">
             {scaleCards.map((card, index) => (
-              <div key={index} className="flex-none w-[85%] md:w-auto snap-center bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(22,119,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
-                <div className="w-10 h-10 rounded-lg bg-[#4F8CFF]/10 flex items-center justify-center mb-6">
-                  <card.icon size={20} className="text-[#4F8CFF]" />
+              <div key={index} className="group flex-none w-[85%] md:w-auto snap-center bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgba(22,119,255,0.1)] hover:border-[#4F8CFF]/30 transition-all duration-300">
+                <div className="tech-icon-wrap w-10 h-10 rounded-full flex items-center justify-center mb-6">
+                  <card.icon size={20} className="tech-icon" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">{card.title}</h3>
                 <p className="text-sm text-[#C7D2E4] leading-relaxed">
@@ -102,7 +102,7 @@ export default function TechDelivery() {
             </p>
             <Link
               to="/hire"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-slate-950 px-8 py-4 font-bold transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5 w-fit"
+              className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold hover:-translate-y-0.5 w-fit"
             >
               Get Free Quote
               <ArrowRight size={18} />
@@ -123,24 +123,27 @@ export default function TechDelivery() {
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   {[
-                    { icon: LayoutTemplate, label: 'UX & Design' },
-                    { icon: MonitorSmartphone, label: 'Web Development' },
-                    { icon: Code2, label: 'API Engineering' },
-                    { icon: Cloud, label: 'Cloud Infrastructure' },
-                    { icon: Shield, label: 'Security & Compliance' },
-                    { icon: Zap, label: 'Performance & Scale' }
+                    { icon: LayoutTemplate, label: 'UX & Design', color: '#f6b73c' },
+                    { icon: MonitorSmartphone, label: 'Web Development', color: '#1677ff' },
+                    { icon: Code2, label: 'API Engineering', color: '#b08cff' },
+                    { icon: Cloud, label: 'Cloud Infrastructure', color: '#52c854' },
+                    { icon: Shield, label: 'Security & Compliance', color: '#00d9ff' },
+                    { icon: Zap, label: 'Performance & Scale', color: '#f6b73c' }
                   ].map((tech, i) => (
                     <div key={i} className="flex items-center gap-4 bg-white/[0.04] border border-white/5 rounded-2xl p-4 hover:bg-white/[0.08] hover:border-white/10 transition-colors cursor-default group">
-                      <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shadow-inner group-hover:bg-accent/10 transition-colors">
-                        <tech.icon size={18} className="text-[#4F8CFF]" />
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shadow-inner transition-colors"
+                        style={{ background: `${tech.color}14`, border: `1px solid ${tech.color}30` }}
+                      >
+                        <tech.icon size={18} style={{ color: tech.color }} />
                       </div>
                       <span className="text-[13px] font-semibold text-white light:text-slate-900 tracking-wide">{tech.label}</span>
                     </div>
                   ))}
                 </div>
                 <div className="bg-accent/10 rounded-2xl p-6 border border-accent/20 flex gap-5 items-center">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30">
-                    <Check size={20} className="text-[#4F8CFF]" />
+                  <div className="tech-icon-wrap w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                    <Check size={20} className="tech-icon" />
                   </div>
                   <div>
                     <h4 className="text-[13px] font-bold text-white light:text-slate-900 mb-1.5 tracking-wider">360° DELIVERY VISIBILITY</h4>

@@ -6,6 +6,7 @@ import TechHero from '../components/sections/TechHero';
 const TechLayers = lazy(() => import('../components/sections/TechLayers'));
 const TechWhyUs = lazy(() => import('../components/sections/TechWhyUs'));
 const TechDelivery = lazy(() => import('../components/sections/TechDelivery'));
+const TechCTA = lazy(() => import('../components/sections/TechCTA'));
 
 function DeferredSections() {
   const [show, setShow] = useState(false);
@@ -17,6 +18,7 @@ function DeferredSections() {
         <TechLayers />
         <TechWhyUs />
         <TechDelivery />
+        <TechCTA />
       </>
     </Suspense>
   );
@@ -68,6 +70,18 @@ export default function TechStack() {
       </Helmet>
       
       <div className="relative min-h-screen bg-navy">
+
+        {/* Shared gradient definition for tech-stack icons */}
+        <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="tech-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#050b2e" />
+              <stop offset="55%" stopColor="#1677ff" />
+              <stop offset="100%" stopColor="#00d9ff" />
+            </linearGradient>
+          </defs>
+        </svg>
+
         <TechHero />
         <DeferredSections />
       </div>

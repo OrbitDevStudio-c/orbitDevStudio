@@ -2,6 +2,27 @@ import { HeartPulse, Palette, Building2, ShoppingCart, Plane, Coffee, Briefcase,
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+// Maps each tech tag to one of the shared `.chip-*` accent colors (see
+// ServicesGrid's tech chips) so the Industries cards read as colorful
+// metadata, not flat gray labels — distinct colors within the same card.
+const techChipColor: Record<string, 'amber' | 'blue' | 'purple' | 'green' | 'cyan'> = {
+  'React': 'amber',
+  'React Native': 'amber',
+  'Node.js': 'green',
+  'AWS': 'blue',
+  'PostgreSQL': 'purple',
+  'Next.js': 'blue',
+  'Shopify Plus': 'green',
+  'Stripe': 'purple',
+  'Three.js': 'cyan',
+  'WebGL': 'amber',
+  'Framer': 'blue',
+  'Gatsby': 'purple',
+  'Tailwind': 'cyan',
+  'GraphQL': 'purple',
+  'Redis': 'blue',
+};
+
 const bentoItems = [
   {
     id: "healthcare",
@@ -153,7 +174,8 @@ export default function IndustriesGrid() {
               <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-5 shrink-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   {item.tech.map(t => (
-                    <span key={t} className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide bg-white/[0.03] border border-white/5 text-[#C7D2E4]">
+                    <span key={t} className={`chip-${techChipColor[t] ?? 'blue'} px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide`}>
+                      <span className="chip-dot" />
                       {t}
                     </span>
                   ))}
