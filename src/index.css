@@ -421,7 +421,10 @@
   }
 
   .core-values-band {
-    background-color: var(--rt-surface-2);
+    /* Deep (surface-1), not soft — this section sits directly after
+       AboutStats (surface-2), so it needs the alternating darker shade
+       to stay visually distinct instead of blending into one flat band. */
+    background-color: var(--rt-surface-1);
   }
 
   .core-value-card {
@@ -909,33 +912,28 @@
     color: #059669;
   }
 
-  /* === Brand gradient text (headings, KPI numbers, key highlights) ===
-     One consistent token-driven treatment for "important" text across the
-     site — heading accents, stat numbers, etc. Uses the full 3-stop
-     --gradient-primary in BOTH themes (previously light-mode-only), with
-     a matching-hue drop-shadow so the gradient's dark navy start stays
-     visible as a soft glow against a dark page background instead of
-     blending in. Light mode needs far less glow since the navy end of
-     the gradient already reads at full contrast against a white page. */
+  /* === Brand gradient text (headings, key highlights) ===
+     Crisp, glow-free treatment — matches .text-gradient (see About hero's
+     "futures"). No drop-shadow/blur; that read as fuzzy rather than premium. */
   .gradient-text-primary,
-  .svc-heading-accent,
-  .svc-kpi-number {
+  .svc-heading-accent {
     background-image: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    /* Two-layer glow: a tight, higher-opacity pass traces a visible edge
-       around the glyphs themselves (so the gradient's near-black start
-       reads as a lit shape rather than vanishing into a dark page
-       background), plus a soft wide pass for ambient glow. */
-    filter: drop-shadow(0 0 2px rgba(0, 217, 255, 0.55)) drop-shadow(0 0 20px rgba(0, 217, 255, 0.3));
   }
 
-  .light .gradient-text-primary,
-  .light .svc-heading-accent,
-  .light .svc-kpi-number {
-    filter: drop-shadow(0 0 1px rgba(22, 119, 255, 0.22)) drop-shadow(0 0 8px rgba(22, 119, 255, 0.12));
+  /* KPI numbers are short, bold strings (2-4 characters) — over that little
+     width the 3-stop primary gradient's near-black start dominates and
+     reads as low-contrast/dark rather than "high-priority". Use the
+     brighter 2-stop blue->cyan gradient instead, still crisp/no glow. */
+  .svc-kpi-number {
+    background-image: linear-gradient(135deg, var(--rt-accent), var(--rt-cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 
   /* === Industries page cards + icons (Bento grid) ===
@@ -1000,6 +998,91 @@
   .group:hover .industries-icon {
     filter: brightness(1.18);
   }
+
+  /* === Multicolor accent chips ===
+     A small, reusable "chip" system for tags/badges that should each carry
+     their own distinct hue (tech stack pills, mini stat labels) rather than
+     the single brand blue-cyan gradient — the controlled multicolor family
+     (amber/blue/purple/green/cyan) used elsewhere for decorative accents. */
+  .chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+
+  .chip-amber, .chip-blue, .chip-purple, .chip-green, .chip-cyan {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-style: solid;
+    border-width: 1px;
+    transition: border-color 300ms ease, background-color 300ms ease;
+  }
+
+  .chip-amber {
+    color: #f6b73c;
+    background: rgba(246, 183, 60, 0.08);
+    border-color: rgba(246, 183, 60, 0.3);
+  }
+  .chip-amber .chip-dot { background: #f6b73c; }
+  .light .chip-amber {
+    color: #b45309;
+    background: rgba(246, 183, 60, 0.1);
+    border-color: rgba(246, 183, 60, 0.35);
+  }
+  .light .chip-amber .chip-dot { background: #b45309; }
+
+  .chip-blue {
+    color: #5b9dff;
+    background: rgba(22, 119, 255, 0.08);
+    border-color: rgba(22, 119, 255, 0.3);
+  }
+  .chip-blue .chip-dot { background: #1677ff; }
+  .light .chip-blue {
+    color: #1677ff;
+    background: rgba(22, 119, 255, 0.08);
+    border-color: rgba(22, 119, 255, 0.3);
+  }
+
+  .chip-purple {
+    color: #b08cff;
+    background: rgba(176, 140, 255, 0.08);
+    border-color: rgba(176, 140, 255, 0.3);
+  }
+  .chip-purple .chip-dot { background: #b08cff; }
+  .light .chip-purple {
+    color: #6c2bff;
+    background: rgba(108, 43, 255, 0.08);
+    border-color: rgba(108, 43, 255, 0.3);
+  }
+  .light .chip-purple .chip-dot { background: #6c2bff; }
+
+  .chip-green {
+    color: #52c854;
+    background: rgba(82, 200, 84, 0.08);
+    border-color: rgba(82, 200, 84, 0.3);
+  }
+  .chip-green .chip-dot { background: #52c854; }
+  .light .chip-green {
+    color: #16a34a;
+    background: rgba(82, 200, 84, 0.1);
+    border-color: rgba(82, 200, 84, 0.35);
+  }
+  .light .chip-green .chip-dot { background: #16a34a; }
+
+  .chip-cyan {
+    color: #00d9ff;
+    background: rgba(0, 217, 255, 0.08);
+    border-color: rgba(0, 217, 255, 0.3);
+  }
+  .chip-cyan .chip-dot { background: #00d9ff; }
+  .light .chip-cyan {
+    color: #0891b2;
+    background: rgba(0, 217, 255, 0.1);
+    border-color: rgba(0, 217, 255, 0.35);
+  }
+  .light .chip-cyan .chip-dot { background: #0891b2; }
 
   /* === Form Inputs === */
   .input-field {

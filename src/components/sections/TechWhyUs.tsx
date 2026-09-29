@@ -37,7 +37,7 @@ const benefits = [
 
 export default function TechWhyUs() {
   return (
-    <section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
+    <section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
       {/* Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#4F8CFF]/[0.08] blur-[150px] pointer-events-none rounded-full" />
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">

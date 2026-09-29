@@ -60,7 +60,7 @@ export default function IndustriesTechClusters() {
   const activeCluster = techClusters.find(c => c.id === activeTab) || techClusters[0];
 
   return (
-  <section className="bg-[#101A2D] w-full relative z-10 overflow-hidden">
+  <section className="bg-navy-deep w-full relative z-10 overflow-hidden">
     <div className="py-16 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
 
   {/* Ambient Background */}

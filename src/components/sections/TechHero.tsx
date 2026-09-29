@@ -5,7 +5,7 @@ import ServiceParticles from './ServiceParticles';
 
 export default function TechHero() {
   return (
-    <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <ServiceParticles />
       

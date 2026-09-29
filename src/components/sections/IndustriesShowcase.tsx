@@ -29,7 +29,7 @@ const cases = [
 
 export default function IndustriesShowcase() {
   return (
-    <section className="bg-[#0E1728] w-full relative z-10 text-white light:text-slate-900 overflow-hidden">
+    <section className="bg-navy-deep w-full relative z-10 text-white light:text-slate-900 overflow-hidden">
       <div className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto w-full relative">
 
       <div className="text-center max-w-3xl mx-auto mb-24">

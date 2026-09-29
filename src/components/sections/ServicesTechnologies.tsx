@@ -26,7 +26,7 @@ export default function ServicesTechnologies() {
   const [activeTab, setActiveTab] = useState<TabType>("Frameworks");
 
   return (
-    <section className="bg-[#101A2D] py-16 md:py-20 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
+    <section className="bg-navy-deep py-16 md:py-20 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 items-stretch relative z-10">
         
         {/* Left Card: Global Reach Image */}

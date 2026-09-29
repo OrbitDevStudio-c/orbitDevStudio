@@ -46,7 +46,7 @@ export default function ServicesDomains() {
   const [activeTab, setActiveTab] = useState(domains[0].id);
 
   return (
-    <section className="bg-[#0E1728] py-20 px-6 md:px-12 lg:px-24 w-full relative z-10">
+    <section className="bg-navy-deep py-20 px-6 md:px-12 lg:px-24 w-full relative z-10">
       <div className="max-w-5xl mx-auto text-center">
         
         {/* Pill header */}

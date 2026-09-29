@@ -34,7 +34,7 @@ const models = [
 
 export default function HireModels() {
   return (
-<section className="bg-[#101A2D] py-16 md:py-20 relative overflow-hidden">
+<section className="bg-navy-deep py-16 md:py-20 relative overflow-hidden">
   <div className="max-w-[1400px] mx-auto px-6">
 
     <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">

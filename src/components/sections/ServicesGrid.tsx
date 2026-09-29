@@ -10,9 +10,16 @@ const services = [
     className: "md:col-span-2", // Large
     microUI: (
       <div className="flex flex-wrap gap-2 mt-6">
-        {['React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind'].map(tech => (
-          <span key={tech} className="px-3 py-1 bg-white/[0.03] services-badge-text text-[11px] font-bold rounded-full border border-white/10 shadow-sm">
-            {tech}
+        {[
+          { name: 'React', chip: 'chip-amber' },
+          { name: 'Next.js', chip: 'chip-blue' },
+          { name: 'Node.js', chip: 'chip-green' },
+          { name: 'TypeScript', chip: 'chip-purple' },
+          { name: 'Tailwind', chip: 'chip-cyan' },
+        ].map(tech => (
+          <span key={tech.name} className={`${tech.chip} px-3 py-1 text-[11px] font-bold rounded-full shadow-sm`}>
+            <span className="chip-dot" />
+            {tech.name}
           </span>
         ))}
       </div>
@@ -27,10 +34,13 @@ const services = [
     microUI: (
       <div className="flex items-center gap-3 mt-6">
         <div className="flex -space-x-2">
-          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold services-badge-text">iOS</div>
-          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-white/20 flex items-center justify-center text-[10px] font-bold services-badge-text">And</div>
+          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-[#1677ff]/40 text-[#5b9dff] flex items-center justify-center text-[9px] font-bold">iOS</div>
+          <div className="w-8 h-8 rounded-full bg-[#101A2D] border-2 border-[#52C854]/40 text-[#52C854] flex items-center justify-center text-[9px] font-bold">And</div>
         </div>
-        <span className="text-[11px] font-bold services-badge-text uppercase tracking-wider">Native & Hybrid</span>
+        <span className="chip-cyan px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
+          <span className="chip-dot" />
+          Native &amp; Hybrid
+        </span>
       </div>
     )
   },
@@ -50,12 +60,12 @@ const services = [
     microUI: (
       <div className="flex gap-6 mt-6 border-t border-white/10 pt-5">
         <div>
-          <div className="text-xl font-black gradient-text-primary mb-1">10+</div>
+          <div className="text-xl font-black text-[#5b9dff] light:text-[#1677ff] mb-1">10+</div>
           <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Systems Shipped</div>
         </div>
         <div className="w-px h-10 bg-white/10"></div>
         <div>
-          <div className="text-xl font-black gradient-text-primary mb-1">0</div>
+          <div className="text-xl font-black text-[#52C854] light:text-[#16a34a] mb-1">0</div>
           <div className="text-[10px] services-metric-label uppercase tracking-[0.1em] font-bold">Tech Debt</div>
         </div>
       </div>

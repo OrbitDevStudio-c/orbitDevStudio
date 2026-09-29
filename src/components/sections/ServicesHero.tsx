@@ -3,7 +3,7 @@ import ServiceParticles from './ServiceParticles';
 
 export default function ServicesHero() {
   return (
-    <section className="bg-[#0B1220] relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
       <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
         <ServiceParticles />
@@ -37,14 +37,25 @@ export default function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
         >
-          <div className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] light:bg-[rgba(22,119,255,0.06)] light:border-[rgba(22,119,255,0.18)] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase">Services</span>
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
+            style={{
+              background: 'var(--rt-pill-bg-2)',
+              border: '1px solid rgba(100,116,139,0.28)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+            />
+            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Services</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6 text-white light:text-slate-900">
             End-to-End Digital <br className="hidden sm:block" />
             Services <br className="hidden sm:block" />
-            <span className="svc-heading-accent">Engineered for Growth</span>
+            <span className="text-gradient">Engineered for Growth</span>
           </h1>
 
           <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-lg">

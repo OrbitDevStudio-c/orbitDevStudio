@@ -26,7 +26,7 @@ const benefits = [
 
 export default function ServicesBenefits() {
   return (
-    <section className="bg-[#101A2D] py-24 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
+    <section className="bg-navy-deep py-24 px-6 md:px-12 lg:px-24 w-full relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white light:text-slate-900 mb-6 tracking-tight">
