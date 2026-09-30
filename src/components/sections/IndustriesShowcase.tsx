@@ -18,30 +18,6 @@ interface Case {
 
 const cases: Case[] = [
   {
-    id: 1,
-    industry: "Healthcare",
-    title: "PharmaCare Platform",
-    problem: "Legacy medical distribution systems caused slow data retrieval and fragmented pharmaceutical supply chain tracking.",
-    solution: "Engineered a secure, highly scalable B2B platform with real-time inventory synchronization and a unified distributor dashboard.",
-    result: "Streamlined order processing by 60% and achieved 99.99% uptime with full medical compliance.",
-    tech: ["React", "Node.js", "Tailwind"],
-    liveUrl: "https://pharmaceutical-demo.vercel.app/",
-    image: "/projects/pharmacare.png",
-    reverse: false
-  },
-  {
-    id: 2,
-    industry: "Interior Design",
-    title: "Aura Design Studio",
-    problem: "A generic template website failed to capture the studio's premium aesthetic, leading to low engagement from high-end clients.",
-    solution: "Developed a bespoke, high-performance visual portfolio featuring immersive interactions and smooth page transitions.",
-    result: "Increased average session duration by 140% and doubled premium consultation inquiries.",
-    tech: ["Next.js", "Framer", "React"],
-    liveUrl: "https://auradesignstudio.netlify.app/",
-    image: "/projects/designerss.png",
-    reverse: true
-  },
-  {
     id: 3,
     industry: "Recruitment & HR Tech",
     title: "RecruitIQ",
