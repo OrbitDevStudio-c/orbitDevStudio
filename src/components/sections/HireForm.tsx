@@ -124,7 +124,7 @@ export default function HireForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-[480px] bg-gradient-to-br from-[#162137] via-[#0E1627] to-[#0A101C] p-8 md:p-10 lg:p-14 text-white relative overflow-hidden flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10"
+            className="lg:w-[480px] bg-gradient-to-br from-[#162137] via-[#0E1627] to-[#0A101C] light:from-white light:via-[#f8fbff] light:to-[#eef4ff] p-8 md:p-10 lg:p-14 text-white relative overflow-hidden flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10"
           >
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#4F8CFF] opacity-[0.06] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -160,12 +160,12 @@ export default function HireForm() {
                 <div className="flex items-center gap-4 justify-center">
                   <CompanyLogo size="xs" />
                   <div className="text-3xl md:text-[42px] font-bold leading-none tracking-tight flex items-center">
-                    <span className="text-white">Orbit</span>
-                    <span className="text-[#A7B3C8]">DevStudios</span>
+                    <span className="text-white light:text-slate-900">Orbit</span>
+                    <span className="text-[#A7B3C8] light:text-slate-500">DevStudios</span>
                   </div>
                 </div>
-                
-                <p className="text-[19px] text-[#A5B4D4] font-medium text-center tracking-wide mt-6">
+
+                <p className="text-[19px] text-[#A5B4D4] light:text-slate-600 font-medium text-center tracking-wide mt-6">
                   Engineering Digital Products That Scale
                 </p>
                 
@@ -182,7 +182,7 @@ export default function HireForm() {
 
               {/* MAIN CONTENT */}
               <div className="mb-12">
-                <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold mb-5 leading-[1.05] tracking-tight text-white">
+                <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold mb-5 leading-[1.05] tracking-tight text-white light:text-slate-900">
                   Hire Us For Your <br className="hidden lg:block"/> Next Project
                 </h2>
                 <p className="text-[#C7D2E4] leading-[1.8] text-[16px] font-light max-w-[420px]">
@@ -199,7 +199,7 @@ export default function HireForm() {
                   </div>
                   <div className="flex flex-col justify-center min-w-0 w-full">
                     <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Email</p>
-                    <a href="mailto:orbitdevstudios@gmail.com" className="text-[13px] sm:text-[15px] text-white font-medium group-hover:text-[#4F8CFF] transition-colors break-all">
+                    <a href="mailto:orbitdevstudios@gmail.com" className="text-[13px] sm:text-[15px] text-white light:text-slate-900 font-medium group-hover:text-[#4F8CFF] transition-colors break-all">
                       orbitdevstudios@gmail.com
                     </a>
                   </div>
@@ -212,7 +212,7 @@ export default function HireForm() {
                   </div>
                   <div className="flex flex-col justify-center min-w-0 w-full">
                     <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Location</p>
-                    <p className="text-[13px] sm:text-[15px] text-white font-medium truncate">
+                    <p className="text-[13px] sm:text-[15px] text-white light:text-slate-900 font-medium truncate">
                       Ahmedabad, Gujarat, India
                     </p>
                   </div>

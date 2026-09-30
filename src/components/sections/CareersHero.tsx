@@ -13,8 +13,23 @@ export default function CareersHero() {
   return (
     <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Confined particle background */}
-      <ServiceParticles />
-      
+      <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
+        <ServiceParticles />
+      </div>
+
+      {/* Subtle Constellation Lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+        <motion.path
+          d="M 150 220 L 380 160 L 600 260 L 900 180"
+          className="stroke-white/10 light:stroke-[#1677ff]/40"
+          strokeWidth="1"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+        />
+      </svg>
+
       {/* Decorative radial gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
@@ -29,12 +44,23 @@ export default function CareersHero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-white light:text-slate-900 max-w-3xl"
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] mb-8">
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
+            style={{
+              background: 'var(--rt-pill-bg-2)',
+              border: '1px solid rgba(100,116,139,0.28)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+            />
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Join Our Orbit</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-bold tracking-tight leading-[1.1] mb-8">
-            Build the future <br className="hidden sm:block" /> with us.
+            Build the <span className="text-gradient">future</span> <br className="hidden sm:block" /> with us.
           </h1>
 
           <p className="text-base sm:text-[17px] text-[#C7D2E4] leading-relaxed font-light mb-12 max-w-xl mx-auto">
@@ -43,7 +69,7 @@ export default function CareersHero() {
 
           <button
             onClick={scrollToOpenings}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-white font-bold text-[14px] px-8 py-4 transition-all hover:bg-blue-600 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5"
+            className="btn-primary inline-flex items-center justify-center gap-2 rounded-full font-bold text-[14px] px-8 py-4"
           >
             View Open Positions
             <ArrowDown size={18} className="animate-bounce mt-1" />

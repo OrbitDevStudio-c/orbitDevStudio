@@ -62,8 +62,8 @@ export default function CareersBenefits() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="card-dark p-8 transition-all duration-300 group hover:shadow-[0_8px_30px_rgba(22,119,255,0.15)]"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
-                <benefit.icon size={24} className="text-accent group-hover:text-white transition-colors" />
+              <div className="careers-icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
+                <benefit.icon size={24} className="careers-icon" />
               </div>
               <h3 className="text-xl font-bold text-white light:text-slate-900 mb-3 group-hover:text-white light:group-hover:text-slate-900 transition-colors">
                 {benefit.title}

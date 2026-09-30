@@ -91,7 +91,7 @@ export default function HireHero() {
             
             {/* Center Core (Project/Business) */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-32 h-32 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl flex items-center justify-center shadow-[0_0_60px_rgba(46,91,229,0.4)]">
-               <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-surface to-primary flex items-center justify-center">
+               <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
                  <Layers size={40} className="text-white opacity-90" />
                </div>
             </div>

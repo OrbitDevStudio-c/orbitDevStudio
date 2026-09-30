@@ -200,7 +200,7 @@ export default function CareersOpenings() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-slate-900 border border-white/10 rounded-3xl w-full max-w-2xl shadow-2xl relative max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-3rem)] flex flex-col"
+              className="bg-[#0f172a] light:bg-white border border-white/10 rounded-3xl w-full max-w-2xl shadow-2xl relative max-h-[calc(100dvh-2rem)] md:max-h-[calc(100dvh-3rem)] flex flex-col"
             >
               
               {/* Header */}
@@ -228,9 +228,9 @@ export default function CareersOpenings() {
                     <p className="text-slate-400 max-w-sm mx-auto mb-8">
                       Thank you for applying to OrbitDevStudio. Our hiring team will review your application and get back to you soon.
                     </p>
-                    <button 
+                    <button
                       onClick={closeForm}
-                      className="px-8 py-3 bg-accent text-slate-950 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer"
+                      className="btn-primary px-8 py-3 rounded-lg font-semibold cursor-pointer"
                     >
                       Close Window
                     </button>
@@ -262,11 +262,11 @@ export default function CareersOpenings() {
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Experience in Industry *</label>
                         <select name="experience" required className="px-4 py-3 rounded-lg border border-white/10 focus:outline-none focus:border-accent bg-white/5 text-white light:text-slate-900">
-                          <option value="" className="bg-slate-900 text-white light:text-slate-900">Select experience</option>
-                          <option value="0-6 months" className="bg-slate-900 text-white light:text-slate-900">0-6 months</option>
-                          <option value="6-12 months" className="bg-slate-900 text-white light:text-slate-900">6-12 months</option>
-                          <option value="1-2 years" className="bg-slate-900 text-white light:text-slate-900">1-2 years</option>
-                          <option value="2+ years" className="bg-slate-900 text-white light:text-slate-900">2+ years</option>
+                          <option value="" className="bg-[#0f172a] light:bg-white text-white light:text-slate-900">Select experience</option>
+                          <option value="0-6 months" className="bg-[#0f172a] light:bg-white text-white light:text-slate-900">0-6 months</option>
+                          <option value="6-12 months" className="bg-[#0f172a] light:bg-white text-white light:text-slate-900">6-12 months</option>
+                          <option value="1-2 years" className="bg-[#0f172a] light:bg-white text-white light:text-slate-900">1-2 years</option>
+                          <option value="2+ years" className="bg-[#0f172a] light:bg-white text-white light:text-slate-900">2+ years</option>
                         </select>
                       </div>
                       <div className="flex flex-col gap-2">
@@ -309,13 +309,13 @@ export default function CareersOpenings() {
                       >
                         Cancel
                       </button>
-                      <button 
-                        type="submit" 
+                      <button
+                        type="submit"
                         disabled={formStatus === 'submitting'}
-                        className="bg-accent text-slate-950 px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                        className="btn-primary px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                       >
                         {formStatus === 'submitting' ? (
-                          <div className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         ) : (
                           'Submit Application'
                         )}
