@@ -2,7 +2,21 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const cases = [
+interface Case {
+  id: number;
+  industry: string;
+  title: string;
+  problem: string;
+  solution: string;
+  result: string;
+  tech: string[];
+  liveUrl: string;
+  image: string;
+  isLogo?: boolean;
+  reverse: boolean;
+}
+
+const cases: Case[] = [
   {
     id: 1,
     industry: "Healthcare",
@@ -12,6 +26,7 @@ const cases = [
     result: "Streamlined order processing by 60% and achieved 99.99% uptime with full medical compliance.",
     tech: ["React", "Node.js", "Tailwind"],
     liveUrl: "https://pharmaceutical-demo.vercel.app/",
+    image: "/projects/pharmacare.png",
     reverse: false
   },
   {
@@ -23,6 +38,33 @@ const cases = [
     result: "Increased average session duration by 140% and doubled premium consultation inquiries.",
     tech: ["Next.js", "Framer", "React"],
     liveUrl: "https://auradesignstudio.netlify.app/",
+    image: "/projects/designerss.png",
+    reverse: true
+  },
+  {
+    id: 3,
+    industry: "Recruitment & HR Tech",
+    title: "RecruitIQ",
+    problem: "Manually screening every resume against a job's requirements is slow and inconsistent, and a genuinely qualified candidate can easily get buried in the pile — while back-and-forth interview scheduling eats up even more of a recruiter's week.",
+    solution: "We engineered an AI recruitment platform that extracts structured requirements straight from the job post, then blends deterministic rule checks (skills, experience, education) with an LLM's semantic read to score and rank every applicant — scrubbing gender and name from anything sent to the model. Shortlisted candidates book their own interview slot instantly, including a fully automated AI voice interview conducted over LiveKit.",
+    result: "Recruiters go from an unsorted resume pile to a ranked, filterable shortlist in minutes — with bulk shortlist/reject actions, automatic candidate emails, and race-safe slot booking so two candidates can never double-book the same interview time.",
+    tech: ["React", "Node.js", "PostgreSQL"],
+    liveUrl: "https://recruitiq-eta.vercel.app/",
+    image: "/projects/recruitiq-logo.png",
+    isLogo: true,
+    reverse: false
+  },
+  {
+    id: 4,
+    industry: "Knowledge Management",
+    title: "KnowledgeVoice",
+    problem: "The answers teams need are buried inside long PDFs, handbooks, and reports that are slow to search and easy to misremember — costing time every single time someone has to dig for one paragraph.",
+    solution: "We built a full-stack RAG pipeline that reads, chunks, and embeds every uploaded document into a private, per-user knowledge base, then grounds every chat or spoken answer in the most relevant passages — always citing exactly which document it came from.",
+    result: "Anyone can ask a question by typing or speaking and get an accurate, source-cited answer in seconds instead of scrolling through a 40-page document, with every conversation saved and searchable for later.",
+    tech: ["React", "Node.js", "MongoDB"],
+    liveUrl: "https://w24-knowledge-agent.vercel.app/",
+    image: "/projects/knowledgevoice-logo.png",
+    isLogo: true,
     reverse: true
   }
 ];
@@ -68,18 +110,22 @@ export default function IndustriesShowcase() {
                 </div>
 
                 {/* Image Preview instead of heavy iframe */}
-                <div className="relative h-[350px] md:h-[450px] w-full bg-[#0B1220] overflow-hidden">
-                  <img 
-                    src={project.id === 1 ? "/projects/pharmacare.png" : "/projects/designerss.png"}
+                <div className={`relative h-[350px] md:h-[450px] w-full overflow-hidden ${project.isLogo ? 'bg-white' : 'bg-[#0B1220]'}`}>
+                  <img
+                    src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"
+                    className={project.isLogo
+                      ? "absolute inset-0 w-full h-full object-contain p-16"
+                      : "absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"}
                     loading="lazy"
                     decoding="async"
                     width={640}
                     height={400}
                   />
                   {/* Overlay to add subtle shading */}
-                  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                  {!project.isLogo && (
+                    <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                  )}
                   
                   {/* Tech Stack Pills */}
                   <div className="absolute bottom-6 left-6 z-20 flex gap-2">
