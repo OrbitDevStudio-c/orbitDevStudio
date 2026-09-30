@@ -52,6 +52,16 @@ const projects: Project[] = [
     logo: '/projects/knowledgevoice-logo.png',
   },
   {
+    id: 8,
+    title: 'BookVerse',
+    industry: 'E-Commerce & Education',
+    category: 'E-commerce',
+    description: 'A scalable e-commerce backend for a digital bookstore, architected as microservices to handle secure auth and transactional workflows.',
+    technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
+    liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
+    logo: '/projects/bookverse-logo.png',
+  },
+  {
     id: 4,
     title: 'Elegant Wedding',
     industry: 'Personal Branding',
@@ -104,16 +114,6 @@ const projects: Project[] = [
     description: 'A comprehensive, SEO-optimized corporate portal for an industrial trading enterprise, serving as a digital storefront for B2B clients.',
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
     liveUrl: 'https://navnidhitrading.netlify.app/',
-  },
-  {
-    id: 8,
-    title: 'BookVerse',
-    industry: 'E-Commerce & Education',
-    category: 'E-commerce',
-    description: 'A scalable e-commerce backend for a digital bookstore, architected as microservices to handle secure auth and transactional workflows.',
-    technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
-    liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
-    logo: '/projects/bookverse-logo.png',
   },
 ];
 
