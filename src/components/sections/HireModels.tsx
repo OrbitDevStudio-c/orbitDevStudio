@@ -101,7 +101,7 @@ export default function HireModels() {
 
         <Link
           to="/hire"
-          className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 font-bold text-slate-950 text-[14px] transition-all hover:bg-accent/90 shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5"
+          className="btn-primary inline-flex items-center justify-center rounded-xl px-8 py-3.5 font-bold text-[14px]"
         >
           Request Quote
         </Link>
@@ -123,10 +123,10 @@ export default function HireModels() {
 
             {/* Left Part */}
             <div className="flex items-center gap-5 relative z-10 lg:w-[250px] shrink-0">
-              <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#4F8CFF]/10 group-hover:border-[#4F8CFF]/30 group-hover:shadow-[0_0_15px_rgba(22,119,255,0.2)] transition-all duration-300">
+              <div className="hire-icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110">
                 <model.icon
                   size={24}
-                  className="text-[#4F8CFF] group-hover:text-white light:group-hover:text-slate-900 transition-colors duration-300"
+                  className="hire-icon"
                 />
               </div>
 

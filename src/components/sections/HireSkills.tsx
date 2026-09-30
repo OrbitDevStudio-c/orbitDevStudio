@@ -8,6 +8,10 @@ const skillsRow2 = [
   "Vue.js", "Angular", "Express.js", "Java", "Spring Boot", ".NET", "C#", "Firebase", "Redis", "Elasticsearch", "Google Cloud", "TailwindCSS"
 ];
 
+// Cycles the shared `.chip-*` accent colors across the scrolling skill
+// pills (same palette as Industries/Technologies) instead of a flat gray row.
+const chipColors: Array<'amber' | 'blue' | 'purple' | 'green' | 'cyan'> = ['amber', 'blue', 'purple', 'green', 'cyan'];
+
 export default function HireSkills() {
   return (
     <section className="bg-navy-deep py-20 relative border-t border-b border-white/5 overflow-hidden">
@@ -42,8 +46,9 @@ export default function HireSkills() {
         {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, index) => (
           <div
             key={index}
-            className="px-6 py-3 rounded-full bg-white/[0.02] border border-white/5 shadow-[0_4px_15px_rgba(0,0,0,0.1)] whitespace-nowrap text-sm font-semibold text-[#94A3B8] hover:border-accent hover:text-accent hover:bg-accent/10 transition-all duration-300 cursor-default"
+            className={`chip-${chipColors[index % chipColors.length]} px-6 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] whitespace-nowrap text-sm font-semibold transition-all duration-300 cursor-default`}
           >
+            <span className="chip-dot" />
             {skill}
           </div>
         ))}
@@ -64,8 +69,9 @@ export default function HireSkills() {
         {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, index) => (
           <div
             key={index}
-            className="px-6 py-3 rounded-full bg-white/[0.02] border border-white/5 shadow-[0_4px_15px_rgba(0,0,0,0.1)] whitespace-nowrap text-sm font-semibold text-[#94A3B8] hover:border-accent hover:text-accent hover:bg-accent/10 transition-all duration-300 cursor-default"
+            className={`chip-${chipColors[(index + 2) % chipColors.length]} px-6 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] whitespace-nowrap text-sm font-semibold transition-all duration-300 cursor-default`}
           >
+            <span className="chip-dot" />
             {skill}
           </div>
         ))}

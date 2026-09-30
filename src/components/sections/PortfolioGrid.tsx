@@ -4,6 +4,11 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 
 const categories = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Personal', 'Industrial', 'AI & SaaS'];
 
+// Cycles the shared `.chip-*` accent colors across each project's tech list
+// (same palette as Industries/Technologies) so the badges read as colorful
+// stack metadata instead of a flat blue wall of labels.
+const chipColors: Array<'amber' | 'blue' | 'purple' | 'green' | 'cyan'> = ['amber', 'blue', 'purple', 'green', 'cyan'];
+
 const projects = [
   {
     id: 1,
@@ -215,8 +220,9 @@ export default function PortfolioGrid() {
                         
                         {/* Technology Chips */}
                         <div className="flex flex-wrap gap-2 mb-6">
-                          {project.technologies.slice(0, 4).map(tech => (
-                            <span key={tech} className="px-2 py-1 bg-[#4F8CFF]/10 border border-[#4F8CFF]/20 rounded text-[10px] font-semibold text-[#4F8CFF] backdrop-blur-md">
+                          {project.technologies.slice(0, 4).map((tech, i) => (
+                            <span key={tech} className={`chip-${chipColors[i % chipColors.length]} px-2 py-1 rounded text-[10px] font-semibold backdrop-blur-md`}>
+                              <span className="chip-dot" />
                               {tech}
                             </span>
                           ))}
@@ -224,11 +230,11 @@ export default function PortfolioGrid() {
 
                         {/* Action Buttons */}
                         <div className="flex items-center gap-3">
-                          <a 
-                            href={project.liveUrl} 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="flex items-center gap-2 text-xs font-semibold text-slate-950 bg-accent hover:bg-accent/90 px-4 py-2.5 rounded-lg transition-colors shadow-[0_4px_15px_rgba(22,119,255,0.3)]"
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn-primary flex items-center gap-2 text-xs px-4 py-2.5 rounded-lg"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Live Demo <ExternalLink size={14} />

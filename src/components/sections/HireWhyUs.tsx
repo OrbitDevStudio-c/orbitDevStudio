@@ -104,8 +104,8 @@ export default function HireWhyUs() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(22,119,255,0.15)] group-hover:shadow-[0_0_25px_rgba(22,119,255,0.3)]">
-                    <benefit.icon size={22} className="text-accent group-hover:text-white transition-colors" strokeWidth={2} />
+                  <div className="hire-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110">
+                    <benefit.icon size={22} className="hire-icon" strokeWidth={2} />
                   </div>
                   <h3 className="text-lg font-bold text-white light:text-slate-900 mb-3 group-hover:text-white light:group-hover:text-slate-900 transition-colors">{benefit.title}</h3>
                   <p className="text-sm leading-relaxed text-[#94A3B8]">

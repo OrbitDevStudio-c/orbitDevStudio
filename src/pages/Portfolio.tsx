@@ -4,6 +4,7 @@ import PortfolioHero from '../components/sections/PortfolioHero';
 
 // Below-fold sections lazy loaded
 const PortfolioGrid = lazy(() => import('../components/sections/PortfolioGrid'));
+const PortfolioCTA = lazy(() => import('../components/sections/PortfolioCTA'));
 
 function DeferredSections() {
   const [show, setShow] = useState(false);
@@ -14,6 +15,7 @@ function DeferredSections() {
       <div className="section-white">
         <PortfolioGrid />
       </div>
+      <PortfolioCTA />
     </Suspense>
   );
 }
@@ -64,6 +66,18 @@ export default function Portfolio() {
       </Helmet>
       
       <div className="relative min-h-screen bg-navy">
+
+        {/* Shared gradient definition for portfolio icons */}
+        <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="portfolio-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#050b2e" />
+              <stop offset="55%" stopColor="#1677ff" />
+              <stop offset="100%" stopColor="#00d9ff" />
+            </linearGradient>
+          </defs>
+        </svg>
+
         <PortfolioHero />
         <DeferredSections />
       </div>

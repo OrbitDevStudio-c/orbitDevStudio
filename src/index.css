@@ -1026,6 +1026,60 @@
     filter: brightness(1.18);
   }
 
+  .portfolio-icon-wrap {
+    background: rgba(22, 119, 255, 0.08);
+    border: 1px solid rgba(22, 119, 255, 0.22);
+    box-shadow: 0 0 12px rgba(22, 119, 255, 0.06);
+    transition: border-color 400ms ease, box-shadow 400ms ease, background-color 400ms ease;
+  }
+
+  .light .portfolio-icon-wrap {
+    background: rgba(22, 119, 255, 0.06);
+    border-color: rgba(22, 119, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(22, 119, 255, 0.07);
+  }
+
+  .group:hover .portfolio-icon-wrap {
+    border-color: rgba(22, 119, 255, 0.45);
+    box-shadow: 0 0 20px rgba(22, 119, 255, 0.16);
+  }
+
+  .portfolio-icon {
+    stroke: url(#portfolio-icon-gradient) var(--rt-accent);
+    transition: filter 400ms ease;
+  }
+
+  .group:hover .portfolio-icon {
+    filter: brightness(1.18);
+  }
+
+  .hire-icon-wrap {
+    background: rgba(22, 119, 255, 0.08);
+    border: 1px solid rgba(22, 119, 255, 0.22);
+    box-shadow: 0 0 12px rgba(22, 119, 255, 0.06);
+    transition: border-color 400ms ease, box-shadow 400ms ease, background-color 400ms ease;
+  }
+
+  .light .hire-icon-wrap {
+    background: rgba(22, 119, 255, 0.06);
+    border-color: rgba(22, 119, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(22, 119, 255, 0.07);
+  }
+
+  .group:hover .hire-icon-wrap {
+    border-color: rgba(22, 119, 255, 0.45);
+    box-shadow: 0 0 20px rgba(22, 119, 255, 0.16);
+  }
+
+  .hire-icon {
+    stroke: url(#hire-icon-gradient) var(--rt-accent);
+    transition: filter 400ms ease;
+  }
+
+  .group:hover .hire-icon {
+    filter: brightness(1.18);
+  }
+
   /* === Multicolor accent chips ===
      A small, reusable "chip" system for tags/badges that should each carry
      their own distinct hue (tech stack pills, mini stat labels) rather than

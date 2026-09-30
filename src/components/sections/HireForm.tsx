@@ -400,13 +400,13 @@ export default function HireForm() {
               </div>
 
               {/* Submit Button */}
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={formStatus === 'submitting'}
-                className="mt-4 w-full bg-accent text-slate-950 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-[0_4px_15px_rgba(22,119,255,0.3)] hover:shadow-[0_6px_25px_rgba(22,119,255,0.5)] hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="btn-primary mt-4 w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {formStatus === 'submitting' ? (
-                  <div className="w-6 h-6 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : (
                   <>
                     Submit Inquiry

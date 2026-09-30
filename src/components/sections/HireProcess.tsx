@@ -117,10 +117,10 @@ export default function HireProcess() {
               </div>
 
               {/* Circle */}
-              <div className="w-[100px] h-[100px] rounded-full bg-white/[0.02] border border-white/10 flex items-center justify-center shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_8px_rgba(22,119,255,0.15)] group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_12px_rgba(22,119,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
+              <div className="hire-icon-wrap w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_8px_rgba(22,119,255,0.15)] group-hover:scale-110 group-hover:shadow-[0_0_0_4px_rgba(16,26,45,1),0_0_0_12px_rgba(22,119,255,0.25)] transition-all duration-500 relative z-10 shrink-0">
                 <step.icon
                   size={32}
-                  className="text-accent"
+                  className="hire-icon"
                   strokeWidth={1.5}
                 />
               </div>
