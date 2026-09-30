@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
-import { SiReact, SiNodedotjs, SiMongodb, SiOpenrouter, type IconType } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiMongodb, SiOpenrouter } from 'react-icons/si';
+import type { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
 
 const techMeta: Record<string, { icon: IconType; color: string }> = {
