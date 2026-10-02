@@ -50,9 +50,19 @@ export default function ServicesDomains() {
       <div className="max-w-5xl mx-auto text-center">
         
         {/* Pill header */}
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] mb-6 shadow-sm backdrop-blur-md">
-          <div className="w-1.5 h-1.5 rounded-full bg-accent mr-2" />
-          <span className="text-[10px] font-bold tracking-[0.1em] text-accent uppercase">Service Categories</span>
+        <div
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-6"
+          style={{
+            background: 'var(--rt-pill-bg-2)',
+            border: '1px solid rgba(100,116,139,0.28)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
+          }}
+        >
+          <span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
+          />
+          <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Service Categories</span>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-white light:text-slate-900 mb-4 tracking-tight">

@@ -75,8 +75,23 @@ const services = [
     id: "ai",
     icon: <Cpu size={22} className="services-icon" />,
     title: "AI & Emerging Tech",
-    desc: "Integrate intelligent automation and LLM capabilities into your products.",
+    desc: "From AI-powered resume screening to full RAG knowledge assistants with voice interfaces, we integrate LLMs into products that ship — not demos.",
     className: "md:col-span-1", // Small
+    microUI: (
+      <div className="flex flex-wrap gap-2 mt-6">
+        {[
+          { name: 'OpenAI', chip: 'chip-amber' },
+          { name: 'OpenRouter AI', chip: 'chip-blue' },
+          { name: 'LiveKit', chip: 'chip-purple' },
+          { name: 'RAG', chip: 'chip-cyan' },
+        ].map(tech => (
+          <span key={tech.name} className={`${tech.chip} px-3 py-1 text-[11px] font-bold rounded-full shadow-sm`}>
+            <span className="chip-dot" />
+            {tech.name}
+          </span>
+        ))}
+      </div>
+    )
   },
   {
     id: "growth",

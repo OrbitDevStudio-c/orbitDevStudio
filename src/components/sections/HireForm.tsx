@@ -273,8 +273,9 @@ export default function HireForm() {
                     Phone Number
                   </label>
                   <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-2">
-                    <select 
+                    <select
                       name="countryCode"
+                      defaultValue="+91"
                       className="w-full sm:w-[120px] px-3 py-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#4F8CFF] focus:ring-1 focus:ring-[#4F8CFF] transition-all bg-white/[0.04] text-white light:text-slate-900 hover:bg-white/[0.06] cursor-pointer"
                     >
                       {COUNTRY_CODES.map((c) => (
