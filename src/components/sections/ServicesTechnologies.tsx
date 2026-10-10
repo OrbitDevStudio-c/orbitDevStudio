@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cpu, Globe, Layers, Code2, ArrowRight, Database, Server, Braces, Terminal } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 
 const techData = {
   Frameworks: [
-    { name: "React & Next.js", icon: <Globe size={16} className="text-[#3b82f6]" /> },
-    { name: "Angular", icon: <Layers size={16} className="text-[#ef4444]" /> },
-    { name: "Vue.js / Nuxt", icon: <Code2 size={16} className="text-[#10b981]" /> },
+    { name: "React & Next.js", icon: <Globe size={16} className="brand-icon" /> },
+    { name: "Angular", icon: <Layers size={16} className="brand-icon" /> },
+    { name: "Vue.js / Nuxt", icon: <Code2 size={16} className="brand-icon" /> },
   ],
   Languages: [
-    { name: "TypeScript & JS", icon: <Braces size={16} className="text-[#eab308]" /> },
-    { name: "Python & Go", icon: <Terminal size={16} className="text-[#3b82f6]" /> },
-    { name: "Java & C#", icon: <Server size={16} className="text-[#8b5cf6]" /> },
+    { name: "TypeScript & JS", icon: <Braces size={16} className="brand-icon" /> },
+    { name: "Python & Go", icon: <Terminal size={16} className="brand-icon" /> },
+    { name: "Java & C#", icon: <Server size={16} className="brand-icon" /> },
   ],
   Databases: [
-    { name: "PostgreSQL & MySQL", icon: <Database size={16} className="text-[#3b82f6]" /> },
-    { name: "MongoDB & Redis", icon: <Database size={16} className="text-[#10b981]" /> },
-    { name: "AWS DynamoDB", icon: <Server size={16} className="text-[#f59e0b]" /> },
+    { name: "PostgreSQL & MySQL", icon: <Database size={16} className="brand-icon" /> },
+    { name: "MongoDB & Redis", icon: <Database size={16} className="brand-icon" /> },
+    { name: "AWS DynamoDB", icon: <Server size={16} className="brand-icon" /> },
   ]
 };
 
@@ -74,7 +75,7 @@ export default function ServicesTechnologies() {
         >
           {/* Header */}
           <div className="flex items-center gap-3 mb-8">
-            <Cpu size={24} className="text-accent" />
+            <GradientIcon icon={Cpu} size={24} box={false} />
             <h3 className="text-xl font-bold text-white light:text-slate-900 tracking-tight">Tech Stack Navigator</h3>
           </div>
 
@@ -121,7 +122,7 @@ export default function ServicesTechnologies() {
                     className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:shadow-[0_4px_20px_rgba(22,119,255,0.08)] transition-all duration-300 cursor-pointer group"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-accent/30 group-hover:bg-accent/10 transition-colors">
+                      <div className="brand-icon-wrap w-10 h-10 rounded-lg flex shrink-0 items-center justify-center">
                         {tech.icon}
                       </div>
                       <span className="text-[14px] font-bold text-white light:text-slate-900 tracking-tight">{tech.name}</span>

@@ -28,10 +28,10 @@ const bentoItems = [
     id: "healthcare",
     icon: <HeartPulse size={28} className="industries-icon" />,
     title: "Healthcare & Medical",
-    desc: "Secure, HIPAA-compliant patient portals, telemedicine platforms, and scalable clinical management systems engineered for uncompromising data integrity.",
+    desc: "Secure, privacy-focused patient portals, telemedicine platforms, and scalable clinical management systems built with healthcare data-protection requirements in mind.",
     className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
     tech: ["React", "Node.js", "AWS", "PostgreSQL"],
-    stats: { label: "Uptime", value: "99.99%" },
+    stats: { label: "Priority", value: "Privacy" },
     isDark: true,
     bgImage: "/healthcare.webp"
   },

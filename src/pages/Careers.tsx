@@ -24,23 +24,23 @@ export default function Careers() {
   return (
     <>
       <Helmet>
-        <title>Careers | OrbitDevStudio</title>
+        <title>Careers | Orbit Dev Studios</title>
         <meta name="description" content="Join OrbitDevStudio and help us build the future of digital products. Explore our open roles and benefits." />
-        <link rel="canonical" href="https://orbitdevstudios.vercel.app/careers" />
+        <link rel="canonical" href="https://orbit-dev-studio.vercel.app/careers" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://orbitdevstudios.vercel.app/careers" />
-        <meta property="og:title" content="Careers | OrbitDevStudio" />
+        <meta property="og:url" content="https://orbit-dev-studio.vercel.app/careers" />
+        <meta property="og:title" content="Careers | Orbit Dev Studios" />
         <meta property="og:description" content="Join OrbitDevStudio and help us build the future of digital products. Explore our open roles and benefits." />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta property="og:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/careers" />
-        <meta name="twitter:title" content="Careers | OrbitDevStudio" />
+        <meta name="twitter:url" content="https://orbit-dev-studio.vercel.app/careers" />
+        <meta name="twitter:title" content="Careers | Orbit Dev Studios" />
         <meta name="twitter:description" content="Join OrbitDevStudio and help us build the future of digital products. Explore our open roles and benefits." />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta name="twitter:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* JSON-LD Breadcrumbs */}
         <script type="application/ld+json">
@@ -52,13 +52,13 @@ export default function Careers() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://orbitdevstudios.vercel.app/"
+                "item": "https://orbit-dev-studio.vercel.app/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Careers",
-                "item": "https://orbitdevstudios.vercel.app/careers"
+                "item": "https://orbit-dev-studio.vercel.app/careers"
               }
             ]
           })}

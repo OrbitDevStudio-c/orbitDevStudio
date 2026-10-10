@@ -1,121 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
-
-const categories = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Personal', 'Industrial', 'AI & SaaS'];
-
-// Cycles the shared `.chip-*` accent colors across each project's tech list
-// (same palette as Industries/Technologies) so the badges read as colorful
-// stack metadata instead of a flat blue wall of labels.
-const chipColors: Array<'amber' | 'blue' | 'purple' | 'green' | 'cyan'> = ['amber', 'blue', 'purple', 'green', 'cyan'];
-
-interface Project {
-  id: number;
-  title: string;
-  industry: string;
-  category: string;
-  description: string;
-  technologies: string[];
-  liveUrl: string;
-  logo?: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 11,
-    title: 'Orbit Food',
-    industry: 'Food & Hospitality',
-    category: 'E-commerce',
-    description: 'A modern food ordering platform built for fast, reliable delivery experiences — from browsing menus to real-time order tracking.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    liveUrl: 'https://food-z09x.onrender.com',
-    logo: '/projects/orbitfood-logo.webp',
-  },
-  {
-    id: 10,
-    title: 'RecruitIQ',
-    industry: 'AI & Recruitment',
-    category: 'AI & SaaS',
-    description: 'An AI recruitment platform that parses resumes, scores every applicant against the job requirements, and ranks candidates into a clear shortlist.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'OpenAI'],
-    liveUrl: 'https://recruitiq-eta.vercel.app/',
-    logo: '/projects/recruitiq-logo.png',
-  },
-  {
-    id: 9,
-    title: 'KnowledgeVoice',
-    industry: 'AI & Knowledge Management',
-    category: 'AI & SaaS',
-    description: 'An AI-powered knowledge base assistant with a full-stack RAG pipeline that answers questions grounded in your own uploaded documents.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'OpenRouter AI'],
-    liveUrl: 'https://w24-knowledge-agent.vercel.app/',
-    logo: '/projects/knowledgevoice-logo.png',
-  },
-  {
-    id: 8,
-    title: 'BookVerse',
-    industry: 'E-Commerce & Education',
-    category: 'E-commerce',
-    description: 'A scalable e-commerce backend for a digital bookstore, architected as microservices to handle secure auth and transactional workflows.',
-    technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
-    liveUrl: 'https://online-book-store-backend-psi.vercel.app/',
-    logo: '/projects/bookverse-logo.png',
-  },
-  {
-    id: 4,
-    title: 'Elegant Wedding',
-    industry: 'Personal Branding',
-    category: 'Personal',
-    description: 'A bespoke personal branding and digital invitation platform, engineered around immersive animation and state-driven storytelling.',
-    technologies: ['React', 'Framer Motion', 'Tailwind CSS'],
-    liveUrl: 'https://wedding-portfolio-lilac.vercel.app/',
-  },
-  {
-    id: 7,
-    title: 'ShivedLife Medicare',
-    industry: 'Healthcare',
-    category: 'Healthcare',
-    description: 'A secure, mobile-first platform for a regional healthcare provider, built for compliant patient navigation under strict performance budgets.',
-    technologies: ['React', 'Next.js', 'TypeScript'],
-    liveUrl: 'https://shivedlifemedicare.vercel.app/',
-  },
-  {
-    id: 3,
-    title: 'PharmaCare Platform',
-    industry: 'Healthcare & Pharma',
-    category: 'Healthcare',
-    description: 'A demonstration platform for pharmaceutical product management, architected to handle complex data tables while staying secure and efficient.',
-    technologies: ['React', 'Node.js', 'Tailwind CSS'],
-    liveUrl: 'https://pharmaceutical-demo.vercel.app/',
-  },
-  {
-    id: 1,
-    title: 'Aura Design Studio',
-    industry: 'Interior Design',
-    category: 'Architecture',
-    description: 'A highly performant portfolio platform for a premium interior design firm, built for high-resolution media delivery without compromising load times.',
-    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://auradesignstudio.netlify.app/',
-  },
-  {
-    id: 2,
-    title: 'Designerss Creative',
-    industry: 'Architecture & Interior',
-    category: 'Architecture',
-    description: 'A sophisticated digital catalog for a boutique architectural firm, letting the client manage complex project portfolios through a fast, accessible interface.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    liveUrl: 'https://designerss.netlify.app/',
-  },
-  {
-    id: 5,
-    title: 'Navnidhi Trading',
-    industry: 'Corporate & Industrial',
-    category: 'Corporate',
-    description: 'A comprehensive, SEO-optimized corporate portal for an industrial trading enterprise, serving as a digital storefront for B2B clients.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS'],
-    liveUrl: 'https://navnidhitrading.netlify.app/',
-  },
-];
+import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { projects, PORTFOLIO_CATEGORIES as categories, TECH_CHIP_COLORS as chipColors, caseStudyPath } from '../../data/projects';
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -190,8 +77,10 @@ export default function PortfolioGrid() {
                     {project.logo ? (
                       <div className="absolute inset-0 flex items-center justify-center bg-white p-8">
                         <img
-                          src={project.logo}
-                          alt={`${project.title} logo`}
+                          src={project.logo.src}
+                          alt={project.logo.alt}
+                          width={project.logo.width}
+                          height={project.logo.height}
                           className="w-full h-full object-contain"
                           loading={index < 3 ? 'eager' : 'lazy'}
                           decoding="async"
@@ -232,7 +121,7 @@ export default function PortfolioGrid() {
                     ))}
                   </div>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto flex flex-wrap items-center gap-3">
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -241,6 +130,15 @@ export default function PortfolioGrid() {
                     >
                       Live Demo <ExternalLink size={14} />
                     </a>
+                    <Link
+                      to={caseStudyPath(project.slug)}
+                      data-track="view_case_study"
+                      data-track-location="portfolio-grid"
+                      aria-label={`View ${project.title} case study`}
+                      className="group/cs inline-flex items-center gap-1.5 text-xs font-semibold text-white light:text-slate-900 px-4 py-2.5 min-h-[44px] rounded-lg border border-white/10 bg-white/[0.03] hover:border-accent/50 hover:text-accent transition-colors"
+                    >
+                      View Case Study <ArrowRight size={14} className="group-hover/cs:translate-x-0.5 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               </motion.div>

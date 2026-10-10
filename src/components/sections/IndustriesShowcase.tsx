@@ -26,7 +26,7 @@ const cases: Case[] = [
     result: "Recruiters go from an unsorted resume pile to a ranked, filterable shortlist in minutes — with bulk shortlist/reject actions, automatic candidate emails, and race-safe slot booking so two candidates can never double-book the same interview time.",
     tech: ["React", "Node.js", "PostgreSQL"],
     liveUrl: "https://recruitiq-eta.vercel.app/",
-    image: "/projects/recruitiq-logo.png",
+    image: "/projects/recruitiq-logo.webp",
     isLogo: true,
     reverse: false
   },
@@ -39,7 +39,7 @@ const cases: Case[] = [
     result: "Anyone can ask a question by typing or speaking and get an accurate, source-cited answer in seconds instead of scrolling through a 40-page document, with every conversation saved and searchable for later.",
     tech: ["React", "Node.js", "MongoDB"],
     liveUrl: "https://w24-knowledge-agent.vercel.app/",
-    image: "/projects/knowledgevoice-logo.png",
+    image: "/projects/knowledgevoice-logo.webp",
     isLogo: true,
     reverse: true
   }
@@ -152,7 +152,7 @@ export default function IndustriesShowcase() {
                 </div>
               </div>
 
-              <Link to="/portfolio" className="self-start group relative px-8 py-3.5 bg-white/[0.03] text-white light:text-slate-900 font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent hover:text-accent transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex items-center gap-2">
+              <Link to={`/case-studies/${project.title.toLowerCase()}`} data-track="view_case_study" data-track-location="industries-showcase" className="self-start group relative px-8 py-3.5 bg-white/[0.03] text-white light:text-slate-900 font-bold text-[14px] rounded-xl border border-white/10 overflow-hidden hover:border-accent hover:text-accent transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex items-center gap-2">
                 <span className="relative z-10">View Case Study</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-accent/10 -z-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

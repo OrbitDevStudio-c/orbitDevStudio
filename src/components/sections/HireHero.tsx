@@ -1,172 +1,26 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, UserCheck, Terminal, Layers } from 'lucide-react';
-import ServiceParticles from './ServiceParticles';
+import { ArrowRight } from 'lucide-react';
+import PageHero from './PageHero';
+import HireFigure from '../hero-figures/HireFigure';
 
 export default function HireHero() {
   return (
-    <section className="bg-navy-deep relative w-full min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
-      {/* Confined particle background */}
-      <div className="absolute inset-0 opacity-50 light:opacity-100 light:mix-blend-normal mix-blend-screen">
-        <ServiceParticles />
-      </div>
-
-      {/* Subtle Constellation Lines */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
-        <motion.path
-          d="M 130 200 L 330 260 L 540 170 L 800 240"
-          className="stroke-white/10 light:stroke-[#1677ff]/40"
-          strokeWidth="1"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
-        />
-      </svg>
-
-      {/* Decorative radial gradients */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4F8CFF]/[0.08] via-transparent to-transparent opacity-60" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#7C5CFF]/[0.15] via-transparent to-transparent" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
-        
-        {/* Left Content */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col text-left text-white light:text-slate-900 max-w-xl"
+    <PageHero
+      eyebrow="Hire Dedicated Talent"
+      title="Scale your team with"
+      highlight="elite engineering."
+      description="Augment your capabilities with senior developers, architects, and designers who integrate seamlessly into your workflow. Flexible engagement models designed to accelerate your product roadmap without the hiring overhead."
+      actions={
+        <button
+          onClick={() => {
+            document.getElementById('hire-form')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl font-bold text-[14px] px-8 py-3.5"
         >
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md mb-8"
-            style={{
-              background: 'var(--rt-pill-bg-2)',
-              border: '1px solid rgba(100,116,139,0.28)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
-            }}
-          >
-            <span
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ background: 'var(--rt-cyan)', boxShadow: '0 0 6px var(--rt-cyan)', animation: 'dot-glow 2.4s ease-in-out infinite' }}
-            />
-            <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Hire Dedicated Talent</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] mb-6">
-            Scale your team with <br className="hidden sm:block" /> <span className="text-gradient">elite engineering.</span>
-          </h1>
-
-          <p className="text-base sm:text-[15px] text-[#C7D2E4] leading-relaxed font-light mb-10 max-w-lg">
-            Augment your capabilities with senior developers, architects, and designers who integrate seamlessly into your workflow. Flexible engagement models designed to accelerate your product roadmap without the hiring overhead.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => {
-                document.getElementById('hire-form')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl font-bold text-[14px] px-8 py-3.5"
-            >
-              Hire Developers Now
-              <ArrowRight size={18} />
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Right UI Illustration: Floating Talent Network */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center lg:justify-end"
-        >
-          {/* Main glowing behind graphic — controlled multicolor accent (amber -> blue -> purple -> cyan), kept soft/premium via heavy blur rather than a hard rainbow ring */}
-          <div
-            className="absolute right-20 top-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full blur-[150px] opacity-[0.16] light:opacity-[0.12]"
-            style={{ background: 'conic-gradient(from 180deg, #f6b73c, #1677ff, #6c2bff, #00d9ff, #f6b73c)' }}
-          />
-          
-          <div className="relative w-full max-w-[500px] h-[450px]">
-            
-            {/* Center Core (Project/Business) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-32 h-32 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl flex items-center justify-center shadow-[0_0_60px_rgba(46,91,229,0.4)]">
-               <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
-                 <Layers size={40} className="text-white opacity-90" />
-               </div>
-            </div>
-
-            {/* Glowing Connecting Lines */}
-            <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none">
-              <svg className="w-full h-full" viewBox="0 0 500 450">
-                <motion.line x1="250" y1="225" x2="380" y2="120" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeDasharray="4 4" className="animate-[pulse_2s_linear_infinite]" />
-                <motion.line x1="250" y1="225" x2="120" y2="150" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeDasharray="4 4" className="animate-[pulse_3s_linear_infinite]" />
-                <motion.line x1="250" y1="225" x2="250" y2="380" stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeDasharray="4 4" className="animate-[pulse_2.5s_linear_infinite]" />
-              </svg>
-            </div>
-
-            {/* Talent Nodes */}
-            
-            {/* Node 1: Senior Dev */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-4 top-[10%] z-20 bg-[#141416]/80 backdrop-blur-md border border-accent/30 p-4 rounded-2xl shadow-2xl flex items-center gap-3 w-48"
-            >
-              <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30 shrink-0">
-                <Terminal size={20} className="text-accent" />
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Senior React Dev</span>
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">Available</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Node 2: Architect */}
-            <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute left-0 top-[20%] z-20 bg-[#141416]/80 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-3 w-44"
-            >
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/30 shrink-0">
-                <UserCheck size={18} className="text-purple-400" />
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Cloud Architect</span>
-                <span className="text-[10px] text-white/50 light:text-slate-900/50">AWS & Azure</span>
-              </div>
-            </motion.div>
-
-            {/* Node 3: UI/UX */}
-            <motion.div 
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute left-1/2 bottom-[5%] -translate-x-1/2 z-20 bg-[#141416]/90 backdrop-blur-md border border-emerald-500/30 p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-3 w-52"
-            >
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 shrink-0">
-                <Layers size={20} className="text-emerald-400" />
-              </div>
-              <div className="flex flex-col gap-1 w-full">
-                <div className="flex justify-between items-center">
-                   <span className="text-xs font-bold text-white light:text-slate-900 tracking-wide">Product Designer</span>
-                   <span className="text-[10px] text-white/50 light:text-slate-900/50">Figma</span>
-                </div>
-                <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mt-1">
-                  <div className="w-[85%] h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full" />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Decorative Stars */}
-            <div className="absolute left-10 top-10 text-accent animate-pulse">✦</div>
-            <div className="absolute right-20 bottom-20 text-white/40 light:text-slate-900/40 text-xl animate-pulse">✦</div>
-
-          </div>
-        </motion.div>
-      </div>
-    </section>
+          Hire Developers Now
+          <ArrowRight size={18} />
+        </button>
+      }
+      figure={<HireFigure />}
+    />
   );
 }

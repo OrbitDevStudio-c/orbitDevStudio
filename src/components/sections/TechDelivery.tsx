@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Building, LineChart, Users, Check, LayoutTemplate, MonitorSmartphone, Code2, Cloud, Shield, Zap } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 import { Link } from 'react-router-dom';
 
 const scaleCards = [
@@ -123,20 +124,15 @@ export default function TechDelivery() {
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   {[
-                    { icon: LayoutTemplate, label: 'UX & Design', color: '#f6b73c' },
-                    { icon: MonitorSmartphone, label: 'Web Development', color: '#1677ff' },
-                    { icon: Code2, label: 'API Engineering', color: '#b08cff' },
-                    { icon: Cloud, label: 'Cloud Infrastructure', color: '#52c854' },
-                    { icon: Shield, label: 'Security & Compliance', color: '#00d9ff' },
-                    { icon: Zap, label: 'Performance & Scale', color: '#f6b73c' }
+                    { icon: LayoutTemplate, label: 'UX & Design' },
+                    { icon: MonitorSmartphone, label: 'Web Development' },
+                    { icon: Code2, label: 'API Engineering' },
+                    { icon: Cloud, label: 'Cloud Infrastructure' },
+                    { icon: Shield, label: 'Security & Compliance' },
+                    { icon: Zap, label: 'Performance & Scale' }
                   ].map((tech, i) => (
                     <div key={i} className="flex items-center gap-4 bg-white/[0.04] border border-white/5 rounded-2xl p-4 hover:bg-white/[0.08] hover:border-white/10 transition-colors cursor-default group">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center shadow-inner transition-colors"
-                        style={{ background: `${tech.color}14`, border: `1px solid ${tech.color}30` }}
-                      >
-                        <tech.icon size={18} style={{ color: tech.color }} />
-                      </div>
+                      <GradientIcon icon={tech.icon} size={18} boxClassName="w-10 h-10 rounded-xl" />
                       <span className="text-[13px] font-semibold text-white light:text-slate-900 tracking-wide">{tech.label}</span>
                     </div>
                   ))}

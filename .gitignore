@@ -22,3 +22,10 @@ dist-ssr
 *.sln
 *.sw?
 config.bat
+
+# Secrets
+.env
+.env.*
+!.env.example
+server/.env
+server/uploads

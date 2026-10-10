@@ -9,7 +9,7 @@ const ServicesProcess = lazy(() => import('../components/sections/ServicesProces
 const ServicesBenefits = lazy(() => import('../components/sections/ServicesBenefits'));
 const ServicesMetrics = lazy(() => import('../components/sections/ServicesMetrics'));
 const ServicesTechnologies = lazy(() => import('../components/sections/ServicesTechnologies'));
-const ServicesCTA = lazy(() => import('../components/sections/ServicesCTA'));
+const FreeAuditSection = lazy(() => import('../components/sections/FreeAuditSection'));
 
 function DeferredSections() {
   const [show, setShow] = useState(false);
@@ -25,7 +25,7 @@ function DeferredSections() {
         <ServicesBenefits />
         <ServicesMetrics />
         <ServicesTechnologies />
-        <ServicesCTA />
+        <FreeAuditSection compact trackLocation="services" />
       </div>
     </Suspense>
   );
@@ -35,23 +35,23 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services | OrbitDevStudio</title>
+        <title>Services | Orbit Dev Studios</title>
         <meta name="description" content="End-to-End Digital Services Engineered for Growth" />
-        <link rel="canonical" href="https://orbitdevstudios.vercel.app/services" />
+        <link rel="canonical" href="https://orbit-dev-studio.vercel.app/services" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://orbitdevstudios.vercel.app/services" />
-        <meta property="og:title" content="Services | OrbitDevStudio" />
+        <meta property="og:url" content="https://orbit-dev-studio.vercel.app/services" />
+        <meta property="og:title" content="Services | Orbit Dev Studios" />
         <meta property="og:description" content="End-to-End Digital Services Engineered for Growth" />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta property="og:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/services" />
-        <meta name="twitter:title" content="Services | OrbitDevStudio" />
+        <meta name="twitter:url" content="https://orbit-dev-studio.vercel.app/services" />
+        <meta name="twitter:title" content="Services | Orbit Dev Studios" />
         <meta name="twitter:description" content="End-to-End Digital Services Engineered for Growth" />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta name="twitter:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* JSON-LD Breadcrumbs */}
         <script type="application/ld+json">
@@ -63,13 +63,13 @@ export default function Services() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://orbitdevstudios.vercel.app/"
+                "item": "https://orbit-dev-studio.vercel.app/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Services",
-                "item": "https://orbitdevstudios.vercel.app/services"
+                "item": "https://orbit-dev-studio.vercel.app/services"
               }
             ]
           })}

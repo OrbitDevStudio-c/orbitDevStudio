@@ -6,7 +6,7 @@ const steps = [
   { icon: Map, title: 'Architecture Planning', desc: 'Scalable architecture decisions, timelines, and precise resource mapping.' },
   { icon: PenTool, title: 'UI/UX Design', desc: 'Creating intuitive wireframes, prototypes, and comprehensive design systems.' },
   { icon: Code2, title: 'Agile Development', desc: 'Sprint-based engineering with continuous delivery and tight feedback loops.' },
-  { icon: TestTube2, title: 'HIPAA & GDPR Security', desc: 'Data encryption in transit and at rest, secure access logs, and strict privacy controls.' },
+  { icon: TestTube2, title: 'Security & Privacy', desc: 'Data encryption in transit and at rest, secure access logs, and strict privacy controls.' },
   { icon: Rocket, title: 'Secure DevOps Pipelines', desc: 'Automated vulnerability scanning, configuration management, and audited deployments.' },
 ];
 

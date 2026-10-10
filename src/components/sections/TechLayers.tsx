@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Smartphone, Database, Server, Layout } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 
 // Cycles the shared `.chip-*` accent colors across each layer's technology
 // list (same palette as the Industries tech tags) so the grid reads as
@@ -84,9 +85,7 @@ export default function TechLayers() {
               {/* Left Side: Content */}
               <div className="flex-1 text-white light:text-slate-900 relative z-10 w-full">
                 <div className="flex items-center gap-5 mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:border-[#4F8CFF]/50 group-hover:bg-[#4F8CFF]/20 group-hover:shadow-[0_0_20px_rgba(22,119,255,0.3)] transition-all duration-500 shadow-inner">
-                    <layer.icon size={26} className="text-[#4F8CFF]" />
-                  </div>
+                  <GradientIcon icon={layer.icon} size={26} boxClassName="w-14 h-14 rounded-xl" />
                   <div>
                     <span className="text-[10px] font-bold tracking-[0.2em] text-white/50 light:text-slate-900/50 uppercase block mb-1">
                       CAPABILITY

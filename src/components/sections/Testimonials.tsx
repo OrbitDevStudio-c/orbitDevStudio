@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 import { useRef } from 'react';
 
 const testimonials = [
@@ -99,10 +100,10 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center testimonial-card p-6 md:p-8 flex flex-col justify-between"
+                className="w-[85vw] max-w-[320px] md:w-auto md:min-w-[380px] shrink-0 snap-center testimonial-card group p-6 md:p-8 flex flex-col justify-between"
               >
                 <div>
-                  <Quote size={32} className="text-white/10 light:text-accent/25 mb-4" />
+                  <GradientIcon icon={Quote} size={32} box={false} className="mb-4 opacity-40" />
                   <p className="text-slate-300 light:text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-light">"{t.text}"</p>
                 </div>
 
@@ -122,7 +123,7 @@ export default function Testimonials() {
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <h4 className="text-white light:text-slate-900 text-sm font-bold">{t.name}</h4>
+                      <h3 className="text-white light:text-slate-900 text-sm font-bold">{t.name}</h3>
                       <p className="text-slate-400 light:text-slate-500 text-[11px] font-medium">{t.role}, {t.company}</p>
                     </div>
                   </div>

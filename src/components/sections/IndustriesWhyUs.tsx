@@ -13,7 +13,7 @@ import {
 const whyUsItems = [
   {
     id: "experience",
-    icon: <CalendarClock size={20} className="text-blue-400" />,
+    icon: <CalendarClock size={20} className="brand-icon" />,
     title: "4+ Years Experience",
     desc: "Delivering high-end engineering solutions consistently.",
     className:
@@ -21,17 +21,17 @@ const whyUsItems = [
   },
   {
     id: "delivery",
-    icon: <Target size={20} className="text-emerald-400" />,
-    title: "99.9%",
-    subtitle: "Delivery Rate",
-    desc: "On time and exactly to specification.",
+    icon: <Target size={20} className="brand-icon" />,
+    title: "On-Spec",
+    subtitle: "Delivery Focus",
+    desc: "Clear milestones and regular check-ins keep delivery aligned with the agreed scope.",
     className:
       "col-span-1 md:col-span-1 lg:col-span-1 bg-[#101A2D] border-accent/20",
     isDark: true,
   },
   {
     id: "projects",
-    icon: <Briefcase size={20} className="text-amber-400" />,
+    icon: <Briefcase size={20} className="brand-icon" />,
     title: "50+",
     subtitle: "Projects Shipped",
     desc: "From startups to enterprise.",
@@ -40,7 +40,7 @@ const whyUsItems = [
   },
   {
     id: "architecture",
-    icon: <Cpu size={20} className="text-purple-400" />,
+    icon: <Cpu size={20} className="brand-icon" />,
     title: "Modern Architecture",
     desc:
       "Headless, microservices, and serverless infrastructures built to scale infinitely.",
@@ -49,17 +49,17 @@ const whyUsItems = [
   },
   {
     id: "security",
-    icon: <ShieldCheck size={20} className="text-accent" />,
+    icon: <ShieldCheck size={20} className="brand-icon" />,
     title: "Enterprise Security",
     desc:
-      "Bank-grade encryption, SOC2 compliance readiness, and zero-trust data protection.",
+      "Encryption in transit and at rest, least-privilege access, and security-focused development practices.",
     className:
       "col-span-1 md:col-span-2 lg:col-span-2 bg-[#0B1220] border-white/5",
     isDark: true,
   },
   {
     id: "support",
-    icon: <Zap size={20} className="text-rose-400" />,
+    icon: <Zap size={20} className="brand-icon" />,
     title: "Fast Support",
     desc: "24/7 dedicated engineering SLAs.",
     className:
@@ -67,7 +67,7 @@ const whyUsItems = [
   },
   {
     id: "ai",
-    icon: <Bot size={20} className="text-cyan-400" />,
+    icon: <Bot size={20} className="brand-icon" />,
     title: "AI Ready",
     desc:
       "Seamlessly integrate LLMs, computer vision, and predictive analytics into your core product.",
@@ -76,7 +76,7 @@ const whyUsItems = [
   },
   {
     id: "scale",
-    icon: <Layers size={20} className="text-indigo-400" />,
+    icon: <Layers size={20} className="brand-icon" />,
     title: "Scalable Systems",
     desc:
       "Architected to handle sudden viral traffic spikes effortlessly.",
@@ -119,7 +119,7 @@ export default function IndustriesWhyUs() {
             )}
 
             <div className="relative z-10">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-white/[0.03] border border-white/5 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(22,119,255,0.2)] relative z-10 [&>svg]:transition-colors [&>svg]:duration-300 group-hover:[&>svg]:brightness-125">
+              <div className="brand-icon-wrap w-10 h-10 rounded-xl flex shrink-0 items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 relative z-10">
                 {item.icon}
               </div>
 

@@ -59,6 +59,37 @@ export default function GalaxyParticles() {
     }
 
     const particles: Particle[] = [];
+
+    // Pre-rendered glow sprites: far cheaper than canvas shadowBlur on every particle each frame.
+    const spriteCache = new Map<string, HTMLCanvasElement>();
+    const hexToRgba = (hex: string, a: number) => {
+      const n = parseInt(hex.slice(1), 16);
+      return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+    };
+    const getSprite = (color: string, glow: string, dust: boolean) => {
+      const key = `${color}|${glow}|${dust}`;
+      const cached = spriteCache.get(key);
+      if (cached) return cached;
+      const size = 32;
+      const sprite = document.createElement('canvas');
+      sprite.width = sprite.height = size;
+      const g = sprite.getContext('2d');
+      if (g) {
+        const c = size / 2;
+        const grad = g.createRadialGradient(c, c, 0, c, c, c);
+        grad.addColorStop(0, color);
+        grad.addColorStop(dust ? 0.12 : 0.22, color);
+        grad.addColorStop(dust ? 0.3 : 0.4, glow);
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        g.fillStyle = grad;
+        g.fillRect(0, 0, size, size);
+      }
+      spriteCache.set(key, sprite);
+      return sprite;
+    };
+    const isSmallScreen = window.innerWidth <= 768;
+    const frameInterval = isSmallScreen ? 1000 / 30 : 0;
+    let lastFrame = 0;
     
     interface ShootingStar {
       x: number;
@@ -114,14 +145,14 @@ export default function GalaxyParticles() {
       height = canvas.offsetHeight;
       canvas.width = width * pixelRatio;
       canvas.height = height * pixelRatio;
-      ctx.scale(pixelRatio, pixelRatio);
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       init();
     };
 
     const init = () => {
       particles.length = 0;
       // Increase particle count so it stays dense when spread over the wider area
-      const PARTICLE_COUNT = window.innerWidth > 768 ? 1400 : 500;
+      const PARTICLE_COUNT = isSmallScreen ? 300 : 900;
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         particles.push(createGalaxyParticle(i));
       }
@@ -143,6 +174,11 @@ export default function GalaxyParticles() {
         animationFrameId = 0;
         return;
       }
+      if (frameInterval && time - lastFrame < frameInterval) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrame = time;
 
       const isLight = themeRef.current === 'light';
       const colors = isLight ? lightColors : darkColors;
@@ -179,22 +215,14 @@ export default function GalaxyParticles() {
         p.x = width / 2 + Math.cos(p.angle) * p.orbit + randomOffset;
         p.y = height / 2 + Math.sin(p.angle) * p.orbit * 0.45 + randomOffset;
 
-        // Dust Clouds
-        if (p.isDust) {
-          ctx.shadowBlur = isLight ? 10 : 18;
-          ctx.shadowColor = isLight ? "rgba(22,119,255,0.5)" : "rgba(120,140,255,0.7)";
-        } else {
-          ctx.shadowBlur = isLight ? 2 : 4;
-          ctx.shadowColor = color;
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = color;
+        const glow = p.isDust
+          ? isLight ? 'rgba(22,119,255,0.5)' : 'rgba(120,140,255,0.7)'
+          : hexToRgba(color, isLight ? 0.25 : 0.4);
+        const sprite = getSprite(color, glow, p.isDust);
+        // Sprite core occupies 22% (12% for dust) of its radius, so scale to keep the dot at p.size.
+        const d = (p.size * 2) / (p.isDust ? 0.12 : 0.22);
         ctx.globalAlpha = isLight ? p.alpha * 0.7 : p.alpha;
-        ctx.fill();
-
-        ctx.shadowBlur = 0; // reset for lines
+        ctx.drawImage(sprite, p.x - d / 2, p.y - d / 2, d, d);
 
         // Reduced Connections
         if (Math.random() < 0.005) {
@@ -271,17 +299,23 @@ export default function GalaxyParticles() {
     height = canvas.offsetHeight;
     canvas.width = width * pixelRatio;
     canvas.height = height * pixelRatio;
-    ctx.scale(pixelRatio, pixelRatio);
-    
-    startTimeoutId = window.setTimeout(() => {
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+    // Start once the page is idle so the animation never competes with first render.
+    const begin = () => {
       init();
       draw(0);
-    }, 120);
+    };
+    const win = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number; cancelIdleCallback?: (id: number) => void };
+    let idleId = 0;
+    if (win.requestIdleCallback) idleId = win.requestIdleCallback(begin, { timeout: 1500 });
+    else startTimeoutId = window.setTimeout(begin, 600);
 
     window.addEventListener('resize', resize);
     return () => {
       window.removeEventListener('resize', resize);
       window.clearTimeout(startTimeoutId);
+      if (idleId) win.cancelIdleCallback?.(idleId);
       cancelAnimationFrame(animationFrameId);
       observer.disconnect();
     };

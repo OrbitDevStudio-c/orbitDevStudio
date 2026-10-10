@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-96 h-96 bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-16 md:pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 pb-28 md:pt-16 md:pb-28">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-8">
 
           {/* Logo */}
@@ -94,15 +94,15 @@ export default function Footer() {
             </Link>
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Crafting premium digital experiences and innovative software
-              solutions for tomorrow&apos;s leading brands.
+              Websites, web applications and e-commerce platforms designed
+              and built to help growing businesses win more customers.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="col-span-1 md:col-span-4 lg:col-span-2">
             <h4 className="text-xs uppercase tracking-wider text-slate-200 font-semibold mb-6">
-              Quick Links
+              Company
             </h4>
 
             <ul className="space-y-3.5 text-sm text-gray-400">
@@ -123,12 +123,12 @@ export default function Footer() {
           {/* Services */}
           <div className="col-span-1 md:col-span-4 lg:col-span-3">
             <h4 className="text-xs uppercase tracking-wider text-slate-200 font-semibold mb-6">
-              Services
+              Resources
             </h4>
 
             <ul className="space-y-3.5 text-sm text-gray-400">
-              {serviceLinks.map((link, idx) => (
-                <li key={idx}>
+              {serviceLinks.map((link) => (
+                <li key={link.label}>
                   <Link
                     to={link.path}
                     className="relative inline-block hover:text-white light:hover:text-slate-900 transition-colors group"
@@ -182,7 +182,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500">
           <p>
-            © {new Date().getFullYear()} OrbitDevStudio. All rights reserved.
+            © {new Date().getFullYear()} Orbit Dev Studios. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
@@ -200,29 +200,6 @@ export default function Footer() {
               Terms of Service
             </Link>
 
-            <button
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                })
-              }
-              aria-label="Back to top"
-              className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white light:hover:text-slate-900 hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="16"
-                height="16"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

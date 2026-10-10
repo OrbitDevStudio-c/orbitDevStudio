@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import PageHero from '../components/sections/PageHero';
+import TermsFigure from '../components/hero-figures/TermsFigure';
 
 export default function Terms() {
   const sections = [
@@ -32,21 +33,21 @@ export default function Terms() {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions | Orbit Dev Studio</title>
+        <title>Terms & Conditions | Orbit Dev Studios</title>
         <meta name="description" content="Read the terms of service and agreement rules for partnering with Orbit Dev Studio." />
         <link rel="canonical" href="https://orbit-dev-studio.vercel.app/terms" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://orbit-dev-studio.vercel.app/terms" />
-        <meta property="og:title" content="Terms & Conditions | Orbit Dev Studio" />
+        <meta property="og:title" content="Terms & Conditions | Orbit Dev Studios" />
         <meta property="og:description" content="Read the terms of service and agreement rules for partnering with Orbit Dev Studio." />
         <meta property="og:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://orbit-dev-studio.vercel.app/terms" />
-        <meta name="twitter:title" content="Terms & Conditions | Orbit Dev Studio" />
+        <meta name="twitter:title" content="Terms & Conditions | Orbit Dev Studios" />
         <meta name="twitter:description" content="Read the terms of service and agreement rules for partnering with Orbit Dev Studio." />
         <meta name="twitter:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
@@ -72,20 +73,19 @@ export default function Terms() {
           })}
         </script>
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen pt-32 pb-24 px-6 md:px-12 lg:px-24 bg-background relative z-10 text-white light:text-slate-900"
+      <PageHero
+        compact
+        eyebrow="Legal Agreement"
+        title="Terms of"
+        highlight="Service"
+        description="These Terms of Service govern your relationship and agreements with Orbit Dev Studio."
+        figure={<TermsFigure />}
       >
-        <div className="max-w-4xl mx-auto">
-          <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em] block mb-3">LEGAL AGREEMENT</span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white light:text-slate-900 mb-8 tracking-tight">Terms of Service</h1>
-          <p className="text-slate-400 text-sm leading-relaxed mb-12 border-b border-white/10 pb-8">
-            Last updated: October 2026. These Terms of Service govern your relationship and agreements with Orbit Dev Studio.
-          </p>
+        <p className="-mt-6 text-sm text-slate-400">Last updated: October 2026</p>
+      </PageHero>
 
+      <section className="relative z-10 bg-background px-6 pb-24 pt-16 text-white md:px-12 md:pt-20 lg:px-24 light:text-slate-900">
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-10">
             {sections.map((section, idx) => (
               <div key={idx} className="space-y-3">
@@ -95,7 +95,7 @@ export default function Terms() {
             ))}
           </div>
         </div>
-      </motion.div>
+      </section>
     </>
   );
 }

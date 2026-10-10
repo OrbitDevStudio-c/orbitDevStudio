@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import Hero from '../components/sections/Hero';
 import { SITE_URL } from '../config/site';
 
+const HomeTrustedBy = lazy(() => import('../components/sections/HomeTrustedBy'));
+const HomeServices = lazy(() => import('../components/sections/HomeServices'));
+const HomeWhyOrbit = lazy(() => import('../components/sections/HomeWhyOrbit'));
 const StoryStats = lazy(() => import('../components/sections/StoryStats'));
 const TechStackMarquee = lazy(() => import('../components/sections/TechStackMarquee'));
 const FeaturedProjects = lazy(() => import('../components/sections/FeaturedProjects'));
-const ProcessTimeline = lazy(() => import('../components/sections/ProcessTimeline'));
 const Testimonials = lazy(() => import('../components/sections/Testimonials'));
 
 function DeferredHomeSections() {
@@ -28,9 +30,11 @@ function DeferredHomeSections() {
   return (
     <Suspense fallback={null}>
       <StoryStats />
-      <TechStackMarquee />
+      <HomeTrustedBy />
+      <HomeServices />
       <FeaturedProjects />
-      <ProcessTimeline />
+      <HomeWhyOrbit />
+      <TechStackMarquee />
       <Testimonials />
     </Suspense>
   );
@@ -40,23 +44,23 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>OrbitDevStudio | Premium Digital Agency & Software Engineering</title>
-        <meta name="description" content="OrbitDevStudio - Engineering premium software solutions, breathtaking aesthetics, and scalable architectures for tomorrow's leading enterprises." />
+        <title>Orbit Dev Studios | Websites, Web Apps & E-commerce Built for Growth</title>
+        <meta name="description" content="Orbit Dev Studios designs and builds fast, conversion-focused websites, web applications, UI/UX and e-commerce platforms for growing businesses." />
         <link rel="canonical" href={`${SITE_URL}/`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/`} />
-        <meta property="og:title" content="OrbitDevStudio | Premium Digital Agency & Software Engineering" />
-        <meta property="og:description" content="OrbitDevStudio - Engineering premium software solutions, breathtaking aesthetics, and scalable architectures for tomorrow's leading enterprises." />
+        <meta property="og:title" content="Orbit Dev Studios | Websites, Web Apps & E-commerce Built for Growth" />
+        <meta property="og:description" content="Orbit Dev Studios designs and builds fast, conversion-focused websites, web applications, UI/UX and e-commerce platforms for growing businesses." />
         <meta property="og:image" content={`${SITE_URL}/companylogo-social.webp`} />
         <meta property="og:site_name" content="OrbitDevStudio" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`${SITE_URL}/`} />
-        <meta name="twitter:title" content="OrbitDevStudio | Premium Digital Agency & Software Engineering" />
-        <meta name="twitter:description" content="OrbitDevStudio - Engineering premium software solutions, breathtaking aesthetics, and scalable architectures for tomorrow's leading enterprises." />
+        <meta name="twitter:title" content="Orbit Dev Studios | Websites, Web Apps & E-commerce Built for Growth" />
+        <meta name="twitter:description" content="Orbit Dev Studios designs and builds fast, conversion-focused websites, web applications, UI/UX and e-commerce platforms for growing businesses." />
         <meta name="twitter:image" content={`${SITE_URL}/companylogo-social.webp`} />
 
         {/* JSON-LD Structured Data */}
@@ -67,10 +71,20 @@ export default function Home() {
               {
                 "@type": "Organization",
                 "@id": `${SITE_URL}/#organization`,
-                "name": "OrbitDevStudio",
+                "name": "Orbit Dev Studios",
                 "url": `${SITE_URL}/`,
                 "logo": `${SITE_URL}/companylogo.webp`,
-                "sameAs": []
+                "email": "orbitdevstudios@gmail.com",
+                "sameAs": [
+                  "https://instagram.com/orbitdevstudio",
+                  "https://www.linkedin.com/company/orbitdevstudio-tech"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "sales",
+                  "email": "orbitdevstudios@gmail.com",
+                  "url": `${SITE_URL}/hire`
+                }
               },
               {
                 "@type": "WebSite",

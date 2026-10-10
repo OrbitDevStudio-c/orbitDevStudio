@@ -11,7 +11,7 @@ const techClusters = [
       { name: "React", x: 20, y: 10 },
       { name: "Node.js", x: 60, y: 30 },
       { name: "AWS", x: 10, y: 60 },
-      { name: "HIPAA Compliant", x: 50, y: 70 },
+      { name: "Data Privacy", x: 50, y: 70 },
       { name: "PostgreSQL", x: 80, y: 15 },
       { name: "HL7/FHIR", x: 30, y: 40 }
     ]
@@ -136,7 +136,6 @@ export default function IndustriesTechClusters() {
     <div className="lg:col-span-7 relative h-[420px] rounded-3xl bg-[#0B1220] border border-white/5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
 
       {/* Grid Background */}
-      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_1px,transparent_1px)] light:bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.08)_1px,transparent_1px)] [background-size:28px_28px]" />
 
       <AnimatePresence mode="wait">
 

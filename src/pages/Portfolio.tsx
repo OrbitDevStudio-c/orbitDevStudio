@@ -24,23 +24,23 @@ export default function Portfolio() {
   return (
     <>
       <Helmet>
-        <title>Portfolio | OrbitDevStudio</title>
+        <title>Our Work | Orbit Dev Studios</title>
         <meta name="description" content="OrbitDevStudio - Digital excellence in action. Explore our portfolio of premium web experiences." />
-        <link rel="canonical" href="https://orbitdevstudios.vercel.app/portfolio" />
+        <link rel="canonical" href="https://orbit-dev-studio.vercel.app/portfolio" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://orbitdevstudios.vercel.app/portfolio" />
-        <meta property="og:title" content="Portfolio | OrbitDevStudio" />
+        <meta property="og:url" content="https://orbit-dev-studio.vercel.app/portfolio" />
+        <meta property="og:title" content="Our Work | Orbit Dev Studios" />
         <meta property="og:description" content="OrbitDevStudio - Digital excellence in action. Explore our portfolio of premium web experiences." />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta property="og:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://orbitdevstudios.vercel.app/portfolio" />
-        <meta name="twitter:title" content="Portfolio | OrbitDevStudio" />
+        <meta name="twitter:url" content="https://orbit-dev-studio.vercel.app/portfolio" />
+        <meta name="twitter:title" content="Our Work | Orbit Dev Studios" />
         <meta name="twitter:description" content="OrbitDevStudio - Digital excellence in action. Explore our portfolio of premium web experiences." />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta name="twitter:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* JSON-LD Breadcrumbs */}
         <script type="application/ld+json">
@@ -52,13 +52,13 @@ export default function Portfolio() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://orbitdevstudios.vercel.app/"
+                "item": "https://orbit-dev-studio.vercel.app/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Portfolio",
-                "item": "https://orbitdevstudios.vercel.app/portfolio"
+                "item": "https://orbit-dev-studio.vercel.app/portfolio"
               }
             ]
           })}

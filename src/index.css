@@ -12,7 +12,7 @@
    wins when both apply to <html> (equal selector specificity).
    ============================================================ */
 :root {
-  --rt-bg: #070b16;
+  --rt-bg: #0b1222;
   --rt-surface-1: #0b1222;
   --rt-surface-2: #101a2d;
   --rt-border: rgba(148, 163, 184, 0.15);
@@ -34,6 +34,8 @@
 
   --gradient-primary: linear-gradient(135deg, #050b2e 0%, #1677ff 55%, #00d9ff 100%);
   --gradient-ai: linear-gradient(135deg, #6c2bff 0%, #6c2bff 45%, #00d9ff 100%);
+  /* Text needs a light start colour on dark backgrounds; the button gradient starts near-black. */
+  --gradient-text: linear-gradient(135deg, #60a5fa 0%, #1677ff 45%, #00d9ff 100%);
 }
 
 .light {
@@ -57,6 +59,7 @@
   --rt-pill-bg-1: rgba(255, 255, 255, 0.97);
   --rt-pill-bg-2: rgba(248, 250, 252, 0.97);
   --rt-pill-sheen: rgba(15, 23, 42, 0.03);
+  --gradient-text: var(--gradient-primary);
 }
 
 @theme {
@@ -130,10 +133,6 @@
   .section-white {
     background-color: var(--color-background);
     color: var(--rt-text-primary);
-    background-image:
-      linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148,163,184,0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
   }
 
   .section-gray {
@@ -380,6 +379,35 @@
   }
 
   .group:hover .value-icon {
+    filter: brightness(1.18);
+  }
+
+  /* === Site-wide brand gradient icons (same treatment as the About values) ===
+     Use <GradientIcon> from components/ui/GradientIcon.tsx; the gradient is mounted once in MainLayout. */
+  .brand-icon-wrap {
+    background: rgba(22, 119, 255, 0.08);
+    border: 1px solid rgba(22, 119, 255, 0.22);
+    box-shadow: 0 0 12px rgba(22, 119, 255, 0.06);
+    transition: border-color 400ms ease, box-shadow 400ms ease, background-color 400ms ease, transform 500ms ease;
+  }
+
+  .light .brand-icon-wrap {
+    background: rgba(22, 119, 255, 0.06);
+    border-color: rgba(22, 119, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(22, 119, 255, 0.07);
+  }
+
+  .group:hover .brand-icon-wrap {
+    border-color: rgba(22, 119, 255, 0.45);
+    box-shadow: 0 0 20px rgba(22, 119, 255, 0.16);
+  }
+
+  .brand-icon {
+    stroke: url(#brand-icon-gradient) var(--rt-accent);
+    transition: filter 400ms ease;
+  }
+
+  .group:hover .brand-icon {
     filter: brightness(1.18);
   }
 
@@ -687,7 +715,7 @@
   .text-gradient {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: var(--gradient-primary);
+    background-image: var(--gradient-text);
   }
 
   .text-gradient-ai {
@@ -1346,4 +1374,21 @@
 @keyframes orbit-glow-ring {
   0%, 100% { opacity: 0.06; }
   50% { opacity: 0.18; }
+}
+
+/* === Two-shade page backgrounds ===
+   MainLayout marks each top-level <section> (and the footer) with data-shade="a"/"b" in page
+   order, so every page alternates the same two surfaces in both themes:
+   a = --rt-surface-2 (dark #101a2d / light #f8fafc), b = --rt-surface-1 (dark #0b1222 / light #ffffff).
+   Higher specificity than the hex-retargeting rules above so the shade always wins. */
+@layer utilities {
+  :root [data-shade='a'][data-shade] {
+    background-color: var(--rt-surface-2) !important;
+    background-image: none !important;
+  }
+
+  :root [data-shade='b'][data-shade] {
+    background-color: var(--rt-surface-1) !important;
+    background-image: none !important;
+  }
 }

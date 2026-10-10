@@ -1,22 +1,78 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, ArrowRight, ChevronDown, Building2, Workflow, Briefcase, CircleHelp, ShieldCheck } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
+import { techStackPages } from '../../data/techStacks';
+import { industries, industryPath } from '../../data/industries';
 import { useTheme } from '../../context/ThemeContext';
 
-const navItems = [
-  { label: 'About Us', path: '/about' },
+const aboutItems = [
+  { label: 'About Us', path: '/about', desc: 'Who we are and why we started.', icon: Building2 },
+  { label: 'How We Work', path: '/about#process', desc: 'Seven clear steps from idea to launch.', icon: Workflow },
+  { label: 'Careers', path: '/careers', desc: 'Join a small team that ships.', icon: Briefcase },
+  { label: 'FAQ', path: '/faq', desc: 'Straight answers to common questions.', icon: CircleHelp },
+  { label: 'Security & Privacy', path: '/security', desc: 'How we protect your data and code.', icon: ShieldCheck },
+];
+
+const techItems = techStackPages.map(({ navLabel, slug, navDesc, icon }) => ({
+  label: navLabel,
+  path: `/tech/${slug}`,
+  desc: navDesc,
+  icon,
+}));
+
+const industryItems = industries.map(({ label, slug, navDesc, icon }) => ({
+  label,
+  path: industryPath(slug),
+  desc: navDesc,
+  icon,
+}));
+
+type NavChild = (typeof aboutItems)[number];
+type NavItem = {
+  label: string;
+  path: string;
+  children?: NavChild[];
+  /** Dropdown header label (links to `path`). */
+  heading?: string;
+  /** Dropdown grid columns; single-column menus get a narrower panel. */
+  columns?: 1 | 2;
+};
+
+const navItems: NavItem[] = [
   { label: 'Services', path: '/services' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Technologies', path: '/tech' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Hire Us', path: '/hire' },
+  { label: 'Work', path: '/portfolio' },
+  { label: 'Industries', path: '/industries', children: industryItems, heading: 'Industries', columns: 2 },
+  { label: 'Pricing', path: '/pricing' },
+  { label: 'Technology', path: '/tech', children: techItems, heading: 'Technology', columns: 1 },
+  { label: 'About', path: '/about', children: aboutItems, heading: 'Company', columns: 2 },
+  { label: 'Blog', path: '/blog' },
 ];
 
 const mobileNavItems = [
-  ...navItems,
+  { label: 'Services', path: '/services' },
+  { label: 'Work', path: '/portfolio' },
+  { label: 'Industries', path: '/industries' },
+  ...industryItems.map(({ label, path }) => ({ label, path })),
+  { label: 'Pricing', path: '/pricing' },
+  { label: 'Technologies', path: '/tech' },
+  ...techItems.map(({ label, path }) => ({ label, path })),
+  ...aboutItems.map(({ label, path }) => ({ label, path })),
+  { label: 'Blog', path: '/blog' },
+  { label: 'Privacy Policy', path: '/privacy-policy' },
+  { label: 'Terms of Service', path: '/terms' },
 ];
+
+const isActivePath = (pathname: string, path: string, hash = '') => {
+  const [base, anchor] = path.split('#');
+  if (anchor) return pathname === base && hash === `#${anchor}`;
+  return (
+    pathname === base ||
+    pathname.startsWith(`${base}/`) ||
+    (base === '/portfolio' && pathname.startsWith('/case-studies/'))
+  );
+};
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -24,6 +80,24 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const menuCloseTimer = useRef<number | undefined>(undefined);
+  const menuTriggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  const openMenuNow = (label: string) => {
+    window.clearTimeout(menuCloseTimer.current);
+    setOpenMenu(label);
+  };
+  const closeMenuSoon = () => {
+    window.clearTimeout(menuCloseTimer.current);
+    menuCloseTimer.current = window.setTimeout(() => setOpenMenu(null), 120);
+  };
+
+  useEffect(() => {
+    setOpenMenu(null);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => () => window.clearTimeout(menuCloseTimer.current), []);
 
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
@@ -138,7 +212,6 @@ export default function Navbar() {
             transform: scrolled ? 'translateY(-2px)' : 'translateY(0px)',
           }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
-          style={{ overflow: 'hidden' }}
         >
           <motion.div className="flex items-center justify-between gap-3 px-3 py-2 md:px-4 md:py-2" style={{ paddingTop: py as any, paddingBottom: py as any }}>
             <Link to="/" className="flex items-center gap-3 group" onClick={() => setMobileOpen(false)}>
@@ -150,11 +223,92 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="relative hidden lg:flex items-center gap-2">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive = item.children
+                  ? isActivePath(location.pathname, item.path) || item.children.some((child) => isActivePath(location.pathname, child.path))
+                  : isActivePath(location.pathname, item.path);
                 const baseText = 'text-white/80 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-white/5 transition-all';
                 const baseBg = isActive ? 'bg-white/10 text-white light:text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] drop-shadow-[0_0_20px_rgba(22,119,255,0.4)] backdrop-blur-xl' : baseText;
+
+                if (item.children) {
+                  const isOpen = openMenu === item.label;
+                  const menuId = `${item.label.toLowerCase()}-menu`;
+                  return (
+                    <div
+                      key={item.label}
+                      onMouseEnter={() => openMenuNow(item.label)}
+                      onMouseLeave={closeMenuSoon}
+                      onBlur={(e) => {
+                        if (isOpen && !e.currentTarget.contains(e.relatedTarget as Node | null)) setOpenMenu(null);
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Escape' && isOpen) {
+                          setOpenMenu(null);
+                          menuTriggerRefs.current[item.label]?.focus();
+                        }
+                      }}
+                    >
+                      <button
+                        ref={(el) => { menuTriggerRefs.current[item.label] = el; }}
+                        type="button"
+                        onClick={() => setOpenMenu((open) => (open === item.label ? null : item.label))}
+                        aria-expanded={isOpen}
+                        aria-controls={menuId}
+                        className={`group relative inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-[13px] font-medium tracking-[0.01em] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isOpen && !isActive ? 'bg-white/5 text-white light:text-slate-900' : baseBg}`}
+                      >
+                        {item.label}
+                        <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      <AnimatePresence>
+                        {isOpen && (
+                          <div className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 ${item.columns === 1 ? 'w-[min(480px,calc(100vw-2rem))]' : 'w-[min(640px,calc(100vw-2rem))]'}`}>
+                            <motion.div
+                              id={menuId}
+                              initial={{ opacity: 0, y: -6 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -6 }}
+                              transition={{ duration: 0.18, ease: 'easeOut' }}
+                              className="rounded-3xl border border-white/10 bg-[#111827] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.5)] light:border-slate-200 light:bg-white light:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
+                            >
+                              <Link
+                                to={item.path}
+                                className="group/head mb-4 inline-flex items-center gap-1.5 px-2 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-400 transition-colors hover:text-white light:text-slate-500 light:hover:text-slate-900 focus:outline-none focus-visible:text-accent"
+                              >
+                                {item.heading ?? item.label}
+                                <ArrowRight size={12} className="transition-transform group-hover/head:translate-x-0.5" />
+                              </Link>
+                              <ul className={`grid gap-1 ${item.columns === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                                {item.children.map((child) => {
+                                  const Icon = child.icon;
+                                  const childActive = isActivePath(location.pathname, child.path, location.hash);
+                                  return (
+                                    <li key={child.label}>
+                                      <Link
+                                        to={child.path}
+                                        aria-current={childActive ? 'page' : undefined}
+                                        className="group/item flex items-start gap-3.5 rounded-2xl p-2.5 transition-colors hover:bg-white/[0.04] light:hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                                      >
+                                        <span className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border transition-colors ${childActive ? 'border-accent/40 bg-accent/10 text-accent' : 'border-white/10 bg-white/[0.03] text-slate-300 group-hover/item:border-accent/30 group-hover/item:text-accent light:border-slate-200 light:bg-slate-50 light:text-slate-500'}`}>
+                                          <Icon size={18} strokeWidth={1.75} />
+                                        </span>
+                                        <span className="pt-0.5">
+                                          <span className={`block text-[14px] font-semibold ${childActive ? 'text-accent' : 'text-white light:text-slate-900'}`}>{child.label}</span>
+                                          <span className="mt-0.5 block text-[13px] leading-snug text-slate-400 light:text-slate-500">{child.desc}</span>
+                                        </span>
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </motion.div>
+                          </div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
 
                 return (
                   <Link
@@ -169,6 +323,15 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-2">
+              <Link
+                to="/hire"
+                data-track="start_project"
+                data-track-location="navbar"
+                className="btn-primary group hidden lg:inline-flex !min-h-0 h-9 items-center gap-1.5 rounded-full px-4 text-[13px] font-semibold"
+              >
+                Start Your Project
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+              </Link>
               <button
                 onClick={toggleTheme}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent border-white/10 bg-white/10 text-white light:text-slate-700 hover:bg-white/20"
@@ -235,7 +398,7 @@ export default function Navbar() {
               {/* Navigation Links */}
               <nav className="flex-1 py-8 flex flex-col gap-2.5 overflow-y-auto">
                 {mobileNavItems.map((item, index) => {
-                  const isActive = location.pathname === item.path;
+                  const isActive = isActivePath(location.pathname, item.path, location.hash);
                   return (
                     <motion.div
                       key={item.label}
@@ -253,7 +416,7 @@ export default function Navbar() {
                           }`}
                       >
                         <span>{item.label}</span>
-                        <span className={`text-[9px] font-mono tracking-wider ${isActive ? 'text-accent' : 'text-slate-500'}`}>0{index + 1}</span>
+                        <span className={`text-[9px] font-mono tracking-wider ${isActive ? 'text-accent' : 'text-slate-500'}`}>{String(index + 1).padStart(2, '0')}</span>
                       </Link>
                     </motion.div>
                   );
@@ -265,9 +428,11 @@ export default function Navbar() {
                 <Link
                   to="/hire"
                   onClick={() => setMobileOpen(false)}
-                  className="flex w-full items-center justify-center rounded-xl bg-accent py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-accent/10 hover:bg-accent/90 transition-all duration-200"
+                  data-track="start_project"
+                  data-track-location="mobile-menu"
+                  className="btn-primary flex w-full items-center justify-center rounded-xl py-3.5 text-sm font-bold transition-all duration-200"
                 >
-                  Hire Us
+                  Start Your Project
                 </Link>
                 <div className="text-center">
                   <p className="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Orbit DevStudio</p>

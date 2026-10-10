@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, MessageSquare, ArrowRight } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 import { Link } from 'react-router-dom';
 
 const faqs = [
@@ -16,8 +17,8 @@ const faqs = [
   },
   {
     id: 3,
-    question: "How do you protect sensitive data and ensure compliance (e.g. HIPAA, SOC2)?",
-    answer: "Security is built into our DNA. We implement zero-trust architectures, end-to-end bank-grade encryption (AES-256), strict role-based access controls (RBAC), and automated vulnerability scanning to ensure you meet all regulatory compliance requirements before launch."
+    question: "How do you protect sensitive data?",
+    answer: "We build with security in mind from day one: encryption in transit and at rest, role-based access control, least-privilege credentials, and dependency vulnerability scanning. If your project has specific regulatory requirements such as HIPAA or GDPR, we scope them with you up front and can work alongside your compliance advisors."
   },
   {
     id: 4,
@@ -41,15 +42,6 @@ export default function IndustriesFAQ() {
     background: "radial-gradient(circle at 90% 90%, rgba(22,119,255,0.08) 0%, transparent 35%), linear-gradient(135deg, var(--rt-surface-1) 0%, var(--rt-surface-2) 45%, var(--rt-surface-1) 100%)",
   }}
 >
-  {/* Background Pattern */}
-  <div
-    className="absolute inset-0 opacity-[0.04] pointer-events-none"
-    style={{
-      backgroundImage:
-        "radial-gradient(circle, var(--rt-text-primary) 1px, transparent 1px)",
-      backgroundSize: "28px 28px",
-    }}
-  />
 
   {/* Blue Glow */}
   <div className="absolute -bottom-52 -right-40 h-[700px] w-[700px] rounded-full bg-accent/10 blur-[180px]" />
@@ -76,7 +68,7 @@ export default function IndustriesFAQ() {
       <div className="rounded-3xl bg-[#101A2D] border border-white/5 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
 
         <div className="flex items-center gap-2 text-accent font-semibold uppercase tracking-[0.15em] text-xs mb-5">
-          <MessageSquare size={16} />
+          <GradientIcon icon={MessageSquare} size={16} box={false} />
           Need a direct answer?
         </div>
 

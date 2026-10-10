@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { SiReact, SiNodedotjs, SiMongodb, SiOpenrouter } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
+import { projects, caseStudyPath } from '../../data/projects';
 
 const techMeta: Record<string, { icon: IconType; color: string }> = {
   'React': { icon: SiReact, color: '#1677ff' },
@@ -11,18 +12,8 @@ const techMeta: Record<string, { icon: IconType; color: string }> = {
   'OpenRouter AI': { icon: SiOpenrouter, color: '#6c2bff' },
 };
 
-const projects = [
-  {
-    id: 1,
-    title: 'Knowledge',
-    titleAccent: 'Voice',
-    industry: 'AI & Knowledge Management',
-    description: 'An AI-powered knowledge base assistant that turns documents into an assistant that actually knows them. Upload PDFs, Word docs, and text files, then ask questions by typing or speaking, and get accurate answers grounded in your own content — with every answer citing exactly which document it came from.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'OpenRouter AI'],
-    liveUrl: 'https://w24-knowledge-agent.vercel.app/',
-    screenshot: '/projects/knowledgevoice.png',
-  },
-];
+// Featured entries come from the shared project data so copy never drifts from the portfolio.
+const featuredProjects = projects.filter((p) => p.featured && p.screenshot);
 
 export default function FeaturedProjects() {
   return (
@@ -68,7 +59,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Project Showcase */}
-        {projects.map((project) => (
+        {featuredProjects.map(({ featured, screenshot, ...project }) => featured && screenshot && (
           <div
             key={project.id}
             className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
@@ -85,11 +76,11 @@ export default function FeaturedProjects() {
               </span>
 
               <h3 className="text-2xl md:text-3xl font-bold text-white light:text-slate-900 mb-4 leading-tight">
-                {project.title}<span className="text-gradient">{project.titleAccent}</span>
+                {featured.titleLead}<span className="text-gradient">{featured.titleAccent}</span>
               </h3>
 
               <p className="text-sm md:text-base text-[#C7D2E4] leading-relaxed mb-6 max-w-[46ch]">
-                {project.description}
+                {featured.description}
               </p>
 
               {/* Technology Chips */}
@@ -125,10 +116,12 @@ export default function FeaturedProjects() {
                   Live Demo <ExternalLink size={15} />
                 </a>
                 <Link
-                  to="/portfolio"
+                  to={caseStudyPath(project.slug)}
+                  data-track="view_case_study"
+                  data-track-location="featured-projects"
                   className="group flex items-center gap-2 text-sm font-semibold text-white light:text-slate-900 bg-white/[0.03] hover:bg-accent/[0.08] px-5 py-3 rounded-xl transition-colors border border-white/10 hover:border-accent/30"
                 >
-                  Case Study <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+                  View Case Study <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -173,13 +166,13 @@ export default function FeaturedProjects() {
                   className="block relative bg-[#0B1220] p-2"
                 >
                   <img
-                    src={project.screenshot}
-                    alt={project.title + project.titleAccent}
+                    src={screenshot.src}
+                    alt={screenshot.alt}
                     className="w-full h-auto rounded-lg"
                     loading="eager"
                     decoding="async"
-                    width={1917}
-                    height={847}
+                    width={screenshot.width}
+                    height={screenshot.height}
                   />
                 </a>
               </div>

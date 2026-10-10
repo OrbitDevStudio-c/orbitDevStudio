@@ -109,7 +109,7 @@ const services = [
     microUI: (
       <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-lg services-reliability-text text-[11px] uppercase tracking-wider font-bold border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        99.9% Reliability
+        Release-Ready QA
       </div>
     )
   }

@@ -2,6 +2,9 @@
   "redirects": [
     { "source": "/hire-us", "destination": "/hire", "permanent": true },
     { "source": "/tec", "destination": "/tech", "permanent": true },
-    { "source": "/technologies", "destination": "/tech", "permanent": true }
+    { "source": "/technologies", "destination": "/tech", "permanent": true },
+    { "source": "/contact", "destination": "/hire", "permanent": false },
+    { "source": "/case-studies", "destination": "/portfolio", "permanent": true },
+    { "source": "/process", "destination": "/about#process", "permanent": true }
   ]
 }

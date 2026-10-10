@@ -65,9 +65,9 @@ export default function ServicesMetrics() {
             className="flex flex-col items-center px-4"
           >
             <div className="text-4xl md:text-5xl font-black text-white light:text-slate-900 mb-2 tracking-tight">
-              99.9%
+              Agile
             </div>
-            <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Deployment Success</p>
+            <p className="text-[#94A3B8] text-[12px] font-bold tracking-[0.1em] uppercase">Sprint-Based Delivery</p>
           </motion.div>
 
           <motion.div

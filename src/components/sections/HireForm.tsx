@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { COUNTRY_CODES } from '../../utils/countryCodes';
 import CompanyLogo from '../ui/CompanyLogo';
+import GradientIcon from '../ui/GradientIcon';
 
 export default function HireForm() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting'>('idle');
@@ -194,9 +195,7 @@ export default function HireForm() {
               <div className="flex flex-col gap-4 mt-auto">
                 {/* Card 1: Email */}
                 <div className="flex items-center gap-4 md:gap-5 p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
-                    <Mail size={18} className="text-[#4F8CFF] md:w-5 md:h-5" />
-                  </div>
+                  <GradientIcon icon={Mail} size={18} boxClassName="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl" className="md:w-5 md:h-5" />
                   <div className="flex flex-col justify-center min-w-0 w-full">
                     <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Email</p>
                     <a href="mailto:orbitdevstudios@gmail.com" className="text-[13px] sm:text-[15px] text-white light:text-slate-900 font-medium group-hover:text-[#4F8CFF] transition-colors break-all">
@@ -207,9 +206,7 @@ export default function HireForm() {
 
                 {/* Card 2: Location */}
                 <div className="flex items-center gap-4 md:gap-5 p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#4F8CFF]/15 group-hover:border-[#4F8CFF]/30 transition-all duration-300">
-                    <MapPin size={18} className="text-[#4F8CFF] md:w-5 md:h-5" />
-                  </div>
+                  <GradientIcon icon={MapPin} size={18} boxClassName="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl" className="md:w-5 md:h-5" />
                   <div className="flex flex-col justify-center min-w-0 w-full">
                     <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-1">Location</p>
                     <p className="text-[13px] sm:text-[15px] text-white light:text-slate-900 font-medium truncate">
@@ -396,7 +393,7 @@ export default function HireForm() {
               {/* Security Note */}
               <div className="flex justify-center mt-2">
                 <p className="text-[11px] text-slate-500">
-                  Locked and secured with enterprise-grade encryption. We never share your data.
+                  Sent securely over HTTPS. We never share your details.
                 </p>
               </div>
 
@@ -428,7 +425,7 @@ export default function HireForm() {
                 </div>
                 <div className="flex items-center gap-1.5 text-slate-400 text-[11px] font-medium tracking-wide">
                   <CheckCircle2 size={13} className="text-emerald-500" />
-                  <span>Enterprise Secure</span>
+                  <span>Secure (HTTPS)</span>
                 </div>
               </div>
 

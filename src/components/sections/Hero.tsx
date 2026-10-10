@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GalaxyParticles from './GalaxyParticles';
+
+const TRUST_POINTS = [
+  'Free consultation & estimate',
+  'NDA available on request',
+  'React, Next.js & Node.js',
+  'Post-launch support',
+];
 
 export default function Hero() {
   return (
@@ -25,27 +32,27 @@ export default function Hero() {
           className="flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-          <span className="text-xs font-medium text-gray-300 tracking-wide">Premium Software Studio</span>
+          <span className="text-xs font-medium text-gray-300 light:text-slate-600 tracking-wide">Design · Develop · Launch · Grow</span>
         </motion.div>
 
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.h1
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white light:text-slate-900 tracking-tight leading-[1.1] mb-6"
         >
-          We build software{' '}
+          Digital experiences{' '}
           <br className="hidden sm:block" />
-          <span className="text-gradient">that ships.</span>
+          <span className="text-gradient">built for growth.</span>
         </motion.h1>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.p
+          initial={{ y: 14 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-base md:text-lg text-gray-400 max-w-xl mx-auto mb-10 font-light leading-relaxed"
+          className="text-base md:text-lg text-gray-400 light:text-slate-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed"
         >
-          From product strategy to production deployment — OrbitDevStudio engineers performant, scalable platforms for teams that move fast.
+          Orbit Dev Studios designs and builds fast, conversion-focused websites, web applications and e-commerce platforms for businesses that want their website to win customers — not just look good.
         </motion.p>
 
         <motion.div 
@@ -56,37 +63,37 @@ export default function Hero() {
         >
           <Link
             to="/hire"
+            data-track="start_project"
+            data-track-location="home-hero"
             className="btn-primary w-full sm:w-auto justify-center px-7 py-3.5 rounded-2xl flex items-center gap-2.5 transition-all hover:-translate-y-px active:translate-y-0 group text-sm"
           >
-            Start a Project
+            Start Your Project
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
-          <Link 
-            to="/portfolio" 
-            className="w-full sm:w-auto text-center px-7 py-3.5 text-white light:text-slate-900 font-medium rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
+          <Link
+            to="/portfolio"
+            data-track="view_work"
+            data-track-location="home-hero"
+            className="w-full sm:w-auto text-center px-7 py-3.5 text-white light:text-slate-900 font-medium rounded-xl border border-white/15 light:border-slate-300 hover:border-white/30 hover:bg-white/[0.04] transition-all text-sm"
           >
-            View Portfolio
+            View Our Work
           </Link>
         </motion.div>
 
-        {/* Code Line */}
-        <motion.div
+        {/* Trust indicators */}
+        <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex items-center justify-center pt-8 border-t border-white/[0.06] w-full max-w-lg mx-auto"
+          className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-x-6 gap-y-3 pt-8 border-t border-white/[0.06] light:border-slate-200 w-full max-w-3xl mx-auto text-left md:text-center"
         >
-          <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white/[0.03] border border-white/10 font-mono text-xs sm:text-sm">
-            <span className="text-gray-500">{'>'}</span>
-            <span>
-              <span className="text-accent">innovate</span>
-              <span className="text-gray-500">.</span>
-              <span className="text-emerald-400">elevate</span>
-              <span className="text-gray-500">()</span>
-            </span>
-            <span className="w-[2px] h-4 bg-accent animate-pulse" />
-          </div>
-        </motion.div>
+          {TRUST_POINTS.map((point) => (
+            <li key={point} className="flex items-center gap-2 text-[13px] text-gray-400 light:text-slate-600">
+              <CheckCircle2 size={15} className="shrink-0 text-emerald-400" />
+              {point}
+            </li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );

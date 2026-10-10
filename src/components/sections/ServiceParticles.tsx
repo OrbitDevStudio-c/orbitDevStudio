@@ -71,7 +71,7 @@ export default function ServiceParticles() {
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       
       particles.length = 0;
       clusterCenters.length = 0;

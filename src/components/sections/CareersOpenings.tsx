@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLenis } from 'lenis/react';
 import { ArrowRight, MapPin, Clock, X, CheckCircle2, Briefcase } from 'lucide-react';
+import GradientIcon from '../ui/GradientIcon';
 
 const positions = [
   {
@@ -157,17 +158,17 @@ export default function CareersOpenings() {
                 </h3>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-[#94A3B8] font-medium mb-4">
                   <div className="flex items-center gap-1.5">
-                    <MapPin size={16} />
+                    <GradientIcon icon={MapPin} size={16} box={false} />
                     {job.location}
                   </div>
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
                   <div className="flex items-center gap-1.5">
-                    <Clock size={16} />
+                    <GradientIcon icon={Clock} size={16} box={false} />
                     {job.type}
                   </div>
                   <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
                   <div className="flex items-center gap-1.5">
-                    <Briefcase size={16} />
+                    <GradientIcon icon={Briefcase} size={16} box={false} />
                     {job.experience}
                   </div>
                 </div>

@@ -16,23 +16,28 @@ export interface SocialLink {
 
 export const navItems: NavItem[] = [
   { label: 'Services', path: '/services' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Technologies', path: '/tech' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Hire Us', path: '/hire' },
+  { label: 'Work', path: '/portfolio' },
+  { label: 'Pricing', path: '/pricing' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Blog', path: '/blog' },
 ];
 
 export const quickLinks: FooterLink[] = [
   { label: 'About Us', path: '/about' },
   { label: 'Our Work', path: '/portfolio' },
+  { label: 'Pricing', path: '/pricing' },
   { label: 'Careers', path: '/careers' },
+  { label: "Let's Talk", path: '/hire' },
 ];
 
 export const serviceLinks: FooterLink[] = [
-  { label: 'Web Development', path: '/services' },
-  { label: 'Mobile Apps', path: '/services' },
-  { label: 'AI Solutions', path: '/services' },
-  { label: 'Cloud Architecture', path: '/services' },
+  { label: 'Services', path: '/services' },
+  { label: 'Industries', path: '/industries' },
+  { label: 'Technologies', path: '/tech' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'Free Website Audit', path: '/free-audit' },
+  { label: 'FAQ', path: '/faq' },
+  { label: 'Security & Privacy', path: '/security' },
 ];
 
 export const socialLinks: SocialLink[] = [

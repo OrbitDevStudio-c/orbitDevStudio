@@ -2,26 +2,27 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import GradientIcon from '../components/ui/GradientIcon';
 
 export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>404 Page Not Found | OrbitDevStudio</title>
+        <title>404 Page Not Found | Orbit Dev Studios</title>
         <meta name="description" content="The page you are looking for does not exist on OrbitDevStudio." />
         <meta name="robots" content="noindex, follow" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="404 Page Not Found | OrbitDevStudio" />
+        <meta property="og:title" content="404 Page Not Found | Orbit Dev Studios" />
         <meta property="og:description" content="The page you are looking for does not exist on OrbitDevStudio." />
-        <meta property="og:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta property="og:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="404 Page Not Found | OrbitDevStudio" />
+        <meta name="twitter:title" content="404 Page Not Found | Orbit Dev Studios" />
         <meta name="twitter:description" content="The page you are looking for does not exist on OrbitDevStudio." />
-        <meta name="twitter:image" content="https://orbitdevstudios.vercel.app/companylogo-social.webp" />
+        <meta name="twitter:image" content="https://orbit-dev-studio.vercel.app/companylogo-social.webp" />
       </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -44,7 +45,7 @@ export default function NotFound() {
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
             }}
           >
-            <Compass size={13} className="text-[var(--rt-cyan)]" />
+            <GradientIcon icon={Compass} size={13} box={false} />
             <span className="text-[10px] font-bold tracking-[0.2em] text-white/90 light:text-slate-900/90 uppercase">Lost in Orbit</span>
           </div>
 

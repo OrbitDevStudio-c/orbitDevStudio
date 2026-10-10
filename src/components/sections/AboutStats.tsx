@@ -23,7 +23,6 @@ export default function AboutStats() {
       </svg>
 
       {/* Background patterns */}
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.02)_0_1px,transparent_1px_20px),repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_20px)] opacity-10 mix-blend-overlay pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-accent blur-[150px] opacity-10 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full core-stats-glow hidden light:block pointer-events-none" />
       
