@@ -43,6 +43,9 @@ const SERVICES: { icon: LucideIcon; title: string; desc: string; benefits: strin
   },
 ];
 
+/** Indexes of the cards that span the wide column of the bento grid. */
+const WIDE = new Set([0, 5]);
+
 export default function HomeServices() {
   return (
     <section aria-labelledby="home-services-heading" className="section-white relative py-20 md:py-28">
@@ -62,38 +65,62 @@ export default function HomeServices() {
           </p>
         </motion.div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map(({ icon: Icon, title, desc, benefits }, i) => (
-            <motion.article
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 3) * 0.08 }}
-              className="card-dark group flex flex-col p-7"
-            >
-              <GradientIcon icon={Icon} size={22} boxClassName="mb-6 h-12 w-12 rounded-2xl" />
-              <h3 className="text-lg font-bold tracking-tight text-white light:text-slate-900 mb-2.5">{title}</h3>
-              <p className="text-[14.5px] leading-relaxed text-[#C7D2E4] light:text-slate-600 mb-5">{desc}</p>
-              <ul className="space-y-2 mb-7">
-                {benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[13.5px] text-slate-300 light:text-slate-600">
-                    <Check size={15} className="mt-0.5 shrink-0 text-emerald-400" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/services"
-                data-track="explore_service"
-                data-track-location={`home-services-${title}`}
-                className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-white light:hover:text-slate-900"
+        {/* Bento grid: wide + narrow, three equal, narrow + wide. */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+          {SERVICES.map(({ icon: Icon, title, desc, benefits }, i) => {
+            const wide = WIDE.has(i);
+            return (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 3) * 0.08 }}
+                className={`card-dark group relative flex flex-col overflow-hidden p-7 ${
+                  wide ? 'sm:col-span-2 lg:col-span-4 md:p-9' : 'lg:col-span-2'
+                }`}
               >
-                Explore Service
-                <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </motion.article>
-          ))}
+                {wide && (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl light:bg-accent/10"
+                  />
+                )}
+                <GradientIcon icon={Icon} size={wide ? 26 : 22} boxClassName={`mb-6 rounded-2xl ${wide ? 'h-14 w-14' : 'h-12 w-12'}`} />
+                <h3
+                  className={`font-bold tracking-tight text-white light:text-slate-900 mb-2.5 ${
+                    wide ? 'text-2xl md:text-[28px]' : 'text-lg'
+                  }`}
+                >
+                  {title}
+                </h3>
+                <p
+                  className={`leading-relaxed text-[#C7D2E4] light:text-slate-600 mb-5 ${
+                    wide ? 'text-base md:text-[17px] max-w-xl' : 'text-[14.5px]'
+                  }`}
+                >
+                  {desc}
+                </p>
+                <ul className={wide ? 'mb-7 flex flex-wrap gap-x-6 gap-y-2' : 'mb-7 space-y-2'}>
+                  {benefits.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-[13.5px] text-slate-300 light:text-slate-600">
+                      <Check size={15} className="mt-0.5 shrink-0 text-emerald-400" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/services"
+                  data-track="explore_service"
+                  data-track-location={`home-services-${title}`}
+                  className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-white light:hover:text-slate-900"
+                >
+                  Explore Service
+                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
