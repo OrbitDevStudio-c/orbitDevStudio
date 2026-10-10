@@ -16,14 +16,6 @@ const DESCRIPTION =
 const OG_IMAGE = `${SITE_URL}/companylogo-social.webp`;
 const TRACK_LOCATION = 'free_audit_page';
 
-function VerifyChip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex rounded-md border border-dashed border-amber-400/40 bg-amber-400/[0.06] px-1.5 text-amber-300 light:text-amber-700">
-      {children}
-    </span>
-  );
-}
-
 const STEPS = [
   {
     icon: Send,
@@ -51,7 +43,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: 'How long does it take?',
     a: (
       <>
-        We aim to send your findings within <VerifyChip>[VERIFY: 2–3]</VerifyChip> business days of
+        We aim to send your findings within 2–3 business days of
         receiving your request. Larger or more complex sites can take a little longer, and we'll let you
         know if that's the case.
       </>

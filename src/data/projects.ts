@@ -20,8 +20,10 @@ export interface ProjectImage {
 export interface CaseStudyContent {
   /** One-line summary used on cards, hero and meta description. */
   summary: string;
-  /** Client name, only when the project title is the client. Otherwise rendered as a [CLIENT NAME] placeholder. */
+  /** Client name or a short, true description of the client. Hidden on the page when unknown. */
   client?: string;
+  /** A real quote from the client. The feedback section is hidden until one exists. */
+  testimonial?: { quote: string; author: string; role?: string };
   services: string[];
   challenge: string;
   objective: string;
@@ -80,8 +82,15 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'NestJS', 'PostgreSQL', 'Prisma', 'TypeScript'],
     liveUrl: 'https://probuild-erp-seven.vercel.app/',
     logo: logo('/projects/probuild-logo.webp', 1254, 'ProBuild ERP'),
+    screenshot: {
+      src: '/projects/probuild.webp',
+      width: 1440,
+      height: 900,
+      alt: 'ProBuild ERP homepage with a project budget, committed and actual cost dashboard',
+    },
     caseStudy: {
       summary: 'A construction ERP for Philippine contractors that tracks every peso and every bag of cement from purchase request to project cost.',
+      client: 'Construction contractor, Philippines',
       services: ['ERP Development', 'Full-Stack Web Development', 'Backend Architecture'],
       challenge:
         'Construction contractors run several sites at once, often from more than one branch. Purchase requests, supplier quotes, deliveries, warehouse stock and site issues usually live in separate spreadsheets, so nobody can say what a project has really spent on materials until long after the money is gone.',
@@ -119,6 +128,12 @@ export const projects: Project[] = [
     technologies: ['React', 'Node.js', 'MongoDB'],
     liveUrl: 'https://food-z09x.onrender.com',
     logo: logo('/projects/orbitfood-logo.webp', 432, 'Orbit Food'),
+    screenshot: {
+      src: '/projects/orbitfood.webp',
+      width: 1440,
+      height: 900,
+      alt: 'Orbit Food restaurant workspace sign-in screen',
+    },
     caseStudy: {
       summary: 'A food ordering platform that covers the full journey, from browsing menus to tracking an order in real time.',
       services: ['UI/UX Design', 'Full-Stack Web Development', 'E-commerce Development'],
@@ -240,6 +255,12 @@ export const projects: Project[] = [
     technologies: ['Node.js', 'Express', 'React', 'MongoDB'],
     liveUrl: 'https://online-book-store-three-tan.vercel.app/',
     logo: logo('/projects/bookverse-logo.webp', 1254, 'BookVerse'),
+    screenshot: {
+      src: '/projects/bookverse.webp',
+      width: 1440,
+      height: 900,
+      alt: 'BookVerse online bookstore homepage with book search',
+    },
     caseStudy: {
       summary: 'A microservices e-commerce backend for a digital bookstore, built for secure authentication and transactional workflows.',
       services: ['Backend Architecture', 'API Development', 'E-commerce Development'],
@@ -317,9 +338,9 @@ export const projects: Project[] = [
     liveUrl: 'https://shivedlifemedicare.vercel.app/',
     screenshot: {
       src: '/projects/shivedlife.webp',
-      width: 1280,
-      height: 800,
-      alt: 'ShivedLife Medicare homepage with the online consultation section',
+      width: 1440,
+      height: 900,
+      alt: 'ShivedLife Medicare homepage for its pharmaceutical contract manufacturing services',
     },
     caseStudy: {
       summary: 'A secure, mobile-first platform for a regional healthcare provider, built to strict performance budgets.',
@@ -397,6 +418,12 @@ export const projects: Project[] = [
     description: 'A highly performant portfolio platform for a premium interior design firm, built for high-resolution media delivery without compromising load times.',
     technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
     liveUrl: 'https://auradesignstudio.netlify.app/',
+    screenshot: {
+      src: '/projects/aura.webp',
+      width: 1440,
+      height: 900,
+      alt: 'Aura Design Studio homepage with a full-screen interior photograph',
+    },
     caseStudy: {
       summary: 'A high-performance portfolio for a premium interior design firm, serving high-resolution media without slow load times.',
       client: 'Aura Design Studio',

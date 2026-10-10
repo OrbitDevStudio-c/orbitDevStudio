@@ -81,14 +81,6 @@ const INPUT_BASE =
 const INPUT_ERROR = '!border-red-400/70 focus:!border-red-400 focus:ring-red-400';
 const LABEL = 'text-[10px] font-bold tracking-widest text-slate-400 uppercase';
 
-function VerifyChip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex rounded-md border border-dashed border-amber-400/40 bg-amber-400/[0.06] px-1.5 text-amber-300 light:text-amber-700">
-      {children}
-    </span>
-  );
-}
-
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
@@ -251,7 +243,7 @@ export default function FreeAuditSection({
                 ))}
               </ul>
               <p className="mt-5 pt-4 border-t border-white/10 light:border-slate-200 text-[13px] text-[#C7D2E4] light:text-slate-600 leading-relaxed">
-                Delivered by email within <VerifyChip>[VERIFY: 2–3]</VerifyChip> business days. No
+                Delivered by email within 2–3 business days. No
                 obligation. Reviewed by our team, not just an automated scan.
               </p>
             </div>
@@ -276,7 +268,7 @@ export default function FreeAuditSection({
                   </h3>
                   <p className="text-[#C7D2E4] light:text-slate-600 text-[15px] leading-relaxed max-w-md mb-8">
                     Thanks! We'll review your site and email your findings within{' '}
-                    <VerifyChip>[VERIFY: 2–3]</VerifyChip> business days. If we have questions, we'll
+                    2–3 business days. If we have questions, we'll
                     reply to the email you provided.
                   </p>
                   <button

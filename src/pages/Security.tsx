@@ -29,14 +29,6 @@ const OG_IMAGE = `${SITE_URL}/companylogo-social.webp`;
 const CONTACT_EMAIL = 'orbitdevstudios@gmail.com';
 const TRACK_LOCATION = 'security_page';
 
-function VerifyChip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex rounded-md border border-dashed border-amber-400/40 bg-amber-400/[0.06] px-1.5 text-amber-300 light:text-amber-700">
-      {children}
-    </span>
-  );
-}
-
 const PRACTICES: { icon: typeof Lock; title: string; body: React.ReactNode }[] = [
   {
     icon: Lock,
@@ -92,7 +84,7 @@ const PRACTICES: { icon: typeof Lock; title: string; body: React.ReactNode }[] =
         >
           {CONTACT_EMAIL}
         </a>{' '}
-        with details. We'll acknowledge your report within <VerifyChip>[VERIFY: 3]</VerifyChip> business
+        with details. We'll acknowledge your report within 3 business
         days.
       </>
     ),
@@ -272,7 +264,7 @@ export default function Security() {
                   <p className="text-[#C7D2E4] light:text-slate-600 leading-relaxed">
                     Your idea, roadmap and code stay yours. We're happy to sign an NDA before you share
                     sensitive details, and confidentiality and IP ownership terms are included in our
-                    project agreements <VerifyChip>[VERIFY]</VerifyChip>.
+                    project agreements.
                   </p>
                 </div>
                 <ul className="flex flex-col gap-4">
