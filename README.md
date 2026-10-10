@@ -73,7 +73,7 @@ The portfolio and case studies are merged into one page. `/case-studies` redirec
 ### Case study pages (`/case-studies/:slug`), [CaseStudy.tsx](src/pages/CaseStudy.tsx)
 One page per project, generated from [src/data/projects.ts](src/data/projects.ts), the single source of project data that the portfolio grid and featured projects also use.
 - **Structure:** hero (industry, summary, live-site link, screenshot) → facts (client, industry, services, technologies) → Challenge → Objective → Our Approach → Design → Development → Technologies → Outcome → Screenshots → Testimonial → previous/next project → **Start Your Project**.
-- Metrics and testimonials are shown as amber `[PROJECT METRICS TO VERIFY]` / `[ADD REAL TESTIMONIAL]` placeholder chips until real data is added.
+- Fields with no verified data are hidden, not shown as placeholders. The Client row appears only when `caseStudy.client` is set, and Client Feedback only when `caseStudy.testimonial` holds a real quote.
 
 ### Pricing (`/pricing`), [Pricing.tsx](src/pages/Pricing.tsx)
 No fixed prices are shown: every project is priced to its requirements.
@@ -239,7 +239,7 @@ src/
 ├── components/
 │   ├── sections/             Page sections; each page composes several
 │   ├── blog/                 Article body renderer, covers, post cards
-│   ├── case-studies/         Case-study building blocks (placeholders, previews, CTA)
+│   ├── case-studies/         Case-study building blocks (previews, tech chips, CTA)
 │   ├── ui/                   Navbar, Footer, CompanyLogo, AIChatWidget, GradientIcon
 │   └── providers/            LenisProvider (smooth scroll)
 ├── data/                     projects.ts, blog.ts, faqs.ts, pricing.ts, navigation.tsx
@@ -275,7 +275,7 @@ scripts/prerender.js          After `vite build`: writes a static index.html wit
   - **Per page:** the eyebrow, heading (second line in the gradient), description and optional stats/CTAs are on the left; a figure is on the right (below the text on mobile).
   - **Figures:** each page's figure lives in [src/components/hero-figures/](src/components/hero-figures/) (e.g. `AboutFigure`, `PricingFigure`, `SecurityFigure`). For a new page, add a figure there and pass it as `figure`.
 - **Icons:** use `<GradientIcon icon={Rocket} />` ([GradientIcon.tsx](src/components/ui/GradientIcon.tsx)) for any feature icon. It gives the blue → cyan gradient stroke in a tinted tile, matching the About page values, with hover glow when its card has the `group` class. The gradient is defined once in `MainLayout`.
-- **Placeholders:** unverified facts are rendered as amber dashed chips, e.g. `[ADD VERIFIED METRIC]`, so they're easy to spot and replace.
+- **Unverified facts:** never shown as placeholders on the site. Leave the field unset and the UI hides it.
 
 ## Getting started
 
@@ -320,12 +320,12 @@ Deployed on Vercel from the `main` branch. Vercel serves `dist/` and deploys eve
 
 The site avoids presenting unverified facts as real. These items need the owner's input:
 - **Pricing guide**: sample ranges and currency rates in `api/_lib/pricingGuide.js`.
-- **Case studies**: metric, revenue, traffic and testimonial placeholders in `src/data/projects.ts`. Aura Design Studio needs a screenshot, Orbit Food / RecruitIQ / BookVerse / ProBuild ERP have logos only, and `shivedlife.webp` is nearly blank.
+- **Case studies**: client names, results and testimonials are hidden until real ones are added to `src/data/projects.ts` (`client`, `testimonial`). RecruitIQ has no screenshot, and its live URL currently returns a Vercel 404.
 - **Testimonials** (homepage): they use stock avatars from randomuser.me and include 3-star reviews. Replace them with verified client testimonials and real photos, or remove them.
 - **Stats**: About (10+ products, 24/7 support, 15+ technologies) and StoryStats numbers.
 - **FAQ / Pricing answers**: code ownership, hosting accounts, maintenance scope, payment milestones.
-- **Free Audit / Security**: `[VERIFY]` markers such as the 2–3 business-day turnaround and the responsible-disclosure response time.
-- **Privacy Policy**: data retention periods (`[VERIFY]`) and a legal review.
+- **Free Audit / Security**: confirm the 2–3 business-day audit turnaround and the 3-business-day disclosure acknowledgement are commitments you can keep.
+- **Privacy Policy**: add specific data retention periods, and get a legal review.
 - **Terms**: not reviewed yet.
 
 ## Known gaps

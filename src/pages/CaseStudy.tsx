@@ -14,7 +14,6 @@ import {
   type Project,
   type ProjectImage,
 } from '../data/projects';
-import Placeholder from '../components/case-studies/Placeholder';
 import TechChips from '../components/case-studies/TechChips';
 import CaseStudyCTA from '../components/case-studies/CaseStudyCTA';
 import GradientIcon from '../components/ui/GradientIcon';
@@ -33,12 +32,6 @@ const fadeUp = {
   viewport: { once: true, margin: '-60px' },
   transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
 };
-
-const METRIC_PLACEHOLDERS = [
-  { label: 'Key project metrics', value: '[PROJECT METRICS TO VERIFY]', hint: 'Performance, usage or conversion figures confirmed with the client.' },
-  { label: 'Traffic change', value: '[TRAFFIC CHANGE — VERIFY]', hint: 'Before-and-after traffic from the client’s analytics.' },
-  { label: 'Revenue impact', value: '[REVENUE IMPACT — VERIFY]', hint: 'Only if the client can share it.' },
-];
 
 /** Numbered editorial section: label column on the left, body on the right (stacked on mobile). */
 function Section({ id, index, title, children }: { id: string; index: string; title: string; children: ReactNode }) {
@@ -101,9 +94,7 @@ function Gallery({ project, images }: { project: Project; images: ProjectImage[]
   if (images.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-white/15 light:border-slate-300 p-6 md:p-8">
-        <p className="mb-4">
-          More screens from this project are on the way: <Placeholder>[ADD PROJECT SCREENSHOTS]</Placeholder>
-        </p>
+        <p className="mb-4">The best way to see this project is to try it.</p>
         <a
           href={project.liveUrl}
           target="_blank"
@@ -195,7 +186,7 @@ export default function CaseStudy() {
   };
 
   const facts: { label: string; value: ReactNode }[] = [
-    { label: 'Client', value: cs.client ?? <Placeholder>[CLIENT NAME]</Placeholder> },
+    ...(cs.client ? [{ label: 'Client', value: cs.client }] : []),
     { label: 'Industry', value: project.industry },
     { label: 'Services', value: cs.services.join(' · ') },
     { label: 'Technologies', value: project.technologies.join(' · ') },
@@ -271,7 +262,7 @@ export default function CaseStudy() {
         <div className="section-white">
           {/* Facts strip */}
           <div className="max-w-7xl mx-auto px-6 pt-12 md:pt-16">
-            <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] light:border-slate-200 light:bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className={`grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] light:border-slate-200 light:bg-slate-200 sm:grid-cols-2 ${facts.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
               {facts.map((f) => (
                 <div key={f.label} className="bg-[#0E1728] light:bg-white p-5 md:p-6">
                   <dt className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#94A3B8] light:text-slate-500">{f.label}</dt>
@@ -319,22 +310,11 @@ export default function CaseStudy() {
 
             <Section id="outcome" index="07" title="The Outcome">
               <h3 className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[#94A3B8] light:text-slate-500">What we delivered</h3>
-              <ul className="mb-10 space-y-3">
+              <ul className="space-y-3">
                 {cs.delivered.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />
                     <span className="text-white light:text-slate-900">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[#94A3B8] light:text-slate-500">Results</h3>
-              <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {METRIC_PLACEHOLDERS.map((m) => (
-                  <li key={m.label} className="rounded-2xl border border-white/10 bg-white/[0.03] light:border-slate-200 light:bg-white p-5">
-                    <span className="mb-3 block text-[10px] font-bold uppercase tracking-[0.2em] text-[#94A3B8] light:text-slate-500">{m.label}</span>
-                    <Placeholder className="mb-3 text-[12px] leading-snug py-0.5">{m.value}</Placeholder>
-                    <span className="block text-[12px] leading-relaxed text-[#94A3B8] light:text-slate-500">{m.hint}</span>
                   </li>
                 ))}
               </ul>
@@ -344,17 +324,20 @@ export default function CaseStudy() {
               <Gallery project={project} images={galleryImages} />
             </Section>
 
-            <Section id="testimonial" index="09" title="Client Feedback">
-              <figure className="card-dark p-6 md:p-8">
-                <GradientIcon icon={Quote} size={28} box={false} className="mb-4" />
-                <blockquote className="mb-5 text-lg leading-relaxed text-white light:text-slate-900">
-                  <Placeholder>[ADD REAL TESTIMONIAL]</Placeholder>
-                </blockquote>
-                <figcaption className="text-sm text-[#94A3B8] light:text-slate-500">
-                  {cs.client && cs.client !== 'Demonstration project' ? cs.client : <Placeholder>[CLIENT NAME]</Placeholder>}
-                </figcaption>
-              </figure>
-            </Section>
+            {cs.testimonial && (
+              <Section id="testimonial" index="09" title="Client Feedback">
+                <figure className="card-dark p-6 md:p-8">
+                  <GradientIcon icon={Quote} size={28} box={false} className="mb-4" />
+                  <blockquote className="mb-5 text-lg leading-relaxed text-white light:text-slate-900">
+                    “{cs.testimonial.quote}”
+                  </blockquote>
+                  <figcaption className="text-sm text-[#94A3B8] light:text-slate-500">
+                    <span className="font-semibold text-white light:text-slate-900">{cs.testimonial.author}</span>
+                    {cs.testimonial.role && <>, {cs.testimonial.role}</>}
+                  </figcaption>
+                </figure>
+              </Section>
+            )}
           </div>
 
           {/* Prev / next */}

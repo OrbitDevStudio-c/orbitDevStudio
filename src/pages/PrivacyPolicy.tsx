@@ -67,7 +67,7 @@ const SECTIONS: Section[] = [
     id: 'retention',
     title: '6. How long we keep information',
     paragraphs: [
-      'We keep enquiry and project correspondence for as long as needed to respond, deliver the work and meet legal obligations. We keep job applications for as long as needed to fill the role, or longer only with your consent. Chat conversations are not stored in our own database. Retention periods: [VERIFY: confirm the periods your business applies].',
+      'We keep enquiry and project correspondence for as long as needed to respond, deliver the work and meet legal obligations. We keep job applications for as long as needed to fill the role, or longer only with your consent. Chat conversations are not stored in our own database.',
     ],
   },
   {
