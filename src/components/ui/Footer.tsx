@@ -185,12 +185,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500">
-          <p>
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:grid md:grid-cols-3 items-center gap-6 text-xs text-gray-500">
+          <p className="text-center md:text-left">
             © {new Date().getFullYear()} Orbit Dev Studios. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
+          <p className="text-center">
+            Crafted with <span role="img" aria-label="love">❤️</span> in India by OrbitDevStudio Team
+          </p>
+
+          <div className="flex items-center gap-6 md:justify-end">
             <Link
               to="/privacy-policy"
               className="hover:text-white light:hover:text-slate-900 transition-colors"
