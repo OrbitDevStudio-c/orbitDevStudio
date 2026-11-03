@@ -153,25 +153,30 @@ export default function Footer() {
 
                 return (
                   <li
-                    key={link.platform}
+                    key={link.url}
                     className="flex items-center gap-3 group w-fit"
                   >
                     <span className="text-accent transition-all duration-300 group-hover:text-white light:group-hover:text-slate-900 group-hover:scale-110 group-hover:rotate-[5deg]">
                       {Icon && <Icon />}
                     </span>
 
-                    <a
-                      href={link.url}
-                      target={link.platform !== "email" ? "_blank" : undefined}
-                      rel={
-                        link.platform !== "email"
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      className="hover:text-white light:hover:text-slate-900 transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    <span className="flex flex-col">
+                      {link.note && (
+                        <span className="text-[10px] uppercase tracking-wider text-slate-500">{link.note}</span>
+                      )}
+                      <a
+                        href={link.url}
+                        target={link.platform !== "email" ? "_blank" : undefined}
+                        rel={
+                          link.platform !== "email"
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="hover:text-white light:hover:text-slate-900 transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </span>
                   </li>
                 );
               })}

@@ -12,6 +12,8 @@ export interface SocialLink {
   platform: string;
   url: string;
   label: string;
+  /** Short caption shown above the link, e.g. what an email address is for. */
+  note?: string;
 }
 
 export const navItems: NavItem[] = [
@@ -41,7 +43,8 @@ export const serviceLinks: FooterLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { platform: 'email', url: 'mailto:orbitdevstudios@gmail.com', label: 'orbitdevstudios@gmail.com' },
+  { platform: 'email', url: 'mailto:orbitdevstudios@gmail.com', label: 'orbitdevstudios@gmail.com', note: 'Business & projects' },
+  { platform: 'email', url: 'mailto:orbitdevstudio@zohomail.in', label: 'orbitdevstudio@zohomail.in', note: 'Careers & HR (resumes)' },
   { platform: 'instagram', url: 'https://instagram.com/orbitdevstudio', label: '@orbitdevstudio' },
   { platform: 'linkedin', url: 'https://www.linkedin.com/company/orbitdevstudio-tech', label: 'orbitdevstudio-c' },
 ];
