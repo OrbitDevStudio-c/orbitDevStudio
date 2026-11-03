@@ -62,7 +62,7 @@ export const TECH_CHIP_COLORS = ['amber', 'blue', 'purple', 'green', 'cyan'] as 
 export type TechChipColor = (typeof TECH_CHIP_COLORS)[number];
 
 /** Portfolio grid filter buttons (order is part of the existing UI). */
-export const PORTFOLIO_CATEGORIES = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Personal', 'Industrial', 'AI & SaaS'];
+export const PORTFOLIO_CATEGORIES = ['All', 'Architecture', 'Healthcare', 'Corporate', 'E-commerce', 'Wedding', 'Industrial', 'AI & SaaS'];
 
 const logo = (src: string, size: number, title: string): ProjectImage => ({
   src,
@@ -72,6 +72,49 @@ const logo = (src: string, size: number, title: string): ProjectImage => ({
 });
 
 export const projects: Project[] = [
+  {
+    id: 13,
+    slug: 'royal-wedding-invitation',
+    title: 'Royal Wedding Invitation',
+    industry: 'Weddings & Events',
+    category: 'Wedding',
+    description: 'A mobile-first digital wedding invitation with palace doors that open on a wax seal, a scratch-to-reveal date, a live countdown and a complete RSVP flow.',
+    technologies: ['React', 'Vite', 'CSS', 'Playwright'],
+    liveUrl: 'https://wedding-card-orbitdevstudio.vercel.app/',
+    screenshot: {
+      src: '/projects/wedding-card.webp',
+      width: 1440,
+      height: 900,
+      alt: 'Digital wedding invitation opening screen with emerald palace doors and a gold wax seal',
+    },
+    caseStudy: {
+      summary: 'A digital wedding invitation in an Indian royal style, from palace doors that open on a wax seal to a guest RSVP.',
+      services: ['UI/UX Design', 'Motion Design', 'Frontend Development'],
+      challenge:
+        'A printed card cannot tell guests which events to attend, what to wear, how to get there or when to reply, and chasing RSVPs over WhatsApp is slow. A digital invitation has to do all of that while still feeling as special as a printed card, mostly on phones.',
+      objective:
+        'Create one invitation link that feels ceremonial to open and gives every guest the dates, venue, events, dress codes, travel details and RSVP in one place.',
+      approach: [
+        'Opened with a moment: guests tap a gold wax seal and two carved palace doors swing open in 3D as the music fades in.',
+        'Turned the date into an interaction with a gold-foil scratch card, plus a button for keyboard and screen-reader users.',
+        'Grouped the celebrations by day, each with time, place and a dress code shown as colour swatches.',
+        'Built a validated RSVP flow with party size, event selection and a note to the couple, plus personalised links that greet each guest by name.',
+        'Kept every detail about the couple in one config file so the invitation can be reused for another wedding.',
+      ],
+      design:
+        'An Indian royal design language: jharokha arches, a marigold toran, mandalas and a line-art lake palace in emerald, ivory and antique gold. Petals drift down the page, and all motion switches off for guests who prefer reduced motion.',
+      development:
+        'React 18 and Vite with plain CSS and self-hosted fonts, under 70 KB of JavaScript (gzip), with AVIF and WebP photos and lazy-loaded gallery and music. Tested from 320 px phones to 1920 px desktops, with Playwright and axe-core accessibility checks.',
+      delivered: [
+        'Live invitation at wedding-card-orbitdevstudio.vercel.app',
+        'Palace-door opening with wax seal and background music',
+        'Scratch-to-reveal date, live countdown and calendar export',
+        'Events with dress codes, venue map, gallery lightbox and travel guide',
+        'RSVP flow with personalised guest links and WhatsApp sharing',
+        'Responsive, accessible build checked with axe-core',
+      ],
+    },
+  },
   {
     id: 12,
     slug: 'probuild-erp',
@@ -292,7 +335,7 @@ export const projects: Project[] = [
     slug: 'elegant-wedding',
     title: 'Elegant Wedding',
     industry: 'Personal Branding',
-    category: 'Personal',
+    category: 'Wedding',
     description: 'A bespoke personal branding and digital invitation platform, engineered around immersive animation and state-driven storytelling.',
     technologies: ['React', 'Framer Motion', 'Tailwind CSS'],
     liveUrl: 'https://wedding-portfolio-lilac.vercel.app/',

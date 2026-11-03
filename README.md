@@ -67,7 +67,7 @@ The portfolio and case studies are merged into one page. `/case-studies` redirec
 | Section | Content |
 |---|---|
 | `PortfolioHero` | Intro |
-| `PortfolioGrid` | Filterable grid of 11 real projects: ProBuild ERP (Industrial); Orbit Food, BookVerse (E-commerce); RecruitIQ, KnowledgeVoice (AI & SaaS); ShivedLife Medicare, PharmaCare Platform (Healthcare); Aura Design Studio, Designerss Creative (Architecture); Navnidhi Trading (Corporate); Elegant Wedding (Personal). Each card has **View Case Study** |
+| `PortfolioGrid` | Filterable grid of 12 real projects: ProBuild ERP (Industrial); Royal Wedding Invitation, Elegant Wedding (Wedding); Orbit Food, BookVerse (E-commerce); RecruitIQ, KnowledgeVoice (AI & SaaS); ShivedLife Medicare, PharmaCare Platform (Healthcare); Aura Design Studio, Designerss Creative (Architecture); Navnidhi Trading (Corporate). Each card has **View Case Study** |
 | `PortfolioCTA` | "Your Project Could Be Next" |
 
 ### Case study pages (`/case-studies/:slug`), [CaseStudy.tsx](src/pages/CaseStudy.tsx)

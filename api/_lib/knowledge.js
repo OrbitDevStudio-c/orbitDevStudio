@@ -15,7 +15,7 @@ Services:
 
 Industries: Healthcare & Medical (privacy-focused patient portals, telemedicine), E-Commerce (headless storefronts, fast checkout), Architecture, Interior Design, Custom Portfolios & wedding portals, Travel Agencies (booking engines), Restaurants (QR menus, reservations).
 
-Selected work: ProBuild ERP (Construction ERP for Philippine contractors), KnowledgeVoice and RecruitIQ (AI & SaaS), Orbit Food and BookVerse (E-commerce), ShivedLife Medicare and PharmaCare Platform (Healthcare), Aura Design Studio and Designerss Creative (Architecture), Navnidhi Trading (Corporate), Elegant Wedding (Personal).
+Selected work: ProBuild ERP (Construction ERP for Philippine contractors), KnowledgeVoice and RecruitIQ (AI & SaaS), Orbit Food and BookVerse (E-commerce), ShivedLife Medicare and PharmaCare Platform (Healthcare), Aura Design Studio and Designerss Creative (Architecture), Navnidhi Trading (Corporate), Royal Wedding Invitation and Elegant Wedding (Wedding).
 
 Process (7 steps): Discovery -> Strategy -> UI/UX -> Development (sprints with regular demos) -> Testing -> Launch -> Support.
 Security practices: HTTPS everywhere, minimal data collection, least-privilege access, MFA on our accounts, backups via the hosting provider, client confidentiality, NDAs available on request. We hold no security certifications; specific compliance needs (e.g. HIPAA, GDPR) are scoped per project. Details at /security.
