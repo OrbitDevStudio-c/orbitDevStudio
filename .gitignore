@@ -24,8 +24,6 @@ dist-ssr
 config.bat
 
 # Secrets
-.env
-.env.*
 !.env.example
 server/.env
 server/uploads
