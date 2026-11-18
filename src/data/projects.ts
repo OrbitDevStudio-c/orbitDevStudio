@@ -73,6 +73,51 @@ const logo = (src: string, size: number, title: string): ProjectImage => ({
 
 export const projects: Project[] = [
   {
+    id: 14,
+    slug: 'ravantra',
+    title: 'RAVANTRA',
+    industry: 'Fashion, Beauty & Lifestyle',
+    category: 'E-commerce',
+    description: 'A premium women\'s lifestyle platform that brings fashion, beauty, salon & spa and lifestyle under one account, one cart and one central admin.',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'Razorpay'],
+    liveUrl: 'https://ravantra.vercel.app/',
+    logo: logo('/projects/ravantra-logo.webp', 900, 'RAVANTRA'),
+    screenshot: {
+      src: '/projects/ravantra.webp',
+      width: 1440,
+      height: 900,
+      alt: 'RAVANTRA homepage with the headline "Everything that makes you, you." and links to fashion, beauty, salon and lifestyle',
+    },
+    caseStudy: {
+      summary: 'A multi-business women\'s lifestyle platform with shopping, salon bookings and a central admin, all on one account.',
+      services: ['UI/UX Design', 'Full-Stack Web Development', 'E-commerce Development', 'AI Integration'],
+      challenge:
+        'A brand that sells fashion and beauty products and also runs a salon and spa usually ends up with a separate shop, booking tool and admin for each business. Customers juggle several accounts, and staff cannot see orders, stock and appointments in one place.',
+      objective:
+        'Build one platform where a customer shops every division and books salon appointments with a single account and cart, and where staff run every division from one admin with access limited to their role.',
+      approach: [
+        'Organised the store into divisions (Fashion, Beauty & Care, Salon & Spa, Lifestyle), so a new division added in the admin gets its own page, navigation, filters and reports without code changes.',
+        'Re-priced every cart on the server and verified Razorpay payments by signature, a server-side fetch and a webhook backup, so prices are never trusted from the browser.',
+        'Built a six-step salon booking wizard with live availability in IST, and blocked double bookings at the database level.',
+        'Enforced role-based access with Postgres row-level security and re-checked it in server actions, with scoped manager roles for each division.',
+        'Added an admin AI assistant that summarises and answers questions about live data, limited to what the signed-in role can see.',
+      ],
+      design:
+        'A "Modern Heritage" look: a midnight palette with antique gold and mauve accents, serif display type and editorial photography. The homepage leads into the four divisions, and search opens from anywhere with / or Ctrl+K.',
+      development:
+        'Next.js 16 with the App Router, React 19 and TypeScript, styled with Tailwind CSS v4 and Radix-based components. Data lives in Neon Postgres, where every money and stock change runs through security-definer functions. Catalogue pages use ISR, and payments, email and the admin AI run through Razorpay, Resend and OpenRouter.',
+      delivered: [
+        'Live storefront at ravantra.vercel.app, with fictional demo data',
+        'Division pages with filters, sorting, instant search, wishlist and product variants',
+        'Shared cart and checkout with coupons and Razorpay payments',
+        'Salon & spa booking with live availability, rescheduling and calendar export',
+        'Customer accounts with order tracking, appointments and saved addresses',
+        'Central admin for divisions, products, inventory, orders, bookings, marketing, reports and staff roles',
+        'Role-scoped AI assistant for admins',
+      ],
+    },
+  },
+  {
     id: 12,
     slug: 'probuild-erp',
     title: 'ProBuild ERP',
