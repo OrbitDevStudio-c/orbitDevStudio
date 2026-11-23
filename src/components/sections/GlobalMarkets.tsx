@@ -83,7 +83,7 @@ export default function GlobalMarkets() {
           className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050b2e] p-3 shadow-[0_20px_60px_rgba(5,11,46,0.45)] sm:p-6 light:border-slate-200"
           style={{ backgroundImage: 'radial-gradient(ellipse at 50% 30%, rgba(22,119,255,0.2), transparent 65%)' }}
         >
-          <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="h-auto w-full" role="img" aria-label="World map connecting Ahmedabad, India with the United States, United Kingdom, Canada, Australia, the UAE and Europe">
+          <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="h-auto w-full" role="img" aria-label="World map connecting Ahmedabad, India with the United States, United Kingdom, Canada, Australia, the UAE, Europe, Singapore, the Philippines, Indonesia, Russia and Africa">
             <defs>
               <pattern id="gs-dots" width="2.6" height="2.6" patternUnits="userSpaceOnUse">
                 <circle cx="1.3" cy="1.3" r="0.55" fill="#4F8CFF" fillOpacity="0.5" />
@@ -91,6 +91,14 @@ export default function GlobalMarkets() {
               <clipPath id="gs-land">
                 <path d={LAND_PATH} />
               </clipPath>
+              {markets.map((m) => {
+                const [x, y] = project(m.lon, m.lat);
+                return (
+                  <clipPath key={m.id} id={`gs-flag-${m.id}`}>
+                    <circle cx={x} cy={y} r={2.6} />
+                  </clipPath>
+                );
+              })}
               <linearGradient id="gs-arc" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#1677ff" />
                 <stop offset="100%" stopColor="#00d9ff" />
@@ -138,9 +146,18 @@ export default function GlobalMarkets() {
                       transition={{ duration: 2.4, repeat: Infinity, ease: 'easeOut', delay: (x % 7) * 0.2 }}
                     />
                   )}
-                  <circle cx={x} cy={y} r={on ? 2.2 : 1.6} fill="#00d9ff" />
-                  <text x={x} y={y - 4} textAnchor="middle" fontSize="3.6" fontWeight="600" fill="#E6EEFF" opacity={on || !active ? 0.95 : 0.4} className="max-sm:hidden" style={{ pointerEvents: 'none' }}>
-                    {m.name === 'Germany & wider Europe' ? 'Europe' : m.name === 'United Arab Emirates' ? 'UAE' : m.name === 'United Kingdom' ? 'UK' : m.name === 'United States' ? 'USA' : m.name}
+                  <circle cx={x} cy={y} r={(on ? 3.4 : 3) } fill="#050b2e" stroke="#00d9ff" strokeWidth={0.5} />
+                  <image
+                    href={`/flags/${m.flag}.svg`}
+                    x={x - 2.6}
+                    y={y - 2.6}
+                    width={5.2}
+                    height={5.2}
+                    preserveAspectRatio="xMidYMid slice"
+                    clipPath={`url(#gs-flag-${m.id})`}
+                  />
+                  <text x={m.id === 'sg' ? x - 4.2 : m.id === 'id' ? x + 4.2 : x} y={m.id === 'sg' || m.id === 'id' ? y + 1.2 : y - 5.2} textAnchor={m.id === 'sg' ? 'end' : m.id === 'id' ? 'start' : 'middle'} fontSize="3.6" fontWeight="600" fill="#E6EEFF" opacity={on || !active ? 0.95 : 0.4} className="max-sm:hidden" style={{ pointerEvents: 'none' }}>
+                    {m.short}
                   </text>
                 </g>
               );
@@ -168,7 +185,7 @@ export default function GlobalMarkets() {
           </svg>
         </motion.div>
 
-        <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           {markets.map((m) => (
             <li key={m.id}>
               <button
@@ -183,7 +200,7 @@ export default function GlobalMarkets() {
                     : 'border-white/10 bg-white/[0.03] text-[#C7D2E4] light:border-slate-200 light:bg-white light:text-slate-700'
                 }`}
               >
-                <span className="h-2 w-2 shrink-0 rounded-full bg-[#00d9ff]" />
+                <img src={`/flags/${m.flag}.svg`} alt="" width={20} height={20} loading="lazy" className="h-5 w-5 shrink-0 rounded-full object-cover ring-1 ring-white/20" />
                 {m.name}
               </button>
             </li>

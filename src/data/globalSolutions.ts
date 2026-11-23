@@ -102,6 +102,10 @@ export const audiences: Audience[] = [
 export interface Market {
   id: string;
   name: string;
+  /** Short label drawn on the map. */
+  short: string;
+  /** Flag file in /public/flags (Europe = EU flag, Africa = African Union flag). */
+  flag: string;
   /** Longitude / latitude of the marker. */
   lon: number;
   lat: number;
@@ -111,12 +115,17 @@ export interface Market {
 export const HOME_BASE = { name: 'Ahmedabad, India', lon: 72.6, lat: 23.0 };
 
 export const markets: Market[] = [
-  { id: 'us', name: 'United States', lon: -98, lat: 39 },
-  { id: 'uk', name: 'United Kingdom', lon: -2, lat: 53.5 },
-  { id: 'ca', name: 'Canada', lon: -100, lat: 57 },
-  { id: 'au', name: 'Australia', lon: 134, lat: -25 },
-  { id: 'ae', name: 'United Arab Emirates', lon: 54.4, lat: 24.3 },
-  { id: 'eu', name: 'Germany & wider Europe', lon: 10.5, lat: 51 },
+  { id: 'us', flag: 'us', name: 'United States', short: 'USA', lon: -98, lat: 39 },
+  { id: 'uk', flag: 'gb', name: 'United Kingdom', short: 'UK', lon: -2, lat: 53.5 },
+  { id: 'ca', flag: 'ca', name: 'Canada', short: 'Canada', lon: -100, lat: 57 },
+  { id: 'au', flag: 'au', name: 'Australia', short: 'Australia', lon: 134, lat: -25 },
+  { id: 'ae', flag: 'ae', name: 'United Arab Emirates', short: 'UAE', lon: 54.4, lat: 24.3 },
+  { id: 'eu', flag: 'eu', name: 'Germany & wider Europe', short: 'Europe', lon: 10.5, lat: 51 },
+  { id: 'sg', flag: 'sg', name: 'Singapore', short: 'Singapore', lon: 103.8, lat: 1.35 },
+  { id: 'ph', flag: 'ph', name: 'Philippines', short: 'Philippines', lon: 122, lat: 13 },
+  { id: 'id', flag: 'id', name: 'Indonesia', short: 'Indonesia', lon: 113, lat: -2 },
+  { id: 'ru', flag: 'ru', name: 'Russia', short: 'Russia', lon: 60, lat: 60 },
+  { id: 'af', flag: 'af', name: 'Africa', short: 'Africa', lon: 20, lat: 5 },
 ];
 
 /* ── Services ──────────────────────────────────────────────────────────── */
@@ -226,7 +235,7 @@ export const showcaseSlugs = ['ravantra', 'hirenova', 'knowledgevoice', 'orbit-f
 export const COUNTRIES = [
   'United States', 'United Kingdom', 'Canada', 'Australia', 'United Arab Emirates', 'Germany', 'France', 'Netherlands',
   'Ireland', 'Spain', 'Italy', 'Sweden', 'Switzerland', 'Singapore', 'New Zealand', 'Saudi Arabia', 'Qatar', 'South Africa',
-  'India', 'Other',
+  'India', 'Philippines', 'Indonesia', 'Malaysia', 'Thailand', 'Vietnam', 'Bangladesh', 'Sri Lanka', 'Nepal', 'Russia', 'Nigeria', 'Kenya', 'Egypt', 'Other',
 ];
 
 export const BUSINESS_TYPES = [
@@ -303,7 +312,7 @@ export const globalFaqs: GlobalFaq[] = [
   },
   {
     question: 'Which countries do you serve?',
-    answer: ['We are actively looking to work with businesses in the United States, United Kingdom, Canada, Australia, the United Arab Emirates, Germany and the wider Europe. Because the work is remote, we are happy to hear from businesses in other countries too.'],
+    answer: ['We are actively looking to work with businesses in the United States, United Kingdom, Canada, Australia, the United Arab Emirates, Germany and the wider Europe, Singapore, the Philippines, Indonesia and South and Southeast Asia, Russia, and across Africa. Because the work is remote, we are happy to hear from businesses in other countries too.'],
   },
   {
     question: 'Can international businesses hire your developers remotely?',
