@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { Menu, X, Sun, Moon, ArrowRight, ChevronDown, Building2, Workflow, Briefcase, CircleHelp, ShieldCheck } from 'lucide-react';
+import { Menu, X, Sun, Moon, ArrowRight, ChevronDown, Building2, Globe, Workflow, Briefcase, CircleHelp, ShieldCheck } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
 import { techStackPages } from '../../data/techStacks';
 import { industries, industryPath } from '../../data/industries';
@@ -9,6 +9,7 @@ import { useTheme } from '../../context/ThemeContext';
 
 const aboutItems = [
   { label: 'About Us', path: '/about', desc: 'Who we are and why we started.', icon: Building2 },
+  { label: 'Global Solutions', path: '/global-solutions', desc: 'Remote software delivery for clients worldwide.', icon: Globe },
   { label: 'How We Work', path: '/about#process', desc: 'Seven clear steps from idea to launch.', icon: Workflow },
   { label: 'Careers', path: '/careers', desc: 'Join a small team that ships.', icon: Briefcase },
   { label: 'FAQ', path: '/faq', desc: 'Straight answers to common questions.', icon: CircleHelp },

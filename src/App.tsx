@@ -30,6 +30,7 @@ const Pricing = lazy(() => import('./pages/Pricing'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Security = lazy(() => import('./pages/Security'));
 const FreeAudit = lazy(() => import('./pages/FreeAudit'));
+const GlobalSolutions = lazy(() => import('./pages/GlobalSolutions'));
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/security" element={<Security />} />
                     <Route path="/free-audit" element={<FreeAudit />} />
+                    <Route path="/global-solutions" element={<GlobalSolutions />} />
 
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms" element={<Terms />} />

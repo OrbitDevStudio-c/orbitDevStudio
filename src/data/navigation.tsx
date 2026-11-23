@@ -34,6 +34,7 @@ export const quickLinks: FooterLink[] = [
 
 export const serviceLinks: FooterLink[] = [
   { label: 'Services', path: '/services' },
+  { label: 'Global Solutions', path: '/global-solutions' },
   { label: 'Industries', path: '/industries' },
   { label: 'Technologies', path: '/tech' },
   { label: 'Blog', path: '/blog' },

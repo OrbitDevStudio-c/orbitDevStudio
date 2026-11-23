@@ -27,7 +27,7 @@ Live at: https://orbit-dev-studio.vercel.app
 - **Navbar:** Services, Work, Pricing, About Us, Blog, and a **Start Your Project** button (→ `/hire`). The mobile menu also lists Industries, Technologies, FAQ, Privacy Policy and Terms.
 - **Footer:**
   - **Company:** About, Our Work, Pricing, Careers, Let's Talk.
-  - **Resources:** Services, Industries, Technologies, Blog, Free Website Audit, FAQ, Security & Privacy.
+  - **Resources:** Services, Global Solutions, Industries, Technologies, Blog, Free Website Audit, FAQ, Security & Privacy.
   - **Connect:** email, Instagram, LinkedIn.
   - **Bottom bar:** Privacy Policy and Terms.
 - **Orbit AI chat widget:** floating button, bottom-right, on every page.
@@ -61,6 +61,20 @@ Each page lives in `src/pages/` and is assembled from section components in `src
 | `ServicesMetrics` | Delivery highlights band |
 | `ServicesTechnologies` | "Built for Global Reach" |
 | `FreeAuditSection` | "Get a Free Website Audit" lead form (compact) |
+
+### Global Solutions (`/global-solutions`), [GlobalSolutions.tsx](src/pages/GlobalSolutions.tsx)
+Landing page for international prospects ("Your Vision. Our Engineering. Worldwide Impact."). Content lives in [src/data/globalSolutions.ts](src/data/globalSolutions.ts); sections are `Global*.tsx` in `src/components/sections/`, below the shared `PageHero`.
+| Section | Content |
+|---|---|
+| `GlobalAudiences` | Startups, SMBs, growing companies, enterprises. **Discuss Your Idea** pre-selects the business type in the form |
+| `GlobalMarkets` | Dotted SVG world map (no map library) linking Ahmedabad to US, UK, Canada, Australia, UAE and Europe. It states there are no offices abroad |
+| `GlobalServices`, `GlobalIndustries` | 10 services and 8 industries, linked to existing pages and real case studies |
+| `GlobalWhy`, `GlobalProcess`, `GlobalEngagement` | Trust points, 7-step timeline, three engagement models (pre-select the form's model) and the remote-collaboration flow |
+| `GlobalWork` | 8 real projects from `projects.ts` |
+| `GlobalForm` | International inquiry form (React Hook Form + Zod, 7 budget currencies). Sends through the **same EmailJS templates as `/hire`**, with the extra fields in the message body, plus honeypot, loading, success and error states |
+| `GlobalFAQ` | 12 questions, with `FAQPage` JSON-LD |
+
+No offices, international clients, certifications, statistics or testimonials are claimed. The prerender script includes the route, so it is in `sitemap.xml`.
 
 ### Work (`/portfolio`), [Portfolio.tsx](src/pages/Portfolio.tsx)
 The portfolio and case studies are merged into one page. `/case-studies` redirects here.

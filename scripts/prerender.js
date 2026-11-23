@@ -17,6 +17,7 @@ const staticRoutes = [
     changefreq: 'weekly',
   },
   { path: 'services', title: 'Services | Orbit Dev Studios', description: 'Website development, web applications, UI/UX design, e-commerce, custom software and website redesign, delivered by one focused team.' },
+  { path: 'global-solutions', title: 'Global Software Development Partner | OrbitDevStudio', description: 'OrbitDevStudio helps startups, small businesses and enterprises worldwide build websites, custom software, web applications and AI-powered digital solutions.' },
   { path: 'portfolio', title: 'Our Work | Orbit Dev Studios', description: 'Websites, e-commerce stores, healthcare platforms and AI products designed and built by Orbit Dev Studios, with a case study for each project.' },
   { path: 'pricing', title: 'Pricing | Orbit Dev Studios', description: 'Websites, e-commerce, web apps and custom software priced to your requirements. Get an instant AI estimate, compare Starter, Professional and Enterprise scope, then a free quote.' },
   { path: 'about', title: 'About Us | Orbit Dev Studios', description: 'Our story, mission, values, seven-step process and the team behind Orbit Dev Studios.' },
