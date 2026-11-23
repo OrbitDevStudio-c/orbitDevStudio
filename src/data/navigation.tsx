@@ -47,4 +47,5 @@ export const socialLinks: SocialLink[] = [
   { platform: 'email', url: 'mailto:orbitdevstudio@zohomail.in', label: 'orbitdevstudio@zohomail.in', note: 'Careers & HR (resumes)' },
   { platform: 'instagram', url: 'https://instagram.com/orbitdevstudio', label: '@orbitdevstudio' },
   { platform: 'linkedin', url: 'https://www.linkedin.com/company/orbitdevstudio-tech', label: 'orbitdevstudio-c' },
+  { platform: 'youtube', url: 'https://www.youtube.com/@orbitDevStudio', label: '@orbitDevStudio' },
 ];
