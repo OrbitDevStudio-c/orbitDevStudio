@@ -196,7 +196,7 @@ export const industries: Industry[] = [
       },
     ],
     builds: ['Multi-tenant platforms', 'Subscription billing', 'Roles & permissions', 'Admin dashboards', 'AI features', 'Public APIs & integrations'],
-    related: ['recruitiq', 'knowledgevoice'],
+    related: ['hirenova', 'knowledgevoice'],
   },
   {
     slug: 'logistics',

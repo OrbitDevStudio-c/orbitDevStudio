@@ -206,14 +206,14 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    slug: 'recruitiq',
-    title: 'RecruitIQ',
+    slug: 'hirenova',
+    title: 'HireNova',
     industry: 'AI & Recruitment',
     category: 'AI & SaaS',
-    description: 'An AI recruitment platform that parses resumes, scores every applicant against the job requirements, and ranks candidates into a clear shortlist.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'OpenAI'],
-    liveUrl: 'https://recruitiq-eta.vercel.app/',
-    logo: logo('/projects/recruitiq-logo.webp', 1254, 'RecruitIQ'),
+    description: 'An AI hiring platform for admins, companies and students that parses resumes, scores every applicant against the job, ranks a clear shortlist and runs AI voice interviews.',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'AI'],
+    liveUrl: 'https://hire-nova-six.vercel.app/',
+    logo: logo('/projects/hirenova-logo.webp', 512, 'HireNova'),
     caseStudy: {
       summary: 'An AI recruitment platform that scores every applicant against the job and ranks them into a clear, filterable shortlist.',
       services: ['AI Integration', 'Full-Stack Web Development', 'SaaS Product Development'],
@@ -230,14 +230,15 @@ export const projects: Project[] = [
       design:
         'The recruiter view is built around the shortlist. Candidates are ranked, filterable and actionable in bulk, so shortlisting or rejecting a group is one action, not a page of clicks.',
       development:
-        'A React front end and Node.js backend, with PostgreSQL storing applicants, scores and interview slots. Scoring pairs OpenAI with rule-based checks. Slot booking is race-safe so two candidates can never book the same interview time, and candidate emails go out automatically.',
+        'A React front end and Node.js backend, with PostgreSQL storing applicants, scores and interview slots. Scoring pairs an LLM (via OpenRouter) with rule-based checks. Slot booking is race-safe so two candidates can never book the same interview time, and candidate emails go out automatically.',
       delivered: [
-        'Live platform at recruitiq-eta.vercel.app',
+        'Live platform at hire-nova-six.vercel.app',
         'Automatic requirement extraction from job posts',
         'Hybrid rule-based and LLM applicant scoring and ranking',
         'Bulk shortlist and reject actions with automatic candidate emails',
         'Self-serve, race-safe interview slot booking',
         'Automated AI voice interviews over LiveKit',
+        'Three role-based areas: platform admin, companies (admin, HR, employees with per-person permissions) and students',
       ],
     },
   },
