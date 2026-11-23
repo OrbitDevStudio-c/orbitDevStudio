@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const BRANDS: { name: string; logo: string }[] = [
   { name: 'BookVerse', logo: '/projects/bookverse-logo-96.webp' },
   { name: 'KnowledgeVoice', logo: '/projects/knowledgevoice-logo-96.webp' },
-  { name: 'RecruitIQ', logo: '/projects/recruitiq-logo-96.webp' },
+  { name: 'HireNova', logo: '/projects/hirenova-logo-96.webp' },
   { name: 'Orbit Food', logo: '/projects/orbitfood-logo.webp' },
   { name: 'ProBuild ERP', logo: '/projects/probuild-logo-96.webp' },
 ];

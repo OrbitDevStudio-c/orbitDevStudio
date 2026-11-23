@@ -67,7 +67,7 @@ The portfolio and case studies are merged into one page. `/case-studies` redirec
 | Section | Content |
 |---|---|
 | `PortfolioHero` | Intro |
-| `PortfolioGrid` | Filterable grid of 13 real projects: RAVANTRA (E-commerce); ProBuild ERP (Industrial); Royal Wedding Invitation, Elegant Wedding (Wedding); Orbit Food, BookVerse (E-commerce); RecruitIQ, KnowledgeVoice (AI & SaaS); ShivedLife Medicare, PharmaCare Platform (Healthcare); Aura Design Studio, Designerss Creative (Architecture); Navnidhi Trading (Corporate). Each card has **View Case Study** |
+| `PortfolioGrid` | Filterable grid of 13 real projects: RAVANTRA (E-commerce); ProBuild ERP (Industrial); Royal Wedding Invitation, Elegant Wedding (Wedding); Orbit Food, BookVerse (E-commerce); HireNova, KnowledgeVoice (AI & SaaS); ShivedLife Medicare, PharmaCare Platform (Healthcare); Aura Design Studio, Designerss Creative (Architecture); Navnidhi Trading (Corporate). Each card has **View Case Study** |
 | `PortfolioCTA` | "Your Project Could Be Next" |
 
 ### Case study pages (`/case-studies/:slug`), [CaseStudy.tsx](src/pages/CaseStudy.tsx)
@@ -133,7 +133,7 @@ General practices only, with no certification claims:
 |---|---|
 | `IndustriesHero` | "Empowering Industries…" |
 | `IndustriesGrid` | Healthcare & Medical, E-Commerce, Architecture, Interior Design, Custom Portfolios, Travel Agencies, Restaurant |
-| `IndustriesShowcase` | "Industry Success Stories" (RecruitIQ, KnowledgeVoice) → their case studies |
+| `IndustriesShowcase` | "Industry Success Stories" (HireNova, KnowledgeVoice) → their case studies |
 | `IndustriesStory`, `IndustriesTechClusters`, `IndustriesWhyUs`, `IndustriesFAQ`, `IndustriesCTA` | Industry expertise, stack by industry, why clients choose us, FAQ, CTA |
 
 ### Technologies (`/tech`), [TechStack.tsx](src/pages/TechStack.tsx)
@@ -320,7 +320,7 @@ Deployed on Vercel from the `main` branch. Vercel serves `dist/` and deploys eve
 
 The site avoids presenting unverified facts as real. These items need the owner's input:
 - **Pricing guide**: sample ranges and currency rates in `api/_lib/pricingGuide.js`.
-- **Case studies**: client names, results and testimonials are hidden until real ones are added to `src/data/projects.ts` (`client`, `testimonial`). RecruitIQ has no screenshot, and its live URL currently returns a Vercel 404.
+- **Case studies**: client names, results and testimonials are hidden until real ones are added to `src/data/projects.ts` (`client`, `testimonial`). HireNova has no screenshot (logo only); its live URL is https://hire-nova-six.vercel.app/.
 - **Testimonials** (homepage): they use stock avatars from randomuser.me and include 3-star reviews. Replace them with verified client testimonials and real photos, or remove them.
 - **Stats**: About (10+ products, 24/7 support, 15+ technologies) and StoryStats numbers.
 - **FAQ / Pricing answers**: code ownership, hosting accounts, maintenance scope, payment milestones.

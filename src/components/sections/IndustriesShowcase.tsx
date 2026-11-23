@@ -20,13 +20,13 @@ const cases: Case[] = [
   {
     id: 3,
     industry: "Recruitment & HR Tech",
-    title: "RecruitIQ",
+    title: "HireNova",
     problem: "Manually screening every resume against a job's requirements is slow and inconsistent, and a genuinely qualified candidate can easily get buried in the pile — while back-and-forth interview scheduling eats up even more of a recruiter's week.",
     solution: "We engineered an AI recruitment platform that extracts structured requirements straight from the job post, then blends deterministic rule checks (skills, experience, education) with an LLM's semantic read to score and rank every applicant — scrubbing gender and name from anything sent to the model. Shortlisted candidates book their own interview slot instantly, including a fully automated AI voice interview conducted over LiveKit.",
     result: "Recruiters go from an unsorted resume pile to a ranked, filterable shortlist in minutes — with bulk shortlist/reject actions, automatic candidate emails, and race-safe slot booking so two candidates can never double-book the same interview time.",
     tech: ["React", "Node.js", "PostgreSQL"],
-    liveUrl: "https://recruitiq-eta.vercel.app/",
-    image: "/projects/recruitiq-logo.webp",
+    liveUrl: "https://hire-nova-six.vercel.app/",
+    image: "/projects/hirenova-logo.webp",
     isLogo: true,
     reverse: false
   },
